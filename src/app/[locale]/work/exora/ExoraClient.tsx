@@ -51,7 +51,7 @@ const positionStates = [
     border: 'rgba(239, 68, 68, 0.4)',
     tint: 'rgba(239, 68, 68, 0.18)',
     title: '警告必須帶有行動路徑',
-    body: '危險水位下主動帶出「立即追加保證金」與「部分平倉」兩條行動路徑，使用者不必再尋找按鈕即可立即回應。',
+    body: '危險水位下主動帶出「保證金調整」與「平倉」兩條行動路徑，使用者不必再尋找按鈕即可立即回應。',
     danger: {
       alert: '距清算還有 $540.00',
     },
@@ -507,7 +507,12 @@ export default function ExoraClient() {
             <div className="relative border-t border-white/[0.08] pt-6 md:pt-8">
               <p className="text-[14px] md:text-[16px] leading-[1.7] text-text-muted italic flex items-start gap-2">
                 <span className="text-accent not-italic mt-[1px]">→</span>
-                <span>{t('userResearch.proseTakeaway')}</span>
+                <span>
+                  {t('userResearch.proseTakeaway')}
+                  <span className="text-accent not-italic font-medium">
+                    {t('userResearch.proseTakeawayHighlight')}
+                  </span>
+                </span>
               </p>
             </div>
           </div>
@@ -598,6 +603,46 @@ export default function ExoraClient() {
         );
       })}
 
+      {/* ========== 04 — CORE DESIGN INSIGHT ========== */}
+      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
+        <SectionLabel label={t('designInsight.label')} />
+        <h2 className="font-[var(--font-display)] text-2xl md:text-[32px] font-semibold text-text-primary mb-8">
+          {t('designInsight.heading')}
+        </h2>
+        <p className="text-[18px] leading-[1.7] text-text-secondary mb-8">
+          {t('designInsight.body')}
+        </p>
+      </ScrollReveal>
+
+      <div className="mb-8">
+        <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
+          <Image
+            src="/images/projects/exora/img-design-insight.png"
+            alt={t('designInsight.heading')}
+            width={1920}
+            height={1080}
+            className="w-full h-auto rounded-xl opacity-80"
+            sizes="(min-width: 768px) 80vw, 100vw"
+          />
+        </div>
+      </div>
+
+      <div className="mb-[var(--cs-section-gap)]">
+        <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
+          <Image
+            src="/images/projects/exora/DD insight.png"
+            alt={t('designInsight.heading')}
+            width={1920}
+            height={1080}
+            className="w-full h-auto rounded-xl"
+            sizes="(min-width: 768px) 80vw, 100vw"
+          />
+          <p className="mt-3 text-center text-[15px] leading-relaxed text-accent">
+            獨立規劃用戶合約交易下單流程、介面設計＆產品視覺風格
+          </p>
+        </div>
+      </div>
+
       {/* ========== 05 — TRADING UX (merged with Order Panel) ========== */}
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <SectionLabel label={t('tradingUX.label')} />
@@ -635,19 +680,6 @@ export default function ExoraClient() {
                     <i className="ri-close-line text-text-muted/60" />
                   </div>
 
-                  {hasDanger && state.danger && (
-                    <div
-                      className="mb-4 rounded-lg border px-3 py-2.5"
-                      style={{
-                        borderColor: state.border,
-                        background: state.tint,
-                        color: state.color,
-                      }}
-                    >
-                      <span className="text-[13px] font-medium">{state.danger.alert}</span>
-                    </div>
-                  )}
-
                   <div className="mb-4">
                     <div className="mb-2 flex items-center justify-between">
                       <span className="text-[13px] text-text-secondary">槓桿</span>
@@ -668,20 +700,46 @@ export default function ExoraClient() {
                       Margin Ratio:{' '}
                       <span className="font-medium text-text-primary">{state.marginRatio}%</span>
                     </span>
-                    {state.badge && (
+                    {hasDanger && state.danger ? (
                       <span
-                        className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-medium"
-                        style={{
-                          color: state.color,
-                          background: state.tint,
-                          border: `1px solid ${state.border}`,
-                        }}
+                        className="text-[13px] font-medium"
+                        style={{ color: state.color }}
                       >
-                        <i className={`${state.badge.icon} text-[12px]`} />
-                        {state.badge.text}
+                        {state.danger.alert}
                       </span>
+                    ) : (
+                      state.badge && (
+                        <span
+                          className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-medium"
+                          style={{
+                            color: state.color,
+                            background: state.tint,
+                            border: `1px solid ${state.border}`,
+                          }}
+                        >
+                          <i className={`${state.badge.icon} text-[12px]`} />
+                          {state.badge.text}
+                        </span>
+                      )
                     )}
                   </div>
+
+                  {hasDanger && state.danger && (
+                    <div className="mt-4 grid grid-cols-2 gap-2">
+                      <button
+                        type="button"
+                        className="rounded-lg border border-white/[0.12] bg-transparent px-3 py-2 text-[12px] font-medium text-text-secondary transition-colors hover:bg-white/[0.04] hover:text-text-primary"
+                      >
+                        保證金調整
+                      </button>
+                      <button
+                        type="button"
+                        className="rounded-lg border border-white/[0.15] bg-white/[0.08] px-3 py-2 text-[12px] font-medium text-text-primary transition-colors hover:bg-white/[0.12]"
+                      >
+                        平倉
+                      </button>
+                    </div>
+                  )}
 
                 </div>
 
@@ -735,46 +793,6 @@ export default function ExoraClient() {
             className="w-full h-auto rounded-xl opacity-90"
             sizes="(min-width: 768px) 80vw, 100vw"
           />
-        </div>
-      </div>
-
-      {/* ========== 04 — CORE DESIGN INSIGHT ========== */}
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <SectionLabel label={t('designInsight.label')} />
-        <h2 className="font-[var(--font-display)] text-2xl md:text-[32px] font-semibold text-text-primary mb-8">
-          {t('designInsight.heading')}
-        </h2>
-        <p className="text-[18px] leading-[1.7] text-text-secondary mb-8">
-          {t('designInsight.body')}
-        </p>
-      </ScrollReveal>
-
-      <div className="mb-8">
-        <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
-          <Image
-            src="/images/projects/exora/img-design-insight.png"
-            alt={t('designInsight.heading')}
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-xl opacity-80"
-            sizes="(min-width: 768px) 80vw, 100vw"
-          />
-        </div>
-      </div>
-
-      <div className="mb-[var(--cs-section-gap)]">
-        <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
-          <Image
-            src="/images/projects/exora/DD insight.png"
-            alt={t('designInsight.heading')}
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-xl"
-            sizes="(min-width: 768px) 80vw, 100vw"
-          />
-          <p className="mt-3 text-center text-[15px] leading-relaxed text-accent">
-            獨立規劃用戶合約交易下單流程、介面設計＆產品視覺風格
-          </p>
         </div>
       </div>
 
@@ -988,6 +1006,35 @@ export default function ExoraClient() {
               </tbody>
             </table>
           </div>
+        </div>
+      </ScrollReveal>
+
+      {/* ========== 12 — REFLECTION ========== */}
+      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
+        <SectionLabel label={t('reflection.label')} />
+        <h2 className="font-[var(--font-display)] text-2xl md:text-[32px] font-semibold text-text-primary mb-8">
+          {t('reflection.heading')}
+        </h2>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[1, 2, 3].map((n) => (
+            <div
+              key={n}
+              className="glass-medium rounded-2xl p-6 md:p-8 hover:border-white/[0.15] transition-colors duration-300"
+            >
+              <span className="block font-[var(--font-mono)] text-5xl font-bold text-accent/30 mb-4">
+                {String(n).padStart(2, '0')}
+              </span>
+              <h3 className="font-[var(--font-display)] text-lg font-semibold text-text-primary mb-2">
+                {t(`reflection.card${n}.title`)}
+              </h3>
+              <p className="text-[16px] leading-[1.7] text-text-secondary">
+                {t.rich(`reflection.card${n}.body`, {
+                  highlight: (chunks) => <span className="text-accent">{chunks}</span>,
+                })}
+              </p>
+            </div>
+          ))}
         </div>
       </ScrollReveal>
 

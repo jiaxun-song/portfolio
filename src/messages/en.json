@@ -12,7 +12,7 @@
   "marquee": {
     "hello": "Hello, I'm Jade!",
     "experience": "With 5+ years of UI/UX design experience",
-    "trading": "4 years in crypto trading"
+    "trading": "5 years in crypto trading"
   },
   "deviceShowcase": {
     "count": "20+",
@@ -56,7 +56,7 @@
       },
       "highlights": {
         "metric1Value": "Design Direction",
-        "metric1Label": "Led the style proposal — from moodboard and color system to typography — anchoring the product's overall visual direction and design language",
+        "metric1Label": "Led the style proposal — from moodboard to color system — anchoring the product's overall visual direction and design language",
         "metric2Value": "UX × UI Flow",
         "metric2Label": "Mapped user flow into page navigation logic and annotated every interaction state into an engineer-ready handoff",
         "metric3Value": "Gold Award",
@@ -296,12 +296,13 @@
       "userResearch": {
         "label": "03 — USER RESEARCH",
         "heading": "Deep Analysis of Trading Experience Pain Points",
-        "body": "4+ years of crypto trading experience enabled faster access to the core problems — not replacing the user perspective, but more precisely identifying which frictions truly affect trading decisions versus surface-level usability issues during research.",
+        "body": "With 5 years of crypto trading experience, research can reach the core problems faster — not replacing the user perspective, but more precisely identifying which frictions truly affect trading decisions versus surface-level usability issues during research.",
         "proseQuote": "I clearly wanted to use isolated margin for this position, but after placing the order I realized it was cross-margin 20x.",
         "proseContext": "This is a real scenario encountered when trading on CEX — switching to a new trading pair, the system defaults to cross-margin 20x leverage. I thought I was using isolated margin to control risk, but my entire account balance was exposed as collateral in a single trade. This doesn't happen every time, but precisely because it's sporadic, users are more likely to overlook it — ",
         "proseHighlight": "the system's default value silently made a high-risk decision for the user, and the interface gave no reminder.",
         "proseContextSuffix": "",
-        "proseTakeaway": "This experience directly influenced the research focus — locking onto the core journey from \"deciding to trade\" to \"trade completed,\" identifying critical friction points in the trading flow.",
+        "proseTakeaway": "This experience directly influenced the research focus — ",
+        "proseTakeawayHighlight": "locking onto the core journey from \"deciding to trade\" to \"trade completed,\" identifying critical friction points in the trading flow.",
         "spectrumTitle": "Trader User Profiles",
         "spectrumSubtitle": "Intent to Execution Spectrum",
         "trader1Title": "Retail Trader",
@@ -357,7 +358,7 @@
         "insightHeadline": "Trading Infrastructure Layer"
       },
       "designInsight": {
-        "label": "05 — CORE DESIGN INSIGHT",
+        "label": "04 — CORE DESIGN INSIGHT",
         "heading": "Technical Architecture Is UX's Ceiling — and Its Foundation",
         "body": "This project has two asymmetric design challenges — surface-level UX problems and deep architectural problems.",
         "layer1Title": "LAYER 1 — Relatively Visible",
@@ -366,8 +367,8 @@
         "layer2Body": "Product architecture involves six-layer fund entities, Agent Key authorization mechanisms, cross-chain settlement — these are PM and engineering team decisions. The design challenge is: fully understand the constraints and boundaries of this system, then translate it into a streamlined experience where users only see three fund states and complete orders in one step."
       },
       "tradingUX": {
-        "label": "04 — DESIGN OUTPUT: TRADING UX",
-        "heading": "High-Pressure Position Management: States and Actions Designed for Extreme Decisions",
+        "label": "05 — DESIGN OUTPUT: TRADING UX",
+        "heading": "High-Volatility Position Management: States and Actions Designed for Extreme Decisions",
         "body": "Three position states each paired with their own action paths — so users can read risk intensity at a glance and respond immediately when needed."
       },
       "orderPanel": {
@@ -481,6 +482,22 @@
             "Built a multi-tenant Design System tool with front-end collaboration using Claude Code"
           ]
         ]
+      },
+      "reflection": {
+        "label": "12 — REFLECTION",
+        "heading": "Reflections on Designing in High-Volatility Markets",
+        "card1": {
+          "title": "Finding the right problem through a trader's lens",
+          "body": "5 years of crypto trading experience let research go straight to \"the frictions that actually affect order decisions,\" instead of stopping at \"the interface is hard to use.\" Focusing research on the core journey from <highlight>\"deciding to trade\" to \"trade completed\"</highlight> — rather than generic UX improvements — was the most critical strategic decision of this project."
+        },
+        "card2": {
+          "title": "Push judgment toward data",
+          "body": "The danger-state position UI uses color and action buttons to drive strong guidance, but <highlight>the threshold of \"what Margin Ratio should trigger red\"</highlight> was set on trading intuition, not user testing. If I started over, I'd layer in live trading observation or A/B testing here, moving the decision from \"I think\" to \"the data supports it.\""
+        },
+        "card3": {
+          "title": "Friction isn't always worth removing",
+          "body": "In crypto finance, <highlight>\"reducing risk\" and \"reducing friction\" often point in opposite directions</highlight> — making a flow too smooth can lead users to place orders before fully reading the risk. A designer's job isn't to mindlessly strip out steps; it's to judge which frictions should stay as protective mechanisms."
+        }
       },
       "projectNav": {
         "prev": "Previous Project",

@@ -12,7 +12,7 @@
   "marquee": {
     "hello": "Hello, I'm Jade!",
     "experience": "With 5+ years of UI/UX design experience",
-    "trading": "4 years in crypto trading"
+    "trading": "5 years in crypto trading"
   },
   "deviceShowcase": {
     "count": "20+",
@@ -90,12 +90,13 @@
       "userResearch": {
         "label": "03 — 使用者研究",
         "heading": "交易體驗的痛點分析：交易前 · 交易中 · 交易後",
-        "body": "4 年以上的加密貨幣交易經驗，讓研究能更快進入問題核心——不是取代用戶視角，而是在研究過程中更精準地辨識哪些摩擦真正影響交易決策，哪些只是表面的易用性問題。",
+        "body": "因擁有 5 年的加密貨幣交易經驗，所以讓研究能更快進入問題核心——不是取代用戶視角，而是在研究過程中更精準地辨識哪些摩擦真正影響交易決策，哪些只是易用性的問題。",
         "proseQuote": "想用逐倉開單，下完才發現是全倉 20x",
         "proseContext": "此為 CEX 交易時用戶的真實情境——當用戶切換到一個新的交易對，系統預設幾乎是全倉 20x 槓桿。而部份用戶交易習慣是使用逐倉控制風險，卻因系統預設的結果，使整個合約帳戶餘額都被當成保證金暴露在一筆交易裡。",
         "proseHighlight": "系統預設值靜默地替用戶做了一個高風險決定，",
         "proseContextSuffix": "也因介面的設計不明顯，使用戶忽略了開倉前重要的參數設定。",
-        "proseTakeaway": "此經驗直接影響了研究聚焦方向——鎖定「從決定交易到交易完成」的核心旅程，識別出交易流程中的關鍵摩擦點。",
+        "proseTakeaway": "此經驗直接影響了研究聚焦方向——鎖定",
+        "proseTakeawayHighlight": "「從決定交易到交易完成」的核心旅程，識別出交易流程中的關鍵摩擦點。",
         "spectrumTitle": "交易用戶輪廓",
         "spectrumSubtitle": "Intent to Execution 光譜圖",
         "trader1Title": "一般用戶",
@@ -116,7 +117,7 @@
         "preTradeCol3": "設計機會",
         "preRow1Pain": "槓桿與保證金模式的靜默預設",
         "preRow1Desc": "切換到新的交易對時，系統預設全倉 20x 槓桿，沒有顯眼的設計，也沒有提醒。",
-        "preRow1Opportunity": "保證金模式預設值以不同的 UI 樣式呈現，讓用戶清楚知道「這個值不是本次主動設定的」",
+        "preRow1Opportunity": "保證金模式預設值以不同的 UI 樣式呈現，讓用戶清楚知道「這個值是影響下單開倉的重中之重」",
         "preRow2Pain": "下單前看不到清算價格",
         "preRow2Desc": "清算價格只有在倉位成立之後才出現。下單當下不知道「這筆交易在什麼價格會被強平」，需另開計算機手動輸入。",
         "preRow2Opportunity": "在 Order Panel 即時計算並顯示預估清算價格，下單前就能看到風險邊界",
@@ -158,13 +159,13 @@
         "insightHeadline": "Trading Infrastructure Layer"
       },
       "designInsight": {
-        "label": "05 — 核心設計洞察",
+        "label": "04 — 核心設計洞察",
         "heading": "技術架構是 UX 的天花板，也是 UX 的地基",
         "body": "交易前/中/後的體驗痛點有明確的設計介入方向。但這個專案真正困難的挑戰在更深一層——產品架構涉及六層資金實體、Agent Key 授權機制、跨鏈結算——這些是 PM 與工程團隊的決策。設計的挑戰是：充分理解這份底層 knowhow 的約束與邊界，再將它翻譯成簡潔的用戶體驗。"
       },
       "tradingUX": {
-        "label": "04 — 設計產出：合約交易 UX",
-        "heading": "高壓持倉管理：為極端決策設計的狀態與行動",
+        "label": "05 — 設計產出：合約交易 UX",
+        "heading": "高波動市場持倉管理：為極端決策設計的狀態與行動",
         "body": "依持倉風險水位設計三種介面狀態與對應行動路徑——讓使用者在一眼掃視之間判斷風險強度，並在必要時立即採取行動。"
       },
       "orderPanel": {
@@ -279,6 +280,22 @@
           ]
         ]
       },
+      "reflection": {
+        "label": "12 — REFLECTION",
+        "heading": "在高波動市場做設計的反思",
+        "card1": {
+          "title": "用交易者視角找對問題",
+          "body": "5 年加密交易經驗讓研究能直接指向「真正影響下單決策的摩擦」，而不是停留在「介面難用」的層次。把研究聚焦在<highlight>「從決定交易到交易完成」</highlight>的核心旅程，避免去做泛用的 UX 改善，是這個專案最關鍵的策略決定。"
+        },
+        "card2": {
+          "title": "把判斷推進到資料支持",
+          "body": "危險水位的持倉 UI 雖然用顏色與行動按鈕做了強引導，但<highlight>「Margin Ratio 多少該觸發紅色」</highlight>這條閾值是憑交易經驗訂的、沒有經過用戶實測。如果重來，會在這層加上實盤數據觀察或 A/B，把判斷從「我認為」推進到「資料支持」。"
+        },
+        "card3": {
+          "title": "摩擦不是越少越好",
+          "body": "在加密金融做設計，<highlight>「降低風險」與「降低摩擦」常常方向相反</highlight>——把流程做太順，反而讓用戶在沒看清風險時就下單。設計師的工作不是無腦移除步驟，而是判斷哪些摩擦該留下來當保護機制。"
+        }
+      },
       "projectNav": {
         "prev": "上一則作品",
         "next": "下一則作品"
@@ -293,7 +310,7 @@
       },
       "highlights": {
         "metric1Value": "Design Direction",
-        "metric1Label": "主導產品整體視覺方向與設計語言，moodboard、色彩與排版規範的設計風格提案",
+        "metric1Label": "主導產品整體視覺方向與設計語言，moodboard、色彩規劃的設計風格提案",
         "metric2Value": "UX × UI Flow",
         "metric2Label": "從 user flow 串接頁面跳轉邏輯，到所有互動狀態標註，產出可交付工程師的設計稿",
         "metric3Value": "Gold Award",
