@@ -227,11 +227,8 @@ export default function ExoraClient() {
           <h3 className="font-[var(--font-display)] text-lg font-semibold text-text-primary mb-2">
             {t('context.userProblemTitle')}
           </h3>
-          <p className="text-[16px] leading-[1.7] text-text-secondary mb-4">
-            {t('context.userProblemCardBody')}
-          </p>
           <p className="text-[16px] leading-[1.7] text-text-secondary">
-            {t('context.userProblemExtra')}
+            {t('context.userProblemCardBody')}
           </p>
         </div>
       </ScrollReveal>

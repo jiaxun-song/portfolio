@@ -291,7 +291,6 @@
         "userProblemTitle": "The User-Side Problem",
         "userProblemCardTitle": "The Current Trading Experience Compromise",
         "userProblemCardBody": "CEX is smooth but opaque; DEX is transparent but the experience is terrible. This either-or dilemma is a structural problem in the crypto trading market.",
-        "userProblemExtra": "A real case from March 2026: a whale executed a ~$50M token swap on the Aave interface, and the trade was routed to a pool with only $73K in liquidity. Slippage hit 99%, and they recovered only ~$36K. The interface showed warnings, but the user confirmed the transaction on mobile — when warning design isn't intuitive enough, no amount of prompts can prevent a single misclick.",
         "insightBody": "Fluidity and transparency shouldn't be an either-or choice. The real design opportunity is: let users simultaneously get CEX operational efficiency and DEX asset transparency without needing to understand the underlying technology — and the way risk information is presented determines whether this experience is safe or dangerous."
       },
       "userResearch": {
@@ -358,7 +357,7 @@
         "insightHeadline": "Trading Infrastructure Layer"
       },
       "designInsight": {
-        "label": "04 — CORE DESIGN INSIGHT",
+        "label": "05 — CORE DESIGN INSIGHT",
         "heading": "Technical Architecture Is UX's Ceiling — and Its Foundation",
         "body": "This project has two asymmetric design challenges — surface-level UX problems and deep architectural problems.",
         "layer1Title": "LAYER 1 — Relatively Visible",
@@ -367,7 +366,7 @@
         "layer2Body": "Product architecture involves six-layer fund entities, Agent Key authorization mechanisms, cross-chain settlement — these are PM and engineering team decisions. The design challenge is: fully understand the constraints and boundaries of this system, then translate it into a streamlined experience where users only see three fund states and complete orders in one step."
       },
       "tradingUX": {
-        "label": "05 — DESIGN OUTPUT: TRADING UX",
+        "label": "04 — DESIGN OUTPUT: TRADING UX",
         "heading": "High-Pressure Position Management: States and Actions Designed for Extreme Decisions",
         "body": "Three position states each paired with their own action paths — so users can read risk intensity at a glance and respond immediately when needed."
       },
