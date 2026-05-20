@@ -1,0 +1,918 @@
+{
+  "nav": {
+    "work": "Work",
+    "projects": "Projects",
+    "about": "About",
+    "resume": "Resume"
+  },
+  "hero": {
+    "greeting": "Hi! I'm Jade Song",
+    "subtitle": "Product Designer"
+  },
+  "marquee": {
+    "hello": "Hello, I'm Jade!",
+    "experience": "With 5+ years of UI/UX design experience",
+    "trading": "4 years in crypto trading"
+  },
+  "deviceShowcase": {
+    "count": "20+",
+    "label": "WEB & APP PROJECTS",
+    "description": "Product design experience across Fintech, Web3, and Crypto"
+  },
+  "caseStudy": {
+    "moreProjects": "10 More Projects",
+    "projects": {
+      "exora": {
+        "title": "Exora — White-Label Perpetual DEX",
+        "description": "A derivatives trading platform integrating Hyperliquid liquidity, redesigning order placement and mobile experience — bringing CEX-level fluidity to DEX."
+      },
+      "prediction-market": {
+        "title": "End-to-End AI Workflow Delivery: Spec, Design & Frontend — Solo",
+        "description": "From Spec to frontend, building a Prediction Market PWA that users can easily use on mobile"
+      },
+      "hydra": {
+        "title": "Derivatives Trading Platform Integrating Hyperliquid Liquidity",
+        "description": "Combining DeFi liquidity with CEX-like trading experience through multi-tenant architecture and shared liquidity."
+      },
+      "cex-web": {
+        "title": "Modular CEX Homepage Design with Multiple Possibilities",
+        "description": "CEX & Web3 Projects Web Designs"
+      },
+      "web3vid": {
+        "title": "Web3Vid",
+        "description": "A Web3 all-in-one video platform for crypto creators — reached Hong Kong Digital Programme finals"
+      },
+      "rolling-x": {
+        "title": "Rolling X",
+        "description": "Stable compound annual return bot platform"
+      }
+    },
+    "aiLearning": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "AAPD UI BOOTCAMP — GOLD AWARD",
+        "title": "An AI Tutor Built for Learning",
+        "subtitle": "A companion platform for exploring AI courses"
+      },
+      "highlights": {
+        "metric1Value": "Design Direction",
+        "metric1Label": "Led the style proposal — from moodboard and color system to typography — anchoring the product's overall visual direction and design language",
+        "metric2Value": "UX × UI Flow",
+        "metric2Label": "Mapped user flow into page navigation logic and annotated every interaction state into an engineer-ready handoff",
+        "metric3Value": "Gold Award",
+        "metric3Label": "Won the Gold Award among 200+ participants at AAPD UI Bootcamp's team competition"
+      },
+      "meta": {
+        "roleLabel": "MY ROLE",
+        "roleValue": "UI/UX Designer",
+        "timelineLabel": "TIMELINE",
+        "timelineValue": "2023.07 — 2023.08 (2 weeks)",
+        "teamLabel": "TEAM",
+        "teamValue": "5 designers in collaboration",
+        "outcomeLabel": "OUTCOME",
+        "outcomeValue": "Gold Award"
+      },
+      "overview": {
+        "label": "01 — OVERVIEW",
+        "heading": "A project at the tipping point of AI education",
+        "body": "In July 2023, I joined the AAPD UI Bootcamp — an intensive program focused on elevating UI design and UX decision-making skills. Over three weeks, I worked with four designers from different industries to complete this project, winning the Gold Award among 200+ participants.\n\nThe timing was critical: ChatGPT had launched just six months prior, and Duolingo along with other global platforms released their AI features in 2023. We chose an AI course learning platform not to chase trends, but based on our judgment that AI-assisted learning was transitioning from concept to product.",
+        "calloutTitle": "The market later validated this judgment",
+        "calloutBody": "The global AI education market is projected to grow from $5.88B in 2024 to $32.27B by 2030 (CAGR 31.2%). Khan Academy's AI tutor Khanmigo grew from 68K users to over 1.4 million.",
+        "calloutSource": "— Grand View Research, 2025; Khan Academy Official Data",
+        "imageCaption": "Platform overview — Homepage, course detail, and AI tutor"
+      },
+      "myRole": {
+        "label": "02 — MY ROLE",
+        "heading": "Leading visual direction & engineering handoff",
+        "intro": "In two intense weeks, I was primarily responsible for two things:",
+        "card1Title": "Led the overall product design direction",
+        "card1Body": "From moodboard to final visual language, including color system, typography standards, and IP character style direction. The team aligned on my proposed direction before beginning individual interface design work.",
+        "card2Title": "Delivered engineering-ready design specs",
+        "card2Body": "UI Flow connections, interaction state annotations for every screen, and component behavior specifications. This is a core competency from my previous work experience, enabling rapid integration within limited time.",
+        "leadTag": "I Led",
+        "collab": "Other collaborative areas included competitive analysis, component design and iteration, and interface design — completed through team division of work."
+      },
+      "research": {
+        "label": "03 — RESEARCH",
+        "heading": "From market observation to pain point synthesis",
+        "body": "We observed AI courses proliferating across major learning platforms as a trending new category. Through interviewing AI learners and competitive analysis, we understood the product landscape and market, using the CIRCLES framework and 5W1H to define product positioning.",
+        "img1Caption": "AI course category trends across platforms",
+        "img2Caption": "User pain points synthesis",
+        "fiveW1H_whoTitle": "For whom?",
+        "fiveW1H_who1": "AI beginners and cross-disciplinary learners (want to learn AI but don't know where to start)",
+        "fiveW1H_who2": "Instructors across fields (want to share AI tool expertise)",
+        "fiveW1H_whatTitle": "What product?",
+        "fiveW1H_what1": "An online learning platform focused on AI courses, with a 'site-wide companion AI tutor' as core differentiator",
+        "fiveW1H_whenTitle": "What timing?",
+        "fiveW1H_when1": "July 2023 — just 6 months after ChatGPT launched, AI education shifting from concept to product",
+        "fiveW1H_when2": "AI courses booming across platforms, but no one had nailed the 'AI-assisted learning experience' itself",
+        "fiveW1H_whereTitle": "In what scenarios?",
+        "fiveW1H_where1": "Browsing the homepage (don't know what to learn → AI helps find courses)",
+        "fiveW1H_where2": "Hesitating on course pages (unsure if it's right → AI answers instantly)",
+        "fiveW1H_where3": "During learning (stuck on a concept → AI acts as a tutor)",
+        "fiveW1H_whyTitle": "Why is this needed?",
+        "fiveW1H_why1": "Three core pain points: can't find the right course, uncertainty before purchase, lack of companionship while learning",
+        "fiveW1H_howTitle": "How to solve it?",
+        "fiveW1H_how1": "Floating Chat Panel (site-wide), with three contextual Tabs (Find Courses / Course Q&A / Learning Assistant) to reduce blank canvas cognitive load",
+        "pain1Title": "Can't find the right course",
+        "pain1Body": "Overwhelmed by the volume of AI courses with no clear starting point. Traditional category filters can't understand natural language needs.",
+        "pain2Title": "Pre-purchase uncertainty",
+        "pain2Body": "Still uncertain after reading course descriptions — is the difficulty right for me? What prerequisites do I need? No immediate answers available.",
+        "pain3Title": "Lack of learning companionship",
+        "pain3Body": "When stuck on a concept, the only options are rewatching videos or searching on your own — missing a 'just ask and understand' tutor role."
+      },
+      "goal": {
+        "label": "04 — GOAL",
+        "heading": "Defining scope through User Stories",
+        "story1": "I want to browse the latest and trending courses on the homepage to understand what the platform offers",
+        "story2": "I want to view course details, instructor bio, and syllabus on the course page to judge if it's right for me",
+        "story3": "I want to quickly find courses matching my needs through search",
+        "positionTitle": "Product Positioning",
+        "pos1Before": "Create a ",
+        "pos1Highlight": "platform focused on exploring and learning AI",
+        "pos1After": "",
+        "pos2Before": "Help users interested in AI who ",
+        "pos2Highlight": "want to quickly master AI learning",
+        "pos2After": " and apply new knowledge",
+        "pos3Before": "Bring together instructors across fields to share AI tool applications, ",
+        "pos3Highlight": "fostering cross-disciplinary learning and innovative thinking",
+        "pos3After": "",
+        "pos4Before": "Through AI tutor, provide users with a ",
+        "pos4Highlight": "fully personalized learning experience",
+        "pos4After": "",
+        "target": "Target audience — Students: AI beginners, cross-discipline learners / Instructors: AI experts, educators across fields"
+      },
+      "keyDecision": {
+        "label": "05 — KEY DECISION",
+        "heading": "AI Tutor presentation: tradeoffs of two approaches",
+        "intro": "The AI tutor is the product's biggest differentiator. When deciding its presentation form, we explored two approaches, each with clear tradeoffs.",
+        "optionATitle": "Option A — Dedicated Page",
+        "optionARef": "Similar to ChatGPT full-page chat",
+        "optionAPros": "",
+        "optionACons": "Must leave the course page, interrupting learning flow\nHigh page-switching cost",
+        "optionAVerdict": "REJECTED",
+        "optionBTitle": "Option B — Floating Chat Panel",
+        "optionBRef": "Persistent bottom-right icon → expand chat panel",
+        "optionBPros": "Available site-wide, doesn't interrupt current page\nUsers already have a mature mental model for this pattern",
+        "optionBCons": "",
+        "optionBVerdict": "SELECTED",
+        "reason": "Our AI tutor is positioned as a 'site-wide companion' — not just helping you learn in courses, but helping you find courses on the homepage and resolving purchase hesitations on course pages. The floating panel covers all User Stories simultaneously.",
+        "insightTitle": "Later research validated this design",
+        "insightBody": "NN/g research indicates that 'conversation starters' are becoming a standard UI pattern in genAI tools, solving the 'blank canvas problem' — users not knowing what to ask. Our 'context tab' design is based on this insight.\n\nThe same research found that users tend to use more direct language with chatbots and heavily rely on preset buttons to reduce input cost.",
+        "insightSource": "— Nielsen Norman Group, \"Prompt Controls in GenAI Chatbots\", 2025"
+      },
+      "deepDive": {
+        "label": "06 — DESIGN DEEP DIVE",
+        "heading": "Context Tabs — reducing blank canvas cognitive load",
+        "body": "After opening the chat panel, users face an empty conversation box. According to NN/g research, the core value of use-case prompt suggestions lies in learnability: helping users quickly understand what the AI tool can do.\n\nBased on this insight, we designed three preset context tabs in the chat panel:",
+        "tab1Name": "Find me a course",
+        "tab1Maps": "→ User Story #3",
+        "tab1Desc": "Describe your needs in natural language, AI recommends matching courses. More intuitive than traditional filter + keyword search.",
+        "tab1Example": "\"I'm a designer, want to learn AI image generation\"",
+        "tab2Name": "Course Q&A",
+        "tab2Maps": "→ User Story #2",
+        "tab2Desc": "While browsing course info, directly ask AI about difficulty, prerequisites, etc., reducing purchase decision uncertainty.",
+        "tab2Example": "\"Does this course require Python knowledge?\"",
+        "tab3Name": "Study Assistant",
+        "tab3Maps": "→ Post-purchase scenarios",
+        "tab3Desc": "Concept clarification, learning progress suggestions, review highlights — letting AI play a true tutor role.",
+        "tab3Example": "\"Summarize the three key points of this chapter\"",
+        "decision": "Why tabs instead of pure open input? Context tabs balance two goals: reducing first-use cognitive load while preserving an open input field for advanced users. This design lets users unfamiliar with AI tools get started immediately, rather than facing a blank input box with no idea what to do.",
+        "imageCaption": "AI Tutor Panel — Preset context tabs + open input"
+      },
+      "iteration": {
+        "label": "07 — ITERATION",
+        "heading": "Restructuring information hierarchy to amplify product highlights",
+        "body": "(I Led) After receiving mentor feedback, I re-proposed the homepage's visual hierarchy and information architecture. The core issue: the original design lacked product character and was indistinguishable from other learning platforms.",
+        "before1": "Lacked product character, indistinguishable from competitors",
+        "before2": "Course card component details could be improved",
+        "before3": "AI tutor feature not highlighted",
+        "after1": "Added IP character animation to strengthen brand identity",
+        "after2": "Enriched course card style variety",
+        "after3": "AI tutor always present in bottom-right, ready anytime"
+      },
+      "finalDesign": {
+        "label": "08 — FINAL DESIGN",
+        "heading": "Complete Interface Showcase",
+        "body": "Designed intuitive exploration and search functionality based on User Stories, enabling users to quickly find courses matching their needs.",
+        "img1Caption": "Homepage — Explore search + trending courses + AI tutor entry",
+        "video1Caption": "Prototype Demo — Homepage hero search interaction flow",
+        "img2Caption": "Course Detail — Introduction, instructor bio, syllabus, reviews",
+        "img3Caption": "AI Tutor Panel — Context tab guidance + conversational interaction",
+        "video2Caption": "Prototype Demo — AI tutor chat panel interaction flow"
+      },
+      "handoff": {
+        "label": "09 — HANDOFF",
+        "heading": "UI Flow & Engineering Handoff",
+        "body": "(I Led) Connecting User Stories to UI Flow with engineering annotations is a core skill I've long been responsible for in past work. Within the limited competition timeline, I rapidly integrated complete page transition logic, interaction state definitions, and component behavior specs.",
+        "imageCaption": "UI Flow — Complete page transition logic & engineering annotations"
+      },
+      "designSystem": {
+        "label": "10 — DESIGN SYSTEM",
+        "heading": "Component State Design & Organization",
+        "collabTag": "Team Collab",
+        "body": "(Team Collab) I established the component state specifications and naming logic, while team members completed detailed design for each component.",
+        "imageCaption": "Design System — Component states & interaction specifications"
+      },
+      "validation": {
+        "label": "11 — MARKET VALIDATION",
+        "heading": "Two years later, the market validated our judgment",
+        "body": "This project was completed in August 2023. Our prediction that 'AI tutors will become standard for learning platforms' was fully validated two years later.",
+        "stat1Number": "500K+",
+        "stat1Label": "Hahow Total Learners",
+        "stat1Detail": "Hahow surpassed 500K learners and introduced its AI learning assistant in 2024, pioneering AI integration in Taiwan's online learning",
+        "stat2Number": "31.2%",
+        "stat2Label": "AI Education Market CAGR",
+        "stat2Detail": "Global AI education market projected to grow at 31.2% CAGR from 2025-2030",
+        "stat3Number": "84%",
+        "stat3Label": "Students Using GenAI",
+        "stat3Detail": "84% of US high school students use generative AI tools for learning in 2025"
+      },
+      "reflection": {
+        "label": "11 — REFLECTION",
+        "heading": "Learning Together, Achieving Together",
+        "seg1Accent": "In this project, my role focused on product style proposals, interface design, and UI Flow with engineering handoff annotations.",
+        "seg1Normal": " It was also my first time collaborating with multiple designers on a single project.",
+        "seg2Accent": " During the early UX research and feature mapping phase,",
+        "seg2Normal": "",
+        "seg3Accent": " I found that I could quickly draw connections to relevant competitors, map out possible flows, and offer direction and input to teammates.",
+        "seg3Normal": " Later, while organizing the Design System and building Prototypes, I discovered the strengths of my teammates —",
+        "seg4Accent": " and went on to apply those methods in my own work projects afterward!",
+        "seg4Normal": "",
+        "seg5Accent": "",
+        "seg5Normal": " Beyond unexpectedly discovering my own potential, I also learned how to divide work among multiple designers through collaboration. Because everyone had different strengths, we could help and learn from each other, while sharpening both my UX thinking and UI expertise. Truly a rewarding experience!",
+        "body2": "In this project, I came to realize two things.",
+        "insight1Title": "The value of quickly setting visual direction",
+        "insight1Body": "In just two weeks, the team needed a clear design style anchor to work in parallel. By quickly completing the moodboard and visual proposal early on, four designers could progress independently under a unified design language, significantly reducing late-stage integration conflicts.",
+        "insight2Title": "The importance of engineering handoff documents",
+        "insight2Body": "UI Flow and engineering annotation deliverables became key to the team's success in this competition — judges evaluated not just beautiful screens, but also the completeness of the handoff."
+      },
+      "projectNav": {
+        "prev": "Previous Project",
+        "next": "Next Project"
+      }
+    },
+    "exora": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "Trading Platform",
+        "title": "Exora\nWhite-Label Perpetual DEX",
+        "subtitle": "Redesigning order placement and mobile experience on an on-chain derivatives trading product — bringing CEX-level fluidity to DEX."
+      },
+      "highlights": {
+        "metric1Value": "6 → 3",
+        "metric1Label": "Abstracted 6-layer fund architecture into 3 user-facing states",
+        "metric2Value": "Dual-Layer Token",
+        "metric2Label": "White-label brand switching without modifying any component structure",
+        "metric3Value": "End-to-End",
+        "metric3Label": "Research → UX Architecture → Visual Design → Design System → PWA"
+      },
+      "meta": {
+        "scopeLabel": "SCOPE",
+        "scopeValue": "Trading UX · Fund Flow · Design System",
+        "platformLabel": "PLATFORM",
+        "platformValue": "Web · Mobile PWA"
+      },
+      "summary": {
+        "label": "Project Summary",
+        "headline": "Bringing CEX-level fluidity to on-chain derivatives trading",
+        "body": "Exora is a perpetual futures trading product built on Hyperliquid. Starting from competitive analysis and user research, I led the visual direction, complete trading flow design, and Mobile PWA experience, and collaborated with front-end engineers to build a dual-layer Token design system supporting multi-tenant brand switching.",
+        "roleLabel": "MY ROLE",
+        "roleValue": "UI / UX Designer",
+        "tag1": "Trading UX",
+        "tag2": "Fund Flow",
+        "tag3": "Design System",
+        "tag4": "Mobile PWA"
+      },
+      "context": {
+        "label": "01 — PROJECT CONTEXT",
+        "heading": "Market Landscape",
+        "body": "CEX and DEX each have clear strengths and weaknesses. This persistent trade-off defines the current state of the crypto derivatives trading market.",
+        "userProblemTitle": "The User-Side Problem",
+        "userProblemCardTitle": "The Current Trading Experience Compromise",
+        "userProblemCardBody": "CEX is smooth but opaque; DEX is transparent but the experience is terrible. This either-or dilemma is a structural problem in the crypto trading market.",
+        "userProblemExtra": "A real case from March 2026: a whale executed a ~$50M token swap on the Aave interface, and the trade was routed to a pool with only $73K in liquidity. Slippage hit 99%, and they recovered only ~$36K. The interface showed warnings, but the user confirmed the transaction on mobile — when warning design isn't intuitive enough, no amount of prompts can prevent a single misclick.",
+        "insightBody": "Fluidity and transparency shouldn't be an either-or choice. The real design opportunity is: let users simultaneously get CEX operational efficiency and DEX asset transparency without needing to understand the underlying technology — and the way risk information is presented determines whether this experience is safe or dangerous."
+      },
+      "userResearch": {
+        "label": "03 — USER RESEARCH",
+        "heading": "Deep Analysis of Trading Experience Pain Points",
+        "body": "4+ years of crypto trading experience enabled faster access to the core problems — not replacing the user perspective, but more precisely identifying which frictions truly affect trading decisions versus surface-level usability issues during research.",
+        "proseQuote": "I clearly wanted to use isolated margin for this position, but after placing the order I realized it was cross-margin 20x.",
+        "proseContext": "This is a real scenario encountered when trading on CEX — switching to a new trading pair, the system defaults to cross-margin 20x leverage. I thought I was using isolated margin to control risk, but my entire account balance was exposed as collateral in a single trade. This doesn't happen every time, but precisely because it's sporadic, users are more likely to overlook it — ",
+        "proseHighlight": "the system's default value silently made a high-risk decision for the user, and the interface gave no reminder.",
+        "proseContextSuffix": "",
+        "proseTakeaway": "This experience directly influenced the research focus — locking onto the core journey from \"deciding to trade\" to \"trade completed,\" identifying critical friction points in the trading flow.",
+        "spectrumTitle": "Trader User Profiles",
+        "spectrumSubtitle": "Intent to Execution Spectrum",
+        "trader1Title": "Retail Trader",
+        "trader1Sub": "Retail Trader",
+        "trader1Desc": "Needs simple onboarding, clear risk information, and foolproof mechanisms.",
+        "trader2Title": "Active Trader",
+        "trader2Sub": "Active Trader",
+        "trader2Desc": "Extremely sensitive to speed and efficiency. Demands minimal steps, real-time feedback, and uninterrupted flow.",
+        "trader3Title": "Quant Trader",
+        "trader3Sub": "Quant Trader",
+        "trader3Desc": "Relies on API stability and ultra-low latency.",
+        "spectrumFooter": "Onboarding is a one-time barrier, but trading is the daily core experience.\nFriction happens here. Retention is lost here."
+      },
+      "painPoints": {
+        "label": "CEX PAIN POINT MAP",
+        "heading": "Three Core Experience Problems",
+        "body": "These aren't just \"hard to use\" — they're direct results of the platform's default logic and information architecture.",
+        "card1Title": "Silent Defaults for Leverage & Margin Mode",
+        "card1Body": "When switching to a new trading pair, the system defaults to cross-margin 20x leverage with no reminder that \"this pair's margin mode is different from your last one.\" Users think they're using isolated margin to control risk, but their entire account balance is exposed as collateral in a single trade.",
+        "card2Title": "Liquidation Price Invisible Before Order",
+        "card2Body": "On CEX, liquidation price only appears in the positions panel after a position is established. At the moment of ordering, you don't know \"at what price will this trade be force-liquidated.\" The platform provides a separate calculator tool, but it requires opening separately and manually entering parameters — not in the order flow.",
+        "card3Title": "Funding Rate Accumulated Costs Are Hidden",
+        "card3Body": "The funding rate doesn't show \"how much funding rate has been deducted from this position so far\" in the positions panel. Users think the trade \"made 2%,\" but after deducting accumulated funding rates, net profit might be only 1.3% or even a loss."
+      },
+      "researchConclusion": {
+        "label": "RESEARCH CONCLUSION",
+        "heading": "Three Designable High-Priority Pain Points",
+        "body": "Distinguishing \"what design can solve\" from \"platform architecture/business model choices,\" focusing on the highest-impact intervention points."
+      },
+      "competitive": {
+        "label": "02 — COMPETITIVE ANALYSIS",
+        "heading": "CEX as UX Baseline, DEX as Direct Competitor",
+        "body": "Analyzed 7 exchanges (Binance, OKX, Kraken, Liquid, Hyperliquid, dYdX, Aster) to position Exora's differentiation across three dimensions.",
+        "tableTitle": "Breaking the Impossible Triangle: From Trading Venue to Infrastructure Layer",
+        "col1": "Binance (CEX Baseline)",
+        "col2": "Hyperliquid (DEX Competitor)",
+        "col3": "Exora (Infrastructure)",
+        "row1Label": "Trading Fluidity",
+        "row1Col1": "Very High",
+        "row1Col2": "Medium (Has Friction)",
+        "row1Col3": "Very High (CEX-Level)",
+        "row2Label": "Asset Transparency",
+        "row2Col1": "Centralized",
+        "row2Col2": "On-chain Verifiable",
+        "row2Col3": "100% Independent Vault",
+        "row3Label": "Enterprise Customization",
+        "row3Col1": "None",
+        "row3Col2": "None",
+        "row3Col3": "SaaS White-Label",
+        "tableFooter": "Exora's opportunity lies in building a SaaS layer: making liquidity and matching engines shared resources, while using design to eliminate DeFi's experience friction.",
+        "insightBody": "DEX competitors are all Trading Venues. Exora is a Trading Infrastructure Layer — enabling others to build their own Trading Venue.",
+        "insightLabel": "POSITIONING INSIGHT",
+        "insightHeadline": "Trading Infrastructure Layer"
+      },
+      "designInsight": {
+        "label": "04 — CORE DESIGN INSIGHT",
+        "heading": "Technical Architecture Is UX's Ceiling — and Its Foundation",
+        "body": "This project has two asymmetric design challenges — surface-level UX problems and deep architectural problems.",
+        "layer1Title": "LAYER 1 — Relatively Visible",
+        "layer1Body": "Default value prominence, liquidation price upfront, funding rate visibility — these have clear design directions.",
+        "layer2Title": "LAYER 2 — The Truly Difficult Part",
+        "layer2Body": "Product architecture involves six-layer fund entities, Agent Key authorization mechanisms, cross-chain settlement — these are PM and engineering team decisions. The design challenge is: fully understand the constraints and boundaries of this system, then translate it into a streamlined experience where users only see three fund states and complete orders in one step."
+      },
+      "tradingUX": {
+        "label": "05 — DESIGN OUTPUT: TRADING UX",
+        "heading": "High-Pressure Position Management: States and Actions Designed for Extreme Decisions",
+        "body": "Three position states each paired with their own action paths — so users can read risk intensity at a glance and respond immediately when needed."
+      },
+      "orderPanel": {
+        "label": "ORDER PLACEMENT",
+        "heading": "Order Placement: Opening a Position",
+        "body": "The highest design density segment of the entire trading experience — let thinking happen outside the interface, let execution happen inside the interface. Every design decision directly maps to a research pain point."
+      },
+      "onboarding": {
+        "label": "06 — ONBOARDING EXPERIENCE",
+        "heading": "Eliminating Crypto's Technical Barriers",
+        "body": "Reshaping the deposit and login experience — replacing cumbersome wallet authorization with familiar Google login, and Tenant Vault advance mechanism completely eliminates the waiting feel of cross-chain settlement."
+      },
+      "mobilePWA": {
+        "label": "07 — MOBILE PWA",
+        "heading": "Bringing Futures Trading to Mobile",
+        "body": "Hyperliquid's mobile is a shrunken copy of desktop. Exora's mobile uses Binance App and OKX App as UX benchmarks, achieving near-native app experience via PWA.",
+        "caption1": "Markets — Market Overview",
+        "caption2": "Trade — Order Panel fixed bottom · Long-press to prevent mistouch",
+        "caption3": "Portfolio — Position management · Fund status"
+      },
+      "visualStyle": {
+        "label": "08 — VISUAL STYLE",
+        "heading": "A Dark System with Brand Color",
+        "body": "With 5+ years of Web3 experience, I continuously track the brand styles and competitive landscape across Web3 projects. ",
+        "bodyAccent": "A self-maintained watchlist of Web3 products lets me respond and propose quickly during design pitches, while staying sensitive to emerging design trends."
+      },
+      "designSystem": {
+        "label": "09 — DESIGN SYSTEM",
+        "heading": "Building a Scalable Design Language",
+        "body": "Simultaneously meeting three goals: product consistency, multi-tenant white-label customization, and engineering teams building independently without deviating from design intent."
+      },
+      "collaboration": {
+        "label": "10 — CROSS-FUNCTIONAL COLLABORATION",
+        "heading": "AI-Driven Design Applications",
+        "body": "Built a multi-tenant, multi-theme Design System tool with front-end collaboration using Claude Code"
+      },
+      "impact": {
+        "label": "11 — IMPACT & OUTCOMES",
+        "heading": "How Design Influenced Product Outcomes",
+        "body": "Quantifying design contributions from three dimensions: trading experience, Design System, and product strategy.",
+        "metric1Value": "6→3",
+        "metric1Label": "Six-layer fund architecture / abstracted to three user states",
+        "metric2Value": "20+",
+        "metric2Label": "Core DS components / three major module coverage",
+        "tableTitle": "Trading Experience",
+        "tableHeaders": [
+          "Metric",
+          "Before (Competitor Status Quo)",
+          "After (Exora)"
+        ],
+        "tableRows": [
+          [
+            "Fund Flow UX Abstraction",
+            "Six-layer entity architecture directly exposed to users",
+            "Three clear states (Tradable / Processing / Withdrawable)"
+          ],
+          [
+            "Deposit to Tradable",
+            "DEX requires Bridge 30min+",
+            "Instant (Vault advance)"
+          ],
+          [
+            "First-time Entry",
+            "Wallet install + seed phrase + authorization",
+            "Google login (no wallet concept)"
+          ],
+          [
+            "Leverage & Margin Mode",
+            "Default cross 20x, no visual cue",
+            "Default value prominently marked + warning color"
+          ],
+          [
+            "Liquidation Price Visibility",
+            "Only visible after opening position, separate calculator needed",
+            "Order panel shows estimated liquidation price in real-time"
+          ],
+          [
+            "Funding Rate Visibility",
+            "Accumulated costs scattered across pages",
+            "Positions panel directly shows accumulated costs"
+          ]
+        ],
+        "dsTableTitle": "Design System & Product Strategy",
+        "dsTableHeaders": [
+          "Metric",
+          "Outcome"
+        ],
+        "dsTableRows": [
+          [
+            "Token Architecture",
+            "Dual-layer architecture (Global → Semantic), white-label brand switching requires no component structure changes"
+          ],
+          [
+            "Design-Dev Alignment",
+            "Semantic Token naming directly maps to CSS variables, eliminating translation loss"
+          ],
+          [
+            "Functional Color Protection",
+            "Bull/Bear colors won't be overridden by tenant brand colors — safety design, not aesthetic preference"
+          ],
+          [
+            "Deployment Efficiency",
+            "Partners deploying their own exchange, from years to weeks"
+          ],
+          [
+            "Full-Chain Design",
+            "Independently completed user research → UX architecture → visual proposal → DS → Mobile PWA"
+          ],
+          [
+            "AI Workflow",
+            "Built a multi-tenant Design System tool with front-end collaboration using Claude Code"
+          ]
+        ]
+      },
+      "projectNav": {
+        "prev": "Previous Project",
+        "next": "Next Project"
+      }
+    },
+    "web3vid": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "WEB3 · VIDEO PLATFORM",
+        "title": "A Web3 All-in-One Video Platform for Crypto Creators & Viewers",
+        "subtitle": "Hong Kong Cyberport Programme Finalist"
+      },
+      "meta": {
+        "roleLabel": "ROLE",
+        "roleValue": "UI / UX Designer",
+        "timelineLabel": "TIMELINE",
+        "timelineValue": "2 Months",
+        "outcomeLabel": "OUTCOME",
+        "outcomeValue": "Hong Kong Cyberport Programme Finalist",
+        "scopeLabel": "SCOPE",
+        "scopeValue": "UI UX Design, Feature Planning, Logo Design, Pitch Deck Design"
+      },
+      "context": {
+        "label": "01 — PROJECT CONTEXT",
+        "heading": "Building a Video Platform Where Projects, KOLs & Web3 Users All Thrive",
+        "body": "The founding team were crypto content creators who experienced two core pain points firsthand — mainstream video platforms impose policy restrictions on Web3 content (throttling, banned promo links, takedown risks), directly impacting creator reach and revenue. Meanwhile, Web3 information is scattered across Twitter, Telegram, YouTube, and more, with inconsistent quality and no trusted aggregation hub.\n\nAfter identifying these market pain points, they decided to build a Web3 all-in-one video platform, starting with the Chinese-speaking market.",
+        "img1Caption": "Requirements workshop with the founding team",
+        "img2Caption": "Crypto information ecosystem analysis"
+      },
+      "problemDefinition": {
+        "label": "02 — COMPETITIVE POSITIONING",
+        "heading": "Competitive Analysis & Platform Positioning",
+        "body": "Analyzing competitors from the perspective of each user role to identify competitive advantages and define platform positioning.",
+        "group1Header": "From Users & Creators",
+        "group1Card1Competitor": "YouTube",
+        "group1Card1Competitor2": "Short-form Video Platforms",
+        "group1Card1Adv1": "More professional, comprehensive Web3 video content aggregation",
+        "group1Card1Adv2": "Systematic categorization aligned with market trends",
+        "group1Card1Adv3": "Creator-friendly environment; targeted user base",
+        "group1Card2Competitor": "Web3 Video Platforms (Knowhere, Odysee)",
+        "group1Card2Adv1": "Dedicated Web3 content",
+        "group1Card2Adv2": "Media-oriented features",
+        "group1Card2Adv3": "Content categorization and curation",
+        "group2Header": "From Clients",
+        "group2Card1Competitor": "Text-based Media",
+        "group2Card1Adv1": "Video-based marketing channel",
+        "group2Card1Adv2": "More diverse marketing formats",
+        "group2Card1Adv3": "First-mover advantage",
+        "group2Card2Competitor": "Video KOLs",
+        "group2Card2Adv1": "Greater precision traffic",
+        "group2Card2Adv2": "Flexible ad placement",
+        "group2Card2Adv3": "Lower ad costs",
+        "competitorLabel": "Competitors",
+        "advantageLabel": "Competitive Advantages",
+        "calloutTitle": "Design Goal",
+        "calloutBody": "Build a video platform where all three roles (creators, viewers, projects) gain value, differentiated through Web3-native mechanics (wallet tasks, points, airdrops).",
+        "calloutSource": "— Early Research Summary"
+      },
+      "marketResearch": {
+        "label": "04 — MARKET RESEARCH",
+        "heading": "Global Crypto Users Growing Rapidly — Chinese Market Scale Supports MVP",
+        "body": "According to Crypto.com and Triple-A market reports, Chinese-speaking crypto users reached approximately 60 million by 2023. With favorable policies and Bitcoin halving/ETF narratives, crypto user growth in 2024 is expected to be explosive.",
+        "calloutTitle": "Data-Informed Design Insights",
+        "calloutCard1Title": "Beginner-Friendly Onboarding",
+        "calloutCard1Body": "Massive new user influx means onboarding must be beginner-friendly — cannot assume wallet literacy.",
+        "calloutCard2Title": "Chinese-First MVP Strategy",
+        "calloutCard2Body": "Chinese market scale is sufficient to support a Chinese-first MVP strategy.",
+        "calloutCard3Title": "Content Speed is Core Experience",
+        "calloutCard3Body": "Rapid market cycles mean content categorization and update speed are core experience, not add-on features."
+      },
+      "marketOpportunity": {
+        "label": "05 — MARKET OPPORTUNITY",
+        "heading": "The Potential Value of Web3 Information & Video Platforms",
+        "body": "From interviews with Web3 media professionals, I learned that market trends and hotspots update extremely fast — information distribution must be \"fast, precise, and impactful.\" In this context, Web3 information distribution compensation shows exceptional cost-effectiveness, making Web3 video platforms a highly promising opportunity."
+      },
+      "platformDecision": {
+        "label": "06 — PLATFORM DECISION",
+        "heading": "Balancing Development Resources & User Experience",
+        "body": "Web3 is a fast-paced industry with tight development timelines. With limited resources, I evaluated three development directions across development cost, user experience, and wallet integration complexity.",
+        "optionATitle": "Option A — Web First",
+        "optionAPros": "Low development cost, ideal for rapid MVP validation\nCross-platform, no App Store review restrictions\nUsers prefer connecting wallets on desktop — smoothest Web integration experience",
+        "optionACons": "Limited mobile experience",
+        "optionAVerdict": "Selected — Best MVP Strategy",
+        "optionBTitle": "Option B — Mobile App First",
+        "optionBPros": "Push notifications, native experience",
+        "optionBCons": "Long development cycle\nWeb3 content may be removed by App Store / Google Play\nWallet integration requires WalletConnect — added complexity",
+        "optionBVerdict": "Rejected — Review Risk Too High",
+        "optionCTitle": "Option C — PWA",
+        "optionCPros": "Balances web and mobile",
+        "optionCCons": "High wallet integration complexity\nOffline scenarios irrelevant for video platforms\nService Worker maintenance cost",
+        "optionCVerdict": "Rejected — ROI Not Justified",
+        "reason": "We chose Web-first. Beyond resource considerations, the core reason is that most users — due to security awareness — still prefer desktop for on-chain interactions (wallet connections, transaction signing). Web provides the smoothest wallet integration experience."
+      },
+      "competitiveAnalysis": {
+        "label": "07 — COMPETITIVE ANALYSIS",
+        "heading": "Analyzing Web3 Competitors to Extract Design Insights",
+        "body": "Analyzed five Web3 video platform competitors — Odysee, 3Speak, DLive, D.Tube, and REVO — focusing on three core dimensions to identify product entry opportunities for Web3Vid.",
+        "card1Title": "Content Mechanics",
+        "card1Body": "Odysee supports uploading any file format (video, music, ebooks); 3Speak lets creators build their own token markets. But users ultimately care about \"is there good content,\" not decentralized storage itself.",
+        "card1Insight": "Insight: ",
+        "card1InsightText": "Prioritize content supply (onboard KOLs), ",
+        "card1Highlight": "decentralization as infrastructure, not selling point",
+        "card1After": ".",
+        "card2Title": "Token Economics",
+        "card2Body": "All five competitors bind their own tokens (LBC, Hive/Speak, Lemons, DTUB, R3VO), but tokens lack liquidity with few early users. DLive takes 25% commission; D.Tube uploads consume VP voting power — barriers too high.",
+        "card2Insight": "Insight: ",
+        "card2InsightText": "",
+        "card2Highlight": "Start with points system to validate mechanics",
+        "card2After": ", defer token issuance.",
+        "card3Title": "User Experience",
+        "card3Body": "D.Tube uses IPFS with public data but no algorithmic recommendations; REVO combines video with NFTs but is overly complex. Web3 video platforms generally have rough UX and high onboarding barriers.",
+        "card3Insight": "Insight: ",
+        "card3InsightText": "Design style ",
+        "card3Highlight": "aligned with YouTube's mental model",
+        "card3After": " to reduce learning cost."
+      },
+      "designPrinciples": {
+        "label": "08 — DESIGN PRINCIPLES",
+        "heading": "Three Core Principles from Research to Design",
+        "body": "Synthesizing early research, I established three design principles to guide all subsequent UI/UX decisions. Each principle directly responds to problems discovered during the research phase.",
+        "card1Title": "Web2 Cognition × Web3 Mechanics",
+        "card1Body": "Users' mental model for watching videos doesn't need to be relearned (aligned with YouTube). Web3 features (wallet connection, points, airdrops) are layered on as enhancements. Reduce cognitive barriers, increase Web3 feature adoption.",
+        "card2Title": "Three-Sided Value Loop First",
+        "card2Body": "Every feature must answer: \"What value does this bring to creators, viewers, and projects respectively?\" If it only serves one role, lower its priority. Ensure positive ecosystem circulation.",
+        "card3Title": "Points First, Tokens Later",
+        "card3Body": "Use points in the MVP phase to validate user behavior models, avoiding premature token economics that bring compliance and liquidity risks. Data first, reduce decision risk.",
+        "ownershipTag": "I led — The three principles were proposed by me after competitive analysis and interviews, then confirmed by team discussion."
+      },
+      "productPositioning": {
+        "label": "03 — PRODUCT POSITIONING",
+        "heading": "Defining the Business Model & Product Value",
+        "body": "Positioned the product as a Web3 Chinese-language video platform, serving as a blockchain media hub for the Chinese-speaking market, providing curated, real-time, comprehensive industry information.",
+        "calloutTitle": "Competitive Advantages",
+        "calloutBody": "After analyzing competitors from each user type's perspective, I converged on three key differentiators: ① Zero content censorship for Web3, creator revenue unaffected by platform policies. ② Native interaction via wallet tasks, viewer engagement depth far exceeding traditional platforms. ③ Precision ad channel reaching active crypto users, higher project ad efficiency.",
+        "calloutSource": "— Competitive Advantage Analysis",
+        "img1Caption": "Competitive advantage comparison by user type",
+        "img2Caption": "Web3Vid differentiated positioning"
+      },
+      "designDecision": {
+        "label": "09 — DESIGN DECISION",
+        "heading": "How to Keep Users Coming Back to Web3Vid?",
+        "body": "Retention mechanisms are critical to platform survival. I evaluated three approaches across short-term DAU lift, long-term ecosystem health, and MVP feasibility, ultimately choosing a points-based task system as the primary strategy.",
+        "optionATitle": "Option A — Pure Content-Driven",
+        "optionAPros": "Healthiest long-term retention model",
+        "optionACons": "Insufficient content during cold start, retention inevitably low\nCannot validate quickly in MVP stage",
+        "optionAVerdict": "Rejected — Long-term direction, but not MVP priority",
+        "optionBTitle": "Option B — Points Task System",
+        "optionBPros": "Effectively boosts short-term DAU\nInstant positive feedback, maintains activity during cold start\nPoints data serves as behavioral baseline for future token economics",
+        "optionBCons": "May attract reward farmers (anti-cheat mechanisms needed)",
+        "optionBVerdict": "Selected — Best MVP Validation Strategy",
+        "optionCTitle": "Option C — Social Mechanics",
+        "optionCPros": "Can build network effects",
+        "optionCCons": "MVP user base too small, social features will feel empty\nHigh dev cost, distracts from core experience",
+        "optionCVerdict": "Rejected — User Base Insufficient to Support",
+        "calloutTitle": "Decision Logic",
+        "calloutBody": "B (points task system) as primary, A as long-term direction. The MVP priority is quickly validating whether users will watch videos on this platform. Points provide instant positive feedback, maintaining user activity even when content volume isn't rich enough. Meanwhile, points data serves as a behavioral baseline for future token economics.",
+        "calloutSource": "— Design Decision Summary",
+        "ownershipTag": "I led — The three-option comparison and final decision were proposed and led by me in team discussions."
+      },
+      "behavioralDesign": {
+        "label": "10 — BEHAVIORAL DESIGN",
+        "heading": "Behavioral Psychology-Driven Points Mechanism Design",
+        "body": "After confirming the points task system, I applied behavioral psychology principles to design specific reward mechanisms — ensuring it's not just \"having points\" but making the points system genuinely change user behavior.",
+        "card1Title": "Instant Positive Feedback",
+        "card1Before": "Based on B.F. Skinner's operant conditioning theory — when behavior is rewarded, users are more likely to repeat it. After completing a task, ",
+        "card1Highlight": "immediately show points increase animation",
+        "card1After": " to reinforce the \"behavior → reward\" psychological connection.",
+        "card2Title": "Progress Visualization",
+        "card2Before": "Applying the Goal Gradient Effect — the closer to the goal, the stronger the motivation. Designed a ",
+        "card2Highlight": "transparent progress bar",
+        "card2After": " so users can see how many points remain until the reward — the \"almost there\" feeling drives the last mile.",
+        "card3Title": "Streak Reward Mechanism",
+        "card3Before": "Streak Mechanism builds usage habits — ",
+        "card3Highlight": "daily check-in bonus multipliers",
+        "card3After": " keep users returning because they \"don't want to break their streak.\""
+      },
+      "featureDesign": {
+        "label": "11 — FEATURE DESIGN",
+        "heading": "Merging Web2 & Web3 for a New Feature Experience",
+        "body": "Combining familiar video watching interfaces with Web3 wallet task functionality. Core design strategy: make Web2 parts \"require no learning\" while Web3 parts are \"worth exploring.\"",
+        "story1Before": "As a ",
+        "story1Highlight": "viewer",
+        "story1After": ", I can connect my wallet while watching videos, complete on-chain tasks to earn points, giving my viewing behavior direct returns.",
+        "story2Before": "As a ",
+        "story2Highlight": "creator",
+        "story2After": ", I can bind interactive tasks to my videos, deepening viewer engagement while earning project collaboration revenue.",
+        "story3Before": "As a ",
+        "story3Highlight": "project",
+        "story3After": ", I can distribute native ads via wallet tasks, precisely reaching active crypto users who have connected their wallets."
+      },
+      "coreFlow": {
+        "label": "12 — CORE FLOW",
+        "heading": "Wallet Tasks × Points Lottery: The Platform Core Flow",
+        "body": "The video platform combined with wallet task lottery flow is Web3Vid's core differentiator. I designed a \"Watch → Connect → Complete → Reward\" closed-loop flow, letting users naturally encounter Web3 interactions during their viewing experience.",
+        "ownershipTag": "I led — This core flow was independently designed by me, from User Flow to UI details.",
+        "flowCaption": "Complete Wallet Task → Points → Lottery User Flow",
+        "img1Caption": "Wallet connection flow — supports MetaMask, WalletConnect",
+        "img2Caption": "Task completion → Points reward animation"
+      },
+      "informationArchitecture": {
+        "label": "13 — INFORMATION ARCHITECTURE",
+        "heading": "Designing a Web3 Category System — Balancing Browsing & Search",
+        "body": "Web3 has numerous tracks. I designed a dual-layer categorization architecture so users with different goals can quickly find the content they want.",
+        "text": "Main Categories (Tab level): Trending, Breaking News, Market Analysis, Hot Topics, Tutorials, Airdrop Guides, Deep Dives — helping users immediately find their area of interest.\n\nSub-categories (Hashtag level): Video hashtags provide more precise topic filtering (e.g., #BTCHalving #Layer2 #DeFi), suitable for users with clear goals.\n\nCategory items were determined through Web3 KOL content topic frequency analysis and team industry experience, identifying the top 7 high-frequency themes as main categories."
+      },
+      "uiDesign": {
+        "label": "14 — UI DESIGN",
+        "heading": "Integrating Research into an MVP That Fits Product Positioning",
+        "body": "Platform video content includes long-form videos, short videos, and podcast audio. Considering existing user habits, the main viewing flow mirrors YouTube. Core differentiation lies in wallet interactions, points tasks, and Web3-styled lottery design.",
+        "img1Caption": "Homepage — Video recommendations & category navigation",
+        "img2Caption": "Player — Video viewing & wallet task entry",
+        "flowCaption": "Complete UI Flow",
+        "img3Caption": "Wallet Task Panel",
+        "img4Caption": "Points Dashboard",
+        "img5Caption": "Web3-styled Lottery Interface",
+        "img6Caption": "Short Video Browsing Interface"
+      },
+      "designSystem": {
+        "label": "15 — DESIGN SYSTEM",
+        "heading": "Building a Design System for Consistency & Development Efficiency",
+        "body": "To ensure rapid MVP iteration doesn't sacrifice visual consistency, I established a Design System early in the design process, covering colors, typography, and component specifications.",
+        "ownershipTag": "I led — Design System was independently built and maintained by me.",
+        "fullCaption": "Complete Design System Overview",
+        "img1Caption": "Color Palette + Typography Scale",
+        "img2Caption": "Core Components (Button / Card / Modal States)"
+      },
+      "pitchDeck": {
+        "label": "16 — PITCH DECK",
+        "heading": "Pitch Deck Design",
+        "body": "I was responsible for integrating product positioning, market analysis, and competitive advantages into an investor pitch deck, used for the Hong Kong Cyberport Incubation Programme application — ultimately reaching the finals."
+      },
+      "scalability": {
+        "label": "17 — SCALABILITY",
+        "heading": "Scale Challenges & Mitigation Strategies Anticipated During Design",
+        "body": "MVP design can't only look at the present. During the design process, I anticipated scale challenges that would emerge as the product grows, and reserved architectural expansion space.",
+        "card1Title": "Content Volume from 100 → 10,000+",
+        "card1Body": "The existing 7 main categories won't suffice, and hashtags will explode. The architecture reserves positions for \"custom categories\" and \"hashtag search,\" with algorithmic recommendations planned long-term.",
+        "card2Title": "Expanding from Chinese to English Markets",
+        "card2Body": "UI copy, category names, and content recommendation logic all need i18n. Design System text components use auto-layout, reserving space for multilingual support.",
+        "card3Title": "Reward Farming at Scale",
+        "card3Body": "Many users will only farm points without actually watching videos. Points task design includes a \"watch duration threshold\" (at least 70% completion), rather than counting mere opens."
+      },
+      "projectNav": {
+        "prev": "Previous Project",
+        "next": "Next Project"
+      }
+    }
+  },
+  "workingWithAI": {
+    "title": "Working with AI",
+    "subtitle": "Integrating AI into workflows, focusing on key decisions and experience essentials",
+    "items": {
+      "prototyping": {
+        "title": "AI Prototyping",
+        "description": "Using v0, Claude Code, Cursor, and Figma MCP to rapidly produce high-fidelity prototypes, efficiently aligning design and interaction logic with PM & engineering teams."
+      },
+      "workflow": {
+        "title": "Design Workflow",
+        "description": "Leveraging AI to deconstruct product UX, simulate scenarios and optimize information architecture. Self-hosting OpenClaw to long-term track and train AI Personas that simulate real user behavior, modularizing user flows to accelerate development and product iteration."
+      },
+      "imageGen": {
+        "title": "Image Generation",
+        "description": "Building custom AI style training models for consistent, high-quality design assets that maintain brand and visual style coherence."
+      },
+      "vibeCoding": {
+        "title": "AI Building",
+        "description": "AI tool research enthusiast, developing DCA asset management concept products as side projects, exploring AI and product feature integration possibilities."
+      }
+    }
+  },
+  "whatIDo": {
+    "title": "What I Do",
+    "subtitle": "Bridging design, code, and strategy to craft products that perform.",
+    "skills": {
+      "brand": {
+        "title": "Brand",
+        "tags": {
+          "visualDesign": "Product Visual Design",
+          "marketing": "Marketing Design",
+          "designSystem": "Design System"
+        }
+      },
+      "research": {
+        "title": "Research",
+        "tags": {
+          "ux": "UX Analysis",
+          "strategy": "Commercialization Strategy",
+          "spec": "Spec Writing"
+        }
+      },
+      "animation": {
+        "title": "Animation",
+        "tags": {
+          "ae": "After Effects",
+          "rotato": "Rotato",
+          "rive": "Rive"
+        }
+      },
+      "dev": {
+        "title": "Dev",
+        "tags": {
+          "htmlCssJs": "HTML/CSS/JS",
+          "aiDev": "AI-Assisted Dev",
+          "designMd": "Design.md Planning"
+        }
+      }
+    }
+  },
+  "kindWords": {
+    "title": "Kind Words",
+    "testimonials": {
+      "karen": {
+        "quote": "Truly grateful for JS's professionalism and attention to detail. Every design decision is thoughtful, balancing both usability and aesthetics. Communication was always patient and precise — the final deliverables exceeded expectations. A truly reliable partner!"
+      },
+      "kyle": {
+        "quote": "Working with JS was incredibly smooth — quick to understand requirements and translate them into polished designs that match brand tone. JS is passionate about Web3 and communicates efficiently, offering detailed UX suggestions that elevate the final product. A designer with both creativity and professionalism!"
+      }
+    }
+  },
+  "projectsPage": {
+    "pageTitle": "Projects",
+    "moreDesignWork": "More Web & Graphic Designs",
+    "cards": {
+      "exora": {
+        "title": "Exora — White-Label Perpetual DEX",
+        "description": "A derivatives trading platform integrating Hyperliquid liquidity, redesigning order placement and mobile experience — bringing CEX-level fluidity to DEX."
+      },
+      "prediction-market": {
+        "title": "End-to-End AI Workflow Delivery: Spec, Design & Frontend — Solo",
+        "description": "From Spec to frontend, building a Prediction Market PWA that users can easily use on mobile"
+      },
+      "hydra": {
+        "title": "Derivatives Trading Platform Integrating Hyperliquid Liquidity",
+        "description": "Combining DeFi liquidity with CEX-like trading experience through multi-tenant architecture and shared liquidity."
+      },
+      "cex-web": {
+        "title": "Modular CEX Homepage Design with Multiple Possibilities",
+        "description": "CEX & Web3 Projects Web Designs"
+      },
+      "web3vid": {
+        "title": "Web3Vid",
+        "description": "A Web3 all-in-one video platform for crypto creators — reached Hong Kong Digital Programme finals"
+      },
+      "rolling-x": {
+        "title": "Rolling X",
+        "description": "Stable compound annual return bot platform"
+      },
+      "play-to-earn": {
+        "title": "Play to Earn GameFi",
+        "description": "Click-to-earn chicken game — a fun P2E GameFi experience"
+      },
+      "ai-learning": {
+        "title": "AI Course Learning Platform",
+        "description": "Explore AI courses with an AI teaching assistant companion"
+      },
+      "dating-pwa": {
+        "title": "PWA Dating Platform",
+        "description": "Won SBIR government grant — helped client secure software development funding"
+      },
+      "booking-app": {
+        "title": "Course Booking APP",
+        "description": "One app to easily book various courses — APP + Web + full dashboard system design"
+      },
+      "ecommerce-mlm": {
+        "title": "E-Commerce & MLM Dashboard",
+        "description": "Front-end e-commerce platform with MLM back-office dashboard design"
+      },
+      "inspiration-library": {
+        "title": "An Inspiration Library Built with Claude Code",
+        "description": "A personal notes and inspiration repository — categorized adaptively by AI on the fly"
+      }
+    }
+  },
+  "cta": {
+    "title": "LET'S WORK TOGETHER!"
+  },
+  "footer": {
+    "copyright": "Copyright © 2026 Jade Song"
+  },
+  "meta": {
+    "title": "Jade Song — Product Designer",
+    "description": "Product Designer portfolio specializing in Fintech, Web3, and Crypto"
+  },
+  "about": {
+    "hero": {
+      "greeting": "Hello! I'm",
+      "name": "Jade",
+      "paragraph1Accent": "Seven years of design experience, with the last four focused on product design in the Web3 and Fintech space.",
+      "paragraph1After": " I've also worked on dating apps, course booking platforms, admin dashboards, and e-commerce sites — building cross-industry design perspective along the way.",
+      "paragraph2": "I'm also a 5-year active crypto trader. I follow on-chain activity, macroeconomic data, and market sentiment daily — along with broader equity markets. ",
+      "paragraph2Accent": "As a frequent trader myself, I understand the experience from beginner to power user, which allows me to intuitively grasp what users truly care about when designing Web3 products.",
+      "paragraph3": "I'm passionate about researching AI tools and have integrated them into the dev team's design workflow — from feature planning and writing spec documents, to designing brand-consistent products, maintaining design quality and attention to detail, and completing frontend implementation via Claude Code in collaboration with backend engineers. From spec writing to frontend development, ",
+      "paragraph3Accent": "I can independently deliver the full design-to-assisted-frontend pipeline through Claude Code & Figma MCP.",
+      "paragraph3After": "I also invest in leveling up my visual design skills — exploring 3D and motion design to bring richer expressiveness to my work.",
+      "paragraph4": "Feel free to check out my portfolio, or let's chat about product design, AI tools, or investment trading!",
+      "btnResume": "View Resume →",
+      "btnWork": "View Work →",
+      "location": "📍 Taipei, Taiwan"
+    },
+    "values": {
+      "sectionLabel": "Design Values",
+      "title": "Design Values",
+      "desc": "Over the course of my design career, I've distilled a few core values that serve as the foundation for every design decision I make.",
+      "card1Title": "0-to-1 Product Experience",
+      "card1Desc": "Most of my projects were built from scratch, which means hands-on involvement in product strategy and feature planning. I tend to assess whether a feature should be built before jumping into design.",
+      "card2Title": "Finding the Best Solution Within Constraints",
+      "card2Desc": "Every product has technical and business constraints. I work within the intersection of engineering feasibility, business goals, and user experience to find solutions that can actually ship.",
+      "card3Title": "Making Complexity Understandable",
+      "card3Desc": "Translating complex information architecture and workflows into interfaces users can operate intuitively. Efficient for power users, approachable for newcomers.",
+      "card4Title": "Trend Insights for Product Decisions",
+      "card4Desc": "I stay on top of industry trends and market dynamics, which helps me contribute informed suggestions during feature planning — not just 'this is more usable,' but 'the market needs this right now.'"
+    },
+    "skills": {
+      "sectionLabel": "Soft Skills",
+      "title": "Soft Skills",
+      "desc": "Beyond solid hard skills, I value communication, collaboration, and continuous learning — traits that keep projects moving smoothly.",
+      "card1Title": "Cross-functional Communication",
+      "card1Desc": "I use flow charts, fund flow diagrams, and design specs to translate design intent into language that engineers, PMs, and compliance teams can all understand.",
+      "card2Title": "Self-driven AI Tool Research",
+      "card2Desc": "Proactively integrating AI into my workflow: Figma MCP bridging design and dev environments, Claude Code for building side projects. Continuously exploring how AI can meaningfully change how designers work.",
+      "card3Title": "Continuously Expanding Design Perspective",
+      "card3Desc": "Regularly attending PM book clubs, design communities, and AI talks — understanding product development from product, engineering, and business angles. Learning from others' workflows to keep improving my own process and output quality."
+    },
+    "cta": {
+      "titleBefore": "Want to see these ideas\nbecome real ",
+      "accent": "product design",
+      "titleAfter": "?",
+      "desc": "Check out my work, or let's chat about Web3 design, AI tools, or macro analysis.",
+      "btnWork": "View Portfolio →",
+      "btnContact": "Contact Me"
+    }
+  }
+}

@@ -1,0 +1,1200 @@
+{
+  "nav": {
+    "work": "作品",
+    "projects": "專案",
+    "about": "關於",
+    "resume": "履歷"
+  },
+  "hero": {
+    "greeting": "嗨！我是 Jade Song",
+    "subtitle": "Product Designer"
+  },
+  "marquee": {
+    "hello": "Hello, I'm Jade!",
+    "experience": "With 5+ years of UI/UX design experience",
+    "trading": "4 years in crypto trading"
+  },
+  "deviceShowcase": {
+    "count": "20+",
+    "label": "WEB & APP PROJECTS",
+    "description": "專注於 Fintech 與 Web3 產品設計，\n過去曾參與交友平台、電商與後台管理系統等多類型產品的設計經驗。"
+  },
+  "caseStudy": {
+    "moreProjects": "10 More Projects",
+    "projects": {
+      "exora": {
+        "title": "以 AI 輔助建置可擴充 Storybook",
+        "description": "為多設計系統的產品架構，預先建立元件管理基礎，並重新設計教億下單流程 -- 讓 DEX 也能擁有 CEX 級別的交易流暢度。"
+      },
+      "prediction-market": {
+        "title": "導入 AI 工作流的端到端交付：Spec、設計、前端切版一人完成",
+        "description": "從 Spec 到前端，打造一款讓用戶在手機上就能輕鬆使用的預測市場產品"
+      },
+      "hydra": {
+        "title": "整合 Hyperliquid 流動性的衍生品交易平台",
+        "description": "結合 DeFi 流動性與 CEX-like 交易體驗，透過多租戶架構與共享流動性，降低建立衍生品交易平台的技術門檻。"
+      },
+      "cex-web": {
+        "title": "CEX 首頁設計模塊化：從一次性設計到讓行銷自由排列組合的設計",
+        "description": "CEX ＆Web3 Projects Web Designs"
+      },
+      "web3vid": {
+        "title": "為幣圈創作者與觀眾打造的 Web3 一站式影音平台",
+        "description": "產品募資提案進入-香港數碼計劃決賽環節"
+      },
+      "rolling-x": {
+        "title": "穩定複利年化機器人平台",
+        "description": "Pilot 用戶平均 APR 提升約 50%、參展 2023 桃園青創博覽會、參與中大天使創投募資提案"
+      }
+    },
+    "exora": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "Trading Platform",
+        "title": "Exora\nWhite-Label Perpetual DEX",
+        "subtitle": "在鏈上衍生品交易產品上，重新設計下單流程與行動端體驗——讓 DEX 也能擁有 CEX 級別的交易流暢度。"
+      },
+      "highlights": {
+        "metric1Value": "6 → 3",
+        "metric1Label": "將六層資金架構抽象為三種用戶可理解的狀態",
+        "metric2Value": "Dual-Layer Token",
+        "metric2Label": "與前端協作打造雙層 Design System Token 架構，一鍵切換打造不同租戶品牌風格產品",
+        "metric3Value": "End-to-End",
+        "metric3Label": "獨立完成前期分析 → UX 架構 → UI 產品風格主導 → Design System → PWA"
+      },
+      "meta": {
+        "scopeLabel": "SCOPE",
+        "scopeValue": "Trading UX · Fund Flow · Design System",
+        "platformLabel": "PLATFORM",
+        "platformValue": "Web · Mobile PWA"
+      },
+      "summary": {
+        "label": "專案摘要",
+        "headline": "讓鏈上合約交易的下單體驗，達到 CEX 的流暢度",
+        "body": "Exora 是建構在 Hyperliquid 上的永續合約交易產品。從競品分析與用戶研究出發，主導了視覺風格定調、完整交易流程設計與 Mobile PWA 行動端體驗，並與前端工程師協作建立支援多租戶品牌切換的雙層 Token 設計系統。",
+        "roleLabel": "MY ROLE",
+        "roleValue": "UI / UX Designer",
+        "tag1": "Trading UX",
+        "tag2": "Fund Flow",
+        "tag3": "Design System",
+        "tag4": "Mobile PWA"
+      },
+      "context": {
+        "label": "01 — 專案背景",
+        "heading": "市場現況",
+        "body": "CEX 與 DEX 各自擁有鮮明可圈可點的優缺點，這種長期共存的取捨，定義了目前加密貨幣交易產品市場的現狀。",
+        "userProblemTitle": "用戶的交易體驗妥協",
+        "userProblemCardBody": "CEX 流暢但不透明，DEX 透明但體驗糟糕。這個二選一困境是加密交易市場的結構性問題。",
+        "userProblemExtra": "2026 年 3 月的真實案例：一名大戶在 Aave 介面上執行約 5,000 萬美元的代幣兌換，交易被路由到一個僅有 7.3 萬美元流動性的池子，滑點達到 99%，最終只收回約 3.6 萬美元。介面上有顯示警告，但用戶在手機上操作時仍然確認了交易——當警告的設計不夠直覺，再多的提示都擋不住一次誤操作。",
+        "insightBody": "流暢與透明無形中成為二選一的情況。設計機會：讓用戶在不需要理解底層技術的前提下，同時獲得 CEX 的操作效率和 DEX 的資產透明度"
+      },
+      "userResearch": {
+        "label": "03 — 使用者研究",
+        "heading": "交易體驗的痛點分析：交易前 · 交易中 · 交易後",
+        "body": "4 年以上的加密貨幣交易經驗，讓研究能更快進入問題核心——不是取代用戶視角，而是在研究過程中更精準地辨識哪些摩擦真正影響交易決策，哪些只是表面的易用性問題。",
+        "proseQuote": "想用逐倉開單，下完才發現是全倉 20x",
+        "proseContext": "這是在 CEX 交易時用戶的真實情境——當用戶切換到一個新的交易對，系統預設幾乎是全倉 20x 槓桿。而部份用戶交易習慣是使用逐倉控制風險，卻因系統預設的結果，使整個合約帳戶餘額都被當成保證金暴露在一筆交易裡。",
+        "proseHighlight": "系統預設值靜默地替用戶做了一個高風險決定，",
+        "proseContextSuffix": "也因介面的設計不明顯，使用戶忽略了開倉前重要的參數設定。",
+        "proseTakeaway": "這個經驗直接影響了研究聚焦方向——鎖定「從決定交易到交易完成」的核心旅程，識別出交易流程中的關鍵摩擦點。",
+        "spectrumTitle": "交易用戶輪廓",
+        "spectrumSubtitle": "Intent to Execution 光譜圖",
+        "trader1Title": "一般用戶",
+        "trader1Sub": "Retail Trader",
+        "trader1Desc": "需要入場流程簡單、風險資訊清晰、防呆機制。",
+        "trader2Title": "活躍交易員",
+        "trader2Sub": "Active Trader",
+        "trader2Desc": "敏感於速度與效率，會期待好的交易體驗。",
+        "trader3Title": "量化交易員",
+        "trader3Sub": "Quant Trader",
+        "trader3Desc": "依賴 API 穩定性與極低延遲。",
+        "spectrumFooter": "入金是一次性的門檻，而交易是每次交易、甚至是每天發生的核心體驗。"
+      },
+      "tradingJourney": {
+        "preTradeLabel": "交易前 — Pre-Trade",
+        "preTradeCol1": "痛點",
+        "preTradeCol2": "說明",
+        "preTradeCol3": "設計機會",
+        "preRow1Pain": "槓桿與保證金模式的靜默預設",
+        "preRow1Desc": "切換到新的交易對時，系統預設全倉 20x 槓桿，沒有顯眼的設計，也沒有提醒。",
+        "preRow1Opportunity": "保證金模式預設值以不同的 UI 樣式呈現，讓用戶清楚知道「這個值不是本次主動設定的」",
+        "preRow2Pain": "下單前看不到清算價格",
+        "preRow2Desc": "清算價格只有在倉位成立之後才出現。下單當下不知道「這筆交易在什麼價格會被強平」，需另開計算機手動輸入。",
+        "preRow2Opportunity": "在 Order Panel 即時計算並顯示預估清算價格，下單前就能看到風險邊界",
+        "duringTradeLabel": "交易中 — During Trade",
+        "duringRow1Pain": "DEX 下單需錢包反覆確認",
+        "duringRow1Desc": "傳統 DEX：點擊下單 → 錢包彈窗 → 手動確認 → 等待廣播 → 成交。每筆交易都打斷思維流，在快速行情中代價極大。",
+        "duringRow1Opportunity": "Agent Key 機制讓下單變成：點擊 → 即時成交，將技術操作還原為純粹的交易決策",
+        "duringRow2Pain": "資金費率累積費用不明顯",
+        "duringRow2Desc": "持倉面板看不到「這筆倉位到目前為止被扣了多少資金費率」。用戶以為賺了 2%，扣完可能只剩 1.3% 甚至虧損。",
+        "duringRow2Opportunity": "用倉位概念顯示累計資金費率，提升數據易讀性與透明性",
+        "postTradeLabel": "交易後 — Post-Trade",
+        "postRow1Pain": "持倉資訊散落",
+        "postRow1Desc": "持倉面板整合所有風控資訊，一個畫面掌握倉位全貌",
+        "postRow1Opportunity": "持倉面板整合所有關鍵風控資訊，一個畫面掌握倉位全貌"
+      },
+      "competitive": {
+        "label": "02 — 競品分析",
+        "heading": "CEX 作為 UX 基準線，DEX 作為直接競品",
+        "body": "分析 7 家交易所（Binance、OKX、Kraken、Liquid、Hyperliquid、dYdX、Aster），從三個維度定位 Exora 的差異化。",
+        "tableTitle": "突破不可能的三角：從交易場所走向基礎設施層",
+        "col1": "Binance (CEX 基準)",
+        "col2": "Hyperliquid (DEX 競品)",
+        "col3": "Exora (基礎設施)",
+        "row1Label": "交易流暢度",
+        "row1Col1": "極高",
+        "row1Col2": "中等 (有摩擦)",
+        "row1Col3": "極高 (CEX 等級)",
+        "row2Label": "資產透明度",
+        "row2Col1": "中心化",
+        "row2Col2": "鏈上可查",
+        "row2Col3": "100% 獨立 Vault",
+        "row3Label": "企業客製化",
+        "row3Col1": "無",
+        "row3Col2": "無",
+        "row3Col3": "SaaS 白標租用",
+        "tableFooter": "Exora 的機會在於建立一個 SaaS 層：讓流動性與撮合引擎成為共享資源，同時用設計消弭 DeFi 的體驗摩擦。",
+        "insightBody": "Exora 是交易基礎設施層 — 讓其他團隊能夠建立自己的 Trading Venue。",
+        "insightLabel": "定位洞察",
+        "insightHeadline": "Trading Infrastructure Layer"
+      },
+      "designInsight": {
+        "label": "04 — 核心設計洞察",
+        "heading": "技術架構是 UX 的天花板，也是 UX 的地基",
+        "body": "交易前/中/後的體驗痛點有明確的設計介入方向。但這個專案真正困難的挑戰在更深一層——產品架構涉及六層資金實體、Agent Key 授權機制、跨鏈結算——這些是 PM 與工程團隊的決策。設計的挑戰是：充分理解這份底層 knowhow 的約束與邊界，再將它翻譯成簡潔的用戶體驗。"
+      },
+      "tradingUX": {
+        "label": "05 — 設計產出：合約交易 UX",
+        "heading": "高壓持倉管理：為極端決策設計的狀態與行動",
+        "body": "依持倉風險水位設計三種介面狀態與對應行動路徑——讓使用者在一眼掃視之間判斷風險強度，並在必要時立即採取行動。"
+      },
+      "orderPanel": {
+        "label": "核心設計",
+        "heading": "Order Placement：開倉流程",
+        "body": "整個交易體驗設計密度最高的環節——讓思考發生在介面之外，讓執行發生在介面之內。每個設計決策直接對應一個研究痛點。"
+      },
+      "onboarding": {
+        "label": "06 — 登入註冊",
+        "heading": "依角色設計的登入流程",
+        "body": "前台使用熟悉的 Google 登入取代繁瑣的錢包授權，後台使用 2FA 的方式進行登入流程"
+      },
+      "mobilePWA": {
+        "label": "07 — MOBILE PWA",
+        "heading": "把合約交易帶進手機",
+        "body": "Hyperliquid 的行動端是桌面版的縮小複製。Exora 的行動端以 Binance App 和 OKX App 為 UX 基準，以 PWA 形式達到接近原生 App 的體驗。",
+        "caption1": "Markets 頁 — 市場總覽",
+        "caption2": "Trade 頁 — Order Panel 固定底部 · 長按防誤觸",
+        "caption3": "Portfolio 頁 — 持倉管理 · 資金狀態"
+      },
+      "visualStyle": {
+        "label": "08 — 視覺風格",
+        "heading": "有品牌色的深色系統",
+        "body": "因交易所的邀請碼制度，自身擁有 10+ 間的交易所使用者體驗經驗，也多年長期追蹤各式 Web3 項目的品牌風格＆競品分析，",
+        "bodyAccent": "因此自建了 Web3 產品的追蹤清單庫，除了可以在設計提案時快速反應＆提案，同時也持續保持設計趨勢的敏感度。"
+      },
+      "designSystem": {
+        "label": "09 — DESIGN SYSTEM",
+        "heading": "建立可擴展的設計語言",
+        "body": "主導產品風格，建立與維護完整的 Design System，一鍵切換的 Light / Dark Mode 設計，使團隊裡的設計師可以更方便的協作"
+      },
+      "collaboration": {
+        "label": "10 — 跨職能協作",
+        "heading": "AI 驅動的設計應用",
+        "body": "使用 Claude Code 建立與前端協作的多租戶多風格 Design System 工具"
+      },
+      "impact": {
+        "label": "11 — IMPACT & OUTCOMES",
+        "heading": "設計如何影響產品結果",
+        "body": "從交易體驗、Design System、產品戰略三個層面量化設計貢獻。",
+        "metric1Value": "6→3",
+        "metric1Label": "六層資金架構 / 抽象為三種用戶狀態",
+        "metric2Value": "20+",
+        "metric2Label": "核心 DS 元件 / 三大模組覆蓋",
+        "tableTitle": "交易體驗層面",
+        "tableHeaders": [
+          "指標",
+          "Before（競品現狀）",
+          "After（Exora）"
+        ],
+        "tableRows": [
+          [
+            "資金流 UX 抽象",
+            "六層實體架構直接暴露給用戶",
+            "三種清晰狀態（可交易 / 處理中 / 可提現）"
+          ],
+          [
+            "入金到可交易",
+            "DEX 需 Bridge 30 分鐘+",
+            "秒到帳（Vault 墊付）"
+          ],
+          [
+            "初次入場",
+            "錢包安裝 + 助記詞 + 授權",
+            "Google 登入（無錢包概念）"
+          ],
+          [
+            "槓桿與保證金模式",
+            "預設全倉 20x，無視覺提示",
+            "預設值顯著標示 + 警示色"
+          ],
+          [
+            "清算價格可見性",
+            "開倉後才能看到，需另開計算機",
+            "下單介面即時顯示預估清算價格"
+          ],
+          [
+            "資金費率可見性",
+            "累積費用散落在不同頁面",
+            "持倉面板直接顯示累計費用"
+          ]
+        ],
+        "dsTableTitle": "Design System & 產品戰略層面",
+        "dsTableHeaders": [
+          "指標",
+          "具體成果"
+        ],
+        "dsTableRows": [
+          [
+            "Token 架構",
+            "雙層架構（Global → Semantic），白標品牌切換不需修改任何元件結構"
+          ],
+          [
+            "設計-開發對齊",
+            "Semantic Token 命名直接對應 CSS variable，消除翻譯損耗"
+          ],
+          [
+            "功能色保護",
+            "漲跌色不會被租戶品牌色覆蓋——安全設計，不是審美偏好"
+          ],
+          [
+            "部署效率",
+            "合作方部署自己的交易所，從數年縮短至數週"
+          ],
+          [
+            "全鏈路設計",
+            "獨立完成用戶研究 → UX 架構 → 視覺提案 → DS → Mobile PWA"
+          ],
+          [
+            "AI Workflow",
+            "使用 Claude Code 建立與前端協作的多租戶 Design System 小工具"
+          ]
+        ]
+      },
+      "projectNav": {
+        "prev": "上一則作品",
+        "next": "下一則作品"
+      }
+    },
+    "aiLearning": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "AAPD UI 實戰營 — 金獎作品",
+        "title": "專為學習打造的 AI 助教",
+        "subtitle": "陪伴探索 AI 課程的學習平台"
+      },
+      "highlights": {
+        "metric1Value": "Design Direction",
+        "metric1Label": "主導產品整體視覺方向與設計語言，moodboard、色彩與排版規範的設計風格提案",
+        "metric2Value": "UX × UI Flow",
+        "metric2Label": "從 user flow 串接頁面跳轉邏輯，到所有互動狀態標註，產出可交付工程師的設計稿",
+        "metric3Value": "Gold Award",
+        "metric3Label": "於 AAPD UI 實戰營 200+ 參與者的團體競賽中獲得金獎"
+      },
+      "meta": {
+        "roleLabel": "MY ROLE",
+        "roleValue": "UI/UX Designer",
+        "timelineLabel": "TIMELINE",
+        "timelineValue": "2023.07 — 2023.08（2 週）",
+        "teamLabel": "TEAM",
+        "teamValue": "5 位設計師協作",
+        "outcomeLabel": "OUTCOME",
+        "outcomeValue": "專案競賽金獎"
+      },
+      "overview": {
+        "label": "01 — OVERVIEW",
+        "heading": "專案背景與動機",
+        "body": "2023 年 7 月，我參與了 AAPD UI 實戰營——一場專注提升設計師在 UI 設計與 UX 決策執行能力的密集訓練。在兩週的時間裡，我與來自不同產業的四位設計師，一同完成了這個專案，並在 200 多位參與者的團體競賽中獲得金獎。\n\n這個專案啟動的時間點很特別：ChatGPT 推出僅半年，Duolingo 和多家國際平台幾乎同步在 2023 年推出各自的 AI 功能。我們選擇 AI 課程學習平台作為主題，是基於對市場趨勢的判斷——AI 輔助學習正從概念走向產品化的轉折點。",
+        "calloutTitle": "後來市場驗證了這個判斷",
+        "calloutBody": "全球 AI 教育市場從 2024 年的 58.8 億美元，預計成長到 2030 年的 322.7 億美元（CAGR 31.2%）。Khan Academy 的 AI 家教 Khanmigo 從 6.8 萬用戶暴增至超過 140 萬。",
+        "calloutSource": "— Grand View Research, 2025; Khan Academy Official Data",
+        "imageCaption": "平台全覽 — 首頁、課程資訊頁與 AI 助教功能"
+      },
+      "myRole": {
+        "label": "02 — MY ROLE",
+        "heading": "主導視覺風格方向 & 工程交付設計稿",
+        "intro": "在兩週的密集時間內，我主要負責：",
+        "card1Title": "主導整體產品的設計風格定調",
+        "card1Body": "從 moodboard 到最終的視覺語言，包含色彩系統、排版規範、產品風格方向提案與主導。",
+        "card2Title": "完成可交付工程師的設計稿系統",
+        "card2Body": "UI Flow 串接、畫面的互動狀態標註、元件行為規格說明。是我在過往工作中長期負責的核心職能，因能在有限時間內快速整合產出。",
+        "leadTag": "我主導",
+        "collab": "其他協作範圍包含競品分析、元件設計與迭代、介面設計——這些是團隊分工完成的。"
+      },
+      "research": {
+        "label": "03 — RESEARCH",
+        "heading": "從市場觀察到痛點收斂",
+        "body": "我們觀察到 AI 課程如雨後春筍般遍布各大學習平台，成為熱門新分類。透過訪問身邊的 AI 學習者與競品分析，我們理解了產品現況與市場，並使用 CIRCLES 思考框架與 5W1H 收斂產品定位。",
+        "img1Caption": "各大平台 AI 課程分類趨勢",
+        "img2Caption": "用戶痛點整理",
+        "fiveW1H_whoTitle": "給誰用？",
+        "fiveW1H_who1": "AI 初學者、跨領域學習者（想學 AI 但不知從何開始）",
+        "fiveW1H_who2": "各領域講師（想分享 AI 工具應用經驗）",
+        "fiveW1H_whatTitle": "做什麼產品？",
+        "fiveW1H_what1": "一個專注於 AI 課程的線上學習平台，核心差異化是「全站陪伴型 AI 助教」",
+        "fiveW1H_whenTitle": "什麼時機？",
+        "fiveW1H_when1": "2023 年 7 月，ChatGPT 推出僅半年，AI 教育正從概念走向產品化的轉折",
+        "fiveW1H_when2": "各大平台 AI 課如雨後春筍，但尚未有平台把「AI 輔助學習體驗」本身做好",
+        "fiveW1H_whereTitle": "在哪些場景使用？",
+        "fiveW1H_where1": "首頁探索課程時（不知道要學什麼 → AI 幫你找課）",
+        "fiveW1H_where2": "課程資訊頁猶豫時（不確定適不適合 → AI 即時回答）",
+        "fiveW1H_where3": "學習過程中（遇到不懂的概念 → AI 扮演助教角色）",
+        "fiveW1H_whyTitle": "為什麼需要這個產品？",
+        "fiveW1H_why1": "三個核心痛點：找不到適合的課程、購買前的不確定感、學習過程缺乏陪伴",
+        "fiveW1H_howTitle": "怎麼解決？",
+        "fiveW1H_how1": "Floating Chat Panel（全站常駐），搭配三個情境 Tab（找課程 / 課程 Q&A / 學習助手）降低空白畫布的認知負擔",
+        "pain1Title": "找不到適合的課程",
+        "pain1Body": "面對大量 AI 課程不知從何選起，傳統分類篩選無法理解自然語言需求",
+        "pain2Title": "購買前的不確定感",
+        "pain2Body": "看完課程介紹仍有疑慮——難度適不適合我？需要什麼前置知識？——卻缺乏即時解答管道",
+        "pain3Title": "學習過程缺乏陪伴",
+        "pain3Body": "遇到不懂的概念只能重看影片或自己搜尋，缺乏『問一下就懂』的助教角色"
+      },
+      "goal": {
+        "label": "04 — GOAL",
+        "heading": "以 User Story 定義需求範圍",
+        "story1": "我期望能在「平台首頁」瀏覽最新與熱門課程，了解平台提供什麼性質的內容",
+        "story2": "我期望能在「課程資訊頁面」瀏覽課程介紹、老師簡介、課綱等，判斷課程是否適合我",
+        "story3": "我期望能透過搜尋功能快速找到符合需求的課程",
+        "positionTitle": "產品定位",
+        "pos1Before": "創造一個",
+        "pos1Highlight": "專注於探索學習 AI 的線上課程平台",
+        "pos1After": "",
+        "pos2Before": "幫助對 AI 學習有興趣、",
+        "pos2Highlight": "希望能迅速掌握 AI 學習",
+        "pos2After": "，應用新知識的使用者",
+        "pos3Before": "集結各領域的講師開課分享 AI 工具應用，",
+        "pos3Highlight": "促進跨界學習和創新思維",
+        "pos3After": "",
+        "pos4Before": "透過 AI 助教功能，給使用者提供",
+        "pos4Highlight": "全面個性化的學習體驗",
+        "pos4After": "",
+        "target": "目標族群 — 學生：AI 初學者、跨領域學習者 / 講師：AI 專家、各領域教育工作者"
+      },
+      "keyDecision": {
+        "label": "05 — KEY DECISION",
+        "heading": "AI 助教的呈現方式：兩種方案的取捨",
+        "intro": "AI 助教是這個產品最大的差異化。在決定它的呈現形式時，我們探索了兩種方案，各有明確的 tradeoff。",
+        "optionATitle": "方案 A — 獨立頁面",
+        "optionARef": "類似 ChatGPT 全頁面聊天",
+        "optionAPros": "",
+        "optionACons": "必須離開課程頁面，打斷學習流程\n頁面切換成本高",
+        "optionAVerdict": "REJECTED",
+        "optionBTitle": "方案 B — Floating Chat Panel",
+        "optionBRef": "右下角常駐 icon → 展開聊天面板",
+        "optionBPros": "全站可用，不打斷當前頁面\n用戶對此 pattern 已有成熟心智模型",
+        "optionBCons": "",
+        "optionBVerdict": "SELECTED",
+        "reason": "將 AI 助教定位是「全站陪伴型」——不只在課程中幫助學習，同時在首頁幫忙找課程、在課程頁解決購買疑慮。Floating panel 能同時覆蓋所有 User Story。無論用戶在首頁探索、在課程頁猶豫、還是在搜尋結果中迷路，都能隨時呼叫 AI 助教。",
+        "insightTitle": "後來的研究驗證了這個設計",
+        "insightBody": "NN/g 的研究指出，在 genAI 工具中，「conversation starters」正成為一種標準 UI pattern，用來解決「blank canvas problem」——用戶不知道可以問什麼。我們的「情境 Tab」設計正是基於這個洞察。\n\n同一研究也發現，用戶面對聊天機器人時傾向使用更直接的語言，並且高度依賴預設按鈕來減少輸入成本。",
+        "insightSource": "— Nielsen Norman Group, \"Prompt Controls in GenAI Chatbots\", 2025"
+      },
+      "deepDive": {
+        "label": "06 — DESIGN DEEP DIVE",
+        "heading": "情境 Tab — 降低空白畫布的認知負擔",
+        "body": "打開聊天面板後，用戶面對的是一個空白對話框。根據 NN/g 的研究，use-case prompt suggestions 的核心價值在於 learnability：幫助用戶快速理解這個 AI 工具能做什麼。\n\n基於這個洞察，我們在聊天面板中設計了三個預設情境 Tab：",
+        "tab1Name": "幫我找課程",
+        "tab1Maps": "→ User Story #3",
+        "tab1Desc": "用自然語言描述需求，AI 推薦符合的課程。比傳統 filter + keyword 搜尋更直覺。",
+        "tab1Example": "「我是設計師，想學用 AI 生成圖片」",
+        "tab2Name": "課程 Q&A",
+        "tab2Maps": "→ User Story #2",
+        "tab2Desc": "在課程資訊頁瀏覽時，直接問 AI 關於難度、前置知識等問題，降低購買決策的不確定性。",
+        "tab2Example": "「這堂課需要會 Python 嗎？」",
+        "tab3Name": "學習助手",
+        "tab3Maps": "→ 已購課程的延伸場景",
+        "tab3Desc": "概念釐清、學習進度建議、複習重點，讓 AI 扮演真正的助教角色。",
+        "tab3Example": "「幫我整理這章的三個重點」",
+        "decision": "情境 Tab 兼顧了兩點：降低首次使用的認知負擔，同時保留開放式輸入框讓進階用戶自由提問。這個設計讓不熟悉 AI 工具的用戶也能立刻上手，而不是面對空白輸入框不知所措。",
+        "imageCaption": "AI 助教面板 — 預設情境 Tab + 開放式輸入"
+      },
+      "iteration": {
+        "label": "07 — ITERATION",
+        "heading": "重新架構資訊層級，放大產品亮點",
+        "body": "在設計期間，我們在有限的時間裡，進一步地尋求了 Mentor 的指導與回饋。團隊因此重新思考架構，並更加聚焦產品的主亮點，進而迭代了原先首頁的設計方式。",
+        "before1": "缺乏產品特色，與競品相去無幾",
+        "before2": "課程卡片 Component 細節可再優化",
+        "before3": "未凸顯 AI 助教功能",
+        "after1": "增加 IP 形象動態展現，強化品牌識別",
+        "after2": "豐富課程卡片樣式種類",
+        "after3": "AI 助教常駐右下角，隨時可用"
+      },
+      "finalDesign": {
+        "label": "08 — FINAL DESIGN",
+        "heading": "UI Design",
+        "body": "根據 User Story 設計一目瞭然的探索搜尋功能，讓使用者能快速找到符合需求的課程。",
+        "img1Caption": "首頁設計 — 探索搜尋 + 熱門課程 + AI 助教入口",
+        "video1Caption": "Prototype 展示 — 首頁 Hero 搜尋互動流程",
+        "img2Caption": "課程資訊頁 — 課程介紹、老師簡介、課綱、學員評價",
+        "img3Caption": "AI 助教面板 — 情境 Tab 引導 + 對話式互動",
+        "video2Caption": "Prototype 展示 — AI 助教對話面板互動流程"
+      },
+      "handoff": {
+        "label": "09 — HANDOFF",
+        "heading": "UI Flow 與工程交付標註",
+        "body": "根據 User Story 整理 UI Flow，並在介面上標註工程開發細節，是我在過去工作上負責的核心工作。因此，在這次競賽有限的時間內，我快速整合了完整的頁面跳轉邏輯、互動狀態定義與元件行為規格。",
+        "imageCaption": "UI Flow — 完整頁面跳轉邏輯與工程開發標註"
+      },
+      "designSystem": {
+        "label": "10 — DESIGN SYSTEM",
+        "heading": "Component 狀態設計與整理",
+        "collabTag": "團隊協作",
+        "body": "（團隊協作）我負責建立元件的狀態規範與命名邏輯，團隊夥伴分工完成各元件的細部設計。",
+        "imageCaption": "Design System — Component 各式狀態與互動規範"
+      },
+      "validation": {
+        "label": "11 — MARKET VALIDATION",
+        "heading": "兩年後，市場驗證了我們的判斷",
+        "body": "這個專案完成於 2023 年 8 月。我們當初對「AI 助教將成為學習平台標配」的預判，在兩年後被充分驗證。",
+        "stat1Number": "50 萬+",
+        "stat1Label": "Hahow 累計學員數",
+        "stat1Detail": "Hahow 累計超過 50 萬名學員，2024 年導入 AI 學習助手，成為台灣線上學習 AI 化的先驅",
+        "stat2Number": "31.2%",
+        "stat2Label": "AI 教育市場 CAGR",
+        "stat2Detail": "全球 AI 教育市場預計 2025-2030 年以 31.2% 年複合成長率增長",
+        "stat3Number": "84%",
+        "stat3Label": "學生使用 GenAI",
+        "stat3Detail": "2025 年 84% 的美國高中生使用生成式 AI 工具輔助學習"
+      },
+      "reflection": {
+        "label": "11 — REFLECTION",
+        "heading": "相互學習，共創佳績",
+        "seg1Accent": "在專案分工裡，這次我的角色主要為產品風格提案、介面設計，與 UI Flow 以及工程交付標註的部分。",
+        "seg1Normal": "也是自己第一次與多位設計師協同設計一個專案。同時我也體悟到了兩件事。",
+        "seg2Accent": "在前期進行 UX 研究與梳理功能時，",
+        "seg2Normal": "",
+        "seg3Accent": "發現自己在團隊裡，可以較為快速的聯想相關競品，梳理流程的可能性，並為夥伴提出方向與意見。",
+        "seg3Normal": "而在後期整理 Design System 與製作 Prototype 的過程中，也發現團隊夥伴的厲害之處，",
+        "seg4Accent": "進而將這些學習到的方法，在往後真實地應用在自己工作的專案上！",
+        "seg4Normal": "",
+        "seg5Accent": "",
+        "seg5Normal": "除了意外的發現自己的小潛力，也從團隊合作中，學習到如何與多位設計師分工；因為各有所長，更能相互幫助與學習，同時更精進了自己在 UX 上的思維與 UI 專業，實為收穫滿滿！",
+        "body2": "在這個專案裡，我體悟到了兩件事。",
+        "insight1Title": "快速定調視覺方向的價值",
+        "insight1Body": "在兩週的極短時間內，團隊需要一個明確的設計風格錨點才能平行作業。我在前期快速完成了 moodboard 和視覺提案，讓四位設計師能在統一的設計語言下各自推進，大幅減少後期整合的衝突成本。",
+        "insight2Title": "工程交付文件的重要性",
+        "insight2Body": "UI Flow 和工程標註的交付工作，在這次競賽中也成為團隊獲勝的關鍵——評審看到的不只是漂亮的畫面，同時也在意 Hand off 的完整度。"
+      },
+      "projectNav": {
+        "prev": "上一則作品",
+        "next": "下一則作品"
+      }
+    },
+    "web3vid": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "WEB3 · VIDEO PLATFORM",
+        "title": "為幣圈創作者與觀眾打造的 Web3 一站式影音平台",
+        "subtitle": "進入香港數碼港計劃決賽環節"
+      },
+      "meta": {
+        "roleLabel": "ROLE",
+        "roleValue": "UI / UX Designer",
+        "timelineLabel": "TIMELINE",
+        "timelineValue": "2 個月",
+        "outcomeLabel": "OUTCOME",
+        "outcomeValue": "香港數碼港計劃決賽環節",
+        "scopeLabel": "SCOPE",
+        "scopeValue": "UI UX 設計、功能規劃、Logo 設計、簡報設計"
+      },
+      "context": {
+        "label": "01 — PROJECT CONTEXT",
+        "heading": "打造項目方、KOL、Web3 用戶共榮的影音平台",
+        "body": "項目方原為幣圈自媒體創作者，在經營期間深感兩個核心問題——主流影音平台對 Web3 內容存在政策限制（限流、禁止推廣連結、下架風險），直接衝擊創作者的曝光與收益；同時，Web3 資訊來源分散在 Twitter、Telegram、YouTube 等平台，品質參差不齊，用戶缺乏一個可信賴的影音平台聚合入口。\n\n在觀察到市場痛點後，決定開發 Web3 一站式影音平台，以華語市場為起點。",
+        "img1Caption": "與項目方進行需求訪談",
+        "img2Caption": "幣圈資訊傳播生態分析"
+      },
+      "problemDefinition": {
+        "label": "02 — COMPETITIVE POSITIONING",
+        "heading": "競品分析與平台定位",
+        "body": "從平台各類型用戶角色出發，分析相關競品，收斂競爭優勢與平台定位。",
+        "group1Header": "從用戶、創作者端出發",
+        "group1Card1Competitor": "YouTube",
+        "group1Card1Competitor2": "短視頻平台",
+        "group1Card1Adv1": "更專業、全面的 Web3 影音內容聚合",
+        "group1Card1Adv2": "系統性分類貼近市場現況",
+        "group1Card1Adv3": "友善的創作環境；精準的用戶群",
+        "group1Card2Competitor": "Web3 影音平台（Knowhere、Odysee）",
+        "group1Card2Adv1": "專屬 Web3 內容",
+        "group1Card2Adv2": "擁有媒體特性",
+        "group1Card2Adv3": "對內容進行分類處理",
+        "group2Header": "從客戶端出發",
+        "group2Card1Competitor": "文字型媒體",
+        "group2Card1Adv1": "影片型行銷渠道",
+        "group2Card1Adv2": "更多元的行銷方式",
+        "group2Card1Adv3": "先進者優勢",
+        "group2Card2Competitor": "影音類 KOL",
+        "group2Card2Adv1": "更大的精準流量",
+        "group2Card2Adv2": "靈活的投放廣告",
+        "group2Card2Adv3": "更低的投放費用",
+        "competitorLabel": "競爭對手",
+        "advantageLabel": "競爭優勢",
+        "calloutTitle": "設計目標",
+        "calloutBody": "打造一個讓三方角色（創作者、觀眾、項目方）都能獲得價值的影音平台，並透過 Web3 原生機制（錢包任務、積分、空投）建立差異化。",
+        "calloutSource": "— 前期研究總結"
+      },
+      "marketResearch": {
+        "label": "04 — MARKET RESEARCH",
+        "heading": "全球加密用戶高速成長，華語市場規模足以支撐 MVP",
+        "body": "根據 Crypto.com 與 Triple-A 的市場報告，截至 2023 年華語地區加密用戶約 6000 多萬人。加上各國政策利好與比特幣減半、ETF 敘事，2024 年加密用戶預計爆炸性增長。",
+        "calloutTitle": "數據對設計的啟示",
+        "calloutCard1Title": "Onboarding 必須新手友善",
+        "calloutCard1Body": "大量新用戶湧入，不能預設用戶都懂錢包操作，Onboarding 流程必須對加密新手友善。",
+        "calloutCard2Title": "華語版本是合理的 MVP 策略",
+        "calloutCard2Body": "華語市場規模夠大，優先做華語版本是合理的 MVP 策略。",
+        "calloutCard3Title": "資訊更新速度是核心體驗",
+        "calloutCard3Body": "市場週期快速變化，資訊分類和內容更新速度是產品核心體驗，不是附加功能。"
+      },
+      "marketOpportunity": {
+        "label": "05 — MARKET OPPORTUNITY",
+        "heading": "Web3 資訊傳播與影音平台的潛在價值",
+        "body": "與 Web3 媒體從業者的訪談中，了解到市場行情熱點週期更新快速，資訊傳播必須以「快、狠、準」的方式直擊受眾需求。在這樣的背景下，Web3 產業中的資訊傳播酬勞展現出極高的性價比，而 Web3 影音平台的發展也因此具有相當大的潛在價值。"
+      },
+      "platformDecision": {
+        "label": "06 — PLATFORM DECISION",
+        "heading": "開發資源與使用者體驗的綜合考量",
+        "body": "Web3 是一個節奏極快的產業，開發時程緊湊。在有限資源下，我評估了三個開發方向，從開發成本、使用體驗、錢包整合難度三個維度做比較。",
+        "optionATitle": "Option A — Web 優先",
+        "optionAPros": "開發成本低，適合 MVP 快速驗證\n跨平台，不受 App Store 審核限制\n用戶習慣在電腦連接錢包，Web 整合體驗最流暢",
+        "optionACons": "行動端體驗受限",
+        "optionAVerdict": "Selected — 最佳 MVP 策略",
+        "optionBTitle": "Option B — Mobile App 優先",
+        "optionBPros": "推送通知，原生體驗好",
+        "optionBCons": "開發週期長\nWeb3 內容可能被 App Store / Google Play 下架\n錢包整合需要 WalletConnect，額外複雜度",
+        "optionBVerdict": "Rejected — 審核風險過高",
+        "optionCTitle": "Option C — PWA",
+        "optionCPros": "兼顧 Web 與行動端",
+        "optionCCons": "錢包整合複雜度高\n離線場景對影音平台意義不大\nService Worker 維護成本",
+        "optionCVerdict": "Rejected — 投入產出比不合理",
+        "reason": "最終選擇 Web 優先。除了資源考量，更核心的原因是大多數用戶因安全意識仍習慣透過電腦進行鏈上交互（連接錢包、簽名交易），Web 版能提供最流暢的錢包整合體驗。"
+      },
+      "competitiveAnalysis": {
+        "label": "07 — COMPETITIVE ANALYSIS",
+        "heading": "分析 Web3 競品，提取設計洞察",
+        "body": "分析 Odysee、3Speak、DLive、D.Tube、REVO 共五個 Web3 影音平台競品，聚焦在三個核心面向，從中提取 Web3Vid 的產品切入機會點。",
+        "card1Title": "內容機制",
+        "card1Body": "Odysee 支持上傳任何檔案格式（影片、音樂、電子書），3Speak 讓創作者建立自己的代幣市場，但用戶真正在乎的是「有沒有好內容」而非去中心化儲存本身。",
+        "card1Insight": "啟示：",
+        "card1InsightText": "優先解決內容供給（拉 KOL 入駐），",
+        "card1Highlight": "去中心化作為底層架構而非賣點",
+        "card1After": "。",
+        "card2Title": "代幣經濟",
+        "card2Body": "五家競品各自綁定代幣（LBC、Hive/Speak、Lemons、DTUB、R3VO），但早期用戶少時代幣缺乏流動性，DLive 用戶僅收取 25% 佣金、D.Tube 上傳需消耗 VP 投票權——門檻過高。",
+        "card2Insight": "啟示：",
+        "card2InsightText": "",
+        "card2Highlight": "先用積分制跑通機制",
+        "card2After": "，代幣發行放在後期。",
+        "card3Title": "使用體驗",
+        "card3Body": "D.Tube 基於 IPFS 存儲數據公開但無算法控制內容推薦，REVO 結合影音與 NFT 但操作複雜。Web3 影音平台普遍 UX 粗糙、onboarding 門檻高。",
+        "card3Insight": "啟示：",
+        "card3InsightText": "設計風格",
+        "card3Highlight": "對齊 YouTube 認知模型",
+        "card3After": "，降低學習成本。"
+      },
+      "designPrinciples": {
+        "label": "08 — DESIGN PRINCIPLES",
+        "heading": "從研究到設計的三條核心原則",
+        "body": "綜合前期研究，我定下三個設計原則來指導後續所有的 UI/UX 決策。每個原則都直接回應研究階段發現的問題。",
+        "card1Title": "Web2 認知 × Web3 機制",
+        "card1Body": "用戶看影片的心智模型不需要重新學習（對齊 YouTube），Web3 功能（錢包連接、積分、空投）作為增強層疊加上去。降低認知門檻，提高 Web3 功能的採用率。",
+        "card2Title": "三方價值閉環優先",
+        "card2Body": "每個功能都必須回答：「這對創作者、觀眾、項目方分別帶來什麼價值？」如果只服務單一角色，降低優先級。確保平台生態的正向循環。",
+        "card3Title": "先積分、後代幣",
+        "card3Body": "MVP 階段用積分制驗證用戶行為模型，避免過早引入代幣經濟帶來的合規與流動性風險。數據先行，降低決策風險。",
+        "ownershipTag": "我主導 — 三條原則是我在競品分析與訪談後提出，經團隊討論確認採用。"
+      },
+      "productPositioning": {
+        "label": "03 — PRODUCT POSITIONING",
+        "heading": "定調商業模式與產品價值",
+        "body": "將產品定位為 Web3 華語影音平台，扮演區塊鏈華語市場媒體的角色，提供整理後、即時、全面的行業資訊。",
+        "calloutTitle": "競爭優勢",
+        "calloutBody": "從平台各類型用戶角度分析競品後，收斂出三大差異化優勢：① 對 Web3 內容零審查限制，創作者收益不受平台政策影響。② 結合錢包任務的原生互動形式，觀眾參與深度遠超傳統平台。③ 精準觸達加密用戶的廣告管道，項目方投放效率更高。",
+        "calloutSource": "— 競爭優勢分析",
+        "img1Caption": "各類用戶的競品優勢比較",
+        "img2Caption": "Web3Vid 差異化定位"
+      },
+      "designDecision": {
+        "label": "09 — DESIGN DECISION",
+        "heading": "如何讓用戶持續回來使用 Web3Vid？",
+        "body": "留存機制是影響平台存亡的關鍵。我評估了三種方向，從短期 DAU 拉升、長期生態健康、MVP 階段可行性三個維度做比較，最終決定以積分任務制為主要策略。",
+        "optionATitle": "Option A — 純內容驅動",
+        "optionAPros": "長期最健康的留存模型",
+        "optionACons": "冷啟動期內容不足，留存率必然偏低\n無法在 MVP 階段快速驗證",
+        "optionAVerdict": "Rejected — 長期方向，但非 MVP 首選",
+        "optionBTitle": "Option B — 積分任務制",
+        "optionBPros": "短期有效拉高 DAU\n即時正回饋，冷啟動期維持用戶活躍\n積分數據可作為未來代幣經濟模型的行為基線",
+        "optionBCons": "可能吸引羊毛黨（需反作弊機制）",
+        "optionBVerdict": "Selected — MVP 最佳驗證策略",
+        "optionCTitle": "Option C — 社交機制",
+        "optionCPros": "能建立網路效應",
+        "optionCCons": "MVP 階段用戶基數不夠，社交功能會冷場\n開發成本高，分散核心體驗",
+        "optionCVerdict": "Rejected — 用戶基數不足以支撐",
+        "calloutTitle": "決策邏輯",
+        "calloutBody": "以 B（積分任務制）為主，A 為長期方向。MVP 階段最重要的是快速驗證用戶願不願意在這個平台上看影片。積分制提供即時正回饋，能在內容量還不夠豐富時維持用戶活躍度。同時，積分數據可以作為未來代幣經濟模型的行為基線。",
+        "calloutSource": "— 設計決策總結",
+        "ownershipTag": "我主導 — 三方案比較與最終決策由我提出並主導團隊討論。"
+      },
+      "behavioralDesign": {
+        "label": "10 — BEHAVIORAL DESIGN",
+        "heading": "行為心理學驅動的積分機制設計",
+        "body": "確定積分任務制後，我運用行為心理學原理來設計具體的獎勵機制，確保不只是「有積分」，而是讓積分系統真正改變用戶行為。",
+        "card1Title": "即時正向回饋",
+        "card1Before": "基於 B.F. Skinner 操作制約理論——行為受到獎勵時，用戶更可能重複該行為。完成任務後",
+        "card1Highlight": "立即顯示積分增加動畫",
+        "card1After": "，強化「行為 → 獎勵」的心理連結。",
+        "card2Title": "進度可視化",
+        "card2Before": "運用 Goal Gradient Effect——距離目標越近，動機越強。設計",
+        "card2Highlight": "透明化進度條",
+        "card2After": "，讓用戶看到距離獎勵還有多少積分，「快要完成」的感覺推動最後一哩路。",
+        "card3Title": "連續獎勵機制",
+        "card3Before": "Streak Mechanism 建立使用習慣——",
+        "card3Highlight": "每日簽到的額外加成",
+        "card3After": "，讓用戶因「不想中斷連續紀錄」而持續回訪。"
+      },
+      "featureDesign": {
+        "label": "11 — FEATURE DESIGN",
+        "heading": "Web2 結合 Web3，創造功能新體驗",
+        "body": "將熟悉的影片觀賞介面結合 Web3 的錢包任務功能。核心設計策略是讓 Web2 部分「不需要學」，Web3 部分「值得探索」。",
+        "story1Before": "作為",
+        "story1Highlight": "觀眾",
+        "story1After": "，我可以在觀看影片的同時連接錢包，完成鏈上任務獲得積分，讓我的觀看行為有直接回報。",
+        "story2Before": "作為",
+        "story2Highlight": "創作者",
+        "story2After": "，我可以為影片綁定互動任務，提升觀眾參與深度，同時獲得項目方的合作收益。",
+        "story3Before": "作為",
+        "story3Highlight": "項目方",
+        "story3After": "，我可以透過錢包任務形式投放原生廣告，精準觸達已連接錢包的活躍加密用戶。"
+      },
+      "coreFlow": {
+        "label": "12 — CORE FLOW",
+        "heading": "錢包任務 × 積分抽獎：平台核心流程",
+        "body": "影音平台結合錢包任務抽獎流程，是 Web3Vid 的差異化功能核心。我設計了一套「觀看 → 連接 → 完成 → 獎勵」的閉環流程，讓用戶在自然的觀影行為中，逐步接觸 Web3 互動。",
+        "ownershipTag": "我主導 — 此核心流程由我獨立設計，從 User Flow 到 UI 細節全程主導。",
+        "flowCaption": "完整錢包任務 → 積分 → 抽獎 User Flow",
+        "img1Caption": "錢包連接流程 — 支援 MetaMask, WalletConnect",
+        "img2Caption": "任務完成 → 積分獎勵動效"
+      },
+      "informationArchitecture": {
+        "label": "13 — INFORMATION ARCHITECTURE",
+        "heading": "設計 Web3 分類系統，平衡快速瀏覽與精準查找",
+        "body": "Web3 有眾多賽道，我設計了雙層分類架構，讓不同目的的用戶都能快速找到想看的內容。",
+        "text": "大分類（Tab 層級）：發燒影片、新聞快訊、行情分析、熱點追蹤、科普教學、空投教學、深度解析——便於用戶第一時間找到感興趣的方向。\n\n細分類（Hashtag 層級）：影片的 Hashtag 提供更精準的主題篩選（如 #BTC減半 #Layer2 #DeFi），適合有明確目標的用戶。\n\n分類項目根據 Web3 KOL 內容主題頻率分析與團隊的行業經驗，整理出前 7 大高頻主題作為大分類。"
+      },
+      "uiDesign": {
+        "label": "14 — UI DESIGN",
+        "heading": "整合前期研究，設計符合產品定位的 MVP",
+        "body": "平台影音內容包括長影片、短影片、Podcast 音檔。考量使用者既有習慣，主功能上的觀看流程與 YouTube 相似。核心差異化在於錢包交互、積分任務與 Web3 風格的抽獎設計。",
+        "img1Caption": "首頁 — 影片推薦與分類導航",
+        "img2Caption": "播放頁 — 影片觀看與錢包任務入口",
+        "flowCaption": "完整 UI Flow",
+        "img3Caption": "錢包任務面板",
+        "img4Caption": "積分儀表板",
+        "img5Caption": "Web3 風格抽獎介面",
+        "img6Caption": "短影音瀏覽介面"
+      },
+      "designSystem": {
+        "label": "15 — DESIGN SYSTEM",
+        "heading": "建立 Design System，確保設計一致性與開發效率",
+        "body": "為了確保 MVP 的快速迭代不犧牲視覺一致性，我在設計初期就建立了 Design System，涵蓋色彩、字型、元件規範。",
+        "ownershipTag": "我主導 — Design System 由我獨立建立與維護。",
+        "fullCaption": "完整 Design System 總覽",
+        "img1Caption": "Color Palette + Typography Scale",
+        "img2Caption": "Core Components（Button / Card / Modal 狀態）"
+      },
+      "pitchDeck": {
+        "label": "16 — PITCH DECK",
+        "heading": "募資簡報設計",
+        "body": "我負責將產品定位、市場分析與競爭優勢整合成投資人簡報，用於香港數碼港創業計劃的申請，最終進入決賽環節。"
+      },
+      "scalability": {
+        "label": "17 — SCALABILITY",
+        "heading": "設計時預想的 Scale 問題與應對策略",
+        "body": "MVP 設計不能只看眼前，我在設計過程中就預想了產品成長後可能遇到的 scale 問題，並在架構層面預留了擴展空間。",
+        "card1Title": "內容量從 100 → 10,000+",
+        "card1Body": "現有 7 大分類不夠用，Hashtag 會爆炸。設計時預留了「自訂分類」和「Hashtag 搜尋」的架構位置，長期可引入演算法推薦。",
+        "card2Title": "華語擴展到英語市場",
+        "card2Body": "UI 文案、分類名稱、內容推薦邏輯都需要 i18n。Design System 文字元件使用 auto-layout，預留多語系空間。",
+        "card3Title": "用戶量增加後的羊毛黨問題",
+        "card3Body": "大量用戶只為嚕積分不真正看影片。積分任務設計「觀看時長門檻」（至少看完 70%），而非點開就算完成。"
+      },
+      "projectNav": {
+        "prev": "上一則作品",
+        "next": "下一則作品"
+      }
+    },
+    "rolling-x": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "WEB3 ・ FINTECH ・ DASHBOARD",
+        "title": "穩定年化複利機器人平台",
+        "subtitle": "將 Bitfinex 自動放貸演算法包裝成一般投資人也能輕鬆使用的產品"
+      },
+      "meta": {
+        "roleLabel": "擔任角色",
+        "roleValue": "UI/UX Designer（唯一設計師）",
+        "resultLabel": "專案成果",
+        "resultValue": "Pilot 用戶平均 APR 提升約 50%、參展 2023 桃園青創博覽會、參與中大天使創投 Pitch",
+        "scopeLabel": "負責內容",
+        "scopeValue": "競品分析、功能規劃、UX / UI 設計、Design System、Logo 設計、Pitch 簡報設計、展場海報設計"
+      },
+      "background": {
+        "label": "01 — 專案背景",
+        "heading": "Bitfinex 放貸市場：高報酬，但體驗門檻極高",
+        "intro": "Bitfinex 是全球歷史最悠久的加密貨幣交易所之一，其 P2P 放貸市場讓用戶可以將閒置的美元或穩定幣借給槓桿交易者，賺取利息收入。近年平均年化報酬（APR）約 10%~20%，遠高於傳統銀行的外幣定存（台灣約 1.1%、美國約 4%）。",
+        "challengeLabel": "體驗問題",
+        "challengeTitle": "手動放貸的操作門檻太高",
+        "challengeBody": "用戶需要持續監控市場利率、手動調整掛單參數，並承擔資金閒置的效率損失。",
+        "solutionLabel": "技術解法",
+        "solutionTitle": "用 Bitfinex API 優化放貸效率",
+        "solutionBody": "團隊內的工程師開發了一套效能更優的放貸演算法，能自動處理過去需要手動判斷的放貸操作。",
+        "taskLabel": "我的任務",
+        "taskTitle": "把演算法包裝成一般投資人也能用的產品",
+        "taskBody": "將這套演算法轉化成清楚、可信任、低門檻的產品體驗——Rolling。",
+        "whyNow": {
+          "title": "Why Now — 為什麼是這個時間點？",
+          "intro": "Rolling 的開發時機與加密貨幣市場的週期密切相關：",
+          "bullet1": "牛市環境預估在 2024 Q2 到來，購買並持有 BTC 的人數將大幅增加",
+          "bullet2": "牛市前後的放貸 APR 通常顯著高於平時，是放貸產品獲客的最佳窗口",
+          "bullet3": "牛熊轉換點有大量新投資者湧入市場，這些人正是「想賺利息但不想承擔高波動」的核心 TA",
+          "conclusion": "以長期投資角度來看，市場週期為 Rolling 這類低風險穩定收益產品提供了天然的需求推力。"
+        },
+        "businessModel": {
+          "title": "",
+          "body": ""
+        }
+      },
+      "competitive": {
+        "label": "02 — 競品分析",
+        "heading": "拆解市場領導者 Fuly.ai 的 5 個體驗問題",
+        "body": "在設計 Rolling 之前，對放貸市場的競品對象做分析，識別出四個主要競爭對手：",
+        "table": {
+          "colName": "競品",
+          "colPlatform": "支援平台",
+          "colPricing": "定價模式",
+          "colFeature": "主要特色",
+          "colWeakness": "UX 痛點",
+          "row1Name": "Fuly.ai",
+          "row1Platform": "Bitfinex",
+          "row1Pricing": "訂閱制（按季付費）",
+          "row1Feature": "IBRR 演算法、智能跟單模式、AI 風險指標",
+          "row1Weakness": "Onboarding 步驟繁瑣、機器人狀態不即時、收益報表不直覺",
+          "row2Name": "Coinlend",
+          "row2Platform": "Bitfinex、Liquid",
+          "row2Pricing": "週費 $1~3 + 利息 5% 抽成",
+          "row2Feature": "跨交易所支援、AI 優化演算法、24/7 自動化",
+          "row2Weakness": "雙重收費結構複雜、介面老舊、報酬表現評價兩極",
+          "row3Name": "AltInvest",
+          "row3Platform": "Bitfinex",
+          "row3Pricing": "月費 $3~45 + 超額利息 3%",
+          "row3Feature": "智能策略放貸、自動複利、風險管理設定",
+          "row3Weakness": "分級定價混亂、高階方案門檻高、14 天試用期偏短",
+          "row4Name": "EarnUSD",
+          "row4Platform": "Bitfinex",
+          "row4Pricing": "月費 $3（0% 抽成）",
+          "row4Feature": "即時掛單更新、每 5 分鐘自動刷新、支援 BTC 定投",
+          "row4Weakness": "僅支援 3 種幣別、品牌知名度低、社群信任度不足"
+        },
+        "caption": "Rolling 的差異化定位：在「新手友善度」和「穩定收益」兩個維度上取得優勢",
+        "fulyIntro": "Fuly.ai 是最直接的競品（同為 Bitfinex 放貸機器人），因此我針對它做了更深入的 UX 拆解：",
+        "pain1": {
+          "title": "Onboarding 需要 6 個步驟，新手門檻極高",
+          "body": "用戶要完成 Fuly.ai 的設定，需要：註冊 Fuly 帳號 → 註冊 Bitfinex 帳號 → 完成 KYC 身份驗證 → 在 Bitfinex 產生 API 金鑰（需精確開啟 5 項權限）→ 將 API 金鑰貼回 Fuly → 將資金從交換錢包轉到融資錢包。任何一步出錯，機器人就無法運作。",
+          "note": "補充：Bitfinex 的 KYC 審查較嚴格，身份驗證流程可能需要數個工作天。"
+        },
+        "pain2": {
+          "title": "機器人啟動延遲，狀態回饋不足",
+          "body": "資金存入後，Fuly.ai 的機器人需要較長時間才會開始掛單，且掛單資訊不是即時更新。用戶無法確認「機器人到底有沒有在工作」——這對涉及真金白銀的金融產品來說，是嚴重的信任問題。"
+        },
+        "pain3": {
+          "title": "績效報表缺乏直覺性",
+          "body": "Fuly.ai 的報表相對基礎，較少清楚展示用戶在 Dashboard 中如何快速理解收益趨勢。"
+        }
+      },
+      "strategy": {
+        "label": "03 — 設計策略",
+        "heading": "從「6 步驟 30 分鐘」到「2 步驟 5 分鐘」",
+        "body": "基於競品分析的發現，我將 Rolling 的核心設計策略定義為：<highlight>用企業帳號架構降低入口門檻，用 Dashboard 設計建立持續信任。</highlight>",
+        "table": {
+          "colFuly": "Fuly.ai 的問題",
+          "colRolling": "Rolling 的設計決策",
+          "row1Fuly": "Onboarding 6 步驟（自行 KYC + API 串接）",
+          "row1Rolling": "企業帳號統一管理：客戶不需自己做 KYC 或產生 API，用戶只需「註冊 → 選擇訂閱方案→ 入金 → 開始賺」",
+          "row2Fuly": "機器人狀態不透明",
+          "row2Rolling": "Dashboard 首頁即時顯示三大核心指標（累積投報率、今日盈虧、累積利息），每日更新收益明細",
+          "row3Fuly": "報表不夠直覺",
+          "row3Rolling": "收益表現概覽整合幣種、日期、投報率、金額，未來規劃加入趨勢圖表"
+        },
+        "before": {
+          "tag": "Fuly.ai — 約 30 分鐘～數天",
+          "step1": "註冊 Fuly",
+          "step2": "註冊 Bitfinex",
+          "step3": "KYC 驗證",
+          "step4": "產生 API 金鑰",
+          "step5": "設定 5 項權限",
+          "step6": "貼 API 到 Fuly",
+          "step7": "轉資金到融資錢包",
+          "step8": "選方案",
+          "step9": "USDT 付款",
+          "step10": "私訊客服",
+          "step11": "等待開通",
+          "step12": "設定參數",
+          "step13": "開始放貸"
+        },
+        "after": {
+          "tag": "Rolling — 約 5 分鐘",
+          "step1": "註冊 Rolling",
+          "step2": "選擇方案",
+          "step3": "入金",
+          "step4": "自動開始放貸"
+        }
+      },
+      "targetUser": {
+        "label": "04 — 目標用戶 & USER STORY",
+        "heading": "鎖定三類用戶，從競品痛點收斂核心需求",
+        "ta1": {
+          "title": "加密貨幣市場投資小白",
+          "body": "對幣圈有興趣但被複雜的操作介面嚇退的人。他們需要的是「無腦放進去就能賺」的體驗，而非一堆參數設定。這也是 Fuly.ai 和 Bitfinex 原生工具<highlight>流失最多的用戶群</highlight>。"
+        },
+        "ta2": {
+          "title": "穩健獲利低風險投資者",
+          "body": "已有投資經驗，但不想承受加密貨幣價格波動的人。放貸的「借出資金收利息」模式天然符合他們的風險偏好。"
+        },
+        "ta3": {
+          "title": "長期投資者",
+          "body": "相信複利效應，願意長期持有並讓資金持續滾動的人。Rolling 的產品命名和自動複利機制就是為這群人設計的。"
+        },
+        "story1": "作為一個投資人，我期望能「一眼看到投資表現」，讓我可以了解資金盈虧，不需要自己打開試算表計算。",
+        "story2": "作為一個投資人，我期望能「查看每日投資明細」，讓我可以確認自動交易機器人確實在正常工作。",
+        "story3": "作為一個投資人，我期望能「隨時提領資金」，讓我可以安心知道資產不會被鎖住，降低嘗試新平台的心理門檻。"
+      },
+      "featurePlanning": {
+        "label": "05 — 功能規劃",
+        "heading": "透過使用者情境，規劃整體產品功能",
+        "body": "根據三條 User Story 和競品分析中識別出的體驗缺口，我初步整理出 Rolling 的功能架構與資訊欄位。核心原則是：讓每一個頁面都能直接回答用戶最在意的一個問題。",
+        "sitemapHeading": "收斂為六大功能模組",
+        "sitemapBody": "將使用者情境收斂為合適的功能分類：資產總覽、錢包（入金／出金／紀錄）、利息收益、訊息通知、用戶管理、API 權限設定，另加儲備證明作為信任輔助入口。每個模組對應一個明確的用戶任務。"
+      },
+      "decisions": {
+        "label": "06 — 設計決策",
+        "heading": "影響產品體驗的設計決策",
+        "body": "以下是我在設計 Rolling Dashboard 過程中做出的三個關鍵決策。每個決策都經歷了多方案探索與取捨。",
+        "rejected": "未採用",
+        "d1": {
+          "title": "資產概覽：用戶第一眼該看到什麼？",
+          "question": "放貸平台的數據很多——總資產、即時利率、累積利息、日利率、投報率、今日盈虧。Dashboard 首屏的資訊密度直接決定用戶的信任感和留存率。",
+          "optionA": {
+            "title": "方案 A：單一大數字",
+            "desc": "只顯示總資產，其餘收在下方",
+            "cons": "用戶需要滾動才能看到績效"
+          },
+          "optionB": {
+            "title": "方案 B：三卡片並列",
+            "desc": "累積投報率、今日盈虧、累積利息並排",
+            "pros": "一眼回答三個核心問題",
+            "verdict": "最終選擇"
+          },
+          "optionC": {
+            "title": "方案 C：儀表板式",
+            "desc": "圓環圖 + 數字組合",
+            "cons": "視覺衝擊強但佔用大量空間"
+          },
+          "callout": {
+            "title": "最終決策：方案 B — 三卡片並列",
+            "body": "放貸用戶每次登入最想回答三個問題：「我的報酬率如何？」「今天賺了多少？」「累積利息有多少？」三張卡片分別對應這三個核心問題。"
+          }
+        },
+        "d2": {
+          "title": "決策 ② 收益呈現：表格 vs. 圖表？",
+          "question": "收益明細應該用「精確數字的表格」還是「趨勢一目了然的折線圖」？兩者各有優勢，取決於用戶的使用場景。",
+          "optionA": {
+            "title": "方案 A：純表格",
+            "pros": "精確可查帳",
+            "cons": "看不出趨勢",
+            "verdict": "✅ v1 上線"
+          },
+          "optionB": {
+            "title": "方案 B：純折線圖",
+            "pros": "趨勢明顯",
+            "cons": "缺少精確數字",
+            "verdict": "未採用"
+          },
+          "optionC": {
+            "title": "方案 C：圖表 + 表格",
+            "pros": "兼顧趨勢與精確度",
+            "cons": "頁面更長",
+            "verdict": "✅ v2 規劃"
+          },
+          "callout": {
+            "title": "最終決策：v1 先以方案 A 上線，v2 規劃方案 C",
+            "body": "考量到 MVP 階段的開發資源有限，先用表格滿足「查帳」的核心需求。但我同步產出了 v2 的概念稿（圖表 + 表格組合），規劃在用戶量達到一定規模後迭代。"
+          }
+        },
+        "d3": {
+          "title": "決策 ③ 信任設計：如何讓用戶安心把錢交給機器人？",
+          "question": "用戶最大的心理障礙不是「利率夠不夠高」，而是「安全嗎？」。團隊已經建立了 Bitfinex 儲備金追蹤機制（持續監測交易所錢包地址和代幣分配），但這些安全資訊在 Dashboard 上完全沒有體現。",
+          "optionA": {
+            "title": "方案 A：被動式",
+            "desc": "在 FAQ 頁面說明安全機制",
+            "cons": "成本最低但效果最差，用戶不會主動去看"
+          },
+          "optionB": {
+            "title": "方案 B：嵌入式",
+            "desc": "在 Dashboard 加入「平台健康度」狀態卡片",
+            "pros": "即時顯示 Bitfinex 儲備金額和代幣分配",
+            "verdict": "✅ 最終選擇"
+          },
+          "optionC": {
+            "title": "方案 C：通知式",
+            "desc": "只在異常時推送提醒",
+            "cons": "節省空間但平時無法建立信任感"
+          },
+          "callout": {
+            "title": "最終決策：方案 B — 在 Dashboard 嵌入 Proof of Reserves 狀態",
+            "body": "信任不應該是被動的。尤其對第一次接觸加密金融的用戶，在 Dashboard 首頁就看到「Bitfinex 儲備金額 $5.2B、BTC 佔比 59%、ETH 佔比 9.7%」這些即時數據，能有效降低信任焦慮。這個設計把團隊原本只放在 Pitch 簡報裡的安全論述，轉化成了用戶每天都能看到的 UI 元素。"
+          }
+        }
+      },
+      "uiDesign": {
+        "label": "07 — 介面設計",
+        "heading": "最終 UI 設計"
+      },
+      "designSystem": {
+        "label": "08 — DESIGN SYSTEM",
+        "heading": "為放貸場景打造的視覺系統",
+        "body": "Rolling 的 Design System 以深色主題為基底，搭配高對比的功能色。<highlight>深色主題的選擇基於兩個考量：一是金融產品常見的專業調性，二是放貸用戶可能在晚間查看資產時的視覺舒適度。</highlight>"
+      },
+      "branding": {
+        "label": "09 — 品牌設計",
+        "heading": "如滾雪球般的穩定複利",
+        "body": "因產品核心是低風險長期穩定複利的自動放貸機器人，獲利將隨著時間愈滾愈大，故取名產品為 Rolling。Logo 以六角形（呼應加密貨幣的幾何語言）包裹一個動態的「R」，傳達持續滾動與成長的意象。\n\n品牌視覺同步延伸至 Pitch 簡報（用於中大天使創投 Pitch）和展場海報（用於 2023 桃園青創博覽會），確保對外溝通的一致性。"
+      },
+      "results": {
+        "label": "10 — 專案成果",
+        "heading": "Pilot 階段 APR 提升約 50%",
+        "stat1": { "value": "~15-20%", "label": "Pilot 用戶平均 APR" },
+        "stat2": { "value": "~50%", "label": "相較手動放貸效率提升" },
+        "body1": "Pilot 階段實測 10 位用戶，Rolling 機器人的平均年化報酬率約 15%~20%，相較手動放貸的 10%~13% 提升約 50%。效益主要來自三個面向：機器人定時自動刷新掛單降低資金閒置時間、在利率短暫飆升時（如 2024 年 4 月市場一度達 30% APR）能分鐘級反應、以及自動複利投入累積長期效益。",
+        "body2": "商業面上，團隊以 120,000 USDT 為放貸資金規模目標，以 10% APR 複利模型推算預估可產生 99,200 USDT 的收益池——這組數據也是天使創投 Pitch 中商業模式可行性論證的核心依據。",
+        "disclaimer": "註：報酬率基於 Bitfinex USD 放貸市場公開資料與行業基準，實際報酬隨市場供需波動。",
+        "qualitative1": "參與中大天使創投 Pitch，完成產品提案與商業模式簡報",
+        "qualitative2": "參展 2023 桃園青創博覽會，實際向投資人與潛在用戶展示產品",
+        "qualitative3": "獨立完成品牌全套視覺（Logo、Dashboard UI、Pitch 簡報、展場海報、Design System）"
+      },
+      "reflection": {
+        "label": "11 — REFLECTION",
+        "heading": "如果重來一次",
+        "card1": {
+          "title": "做得好的",
+          "body": "以競品 UX 問題為起點來定義設計策略，讓每一個設計決策都有清晰的「為什麼」。用企業帳號架構大幅簡化用戶的入口門檻，是這個產品最核心的差異化設計。"
+        },
+        "card2": {
+          "title": "可以更好的",
+          "body": "如果重來，我會在設計初期就做更完整的用戶測試——至少找 3-5 位目標用戶做任務測試，用數據而非推測來驗證設計假設。"
+        },
+        "card3": {
+          "title": "帶走的經驗",
+          "body": "在加密金融領域做設計，<highlight>「信任」的權重遠超過「美觀」</highlight>。用戶願不願意把真金白銀放進來，取決於產品能不能在每一個觸點回答「安全嗎？」這個問題。這個洞察影響了我後續在 Web3 相關專案上的功能思路。"
+        }
+      },
+      "projectNav": {
+        "prev": "上一則作品",
+        "next": "下一則作品"
+      }
+    }
+  },
+  "workingWithAI": {
+    "title": "Working with AI",
+    "subtitle": "將 AI 納入工作流，專注於關鍵決策與體驗本質",
+    "items": {
+      "prototyping": {
+        "title": "AI-Driven Workflow",
+        "description": "熱衷於研究最新 AI 前沿應用，擅於根據不同專案，分析進行解構與重構，導入合適 AI 應用與工具進入團隊中。目前主力使用 Claude Code 與 Codex，可獨自完成：UX 調研 >> Spec 產出 >> UI 設計 >> 前端切版 >> Git 推版。加速端到端的交付協作。"
+      },
+      "workflow": {
+        "title": "Design Workflow",
+        "description": "運用 AI 拆解產品 UX 與優化資訊架構，並自架小龍蝦（OpenClaw）協作 routine work。也擅長將用戶流程整理與模組化，加速開發理解與產品迭代。"
+      },
+      "imageGen": {
+        "title": "Image Generation",
+        "description": "自建 AI 風格訓練模型，穩定產出高品質設計素材，確保品牌與視覺風格的一致性。"
+      },
+      "vibeCoding": {
+        "title": "AI Building",
+        "description": "AI 工具研究愛好者，喜歡著手進行小工具 Side Project 開發、Skills 製作，探索 AI 與產品功能整合的可能性。"
+      }
+    }
+  },
+  "whatIDo": {
+    "title": "What I Do",
+    "subtitle": "串聯設計、程式與策略，打造真正有效的產品。",
+    "skills": {
+      "brand": {
+        "title": "Brand",
+        "tags": {
+          "visualDesign": "產品整體視覺設計",
+          "marketing": "行銷設計",
+          "designSystem": "Design System"
+        }
+      },
+      "research": {
+        "title": "Research",
+        "tags": {
+          "ux": "UX 分析",
+          "strategy": "商業化策略",
+          "spec": "撰寫 Spec"
+        }
+      },
+      "animation": {
+        "title": "Animation",
+        "tags": {
+          "ae": "After Effects",
+          "rotato": "Rotato",
+          "rive": "Rive"
+        }
+      },
+      "dev": {
+        "title": "Dev",
+        "tags": {
+          "htmlCssJs": "HTML/CSS/JS",
+          "aiDev": "AI-Assisted Dev",
+          "designMd": "Design.md 規劃"
+        }
+      }
+    }
+  },
+  "kindWords": {
+    "title": "Kind Words",
+    "testimonials": {
+      "karen": {
+        "quote": "由衷感謝 JS 的專業與細心，讓每個設計細節都經過深思熟慮，以確保設計的實用性與美感兼具。在溝通過程中，總是耐心傾聽需求，精準掌握方向，設計成品不僅符合期待，甚至超過預期。與 JS 合作非常愉快，是個值得信賴的合作夥伴！"
+      },
+      "kyle": {
+        "quote": "與 JS 合作的過程非常順暢，能迅速理解需求，並轉化為具有質感且符合品牌調性的設計。JS 對於 Web3 充滿熱情，溝通上也很高效，可以針對細節給出 Web3 體驗上的設計建議，讓設計成果更具完整性，是一位兼具創意與專業能力的設計師，合作起來很愉快！"
+      }
+    }
+  },
+  "projectsPage": {
+    "pageTitle": "Projects",
+    "moreDesignWork": "More Web & Graphic Designs",
+    "cards": {
+      "exora": {
+        "title": "以 AI 輔助建置可擴充 Storybook",
+        "description": "為多設計系統的產品架構，預先建立元件管理基礎，並重新設計教億下單流程 -- 讓 DEX 也能擁有 CEX 級別的交易流暢度。"
+      },
+      "prediction-market": {
+        "title": "導入 AI 工作流的端到端交付：Spec、設計、前端切版一人完成",
+        "description": "從 Spec 到前端，打造一款讓用戶在手機上就能輕鬆使用的預測市場產品"
+      },
+      "hydra": {
+        "title": "整合 Hyperliquid 流動性的衍生品交易平台",
+        "description": "結合 DeFi 流動性與 CEX-like 交易體驗，透過多租戶架構與共享流動性，降低建立衍生品交易平台的技術門檻。"
+      },
+      "cex-web": {
+        "title": "CEX 首頁設計模塊化：從一次性設計到讓行銷自由排列組合的設計",
+        "description": "CEX ＆Web3 Projects Web Designs"
+      },
+      "web3vid": {
+        "title": "為幣圈創作者與觀眾打造的 Web3 一站式影音平台",
+        "description": "產品募資提案進入 - 香港數碼計劃決賽環節"
+      },
+      "rolling-x": {
+        "title": "穩定複利年化機器人平台",
+        "description": "Pilot 用戶平均 APR 提升約 50%、參展 2023 桃園青創博覽會、參與中大天使創投募資提案"
+      },
+      "play-to-earn": {
+        "title": "Play to Earn GameFi",
+        "description": "小紅雞點擊賺幣遊戲"
+      },
+      "ai-learning": {
+        "title": "AI 課程學習平台",
+        "description": "AAPD UI 實戰營 — 金獎作品"
+      },
+      "dating-pwa": {
+        "title": "PWA 交友平台",
+        "description": "獲得『經濟部 SBIR 計畫』協助客戶獲得百萬軟體開發資金"
+      },
+      "booking-app": {
+        "title": "課程預約 APP",
+        "description": "只需要一個 App 輕鬆預約多樣課程！\nAPP + Web + 前後台系統設計"
+      },
+      "ecommerce-mlm": {
+        "title": "電商平台＆直銷後台設計",
+        "description": "前台電商平台、直銷後台設計"
+      },
+      "inspiration-library": {
+        "title": "使用 Claude Code 建置的靈感搜集庫",
+        "description": "自用的筆記與隨手靈感搜集庫，透過 AI 快速自適應判斷分類"
+      }
+    }
+  },
+  "cta": {
+    "title": "LET'S WORK TOGETHER!"
+  },
+  "footer": {
+    "copyright": "Copyright © 2026 Jade Song"
+  },
+  "meta": {
+    "title": "Jade Song — Product Designer",
+    "description": "Fintech / Web3 / Crypto 領域的 Product Designer 作品集"
+  },
+  "about": {
+    "hero": {
+      "greeting": "Hello! I'm",
+      "name": "Jade",
+      "paragraph1Accent": "擁有七年的設計經驗，其中有 5+ 年產品設計經驗，過去多專注於 Web3 與 Fintech 領域的產品設計。",
+      "paragraph1After": "也曾參與交友產品、課程預約 App、後台管理平台、電商網站等不同類型的專案，累積了跨產業的設計視角。",
+      "paragraph2Highlight": "自身同時是 5 年的加密貨幣交易者，",
+      "paragraph2": "長期關注鏈上動態、總經數據與市場情緒，對股市與宏觀經濟也有所涉略。",
+      "paragraph2Accent": "由於自己是頻繁的交易用戶，除了具備產業內趨勢的設計敏感度，同時熟知從小白到深度用戶的體驗視角，因此設計 Web3 產品時更能直覺地掌握用戶真正在意的細節。",
+      "paragraph3": "平時也熱衷於研究 AI 工具，擅長解構與重構不同專案的情境與工作流，導入合適的 AI 應用至開發團隊中。",
+      "paragraph3Accent": "能透過 Claude Code, Codex & Figma MCP 獨立完成從 Spec 產出到設計到前端切版的完整鏈路。",
+      "paragraph3After": "此外，也持續鑽研 3D 與動態設計，讓作品在體驗之外能有更好的視覺表現力。",
+      "paragraph4": "歡迎參考我的作品集，或一起聊聊產品設計、AI 工具與投資交易相關的話題！",
+      "btnResume": "查看履歷 →",
+      "btnWork": "查看作品 →",
+      "location": "📍 Taipei, Taiwan"
+    },
+    "values": {
+      "sectionLabel": "Design Values",
+      "title": "Design Values",
+      "desc": "在設計職涯中，我淬鍊出幾個核心價值，作為支撐每一次設計決策的基礎原則。",
+      "card1Title": "從 0 到 1 的產品經驗",
+      "card1Desc": "經手的專案大多是從零開始打造的，也因此有不少參與產品策略與功能規劃的經驗。習慣在動手設計之前，先判斷這個功能該不該做、市場趨勢是否支持這個方向。",
+      "card2Title": "在限制裡找最佳解",
+      "card2Desc": "每個產品都有技術與商業上的限制，設計時沒辦法忽略這些現實。習慣在工程可行性、商業目標跟用戶體驗之間，找到能真正上線的方案。",
+      "card3Title": "把複雜的東西變得好懂",
+      "card3Desc": "將專業的資訊架構與流程，轉化成用戶可以直覺操作的介面。讓老手效率高，新手也不會被嚇跑。",
+      "card4Title": "用趨勢洞察輔助產品決策",
+      "card4Desc": "平常就在關注產業趨勢與市場動態，在參與功能規劃時能提出有依據的建議——不只是「這樣比較好用」，而是「現在市場需要這個」。"
+    },
+    "skills": {
+      "sectionLabel": "Soft Skills",
+      "title": "Soft Skills",
+      "desc": "穩定的硬實力之外，我同樣重視溝通協作與持續學習——這些特質往往是讓專案順利推進的關鍵。",
+      "card1Title": "跨角色溝通協作",
+      "card1Desc": "習慣用 flow chart、fund flow diagram、design spec 等視覺化方式，把設計意圖轉譯成工程師、PM、合規團隊都能理解的語言。",
+      "card2Title": "自發性 AI 工具研究",
+      "card2Desc": "主動研究並整合 AI 到工作流，持續探索 AI 如何實質改變設計師的工作方式。",
+      "card3Title": "持續拓展設計視野",
+      "card3Desc": "定期參與 PM 讀書會、設計社群與 AI 講座，從產品、工程、商業等不同角度理解產品開發的不同面向。並持續優化自己的設計流程與產出品質。"
+    },
+    "cta": {
+      "titleBefore": "想看看這些想法\n怎麼變成實際的",
+      "accent": "產品設計",
+      "titleAfter": "？",
+      "desc": "歡迎看看作品集，或找我聊聊 Web3 設計、AI 工具、總經分析相關的話題。",
+      "btnWork": "查看作品集 →",
+      "btnContact": "聯絡我"
+    }
+  }
+}
