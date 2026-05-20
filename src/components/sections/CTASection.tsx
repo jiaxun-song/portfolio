@@ -31,7 +31,7 @@ export default function CTASection() {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <section className="relative flex items-center justify-center py-24 px-6">
+    <section className="relative flex items-center justify-center py-24 px-6 overflow-x-clip">
       {/* Outer glow */}
       <div className="cta-glow" />
 

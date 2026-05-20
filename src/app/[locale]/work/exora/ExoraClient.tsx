@@ -584,10 +584,17 @@ export default function ExoraClient() {
               </div>
             </ScrollReveal>
 
-            {/* Image placeholder after each phase */}
+            {/* Image after each phase */}
             <div className="mb-[var(--cs-section-gap)]">
               <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
-                <Placeholder name={`${phaseIndex + 1}`} ratio="16/9" />
+                <Image
+                  src={`/images/projects/exora/${phaseIndex + 1}.png`}
+                  alt={t(`tradingJourney.${labelKey}`)}
+                  width={1920}
+                  height={1080}
+                  className="w-full h-auto rounded-xl"
+                  sizes="(min-width: 768px) 80vw, 100vw"
+                />
               </div>
             </div>
           </div>
