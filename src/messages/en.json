@@ -800,7 +800,7 @@
       "dev": {
         "title": "Dev",
         "tags": {
-          "htmlCssJs": "HTML/CSS/JS",
+          "htmlCssJs": "HTML/CSS",
           "aiDev": "AI-Assisted Dev",
           "designMd": "Design.md Planning"
         }
