@@ -23,7 +23,7 @@
     "moreProjects": "10 More Projects",
     "projects": {
       "exora": {
-        "title": "以 AI 輔助建置可擴充 Storybook",
+        "title": "以 AI 輔助建置可擴充多租戶的 Design System 展示平台",
         "description": "為多設計系統的產品架構，預先建立元件管理基礎，並重新設計交易下單流程 -- 讓 DEX 也能擁有 CEX 級別的交易流暢度。"
       },
       "prediction-market": {
@@ -1104,7 +1104,7 @@
     "moreDesignWork": "More Web & Graphic Designs",
     "cards": {
       "exora": {
-        "title": "以 AI 輔助建置可擴充 Storybook",
+        "title": "以 AI 輔助建置可擴充多租戶的 Design System 展示平台",
         "description": "為多設計系統的產品架構，預先建立元件管理基礎，並重新設計交易下單流程 -- 讓 DEX 也能擁有 CEX 級別的交易流暢度。"
       },
       "prediction-market": {
