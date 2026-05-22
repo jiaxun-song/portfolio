@@ -7,6 +7,7 @@ import AnimatedBackground from '@/components/layout/AnimatedBackground';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/CustomCursor';
+import { Analytics } from '@vercel/analytics/next';
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
@@ -78,6 +79,7 @@ export default async function LocaleLayout({
           <main className="relative z-10">{children}</main>
           <Footer />
         </NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );
