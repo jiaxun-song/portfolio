@@ -1329,7 +1329,7 @@ export default function BookingAppClient() {
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-6">
         <SectionLabel label="09 — Reflection" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          如果重做一次，我會把「驗證」往前放
+          如果還有機會，下次會把「驗證」往前放
         </h2>
         <div className="glass-medium rounded-2xl p-8 md:p-10">
           <p className="mb-5 text-[18px] leading-[1.7] text-text-secondary">
