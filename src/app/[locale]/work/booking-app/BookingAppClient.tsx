@@ -1335,21 +1335,24 @@ export default function BookingAppClient() {
           <p className="mb-5 text-[18px] leading-[1.7] text-text-secondary">
             這個專案讓我完整經歷了一次雙邊產品從 0 到交付的設計。最大的收穫，是「從前台反推後台系統」這套方法——它後來成為我處理任何前後台一併設計時的思路。
           </p>
-          <p className="mb-5 text-[18px] leading-[1.7] text-text-secondary">
-            但如果重來一次，有兩件事我會做得不同。
+          <p className="mb-7 text-[18px] leading-[1.7] text-text-secondary">
+            但若重來一次，有兩件事會選擇做得不同。
           </p>
-          <p className="mb-5 text-[18px] leading-[1.7] text-text-secondary">
-            <span className="font-semibold text-text-primary">我會把市場驗證往前放。</span>
-            這次的需求主要來自客戶的市場觀察，我沒有對台灣既有的同類嘗試做足夠的研究。若能更早釐清「這個模式過去為什麼沒做大」，設計就能更早針對真實風險——例如雙邊平台最難的商家冷啟動——做出回應，而不只是把功能做對。
+          <p className="mb-3 font-[var(--font-display)] text-lg font-semibold text-text-primary md:text-xl">
+            「把市場驗證往前放」
           </p>
-          <p className="mb-5 text-[18px] leading-[1.7] text-text-secondary">
-            <span className="font-semibold text-text-primary">我會為設計成果埋下可被衡量的指標。</span>
+          <p className="mb-7 text-[18px] leading-[1.7] text-text-secondary">
+            這次的需求主要來自客戶的市場觀察，我沒有對台灣既有的同類嘗試做足夠的研究。若能更早釐清「這個模式過去為什麼沒做大」，設計便能更早針對真實風險——例如雙邊平台最難的商家冷啟動——做出回應，而不只是把功能做對。
+          </p>
+          <p className="mb-3 font-[var(--font-display)] text-lg font-semibold text-text-primary md:text-xl">
+            「為設計成果埋下可被衡量的指標」
+          </p>
+          <p className="mb-7 text-[18px] leading-[1.7] text-text-secondary">
             這次的交付以「完整、可交付工程」為終點，缺少上線後的數據回饋。未來我會在設計階段就與客戶定義成功指標（例如預約完成率、商家上架課程的耗時），讓設計的價值能被驗證，而不只是被交付。
           </p>
           <p className="text-[18px] leading-[1.7] text-text-secondary">
-            設計師在 0~1 專案裡最有價值的貢獻，往往不是把介面做漂亮，而是
-            <span className="text-accent">在資訊不完整時，仍能把一個模糊的願景，拆解成一套彼此咬合、可被執行的系統。</span>
-            這個專案，是我這個能力的起點。
+            在 0~1 專案裡最有價值的經歷，往往不是把介面做漂亮，而是在資訊不完整時，仍能把一個模糊的願景，拆解成一套彼此咬合、可被執行的系統。這個專案，
+            <span className="text-accent">讓我對於前後台功能整合設計更為有經驗。</span>
           </p>
         </div>
       </ScrollReveal>
