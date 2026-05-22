@@ -412,7 +412,7 @@
         "metric1Value": "6→3",
         "metric1Label": "Six-layer fund architecture / abstracted to three user states",
         "metric2Value": "20+",
-        "metric2Label": "Core DS components / three major module coverage",
+        "metric2Label": "Core DS components / covering Markets · Trade · Portfolio modules",
         "tableTitle": "Trading Experience",
         "tableHeaders": [
           "Metric",
@@ -848,7 +848,7 @@
       },
       "play-to-earn": {
         "title": "Play to Earn GameFi",
-        "description": "Click-to-earn chicken game — a fun P2E GameFi experience"
+        "description": "Starting from an 8-page whitepaper, built the visual language, UX flow, and player onboarding narrative for a Web3 Telegram mini-game in 2.5 weeks."
       },
       "ai-learning": {
         "title": "AI Course Learning Platform",
@@ -859,8 +859,8 @@
         "description": "Won SBIR government grant — helped client secure software development funding"
       },
       "booking-app": {
-        "title": "Course Booking APP",
-        "description": "One app to easily book various courses — APP + Web + full dashboard system design"
+        "title": "Bilateral System Design — From 2C Booking App to 2B Merchant Dashboard",
+        "description": "Solo-designed 2C booking app, dual landing pages, and 2B merchant dashboard\nReverse-engineered the backend system from front-end user moments"
       },
       "ecommerce-mlm": {
         "title": "E-Commerce & MLM Dashboard",

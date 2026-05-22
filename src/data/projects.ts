@@ -52,7 +52,7 @@ export const allProjects: Project[] = [
     id: 'booking-app',
     tags: ['APP', 'Web', 'Dashboard', 'Brand Design'],
     image: '/images/projects/Buddy Cover.jpg',
-    link: '',
+    link: '/work/booking-app',
   },
   {
     id: 'dating-pwa',

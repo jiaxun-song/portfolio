@@ -5,10 +5,12 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import gsap from 'gsap';
 
+const isVideo = (src: string) => /\.(webm|mp4|mov)$/i.test(src);
+
 const skills = [
   {
     key: 'brand',
-    image: '/images/skills/brand-visual-design.png',
+    image: '/images/What I Do/Brand.png',
     tags: [
       { key: 'visualDesign' },
       { key: 'marketing' },
@@ -17,7 +19,7 @@ const skills = [
   },
   {
     key: 'research',
-    image: '/images/skills/research-ux.png',
+    image: '/images/What I Do/Research.png',
     tags: [
       { key: 'ux' },
       { key: 'strategy' },
@@ -26,7 +28,7 @@ const skills = [
   },
   {
     key: 'animation',
-    image: '/images/skills/anim-ae.gif',
+    image: '/images/What I Do/Klyne 2.webm',
     tags: [
       { key: 'ae' },
       { key: 'rotato' },
@@ -35,7 +37,7 @@ const skills = [
   },
   {
     key: 'dev',
-    image: '/images/skills/dev-html.png',
+    image: '/images/What I Do/DEV.png',
     tags: [
       { key: 'htmlCssJs' },
       { key: 'aiDev' },
@@ -155,17 +157,28 @@ export default function WhatIDo() {
                   </div>
                 </div>
 
-                {/* Mobile: show image inline (temporarily hidden) */}
-                {false && isHovered && (
+                {/* Mobile: show image/video inline */}
+                {isHovered && (
                   <div className="md:hidden overflow-hidden pb-4">
                     <div className="relative w-full rounded-2xl overflow-hidden border border-white/[0.08]" style={{ maxHeight: 300 }}>
-                      <Image
-                        src={skill.image}
-                        alt={t(`skills.${skill.key}.title`)}
-                        width={800}
-                        height={300}
-                        className="w-full object-cover"
-                      />
+                      {isVideo(skill.image) ? (
+                        <video
+                          src={skill.image}
+                          autoPlay
+                          loop
+                          muted
+                          playsInline
+                          className="w-full object-cover"
+                        />
+                      ) : (
+                        <Image
+                          src={skill.image}
+                          alt={t(`skills.${skill.key}.title`)}
+                          width={800}
+                          height={300}
+                          className="w-full object-cover object-left-top"
+                        />
+                      )}
                     </div>
                   </div>
                 )}
@@ -173,10 +186,10 @@ export default function WhatIDo() {
             );
           })}
 
-          {/* Floating thumbnail that follows cursor (desktop only) — temporarily hidden */}
+          {/* Floating thumbnail that follows cursor (desktop only) */}
           <div
             ref={thumbRef}
-            className="hidden pointer-events-none absolute top-0 left-0 z-10 w-[400px] h-[250px] rounded-2xl overflow-hidden border border-white/[0.08]"
+            className="pointer-events-none absolute top-0 left-0 z-10 w-[400px] h-[250px] rounded-2xl overflow-hidden border border-white/[0.08]"
             style={{ willChange: 'transform' }}
           >
             {skills.map((skill, index) => (
@@ -185,13 +198,24 @@ export default function WhatIDo() {
                 className="absolute inset-0 transition-opacity duration-300"
                 style={{ opacity: activeIndex === index ? 1 : 0 }}
               >
-                <Image
-                  src={skill.image}
-                  alt={t(`skills.${skill.key}.title`)}
-                  fill
-                  className="object-cover"
-                  sizes="400px"
-                />
+                {isVideo(skill.image) ? (
+                  <video
+                    src={skill.image}
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="absolute inset-0 h-full w-full object-cover"
+                  />
+                ) : (
+                  <Image
+                    src={skill.image}
+                    alt={t(`skills.${skill.key}.title`)}
+                    fill
+                    className="object-cover object-left-top"
+                    sizes="400px"
+                  />
+                )}
               </div>
             ))}
           </div>

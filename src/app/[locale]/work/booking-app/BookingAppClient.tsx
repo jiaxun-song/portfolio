@@ -1,10 +1,13 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslations } from 'next-intl';
+import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionLabel from '@/components/ui/SectionLabel';
+import VideoEmbed from '@/components/ui/VideoEmbed';
 import { visibleProjects } from '@/data/projects';
 
 const CURRENT_ID = 'booking-app';
@@ -14,7 +17,7 @@ const nextProject = visibleProjects[(currentIdx + 1) % visibleProjects.length];
 
 const metaItems = [
   { label: '擔任角色', value: 'UI/UX Designer（一人設計，App & Web）' },
-  { label: '專案範疇', value: 'Product Planning · UX · 2B Backend System' },
+  { label: '專案範疇', value: 'Product Planning · UX · UI & Branding ·  2B Backend System' },
   { label: '產出平台', value: 'App · Web · Admin Backend' },
 ];
 
@@ -22,7 +25,7 @@ const summaryTags = ['0→1 產品', '雙邊平台', '資訊架構', '2B 後台�
 
 const dualChallengeCards = [
   {
-    layer: 'LAYER 01',
+    layer: '2C 端',
     title: '簡單到「值得換掉現有習慣」',
     body: '使用者已經習慣了 LINE 預約。要讓他換過來，新體驗不能只是「也能用」，而要明顯更省事——一個地方看完所有選擇、一個流程完成預約。這一層有清楚的設計方向。',
     accent: 'rgb(125, 211, 252)',
@@ -30,12 +33,35 @@ const dualChallengeCards = [
     border: 'rgba(56, 189, 248, 0.22)',
   },
   {
-    layer: 'LAYER 02',
+    layer: '2B 端',
     title: '完整到「商家願意把營運交出來」',
-    body: '商家後台面向的，是沒有設計師協助、要自己上架與管理課程的場館老闆。它必須涵蓋商家營運的完整工作流，且邏輯要對得起前台的每一個欄位。在沒有 PM 規格的情況下，這一整套系統需要被獨立推導出來——這是這個專案真正困難、也最值得說的部分。',
+    body: '商家後台面向的，是要自己上架與管理課程的場館老闆。它必須涵蓋商家營運的完整工作流，且邏輯要對得起前台的每一個欄位。在沒有 PM 規格的情況下，這一整套系統需要被獨立推導出來並設計落地。',
     accent: 'var(--color-accent)',
     tint: 'rgba(0, 229, 208, 0.14)',
     border: 'rgba(0, 229, 208, 0.32)',
+  },
+];
+
+const asymmetryRows: Array<{ label: string; consumer: string; merchant: string }> = [
+  {
+    label: '成敗判準',
+    consumer: '能不能比現有的 LINE 流程更省事',
+    merchant: '能不能取代商家現在用的 Excel 與訊息對帳',
+  },
+  {
+    label: '主要範圍',
+    consumer: '3 個核心畫面：探索 ／ 預約 ／ 完成',
+    merchant: '8＋ 個營運模組：課程・課表・場館・教練・訂單・取消改期・評價・報表',
+  },
+  {
+    label: '衡量單位',
+    consumer: '用戶體驗順暢速度',
+    merchant: '工作流完整度（前台每個欄位都有後台來源）',
+  },
+  {
+    label: '失敗的樣子',
+    consumer: '多按一次、多想一步 → 退回去用 LINE',
+    merchant: '少一個欄位、少一個動作 → 退回去用 Excel 對帳',
   },
 ];
 
@@ -60,18 +86,26 @@ const designProcess = [
 
 const appDecisionCards = [
   {
-    title: '首屏以「附近 × 時段」組織課程',
-    body: '使用者打開 App 的真實情境是「我等等有空，附近有什麼能上」，而不是「我想逛某家店」。因此首屏以地點與時段為主軸組織課程，而非場館品牌——這樣 App 才真正取代了「分別查三家課表」的麻煩。',
+    stage: '01 — 探索 ／ Discovery',
+    moment: '「我等等有空，附近有什麼能上」',
+    title: '搜尋探索頁以「附近」組織課程',
+    body: '使用者打開 App 的真實情境是「我等等有空，附近有什麼能上」，因此搜尋探索頁以地點與分類為主軸組織課程。',
   },
   {
+    stage: '02 — 瀏覽 ／ Browse',
+    moment: '「這堂課值不值得點進去？」',
     title: '課程卡片只放「決策所需」的資訊',
-    body: '卡片能塞下教練、難度、評價、名額、價格，但過載會拖慢瀏覽。以「使用者在這一步要做的決定」為標準篩選：列表階段他要決定的是「值不值得點進去」，卡片因此只保留課名、時間、地點、價格、剩餘名額；其餘留到詳情頁。',
+    body: '卡片以「用戶值不值得點進去」為標準篩選，因此只保留課名、課程時長、地點、評分數；其餘留到詳情頁。',
   },
   {
+    stage: '03 — 預約 ／ Booking',
+    moment: '「等等，我以為可以取消？」',
     title: '取消政策前置到「確認預約」之前',
     body: '課程預約類產品最大的客訴來源是「我以為可以取消」。把取消與改期規則放在確認預約這一步之前，而不是藏進條款頁，讓使用者在付出成本前就理解規則。',
   },
   {
+    stage: '04 — 系統 ／ System',
+    moment: '「前台每一個欄位，背後都是一個設計決定」',
     title: 'App 後台與 2C 同步設計',
     body: '2C App 的每一個動態欄位，背後都需要一個輸入來源。App 後台與前台同步規劃，確保前台呈現與後台維護一致——這也銜接到下一段的後台系統設計。',
   },
@@ -92,7 +126,7 @@ const webDualCards = [
     tag: '2B 形象網頁',
     pitch: '賣「生意」',
     audience: '考慮進駐的場館商家',
-    points: ['平台曝光效益', '後台管理的省力', '進駐門檻'],
+    points: ['平台曝光效益', '後台管理的省力', '進駐申請'],
     cta: '聯絡進駐 / 申請開店',
     accent: 'rgb(251, 191, 36)',
     tint: 'rgba(251, 191, 36, 0.14)',
@@ -136,8 +170,6 @@ const fieldMappingRows: Array<[string, string]> = [
 const scopeMetrics = [
   { value: '5', label: '介面產出', sub: 'App · App 後台 · 2C 網頁 · 2B 網頁 · 2B 後台' },
   { value: '2', label: '雙邊系統', sub: '2C 使用者端 ＋ 2B 商家端' },
-  { value: '3', label: '個月', sub: '從 0 到交付工程師' },
-  { value: '1', label: '人', sub: '獨立完成全流程設計' },
 ];
 
 const beforeAfterRows: Array<[string, string, string]> = [
@@ -150,7 +182,7 @@ const beforeAfterRows: Array<[string, string, string]> = [
 
 const systemAxisRows: Array<{ consumer: string; dataLabel: string; merchant: string }> = [
   {
-    consumer: '在首屏依「附近 × 時段」探索可上的課',
+    consumer: '在搜尋探索頁依地點「附近」探索可上的課',
     dataLabel: '課程列表',
     merchant: '在後台建立、上下架課程',
   },
@@ -181,22 +213,13 @@ const systemAxisRows: Array<{ consumer: string; dataLabel: string; merchant: str
   },
 ];
 
-function ImagePlaceholder({ label, ratio = '16/9' }: { label: string; ratio?: string }) {
-  return (
-    <div
-      className="relative flex w-full items-center justify-center overflow-hidden rounded-2xl border border-dashed border-accent/20 bg-gradient-to-br from-accent/[0.08] via-white/[0.025] to-accent/[0.05]"
-      style={{ aspectRatio: ratio }}
-    >
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,229,208,0.12),transparent_42%)]" />
-      <p className="relative px-6 text-center font-[var(--font-mono)] text-[12px] uppercase tracking-[1.6px] text-text-muted">
-        Image Slot — {label}
-      </p>
-    </div>
-  );
-}
-
 export default function BookingAppClient() {
   const tp = useTranslations('projectsPage');
+  const [decisionIdx, setDecisionIdx] = useState(0);
+  const decision = appDecisionCards[decisionIdx];
+  const goPrev = () =>
+    setDecisionIdx((i) => (i - 1 + appDecisionCards.length) % appDecisionCards.length);
+  const goNext = () => setDecisionIdx((i) => (i + 1) % appDecisionCards.length);
 
   return (
     <>
@@ -225,18 +248,17 @@ export default function BookingAppClient() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          <div className="h-full w-full bg-[radial-gradient(circle_at_75%_25%,rgba(56,189,248,0.18),transparent_36%),radial-gradient(circle_at_22%_60%,rgba(0,229,208,0.22),transparent_38%),linear-gradient(135deg,#111111_0%,#0A0A0A_55%,#0B1418_100%)]" />
+          <Image
+            src="/images/projects/booking-app/Buddy Hero.jpg"
+            alt="Buddy — 課程預約平台 Hero"
+            fill
+            className="object-cover"
+            sizes="100vw"
+            priority
+          />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/25 to-transparent" />
         <div className="relative z-10 mx-auto w-full max-w-[var(--cs-wide-max-width)]">
-          <motion.span
-            className="mb-4 block font-[var(--font-mono)] text-[14px] uppercase tracking-[3px] text-accent"
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
-          >
-            Case Study — 2024
-          </motion.span>
           <motion.h1
             className="mb-3 max-w-4xl font-[var(--font-display)] text-[32px] font-bold leading-[1.18] text-text-primary md:text-[52px]"
             initial={{ opacity: 0, y: 40 }}
@@ -251,13 +273,13 @@ export default function BookingAppClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            一個人，三個月，把「想做台灣版 ClassPass」的模糊命題，收斂成一套 2C 預約 App 與 2B 商家管理後台咬合運作的雙邊系統。
+            把客戶「想做台灣版 ClassPass」的模糊命題，收斂成一套 2C 預約 App 與 2B 商家管理後台咬合運作的雙邊系統。
           </motion.p>
         </div>
       </section>
 
       {/* Metadata Bar */}
-      <ScrollReveal className="mx-auto mt-20 max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
+      <ScrollReveal className="mx-auto mt-20 max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-6">
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {metaItems.map((item) => (
             <div
@@ -283,7 +305,7 @@ export default function BookingAppClient() {
             把一個模糊的市場願景，收斂成一套雙邊產品的完整設計藍圖。
           </h2>
           <p className="mb-8 text-[16px] leading-[1.7] text-text-secondary">
-            這是一個對標 ClassPass 模式的台灣課程預約平台。核心設計任務是處理「雙邊產品」的本質挑戰——2C 使用者端要簡單到值得讓人換掉現有習慣，2B 商家後台要完整到讓商家願意託付營運。在沒有現成產品規格的情況下，獨立完成功能規劃、資訊架構、2C App 與形象網頁設計，並
+            這是一個對標 ClassPass 模式的台灣課程預約平台。核心設計任務是處理「雙邊產品」的本質挑戰——面對 2C 使用者要換掉舊習慣的門檻很高，產品體驗必須低到值得跨過，2B 商家後台要完整到讓商家願意託付營運。在沒有現成產品規格的情況下，獨立完成功能規劃、資訊架構、2C App 與形象網頁設計，並
             <span className="text-accent">從前台介面反推、設計出整套 2B 商家管理後台</span>。
           </p>
           <div className="mb-6 border-t border-white/[0.08]" />
@@ -314,10 +336,10 @@ export default function BookingAppClient() {
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <SectionLabel label="01 — 專案背景" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          台灣的課程預約，還停在「一間一個 LINE」的時代
+          想上三堂不同的課，要先加三個官方 LINE
         </h2>
         <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
-          在國外，課程聚合平台用一個 App 就能串起上千家場館；但這個模式始終沒有真正服務台灣的使用者。客戶看見了這個缺口——這次他想為台灣再做一次。
+          在國外，課程聚合平台用一個 App 就能串起上千家場館；但這個模式始終沒有真正服務台灣的使用者，而客戶看見了這個缺口與其潛力。
         </p>
       </ScrollReveal>
 
@@ -330,7 +352,7 @@ export default function BookingAppClient() {
             分散在各處的預約體驗
           </h3>
           <p className="text-[16px] leading-[1.7] text-text-secondary">
-            想上一堂瑜珈、一堂拳擊、一堂壺鈴，在台灣你得分別加三個官方 LINE、記三套預約規則、看三種課表格式。沒有一個地方能讓你「一次看完附近所有能上的課」——課程選擇的成本，被完全推給了使用者。
+            想上一堂瑜珈、一堂拳擊、一堂壺鈴，在台灣需要分別加三個官方 LINE、記三套預約規則、看三種課表格式。沒有一個地方能讓用戶「一次看完附近所有能上的課」——課程選擇的成本，被間接推給了使用者。
           </p>
         </div>
       </ScrollReveal>
@@ -461,14 +483,6 @@ export default function BookingAppClient() {
             </div>
           ))}
 
-          <div className="border-t border-white/[0.08] bg-white/[0.02] px-6 py-5 md:px-8">
-            <p className="text-[14px] leading-[1.7] text-text-secondary">
-              <span className="font-[var(--font-mono)] text-[11px] uppercase tracking-[2px] text-accent">
-                Reading the diagram ／{' '}
-              </span>
-              從中間欄位往左讀，是 2C 使用者怎麼看見這份資料；往右讀，是 2B 商家如何在後台維護它。任何一個資料節點若兩端理解不一致，整個雙邊系統就會在那一點失衡。
-            </p>
-          </div>
         </div>
       </ScrollReveal>
 
@@ -494,7 +508,7 @@ export default function BookingAppClient() {
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <SectionLabel label="02 — 競品與市場機會" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          缺口存在，但前人來過
+          缺口存在，挑戰者也一直有
         </h2>
         <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
           定位這個平台的市場處境，需要同時看見兩件事：國際品牌的缺席，以及本地前人的足跡。
@@ -562,15 +576,35 @@ export default function BookingAppClient() {
         </div>
       </ScrollReveal>
 
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
+      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <div className="glass-medium rounded-2xl border-l-[3px] border-l-accent p-6 md:p-8">
           <h3 className="mb-3 font-[var(--font-display)] text-lg font-semibold text-text-primary">
             需求真實，但模式不易做大
           </h3>
           <p className="text-[16px] leading-[1.7] text-text-secondary">
-            國際課程聚合平台（如 ClassPass）服務涵蓋全球數千座城市，卻始終未進入台灣市場。而早在 2014 年，台灣就出現過受其啟發的本地嘗試（如 17Fit、KFit），它們驗證了需求真實存在，卻都沒有長成足夠大的平台。這個專案的處境因此很明確：
-            <span className="text-accent">市場有真空，但也有前車之鑑。</span>
+            國際課程聚合平台（如 ClassPass）服務涵蓋全球數千座城市，卻始終未進入台灣市場。而早在 2014 年，台灣就出現過受其啟發的本地嘗試（如 17Fit、KFit），它們驗證了需求真實存在，卻都沒有長成足夠大的平台。
           </p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-8">
+          <Image
+            src="/images/projects/booking-app/Image Slot — 視覺呈現 01.png"
+            alt="視覺呈現 01"
+            width={1682}
+            height={1670}
+            className="h-auto w-full rounded-2xl"
+            sizes="(min-width: 768px) 40vw, 90vw"
+          />
+          <Image
+            src="/images/projects/booking-app/Image Slot — 視覺呈現 02.png"
+            alt="視覺呈現 02"
+            width={1226}
+            height={1214}
+            className="h-auto w-full rounded-2xl"
+            sizes="(min-width: 768px) 40vw, 90vw"
+          />
         </div>
       </ScrollReveal>
 
@@ -581,7 +615,7 @@ export default function BookingAppClient() {
           一個雙邊系統，兩種要被說服的人
         </h2>
         <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
-          雙邊平台最常見的設計錯誤，是用同一套思路面對兩種人。但使用者與商家要的東西幾乎相反——這個專案存在兩個性質不同的設計挑戰。
+          雙邊平台最常見的設計錯誤，是用同一套思路面對兩種人。此專案存在兩個性質不同的設計挑戰。
         </p>
       </ScrollReveal>
 
@@ -623,7 +657,103 @@ export default function BookingAppClient() {
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
-        <ImagePlaceholder label="雙邊產品的不對稱挑戰（2C 簡單 / 2B 完整）" ratio="16/9" />
+        <div className="glass-medium overflow-hidden rounded-2xl border border-white/[0.08]">
+          {/* Header */}
+          <div className="border-b border-white/[0.08] px-6 py-6 md:px-8 md:py-7">
+            <p className="mb-2 font-[var(--font-mono)] text-[11px] uppercase tracking-[2px] text-accent">
+              Asymmetric Challenge ／ 設計重量對照
+            </p>
+            <h3 className="mb-3 font-[var(--font-display)] text-xl font-semibold text-text-primary md:text-[22px]">
+              同一個產品，兩端的設計取捨幾乎相反
+            </h3>
+            <p className="text-[15px] leading-[1.7] text-text-secondary">
+              上面兩張卡描述了兩種挑戰的性質——這張表把它變成可量化的對比，讓「不對稱」這件事被看見。
+            </p>
+          </div>
+
+          {/* Column headers */}
+          <div className="grid grid-cols-1 border-b border-white/[0.08] md:grid-cols-12">
+            <div className="hidden md:col-span-2 md:block md:border-r md:border-white/[0.05]" />
+            <div
+              className="border-b border-white/[0.06] px-5 py-5 md:col-span-5 md:border-b-0 md:border-r md:border-white/[0.05]"
+              style={{ background: 'rgba(56, 189, 248, 0.05)' }}
+            >
+              <div className="flex items-center gap-2">
+                <span
+                  className="inline-flex h-2 w-2 rounded-full"
+                  style={{ background: 'rgb(125, 211, 252)' }}
+                />
+                <p
+                  className="font-[var(--font-mono)] text-[11px] uppercase tracking-[1.8px]"
+                  style={{ color: 'rgb(125, 211, 252)' }}
+                >
+                  2C App
+                </p>
+              </div>
+              <p className="mt-2 font-[var(--font-display)] text-base font-semibold text-text-primary md:text-[17px]">
+                設計取向：減法
+              </p>
+              <p className="mt-1 text-[13px] leading-[1.6] text-text-muted">
+                拿掉所有不必要的，留下決策最短路徑
+              </p>
+            </div>
+            <div
+              className="px-5 py-5 md:col-span-5"
+              style={{ background: 'rgba(0, 229, 208, 0.05)' }}
+            >
+              <div className="flex items-center gap-2">
+                <span className="inline-flex h-2 w-2 rounded-full bg-accent" />
+                <p className="font-[var(--font-mono)] text-[11px] uppercase tracking-[1.8px] text-accent">
+                  2B 後台
+                </p>
+              </div>
+              <p className="mt-2 font-[var(--font-display)] text-base font-semibold text-text-primary md:text-[17px]">
+                設計取向：加法
+              </p>
+              <p className="mt-1 text-[13px] leading-[1.6] text-text-muted">
+                補齊所有必要的，撐起完整的營運流程
+              </p>
+            </div>
+          </div>
+
+          {/* Comparison rows */}
+          {asymmetryRows.map((row, i) => (
+            <div
+              key={row.label}
+              className={`grid grid-cols-1 md:grid-cols-12 ${
+                i < asymmetryRows.length - 1 ? 'border-b border-white/[0.05]' : ''
+              }`}
+            >
+              <div className="flex items-center px-5 py-4 md:col-span-2 md:border-r md:border-white/[0.05]">
+                <p className="font-[var(--font-mono)] text-[11px] uppercase tracking-[1.6px] text-text-muted">
+                  {row.label}
+                </p>
+              </div>
+              <div
+                className="border-b border-white/[0.05] px-5 py-4 text-[14px] leading-[1.7] text-text-secondary md:col-span-5 md:border-b-0 md:border-r md:border-white/[0.05] md:text-[15px]"
+                style={{ background: 'rgba(56, 189, 248, 0.03)' }}
+              >
+                {row.consumer}
+              </div>
+              <div
+                className="px-5 py-4 text-[14px] leading-[1.7] text-text-secondary md:col-span-5 md:text-[15px]"
+                style={{ background: 'rgba(0, 229, 208, 0.03)' }}
+              >
+                {row.merchant}
+              </div>
+            </div>
+          ))}
+
+          {/* Reading caption */}
+          <div className="border-t border-white/[0.08] bg-white/[0.02] px-6 py-5 md:px-8">
+            <p className="text-[14px] leading-[1.7] text-text-secondary">
+              <span className="font-[var(--font-mono)] text-[11px] uppercase tracking-[2px] text-accent">
+                Reading the table ／{' '}
+              </span>
+              2C 那一欄越短越好，2B 那一欄越完整越好：同一個產品，兩端的「做好」是兩件相反的事。
+            </p>
+          </div>
+        </div>
       </ScrollReveal>
 
       {/* 04 — 0~1 設計流程 */}
@@ -662,7 +792,7 @@ export default function BookingAppClient() {
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
-        <ImagePlaceholder label="0~1 四階段流程圖" ratio="16/9" />
+        <VideoEmbed videoId="UMYxOdTFVP4" width="wide" padded={false} />
       </ScrollReveal>
 
       {/* 05 — 設計產出：2C App */}
@@ -672,18 +802,25 @@ export default function BookingAppClient() {
           App UI &amp; UX
         </h2>
         <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
-          2C App 的設計目標只有一個——讓「找課、預約」這件事，比現有的 LINE 流程明顯更省事。
+          2C App 的設計目標只有一個——讓「找課、預約」這件事，比現有「自己 Google 找課、加官方 LINE 預約」的流程明顯更省事。
         </p>
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
-        <ImagePlaceholder label="2C App 主要流程長圖（探索 → 預約 → 完成）" ratio="16/9" />
+        <Image
+          src="/images/projects/booking-app/Image Slot — 2C App 主要流程長圖（探索 → 預約 → 完成）.png"
+          alt="2C App 主要流程長圖：探索 → 預約 → 完成"
+          width={2400}
+          height={1175}
+          className="h-auto w-full rounded-2xl"
+          sizes="(min-width: 768px) 80vw, 100vw"
+        />
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <SectionLabel label="關鍵設計決策" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          雙邊產品的每一個取捨，都要對得起兩端
+          跟著使用者走進 App 的每一個瞬間
         </h2>
         <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
           以下是這個專案中幾個關鍵的介面設計判斷。
@@ -691,34 +828,138 @@ export default function BookingAppClient() {
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {appDecisionCards.map((card) => (
-            <div
-              key={card.title}
-              className="glass-medium rounded-2xl border-l-[3px] border-l-accent p-6 md:p-8"
-            >
-              <h3 className="mb-3 font-[var(--font-display)] text-lg font-semibold text-text-primary">
-                {card.title}
-              </h3>
-              <p className="text-[16px] leading-[1.75] text-text-secondary">{card.body}</p>
+        <div className="glass-medium relative overflow-hidden rounded-2xl border border-white/[0.08] p-6 md:p-8">
+          {/* Top accent hairline */}
+          <div className="pointer-events-none absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
+
+          {/* Subtle background blob */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-accent/[0.06] blur-3xl"
+          />
+
+          <div className="relative">
+            {/* Header: stage marker + nav controls */}
+            <div className="mb-5 flex items-center justify-between gap-4">
+              <AnimatePresence mode="wait">
+                <motion.span
+                  key={`stage-${decisionIdx}`}
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  transition={{ duration: 0.25 }}
+                  className="font-[var(--font-mono)] text-[12px] uppercase tracking-[2.5px] text-accent"
+                >
+                  {decision.stage}
+                </motion.span>
+              </AnimatePresence>
+
+              <div className="flex items-center gap-3">
+                <span className="font-[var(--font-mono)] text-[12px] tracking-[1.6px] text-text-muted">
+                  {String(decisionIdx + 1).padStart(2, '0')}{' '}
+                  <span className="text-text-muted/40">/</span>{' '}
+                  {String(appDecisionCards.length).padStart(2, '0')}
+                </span>
+                <div className="flex items-center gap-2">
+                  <button
+                    type="button"
+                    onClick={goPrev}
+                    aria-label="上一個設計決策"
+                    className="group flex h-9 w-9 items-center justify-center rounded-full border border-accent/25 bg-accent/5 transition-all hover:border-accent/50 hover:bg-accent/10"
+                  >
+                    <i className="ri-arrow-left-line text-accent transition-transform group-hover:-translate-x-0.5" />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={goNext}
+                    aria-label="下一個設計決策"
+                    className="group flex h-9 w-9 items-center justify-center rounded-full border border-accent/25 bg-accent/5 transition-all hover:border-accent/50 hover:bg-accent/10"
+                  >
+                    <i className="ri-arrow-right-line text-accent transition-transform group-hover:translate-x-0.5" />
+                  </button>
+                </div>
+              </div>
             </div>
-          ))}
+
+            {/* Divider between header and content */}
+            <div className="mb-6 h-px w-full bg-gradient-to-r from-accent/20 via-white/[0.06] to-transparent" />
+
+            {/* Chapter content — animated transition between decisions */}
+            <div className="min-h-[160px] md:min-h-[130px]">
+              <AnimatePresence mode="wait">
+                <motion.div
+                  key={decisionIdx}
+                  initial={{ opacity: 0, x: 24 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -24 }}
+                  transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                  className="grid grid-cols-1 gap-7 md:grid-cols-12 md:gap-10"
+                >
+                  <div className="md:col-span-5">
+                    <p className="font-[var(--font-display)] text-xl font-semibold leading-[1.45] text-text-primary md:text-[26px]">
+                      {decision.moment}
+                    </p>
+                  </div>
+                  <div className="md:col-span-7 md:border-l md:border-white/[0.10] md:pl-10">
+                    <h3 className="mb-4 font-[var(--font-display)] text-base font-semibold leading-tight text-text-primary md:text-lg">
+                      {decision.title}
+                    </h3>
+                    <p className="text-[15px] leading-[1.75] text-text-secondary md:text-[16px]">
+                      {decision.body}
+                    </p>
+                  </div>
+                </motion.div>
+              </AnimatePresence>
+            </div>
+
+            {/* Progress indicators — pill style */}
+            <div className="mt-6 flex items-center justify-center gap-2">
+              {appDecisionCards.map((card, i) => (
+                <button
+                  key={card.title}
+                  type="button"
+                  onClick={() => setDecisionIdx(i)}
+                  aria-label={`切換到第 ${i + 1} 章 ／ ${card.stage}`}
+                  aria-current={i === decisionIdx ? 'true' : 'false'}
+                  className={`h-1.5 rounded-full transition-all duration-300 ${
+                    i === decisionIdx
+                      ? 'w-10 bg-accent'
+                      : 'w-4 bg-text-muted/30 hover:bg-text-muted/50'
+                  }`}
+                />
+              ))}
+            </div>
+          </div>
         </div>
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
-        <ImagePlaceholder label="App 關鍵畫面（帶設計決策標註）" ratio="16/9" />
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-8">
+          <Image
+            src="/images/projects/booking-app/Image Slot — App 關鍵畫面 01 — 帶設計決策標註.png"
+            alt="App 關鍵畫面 01：帶設計決策標註"
+            width={1196}
+            height={5632}
+            className="h-auto w-full rounded-2xl"
+            sizes="(min-width: 768px) 40vw, 90vw"
+          />
+          <Image
+            src="/images/projects/booking-app/Image Slot — App 畫面 02.png"
+            alt="App 畫面 02"
+            width={1200}
+            height={5632}
+            className="h-auto w-full rounded-2xl"
+            sizes="(min-width: 768px) 40vw, 90vw"
+          />
+        </div>
       </ScrollReveal>
 
       {/* 06 — 形象網頁分流 */}
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <SectionLabel label="06 — 形象網頁" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          同一個平台，兩種完全不同的說服
+          面對 2C &amp; 2B 的形象網頁設計
         </h2>
-        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
-          雙邊平台常見的錯誤，是用同一套形象網頁面對兩種人。但使用者與商家要的東西完全相反——兩者的訴求、內容結構與 CTA 都不該一樣。
-        </p>
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
@@ -783,14 +1024,31 @@ export default function BookingAppClient() {
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <ImagePlaceholder label="2C 與 2B 形象網頁並排對比" ratio="16/9" />
-      </ScrollReveal>
-
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
         <div className="glass-medium rounded-2xl border-l-[3px] border-l-accent p-6 md:p-8">
           <p className="text-[16px] leading-[1.7] text-text-secondary">
             為兩種使用者設計不同的內容結構與視覺語氣，讓每一頁只專心說服一種人——這是雙邊平台「招募雙邊」這件事，在形象層的落地。
           </p>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 md:items-start md:gap-8">
+          <Image
+            src="/images/projects/booking-app/Image Slot — 2C 形象網頁.png"
+            alt="2C 形象網頁：訴求想找課的使用者，主打課程多樣性、預約簡單、價格彈性"
+            width={1195}
+            height={8021}
+            className="h-auto w-full rounded-2xl"
+            sizes="(min-width: 768px) 40vw, 90vw"
+          />
+          <Image
+            src="/images/projects/booking-app/Image Slot — 2B 形象網頁.png"
+            alt="2B 形象網頁：訴求考慮進駐的場館商家，主打平台曝光效益與後台管理"
+            width={1195}
+            height={8019}
+            className="h-auto w-full rounded-2xl"
+            sizes="(min-width: 768px) 40vw, 90vw"
+          />
         </div>
       </ScrollReveal>
 
@@ -801,50 +1059,132 @@ export default function BookingAppClient() {
           前台使用者看到的每一個資訊，都是後台一個被設計過的輸入決策
         </h2>
         <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
-          2B 後台是一個獨立系統，面向的是「沒有設計師協助、要自己管課程」的場館商家。在沒有現成規格的情況下，這整套後台的內容與結構，是從前台一路反推、自行定義出來的。
+          2B 後台是一個獨立系統，面向的是「要自己管課程」的場館商家。在沒有現成規格的情況下，這整套後台的內容與結構，是從前台一路反推、自行定義出來的。而 2C App 與 2B 後台看似是兩個產品，實際上是同一份資料的一體兩面。以下是把後台從零推導出來的方法。
         </p>
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
-        <ImagePlaceholder label="後台規劃五步驟方法論圖" ratio="16/9" />
-      </ScrollReveal>
-
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <SectionLabel label="規劃方法" />
-        <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          從前台反推一套管理系統的五個步驟
-        </h2>
-        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
-          2C App 與 2B 後台看似是兩個產品，實際上是同一份資料的一體兩面。以下是把後台從零推導出來的方法。
-        </p>
-      </ScrollReveal>
-
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {backendMethodSteps.map((step, idx) => (
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-12 md:gap-5">
+          {/* 01 — Foundation（feature 大卡） */}
+          <div className="group glass-medium relative col-span-1 overflow-hidden rounded-2xl p-7 transition-transform duration-500 hover:-translate-y-1 md:col-span-7 md:p-9">
             <div
-              key={step.title}
-              className="glass-medium relative overflow-hidden rounded-2xl p-6 transition-transform duration-500 hover:-translate-y-1"
+              aria-hidden
+              className="pointer-events-none absolute -right-20 -top-24 h-64 w-64 rounded-full bg-accent/[0.10] blur-3xl"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -bottom-16 -left-16 h-44 w-44 rounded-full bg-sky-400/[0.06] blur-3xl"
+            />
+            <span
+              aria-hidden
+              className="pointer-events-none absolute right-4 top-0 select-none font-[var(--font-mono)] text-[140px] font-bold leading-none text-accent/[0.07] md:text-[180px]"
             >
-              <div className="mb-5 flex items-center gap-3">
-                <span className="font-[var(--font-mono)] text-[36px] font-bold leading-none text-accent/25">
-                  0{idx + 1}
-                </span>
-                <div className="flex-1">
-                  <h3 className="font-[var(--font-display)] text-base font-semibold text-text-primary md:text-lg">
-                    {step.title}
-                  </h3>
-                  <div className="mt-2 h-[2px] w-8 rounded-full bg-accent/40" />
-                </div>
-              </div>
-              <p className="text-[15px] leading-[1.75] text-text-secondary">{step.body}</p>
+              01
+            </span>
+            <div className="relative flex h-full flex-col">
+              <h3 className="mb-4 font-[var(--font-display)] text-xl font-semibold leading-tight text-text-primary md:text-[24px]">
+                {backendMethodSteps[0].title}
+              </h3>
+              <div className="mb-5 h-[2px] w-10 rounded-full bg-accent/50" />
+              <p className="text-[15px] leading-[1.75] text-text-secondary md:text-[16px]">
+                {backendMethodSteps[0].body}
+              </p>
             </div>
-          ))}
+          </div>
+
+          {/* 02 — Structure */}
+          <div className="group glass-medium relative col-span-1 overflow-hidden rounded-2xl p-6 transition-transform duration-500 hover:-translate-y-1 md:col-span-5">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -top-2 right-3 select-none font-[var(--font-mono)] text-[100px] font-bold leading-none text-accent/[0.05]"
+            >
+              02
+            </span>
+            <h3 className="relative mb-3 font-[var(--font-display)] text-base font-semibold leading-tight text-text-primary md:text-lg">
+              {backendMethodSteps[1].title}
+            </h3>
+            <div className="relative mb-3 h-[2px] w-8 rounded-full bg-accent/40" />
+            <p className="relative text-[14px] leading-[1.7] text-text-secondary md:text-[15px]">
+              {backendMethodSteps[1].body}
+            </p>
+          </div>
+
+          {/* 03 — Listing（與 02 鏡像排列） */}
+          <div className="group glass-medium relative col-span-1 overflow-hidden rounded-2xl p-6 transition-transform duration-500 hover:-translate-y-1 md:col-span-5">
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -top-2 right-3 select-none font-[var(--font-mono)] text-[100px] font-bold leading-none text-accent/[0.05]"
+            >
+              03
+            </span>
+            <h3 className="relative mb-3 font-[var(--font-display)] text-base font-semibold leading-tight text-text-primary md:text-lg">
+              {backendMethodSteps[2].title}
+            </h3>
+            <div className="relative mb-3 h-[2px] w-8 rounded-full bg-accent/40" />
+            <p className="relative text-[14px] leading-[1.7] text-text-secondary md:text-[15px]">
+              {backendMethodSteps[2].body}
+            </p>
+          </div>
+
+          {/* 04 — Detail */}
+          <div className="group glass-medium relative col-span-1 overflow-hidden rounded-2xl p-6 transition-transform duration-500 hover:-translate-y-1 md:col-span-7 md:p-8">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -bottom-10 -right-10 h-32 w-32 rounded-full bg-accent/[0.05] blur-3xl"
+            />
+            <span
+              aria-hidden
+              className="pointer-events-none absolute -top-2 right-4 select-none font-[var(--font-mono)] text-[110px] font-bold leading-none text-accent/[0.06] md:text-[120px]"
+            >
+              04
+            </span>
+            <h3 className="relative mb-3 font-[var(--font-display)] text-base font-semibold leading-tight text-text-primary md:text-lg">
+              {backendMethodSteps[3].title}
+            </h3>
+            <div className="relative mb-3 h-[2px] w-8 rounded-full bg-accent/40" />
+            <p className="relative text-[14px] leading-[1.7] text-text-secondary md:text-[15px]">
+              {backendMethodSteps[3].body}
+            </p>
+          </div>
+
+          {/* 05 — Closing Check（accent feature 全寬卡） */}
+          <div
+            className="group relative col-span-1 overflow-hidden rounded-2xl p-7 transition-transform duration-500 hover:-translate-y-1 md:col-span-12 md:p-9"
+            style={{
+              background:
+                'linear-gradient(135deg, rgba(0, 229, 208, 0.10) 0%, rgba(255,255,255,0.02) 100%)',
+              border: '1px solid rgba(0, 229, 208, 0.28)',
+            }}
+          >
+            <div
+              aria-hidden
+              className="pointer-events-none absolute -top-20 right-1/4 h-48 w-48 rounded-full bg-accent/10 blur-3xl"
+            />
+            <span
+              aria-hidden
+              className="pointer-events-none absolute right-6 top-2 select-none font-[var(--font-mono)] text-[120px] font-bold leading-none text-accent/[0.10] md:text-[160px]"
+            >
+              05
+            </span>
+            <div className="relative flex flex-col gap-6 md:flex-row md:items-start md:gap-10">
+              <div className="md:w-[38%]">
+                <h3 className="font-[var(--font-display)] text-xl font-semibold leading-tight text-text-primary md:text-[24px]">
+                  {backendMethodSteps[4].title}
+                </h3>
+                <div className="mt-4 h-[2px] w-10 rounded-full bg-accent" />
+              </div>
+              <div className="md:w-[62%] md:border-l md:border-accent/15 md:pl-10">
+                <p className="text-[15px] leading-[1.75] text-text-secondary md:text-[16px]">
+                  {backendMethodSteps[4].body}
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <SectionLabel label="實證" />
+        <SectionLabel label="後台介面" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
           一張課程卡片，如何決定後台的樣子
         </h2>
@@ -898,33 +1238,25 @@ export default function BookingAppClient() {
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <ImagePlaceholder label="前台課程卡片 ↔ 後台編輯表單的欄位對照圖" ratio="16/9" />
-      </ScrollReveal>
-
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <div className="glass-medium relative overflow-hidden rounded-2xl border border-accent/20 p-8 md:p-10">
-          <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
-          <div className="pointer-events-none absolute -top-24 left-1/2 h-48 w-64 -translate-x-1/2 rounded-full bg-accent/5 blur-3xl" />
-          <div className="relative">
-            <p className="mb-4 font-[var(--font-mono)] text-[12px] uppercase tracking-[3px] text-accent">
-              SYSTEM THINKING
-            </p>
-            <p className="mb-3 font-[var(--font-display)] text-xl font-semibold text-text-primary md:text-2xl">
-              後台設計的本質，是物件關聯的設計
-            </p>
-            <p className="max-w-3xl text-[16px] leading-[1.7] text-text-secondary">
-              欄位對照進一步釐清了後台必須處理的物件關聯——「課程」是一份範本，它被排進「課表」後才產生實際可被預約的「場次」，使用者預約某個「場次」才產生「訂單」並扣減名額。因此商家在後台改動一門課程，會連動影響哪些已排定的場次、哪些已成立的訂單。據此，我也推導出商家端的完整工作流：上架課程 → 排入課表 → 管理預約名單 → 處理取消與改期。
-            </p>
-          </div>
-        </div>
-      </ScrollReveal>
-
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <ImagePlaceholder label="物件關聯圖（課程 → 場次 → 訂單）" ratio="16/9" />
+        <Image
+          src="/images/projects/booking-app/Image Slot — 物件關聯圖（課程 → 場次 → 訂單）.png"
+          alt="物件關聯圖：課程 → 場次 → 訂單"
+          width={2400}
+          height={1175}
+          className="h-auto w-full rounded-2xl"
+          sizes="(min-width: 768px) 80vw, 100vw"
+        />
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
-        <ImagePlaceholder label="2B 後台介面設計" ratio="16/9" />
+        <Image
+          src="/images/projects/booking-app/Image Slot — 前台課程卡片 ↔ 後台編輯表單的欄位對照圖.png"
+          alt="前台課程卡片 ↔ 後台編輯表單的欄位對照圖"
+          width={2400}
+          height={1500}
+          className="h-auto w-full rounded-2xl"
+          sizes="(min-width: 768px) 80vw, 100vw"
+        />
       </ScrollReveal>
 
       {/* 08 — Impact & Scope */}
@@ -934,12 +1266,12 @@ export default function BookingAppClient() {
           一個人交付的設計範疇
         </h2>
         <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
-          這是一個客戶委託專案，設計交付以「完整、可交付工程」為終點。以下從設計範疇與體驗改變兩個層面呈現貢獻。
+          設計交付以「完整、可交付工程」為終點。以下從設計範疇與體驗改變兩個層面呈現。
         </p>
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {scopeMetrics.map((m, idx) => (
             <div key={m.label} className="glass-medium rounded-2xl p-6 text-center">
               <span
@@ -994,15 +1326,14 @@ export default function BookingAppClient() {
       </ScrollReveal>
 
       {/* 09 — Reflection */}
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
+      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-6">
         <SectionLabel label="09 — Reflection" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
           如果重做一次，我會把「驗證」往前放
         </h2>
         <div className="glass-medium rounded-2xl p-8 md:p-10">
           <p className="mb-5 text-[18px] leading-[1.7] text-text-secondary">
-            這個專案讓我完整經歷了一次雙邊產品從 0 到交付的設計。最大的收穫，是「從前台反推後台系統」這套方法——它後來成為我處理任何前後台一併設計時的固定思路：
-            <span className="text-accent">前台使用者看到的每一個資訊，都是後台一個被設計過的輸入決策。</span>
+            這個專案讓我完整經歷了一次雙邊產品從 0 到交付的設計。最大的收穫，是「從前台反推後台系統」這套方法——它後來成為我處理任何前後台一併設計時的思路。
           </p>
           <p className="mb-5 text-[18px] leading-[1.7] text-text-secondary">
             但如果重來一次，有兩件事我會做得不同。
@@ -1021,6 +1352,16 @@ export default function BookingAppClient() {
             這個專案，是我這個能力的起點。
           </p>
         </div>
+      </ScrollReveal>
+
+      {/* Project Status — 簡短交代產品最終落點 */}
+      <ScrollReveal className="mx-auto mb-[100px] max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
+        <p className="text-left text-[13px] leading-[1.75] text-text-muted">
+          <span className="mr-2 font-[var(--font-mono)] uppercase tracking-[1.8px] text-text-secondary">
+            Project Status —
+          </span>
+          設計交付完成並上架 TestFlight 進行 beta 測試；後因客戶與公司之間的合約因素，產品未進入正式上線階段。
+        </p>
       </ScrollReveal>
 
       {/* Prev / Next Project Nav */}

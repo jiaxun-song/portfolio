@@ -209,7 +209,7 @@
         "metric1Value": "6→3",
         "metric1Label": "六層資金架構 / 抽象為三種用戶狀態",
         "metric2Value": "20+",
-        "metric2Label": "核心 DS 元件 / 三大模組覆蓋",
+        "metric2Label": "核心 DS 元件 / 覆蓋 Markets · Trade · Portfolio 三大交易模組",
         "tableTitle": "交易體驗層面",
         "tableHeaders": [
           "指標",
@@ -1129,7 +1129,7 @@
       },
       "play-to-earn": {
         "title": "Play to Earn GameFi",
-        "description": "小紅雞點擊賺幣遊戲"
+        "description": "從一份 8 頁白皮書出發，在 2.5 週內建立 Web3 Telegram 小遊戲的視覺語言、UX 流程與玩家入門敘事。"
       },
       "ai-learning": {
         "title": "AI 課程學習平台",
@@ -1140,8 +1140,8 @@
         "description": "獲得『經濟部 SBIR 計畫』協助客戶獲得百萬軟體開發資金"
       },
       "booking-app": {
-        "title": "課程預約 APP",
-        "description": "只需要一個 App 輕鬆預約多樣課程！\nAPP + Web + 前後台系統設計"
+        "title": "從 2C 預約 App 到 2B 商家後台的雙邊系統設計",
+        "description": "獨立設計 2C 預約 App、雙邊形象網頁與 2B 商家管理後台\n從前台情境反推一套完整可交付的後台系統"
       },
       "ecommerce-mlm": {
         "title": "電商平台＆直銷後台設計",
