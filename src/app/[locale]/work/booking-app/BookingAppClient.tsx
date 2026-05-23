@@ -612,7 +612,7 @@ export default function BookingAppClient() {
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <SectionLabel label="03 — 核心設計挑戰" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          一個雙邊系統，兩種要被說服的人
+          同時面對 2C & 2B 端的產品
         </h2>
         <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
           雙邊平台最常見的設計錯誤，是用同一套思路面對兩種人。此專案存在兩個性質不同的設計挑戰。
