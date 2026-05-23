@@ -8,7 +8,7 @@ const testimonials = [
   {
     key: 'karen',
     name: 'Karen',
-    title: '@ 35+ CEO',
+    title: '@ 希望方程式有限公司 CEO',
     avatar: '/images/testimonials/karen.jpg',
   },
   {
