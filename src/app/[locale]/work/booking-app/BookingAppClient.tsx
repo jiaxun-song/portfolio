@@ -508,7 +508,7 @@ export default function BookingAppClient() {
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <SectionLabel label="02 — 競品與市場機會" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          缺口存在，挑戰者也一直有
+          持續存在的市場機會
         </h2>
         <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
           定位這個平台的市場處境，需要同時看見兩件事：國際品牌的缺席，以及本地前人的足跡。
