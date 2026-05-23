@@ -42,6 +42,10 @@
         "title": "Web3Vid",
         "description": "A Web3 all-in-one video platform for crypto creators — reached Hong Kong Digital Programme finals"
       },
+      "booking-app": {
+        "title": "Bilateral System Design — From 2C Booking App to 2B Merchant Dashboard",
+        "description": "Solo-designed 2C booking app, dual landing pages, and 2B merchant dashboard\nReverse-engineered the backend system from front-end user moments"
+      },
       "rolling-x": {
         "title": "Rolling X",
         "description": "Stable compound annual return bot platform"

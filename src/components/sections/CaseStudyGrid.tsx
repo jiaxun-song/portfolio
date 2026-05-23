@@ -8,6 +8,7 @@ import GlowButton from '@/components/ui/GlowButton';
 const projects = [
   { id: 'exora',      tags: ['Fintech', 'Trading UX', 'Design System'], link: '/work/exora' as const, image: '/images/projects/exora-cover.jpg' },
   { id: 'prediction-market', tags: ['Fintech', 'Functional Planning', 'Brand Design'], link: undefined, image: '/images/projects/prediction-market-cover.jpg' },
+  { id: 'booking-app', tags: ['APP', 'Web', 'Dashboard', 'Brand Design'], link: '/work/booking-app' as const, image: '/images/projects/Buddy Cover.jpg' },
   { id: 'rolling-x',  tags: ['Fintech', 'Subscription Platform', 'Brand Design'], link: '/work/rolling-x' as const, image: '/images/projects/rolling-cover.jpg' },
 ];
 
