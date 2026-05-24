@@ -298,7 +298,7 @@
         "insightBody": "Fluidity and transparency shouldn't be an either-or choice. The real design opportunity is: let users simultaneously get CEX operational efficiency and DEX asset transparency without needing to understand the underlying technology — and the way risk information is presented determines whether this experience is safe or dangerous."
       },
       "userResearch": {
-        "label": "03 — USER RESEARCH",
+        "label": "03 — TRADING EXPERIENCE BREAKDOWN",
         "heading": "Deep Analysis of Trading Experience Pain Points",
         "body": "With 5 years of crypto trading experience, research can reach the core problems faster — not replacing the user perspective, but more precisely identifying which frictions truly affect trading decisions versus surface-level usability issues during research.",
         "proseQuote": "I clearly wanted to use isolated margin for this position, but after placing the order I realized it was cross-margin 20x.",
@@ -378,10 +378,10 @@
       "orderPanel": {
         "label": "ORDER PLACEMENT",
         "heading": "Order Placement: Opening a Position",
-        "body": "The highest design density segment of the entire trading experience — let thinking happen outside the interface, let execution happen inside the interface. Every design decision directly maps to a research pain point."
+        "body": "The product's primary user journey."
       },
       "onboarding": {
-        "label": "06 — ONBOARDING EXPERIENCE",
+        "label": "05 — ONBOARDING EXPERIENCE",
         "heading": "Eliminating Crypto's Technical Barriers",
         "body": "Reshaping the deposit and login experience — replacing cumbersome wallet authorization with familiar Google login, and Tenant Vault advance mechanism completely eliminates the waiting feel of cross-chain settlement."
       },
@@ -394,23 +394,23 @@
         "caption3": "Portfolio — Position management · Fund status"
       },
       "visualStyle": {
-        "label": "08 — VISUAL STYLE",
+        "label": "06 — VISUAL STYLE",
         "heading": "A Dark System with Brand Color",
-        "body": "With 5+ years of Web3 experience, I continuously track the brand styles and competitive landscape across Web3 projects. ",
-        "bodyAccent": "A self-maintained watchlist of Web3 products lets me respond and propose quickly during design pitches, while staying sensitive to emerging design trends."
+        "body": "Through exchange referral systems, airdrops, and new-token mining, ",
+        "bodyAccent": "I've used 10+ exchanges firsthand and continuously track the brand styles and competitive landscape across Web3 projects. A self-maintained watchlist of Web3 products lets me respond and propose quickly during design pitches, while staying sensitive to emerging design trends."
       },
       "designSystem": {
-        "label": "09 — DESIGN SYSTEM",
+        "label": "07 — DESIGN SYSTEM",
         "heading": "Building a Scalable Design Language",
         "body": "Simultaneously meeting three goals: product consistency, multi-tenant white-label customization, and engineering teams building independently without deviating from design intent."
       },
       "collaboration": {
-        "label": "10 — CROSS-FUNCTIONAL COLLABORATION",
+        "label": "08 — AI TOOLING FOR DESIGN SYSTEMS",
         "heading": "AI-Driven Design Applications",
-        "body": "Built a multi-tenant, multi-theme Design System tool with front-end collaboration using Claude Code"
+        "body": "Built a multi-tenant, multi-theme Design System tool with front-end collaboration using Claude Code, anticipating that the core product will need to ship multi-tenant design system variants in the future."
       },
       "impact": {
-        "label": "11 — IMPACT & OUTCOMES",
+        "label": "09 — IMPACT & OUTCOMES",
         "heading": "How Design Influenced Product Outcomes",
         "body": "Quantifying design contributions from three dimensions: trading experience, Design System, and product strategy.",
         "metric1Value": "6→3",
@@ -488,19 +488,19 @@
         ]
       },
       "reflection": {
-        "label": "12 — REFLECTION",
+        "label": "10 — REFLECTION",
         "heading": "Reflections on Designing in High-Volatility Markets",
         "card1": {
           "title": "Finding the right problem through a trader's lens",
-          "body": "5 years of crypto trading experience let research go straight to \"the frictions that actually affect order decisions,\" instead of stopping at \"the interface is hard to use.\" Focusing research on the core journey from <highlight>\"deciding to trade\" to \"trade completed\"</highlight> — rather than generic UX improvements — was the most critical strategic decision of this project."
+          "body": "5 years of crypto trading experience let research go straight to \"the frictions that actually affect order decisions,\" instead of stopping at \"the interface is hard to use.\" Research focused on the core journey from <highlight>\"deciding to trade\" to \"trade completed\"</highlight> — rather than generic UX improvements."
         },
         "card2": {
-          "title": "Push judgment toward data",
-          "body": "The danger-state position UI uses color and action buttons to drive strong guidance, but <highlight>the threshold of \"what Margin Ratio should trigger red\"</highlight> was set on trading intuition, not user testing. If I started over, I'd layer in live trading observation or A/B testing here, moving the decision from \"I think\" to \"the data supports it.\""
+          "title": "Subtraction is harder than addition",
+          "body": "A perp trader has to watch price, position, funding rate, liquidation price, margin ratio — adding more is easy; the challenge is <highlight>showing only what the user needs at each decision point</highlight>. From there, it's about deciding which information should be pushed to a second layer, and which earns a spot on the main canvas."
         },
         "card3": {
           "title": "Friction isn't always worth removing",
-          "body": "In crypto finance, <highlight>\"reducing risk\" and \"reducing friction\" often point in opposite directions</highlight> — making a flow too smooth can lead users to place orders before fully reading the risk. A designer's job isn't to mindlessly strip out steps; it's to judge which frictions should stay as protective mechanisms."
+          "body": "In crypto finance, <highlight>\"reducing risk\" and \"reducing friction\" often point in opposite directions</highlight> — making a flow too smooth can lead users to place orders before fully reading the risk. The work isn't to strip out as many steps as possible; it's to judge which frictions should stay as protective mechanisms."
         }
       },
       "projectNav": {

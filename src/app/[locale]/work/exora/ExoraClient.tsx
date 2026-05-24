@@ -16,48 +16,6 @@ const currentIdx = navigableProjects.findIndex((p) => p.id === CURRENT_ID);
 const prevProject = navigableProjects[(currentIdx - 1 + navigableProjects.length) % navigableProjects.length];
 const nextProject = navigableProjects[(currentIdx + 1) % navigableProjects.length];
 
-const positionStates = [
-  {
-    key: 'safe',
-    label: '安全水位',
-    sublabel: 'Safe',
-    badge: { icon: 'ri-checkbox-circle-fill', text: '安全' },
-    marginRatio: 20,
-    color: 'rgb(52, 211, 153)',
-    border: 'rgba(52, 211, 153, 0.28)',
-    tint: 'rgba(52, 211, 153, 0.14)',
-    title: '清算價格層級最高',
-    body: '作為單一最重要的決策數字，採用最大字重與對比色，支援極速掃視。',
-  },
-  {
-    key: 'warning',
-    label: '警戒水位',
-    sublabel: 'Alert',
-    badge: { icon: 'ri-error-warning-fill', text: '警戒' },
-    marginRatio: 65,
-    color: 'rgb(251, 191, 36)',
-    border: 'rgba(251, 191, 36, 0.32)',
-    tint: 'rgba(251, 191, 36, 0.14)',
-    title: '隱性成本可視化',
-    body: '補足傳統盲區，主動累計顯示資金費率（Funding Rate），讓真實盈虧一目了然。',
-  },
-  {
-    key: 'danger',
-    label: '危險水位',
-    sublabel: 'Danger',
-    badge: null as { icon: string; text: string } | null,
-    marginRatio: 85,
-    color: 'rgb(239, 68, 68)',
-    border: 'rgba(239, 68, 68, 0.4)',
-    tint: 'rgba(239, 68, 68, 0.18)',
-    title: '警告必須帶有行動路徑',
-    body: '危險水位下主動帶出「保證金調整」與「平倉」兩條行動路徑，使用者不必再尋找按鈕即可立即回應。',
-    danger: {
-      alert: '距清算還有 $540.00',
-    },
-  },
-] as const;
-
 /* Placeholder for missing images */
 function Placeholder({ name, ratio = '16/10' }: { name: string; ratio?: string }) {
   return (
@@ -590,7 +548,11 @@ export default function ExoraClient() {
             <div className="mb-[var(--cs-section-gap)]">
               <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
                 <Image
-                  src={`/images/projects/exora/${phaseIndex + 1}.png`}
+                  src={
+                    phaseIndex === 2
+                      ? '/images/projects/exora/03.png'
+                      : `/images/projects/exora/${String(phaseIndex + 1).padStart(3, '0')}.png`
+                  }
                   alt={t(`tradingJourney.${labelKey}`)}
                   width={1920}
                   height={1080}
@@ -599,6 +561,33 @@ export default function ExoraClient() {
                 />
               </div>
             </div>
+
+            {/* Order Placement block — appended to Post-Trade phase */}
+            {phase === 'post' && (
+              <>
+                <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
+                  <h3 className="font-[var(--font-display)] text-xl md:text-2xl font-semibold text-text-primary mb-4">
+                    {t('orderPanel.heading')}
+                  </h3>
+                  <p className="text-[18px] leading-[1.7] text-text-secondary mb-8">
+                    {t('orderPanel.body')}
+                  </p>
+                </ScrollReveal>
+
+                <div className="mb-[var(--cs-section-gap)]">
+                  <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
+                    <Image
+                      src="/images/projects/exora/img-order-panel.png"
+                      alt={t('orderPanel.heading')}
+                      width={1920}
+                      height={1080}
+                      className="w-full h-auto rounded-xl opacity-90"
+                      sizes="(min-width: 768px) 80vw, 100vw"
+                    />
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         );
       })}
@@ -617,7 +606,7 @@ export default function ExoraClient() {
       <div className="mb-8">
         <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
           <Image
-            src="/images/projects/exora/img-design-insight.png"
+            src="/images/projects/exora/design-insight.png"
             alt={t('designInsight.heading')}
             width={1920}
             height={1080}
@@ -640,159 +629,6 @@ export default function ExoraClient() {
           <p className="mt-3 text-center text-[15px] leading-relaxed text-accent">
             獨立規劃用戶合約交易下單流程、介面設計＆產品視覺風格
           </p>
-        </div>
-      </div>
-
-      {/* ========== 05 — TRADING UX (merged with Order Panel) ========== */}
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <SectionLabel label={t('tradingUX.label')} />
-        <h2 className="font-[var(--font-display)] text-2xl md:text-[32px] font-semibold text-text-primary mb-8">
-          {t('tradingUX.heading')}
-        </h2>
-        <p className="text-[18px] leading-[1.7] text-text-secondary mb-8">
-          {t('tradingUX.body')}
-        </p>
-      </ScrollReveal>
-
-      {/* High-pressure position management — three states visualization */}
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
-        <div className="grid grid-cols-1 gap-6 lg:grid-cols-3 lg:grid-rows-[auto_auto_1fr]">
-          {positionStates.map((state) => {
-            const hasDanger = 'danger' in state && state.danger !== undefined;
-            return (
-              <div key={state.key} className="grid gap-4 lg:row-span-3 lg:grid-rows-subgrid">
-                {/* Position card mockup */}
-                <div
-                  className="relative overflow-hidden rounded-2xl border p-5 md:p-6"
-                  style={{
-                    background:
-                      'linear-gradient(180deg, rgba(20,20,22,0.85) 0%, rgba(15,15,18,0.85) 100%)',
-                    borderColor: state.border,
-                  }}
-                >
-                  <div
-                    className="mb-4 flex items-center justify-between border-b pb-3"
-                    style={{ borderColor: 'rgba(255,255,255,0.06)' }}
-                  >
-                    <span className="font-[var(--font-mono)] text-[11px] uppercase tracking-[2px] text-text-muted">
-                      POSITION
-                    </span>
-                    <i className="ri-close-line text-text-muted/60" />
-                  </div>
-
-                  <div className="mb-4">
-                    <div className="mb-2 flex items-center justify-between">
-                      <span className="text-[13px] text-text-secondary">槓桿</span>
-                    </div>
-                    <div className="h-2 overflow-hidden rounded-full bg-white/[0.05]">
-                      <div
-                        className="h-full rounded-full transition-all duration-500"
-                        style={{
-                          width: `${state.marginRatio}%`,
-                          background: state.color,
-                        }}
-                      />
-                    </div>
-                  </div>
-
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <span className="text-[13px] text-text-secondary">
-                      Margin Ratio:{' '}
-                      <span className="font-medium text-text-primary">{state.marginRatio}%</span>
-                    </span>
-                    {hasDanger && state.danger ? (
-                      <span
-                        className="text-[13px] font-medium"
-                        style={{ color: state.color }}
-                      >
-                        {state.danger.alert}
-                      </span>
-                    ) : (
-                      state.badge && (
-                        <span
-                          className="inline-flex items-center gap-1 rounded-full px-2.5 py-1 text-[11px] font-medium"
-                          style={{
-                            color: state.color,
-                            background: state.tint,
-                            border: `1px solid ${state.border}`,
-                          }}
-                        >
-                          <i className={`${state.badge.icon} text-[12px]`} />
-                          {state.badge.text}
-                        </span>
-                      )
-                    )}
-                  </div>
-
-                  {hasDanger && state.danger && (
-                    <div className="mt-4 grid grid-cols-2 gap-2">
-                      <button
-                        type="button"
-                        className="rounded-lg border border-white/[0.12] bg-transparent px-3 py-2 text-[12px] font-medium text-text-secondary transition-colors hover:bg-white/[0.04] hover:text-text-primary"
-                      >
-                        保證金調整
-                      </button>
-                      <button
-                        type="button"
-                        className="rounded-lg border border-white/[0.15] bg-white/[0.08] px-3 py-2 text-[12px] font-medium text-text-primary transition-colors hover:bg-white/[0.12]"
-                      >
-                        平倉
-                      </button>
-                    </div>
-                  )}
-
-                </div>
-
-                <p className="text-center">
-                  <span className="font-[var(--font-display)] text-base font-semibold text-text-primary">
-                    {state.label}
-                  </span>
-                  <span
-                    className="ml-2 font-[var(--font-mono)] text-[12px] uppercase tracking-[1.5px]"
-                    style={{ color: state.color }}
-                  >
-                    {state.sublabel}
-                  </span>
-                </p>
-
-                <div
-                  className="glass-medium rounded-2xl border-l-[3px] p-5 md:p-6"
-                  style={{ borderLeftColor: state.color }}
-                >
-                  <h4 className="mb-2 font-[var(--font-display)] text-base font-semibold text-text-primary md:text-[17px]">
-                    {state.title}
-                  </h4>
-                  <p className="text-[14px] leading-[1.7] text-text-secondary md:text-[15px]">
-                    {state.body}
-                  </p>
-                </div>
-              </div>
-            );
-          })}
-        </div>
-      </ScrollReveal>
-
-      {/* Order Panel sub-heading */}
-      <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
-        <h3 className="font-[var(--font-display)] text-xl md:text-2xl font-semibold text-text-primary mb-4">
-          {t('orderPanel.heading')}
-        </h3>
-        <p className="text-[18px] leading-[1.7] text-text-secondary mb-8">
-          {t('orderPanel.body')}
-        </p>
-      </ScrollReveal>
-
-      {/* Order panel image */}
-      <div className="mb-[var(--cs-section-gap)]">
-        <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
-          <Image
-            src="/images/projects/exora/img-order-panel.png"
-            alt={t('orderPanel.heading')}
-            width={1920}
-            height={1080}
-            className="w-full h-auto rounded-xl opacity-90"
-            sizes="(min-width: 768px) 80vw, 100vw"
-          />
         </div>
       </div>
 
