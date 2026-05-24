@@ -168,8 +168,8 @@ const fieldMappingRows: Array<[string, string]> = [
 ];
 
 const scopeMetrics = [
-  { value: '5', label: '介面產出', sub: 'App · App 後台 · 2C 網頁 · 2B 網頁 · 2B 後台' },
-  { value: '2', label: '雙邊系統', sub: '2C 使用者端 ＋ 2B 商家端' },
+  { value: '5', label: '產品介面設計', sub: 'App · App 後台 · 2C 網頁 · 2B 網頁 · 2B 後台' },
+  { value: '2', label: '雙邊系統功能規劃', sub: '2C 使用者端 ＋ 2B 商家端' },
 ];
 
 const beforeAfterRows: Array<[string, string, string]> = [
