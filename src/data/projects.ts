@@ -37,10 +37,10 @@ export const allProjects: Project[] = [
     link: '/work/rolling-x',
   },
   {
-    id: 'play-to-earn',
-    tags: ['PWA', 'GameFi', 'Brand Design'],
-    image: '/images/projects/chicken cover.jpg',
-    link: '/work/play-to-earn',
+    id: 'booking-app',
+    tags: ['APP', 'Web', 'Dashboard', 'Brand Design'],
+    image: '/images/projects/Buddy Cover.jpg',
+    link: '/work/booking-app',
   },
   {
     id: 'ai-learning',
@@ -49,10 +49,10 @@ export const allProjects: Project[] = [
     link: '/work/ai-learning',
   },
   {
-    id: 'booking-app',
-    tags: ['APP', 'Web', 'Dashboard', 'Brand Design'],
-    image: '/images/projects/Buddy Cover.jpg',
-    link: '/work/booking-app',
+    id: 'play-to-earn',
+    tags: ['PWA', 'GameFi', 'Brand Design'],
+    image: '/images/projects/chicken cover.jpg',
+    link: '/work/play-to-earn',
   },
   {
     id: 'dating-pwa',
