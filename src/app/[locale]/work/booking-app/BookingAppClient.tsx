@@ -27,7 +27,7 @@ const dualChallengeCards = [
   {
     layer: '2C 端',
     title: '簡單到「值得換掉現有習慣」',
-    body: '使用者已經習慣了 LINE 預約。要讓他換過來，新體驗不能只是「也能用」，而要明顯更省事——一個地方看完所有選擇、一個流程完成預約。這一層有清楚的設計方向。',
+    body: '使用者已經習慣了 LINE 或是其他預約課程的習慣。要使用者換過來，新體驗不能只是「也能用」，而要明顯更省事——一個地方看完所有選擇、一個更順暢的流程完成預約。收斂為探索課程＆預約課程成功為產品主要核心功能規劃。',
     accent: 'rgb(125, 211, 252)',
     tint: 'rgba(56, 189, 248, 0.14)',
     border: 'rgba(56, 189, 248, 0.22)',
@@ -35,7 +35,7 @@ const dualChallengeCards = [
   {
     layer: '2B 端',
     title: '完整到「商家願意把營運交出來」',
-    body: '商家後台面向的，是要自己上架與管理課程的場館老闆。它必須涵蓋商家營運的完整工作流，且邏輯要對得起前台的每一個欄位。在沒有 PM 規格的情況下，這一整套系統需要被獨立推導出來並設計落地。',
+    body: '商家後台面向的，是要自己上架與管理課程的場館老闆。產品必須涵蓋商家營運的完整工作流，且邏輯要對的齊前台的每一個欄位。在沒有 PM 規格的情況下，這一整套系統需要被獨立推導出來並設計落地。',
     accent: 'var(--color-accent)',
     tint: 'rgba(0, 229, 208, 0.14)',
     border: 'rgba(0, 229, 208, 0.32)',
@@ -305,8 +305,8 @@ export default function BookingAppClient() {
             把一個模糊的市場願景，收斂成一套雙邊產品的完整設計藍圖。
           </h2>
           <p className="mb-8 text-[16px] leading-[1.7] text-text-secondary">
-            這是一個對標 ClassPass 模式的台灣課程預約平台。核心設計任務是處理「雙邊產品」的本質挑戰——面對 2C 使用者要換掉舊習慣的門檻很高，產品體驗必須低到值得跨過，2B 商家後台要完整到讓商家願意託付營運。在沒有現成產品規格的情況下，獨立完成功能規劃、資訊架構、2C App 與形象網頁設計，並
-            <span className="text-accent">從前台介面反推、設計出整套 2B 商家管理後台</span>。
+            這是一個對標 ClassPass 模式的台灣課程預約 App。核心設計任務是處理「雙邊產品」的本質挑戰——面對 2C 使用者要換掉既有息觀的門檻，以及 2B 商家後台要完整到讓商家願意託付營運。在沒有現成產品規格的情況下，獨立完成功能規劃、資訊架構、2C App 與形象網頁設計，
+            <span className="text-accent">並從前台介面反推、設計出完整的 2B 商家管理後台。</span>
           </p>
           <div className="mb-6 border-t border-white/[0.08]" />
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
@@ -364,10 +364,10 @@ export default function BookingAppClient() {
               Bilateral System ／ 雙邊系統關係
             </p>
             <h3 className="mb-3 font-[var(--font-display)] text-xl font-semibold text-text-primary md:text-[22px]">
-              課程資料，是 2C 與 2B 之間唯一的軸線
+              課程資料，是 2C 與 2B 之間的軸線
             </h3>
             <p className="text-[15px] leading-[1.7] text-text-secondary">
-              雙邊平台轉得動的前提，是兩端對「同一份資料」的理解必須咬合一致——2C 使用者看見的每一個欄位，都對應 2B 商家在後台維護的一筆資料。
+              雙邊平台轉得動的前提，是兩端對「同一份資料」的理解咬合一致——2C 使用者看見的每一個欄位，都對應 2B 商家在後台維護的一筆資料。
             </p>
           </div>
 
@@ -614,9 +614,6 @@ export default function BookingAppClient() {
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
           同時面對 2C & 2B 端的產品
         </h2>
-        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
-          雙邊平台最常見的設計錯誤，是用同一套思路面對兩種人。此專案存在兩個性質不同的設計挑戰。
-        </p>
       </ScrollReveal>
 
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
@@ -1197,7 +1194,7 @@ export default function BookingAppClient() {
         <div className="glass-medium overflow-hidden rounded-2xl border border-white/[0.08]">
           <div className="border-b border-white/[0.08] px-6 py-5 md:px-8">
             <h3 className="font-[var(--font-display)] text-lg font-semibold text-text-primary md:text-xl">
-              課程卡片 → 後台編輯表單的欄位對照
+              課程詳情頁 → 後台編輯表單的欄位對照
             </h3>
           </div>
           <div className="overflow-x-auto">
@@ -1205,7 +1202,7 @@ export default function BookingAppClient() {
               <thead>
                 <tr className="border-b border-white/[0.08]">
                   <th className="w-1/2 px-4 py-4 text-left font-[var(--font-mono)] text-xs uppercase tracking-wider text-text-muted md:px-6">
-                    前台（2C App 課程卡片顯示）
+                    前台（2C App 課程詳情頁顯示）
                   </th>
                   <th className="w-1/2 px-4 py-4 text-left font-[var(--font-mono)] text-xs uppercase tracking-wider text-accent md:px-6">
                     後台（2B 課程編輯表單輸入）
@@ -1333,7 +1330,7 @@ export default function BookingAppClient() {
         </h2>
         <div className="glass-medium rounded-2xl p-8 md:p-10">
           <p className="mb-5 text-[18px] leading-[1.7] text-text-secondary">
-            這個專案讓我完整經歷了一次雙邊產品從 0 到交付的設計。最大的收穫，是「從前台反推後台系統」這套方法——它後來成為我處理任何前後台一併設計時的思路。
+            這個專案讓我完整經歷了一次雙邊產品從 0 到交付的設計。最大的收穫是「從前台反推後台系統」這套方法——它後來成為我處理前後台功能整合設計時的思路。
           </p>
           <p className="mb-7 text-[18px] leading-[1.7] text-text-secondary">
             但若重來一次，有兩件事會選擇做得不同。
@@ -1342,7 +1339,7 @@ export default function BookingAppClient() {
             「把市場驗證往前放」
           </p>
           <p className="mb-7 text-[18px] leading-[1.7] text-text-secondary">
-            這次的需求主要來自客戶的市場觀察，我沒有對台灣既有的同類嘗試做足夠的研究。若能更早釐清「這個模式過去為什麼沒做大」，設計便能更早針對真實風險——例如雙邊平台最難的商家冷啟動——做出回應，而不只是把功能做對。
+            這次的需求主要來自客戶的市場觀察，在專案開發時程的限制內，這次沒有足夠的時間對台灣既有的競品嘗試做更深入的研究。若能更早釐清「這個產品商業模式過去為什麼好像沒做大」，設計便能更早針對真實風險——例如雙邊平台最難的商家冷啟動——做出回應，而不只是把功能做對。
           </p>
           <p className="mb-3 font-[var(--font-display)] text-lg font-semibold text-text-primary md:text-xl">
             「為設計成果埋下可被衡量的指標」
@@ -1351,8 +1348,7 @@ export default function BookingAppClient() {
             這次的交付以「完整、可交付工程」為終點，缺少上線後的數據回饋。未來我會在設計階段就與客戶定義成功指標（例如預約完成率、商家上架課程的耗時），讓設計的價值能被驗證，而不只是被交付。
           </p>
           <p className="text-[18px] leading-[1.7] text-text-secondary">
-            在 0~1 專案裡最有價值的經歷，往往不是把介面做漂亮，而是在資訊不完整時，仍能把一個模糊的願景，拆解成一套彼此咬合、可被執行的系統。這個專案，
-            <span className="text-accent">讓我對於前後台功能整合設計更為有經驗。</span>
+            在 0~1 專案裡最有價值的經歷，往往不是把介面做漂亮，而是在資訊不完整時，仍能把一個模糊的願景，拆解成一套彼此咬合、可被執行的系統。這個專案，讓我對於前後台功能整合設計更為有經驗。
           </p>
         </div>
       </ScrollReveal>
