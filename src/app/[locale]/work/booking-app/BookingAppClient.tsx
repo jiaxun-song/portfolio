@@ -305,7 +305,7 @@ export default function BookingAppClient() {
             把一個模糊的市場願景，收斂成一套雙邊產品的完整設計藍圖。
           </h2>
           <p className="mb-8 text-[16px] leading-[1.7] text-text-secondary">
-            這是一個對標 ClassPass 模式的台灣課程預約 App。核心設計任務是處理「雙邊產品」的本質挑戰——面對 2C 使用者要換掉既有息觀的門檻，以及 2B 商家後台要完整到讓商家願意託付營運。在沒有現成產品規格的情況下，獨立完成功能規劃、資訊架構、2C App 與形象網頁設計，
+            這是一個對標 ClassPass 模式的台灣課程預約 App。核心設計任務是處理「雙邊產品」的本質挑戰——面對 2C 使用者要換掉既有習慣的門檻，以及 2B 商家後台要完整到讓商家願意託付營運。在沒有現成產品規格的情況下，獨立完成功能規劃、資訊架構、2C App 與形象網頁設計，
             <span className="text-accent">並從前台介面反推、設計出完整的 2B 商家管理後台。</span>
           </p>
           <div className="mb-6 border-t border-white/[0.08]" />
