@@ -8,13 +8,11 @@ const testimonials = [
   {
     key: 'karen',
     name: 'Karen',
-    title: '@ 希望方程式有限公司 CEO',
     avatar: '/images/testimonials/karen.jpg',
   },
   {
     key: 'kyle',
     name: 'Kyle',
-    title: '@ Bitget CN Marketing Lead',
     avatar: '/images/testimonials/kyle.jpg',
   },
 ];
@@ -70,7 +68,7 @@ export default function KindWords() {
                 </div>
                 <div>
                   <p className="text-text-primary font-semibold">{person.name}</p>
-                  <p className="text-text-secondary text-sm">{person.title}</p>
+                  <p className="text-text-secondary text-sm">{t(`testimonials.${person.key}.title`)}</p>
                 </div>
               </div>
 

@@ -5,6 +5,7 @@ import { useTranslations } from 'next-intl';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X } from 'lucide-react';
 import { Link, usePathname } from '@/i18n/navigation';
+import LanguageSwitcher from './LanguageSwitcher';
 
 const navLinks = [
   { label: 'Projects', href: '/work' },
@@ -89,6 +90,7 @@ export default function Navbar() {
                   </Tag>
                 );
               })}
+              <LanguageSwitcher />
             </div>
 
             {/* Mobile Menu Button */}
@@ -140,6 +142,15 @@ export default function Navbar() {
                   </motion.div>
                 );
               })}
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ delay: navLinks.length * 0.1, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
+                className="mt-2"
+              >
+                <LanguageSwitcher />
+              </motion.div>
             </nav>
           </motion.div>
         )}

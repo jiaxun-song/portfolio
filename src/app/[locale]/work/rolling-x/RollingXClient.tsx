@@ -25,16 +25,6 @@ const uiDesignImages = [
   { width: 3020, height: 1722 },
   { width: 3022, height: 1718 },
 ];
-const uiDesignLabels = [
-  '資產總覽',
-  '資產總覽',
-  '錢包：入金',
-  '錢包：出入金紀錄',
-  '利息收益',
-  '訊息通知',
-  '用戶管理',
-  'API 權限設定',
-];
 const decisionOptionImages = {
   A: { width: 1512, height: 862 },
   B: { width: 1511, height: 857 },
@@ -383,18 +373,18 @@ export default function RollingXClient() {
                 Fuly.ai UX Audit
               </p>
               <h3 className="mt-3 font-[var(--font-display)] text-2xl font-semibold leading-tight text-text-primary">
-                三個阻礙新手的關鍵摩擦
+                {t('competitive.auditTitle')}
               </h3>
               <p className="mt-4 text-[15px] leading-[1.7] text-text-muted">
-                從註冊、啟動到報表查看，逐步拆解用戶最容易流失的節點。
+                {t('competitive.auditIntro')}
               </p>
             </div>
             <div className="hidden rounded-xl border border-white/[0.1] bg-white/[0.055] p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] md:block">
               <p className="font-[var(--font-mono)] text-[11px] uppercase tracking-[1.5px] text-text-muted">
-                拆解重點
+                {t('competitive.auditFocusLabel')}
               </p>
               <p className="mt-2 text-sm leading-[1.6] text-text-secondary">
-                註冊流程複雜度、系統狀態回饋、績效資訊清晰度
+                {t('competitive.auditFocusBody')}
               </p>
             </div>
           </div>
@@ -451,7 +441,7 @@ export default function RollingXClient() {
         <div className="mt-8 overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025] shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
           <Image
             src={`${IMG}/三個阻礙新手的關鍵摩擦.png`}
-            alt="三個阻礙新手的關鍵摩擦"
+            alt={t('competitive.auditImageAlt')}
             width={2400}
             height={805}
             className="h-auto w-full opacity-[0.85]"
@@ -459,7 +449,7 @@ export default function RollingXClient() {
           />
         </div>
         <p className="mt-3 text-center text-[13px] leading-relaxed text-accent">
-          Fuly.ai 的 Dashbaord 視覺層級不明確，績效報表缺乏直覺性
+          {t('competitive.auditCaption')}
         </p>
       </ScrollReveal>
 
@@ -649,11 +639,11 @@ export default function RollingXClient() {
                 User Story
               </p>
               <h3 className="mt-2 font-[var(--font-display)] text-xl font-semibold text-text-primary">
-                從使用者情境收斂核心需求
+                {t('targetUser.storyHeading')}
               </h3>
             </div>
             <p className="max-w-md text-sm leading-[1.7] text-text-muted">
-              將競品痛點轉譯成三個產品需要直接回答的問題。
+              {t('targetUser.storyIntro')}
             </p>
           </div>
 
@@ -818,7 +808,7 @@ export default function RollingXClient() {
                     />
                     <div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3">
                       <span className="font-[var(--font-mono)] text-[11px] uppercase tracking-[1.5px] text-accent">
-                        {uiDesignLabels[index]}
+                        {(t.raw('uiDesign.labels') as string[])[index]}
                       </span>
                       <span className="font-[var(--font-mono)] text-[11px] text-text-muted">
                         {String(index + 1).padStart(2, '0')} / {String(uiDesignImages.length).padStart(2, '0')}

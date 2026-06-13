@@ -8,6 +8,7 @@ import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/CustomCursor';
 import { Analytics } from '@vercel/analytics/next';
+import ScrollRestoration from '@/components/ScrollRestoration';
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
@@ -68,10 +69,8 @@ export default async function LocaleLayout({
       className={`${spaceGrotesk.variable} ${inter.variable} ${jetbrainsMono.variable} antialiased`}
       suppressHydrationWarning
     >
-      <head>
-        <script dangerouslySetInnerHTML={{ __html: `history.scrollRestoration = "manual"; window.scrollTo(0, 0);` }} />
-      </head>
       <body className="min-h-screen bg-bg-primary text-text-primary font-[var(--font-body)]">
+        <ScrollRestoration />
         <NextIntlClientProvider messages={messages}>
           <CustomCursor />
           <AnimatedBackground />

@@ -17,14 +17,14 @@
   "deviceShowcase": {
     "count": "20+",
     "label": "WEB & APP PROJECTS",
-    "description": "Product design experience across Fintech, Web3, and Crypto"
+    "description": "Focused on Fintech and Web3 product design,\nwith experience across dating platforms, e-commerce, and admin dashboard products."
   },
   "caseStudy": {
     "moreProjects": "More Projects",
     "projects": {
       "exora": {
-        "title": "Exora — White-Label Perpetual DEX",
-        "description": "A derivatives trading platform integrating Hyperliquid liquidity, redesigning order placement and mobile experience — bringing CEX-level fluidity to DEX."
+        "title": "An AI-Assisted, Scalable Multi-Tenant Design System Showcase Platform",
+        "description": "Built a component management foundation for a multi-design-system product architecture, and redesigned the trading order flow — bringing CEX-level fluidity to DEX."
       },
       "prediction-market": {
         "title": "End-to-End AI Workflow Delivery: Spec, Design & Frontend — Solo",
@@ -39,16 +39,16 @@
         "description": "CEX & Web3 Projects Web Designs"
       },
       "web3vid": {
-        "title": "Web3Vid",
-        "description": "A Web3 all-in-one video platform for crypto creators — reached Hong Kong Digital Programme finals"
+        "title": "A Web3 All-in-One Video Platform for Crypto Creators and Audiences",
+        "description": "Funding pitch reached the finals of Hong Kong's Cyberport Programme"
       },
       "booking-app": {
         "title": "Bilateral System Design — From 2C Booking App to 2B Merchant Dashboard",
         "description": "Solo-designed 2C booking app, dual landing pages, and 2B merchant dashboard\nReverse-engineered the backend system from front-end user moments"
       },
       "rolling-x": {
-        "title": "Rolling X",
-        "description": "Stable compound annual return bot platform"
+        "title": "A Stable Compound Annual Return Bot Platform",
+        "description": "Pilot users saw avg. APR rise ~50%; exhibited at the 2023 Taoyuan Youth Entrepreneurship Expo; pitched at NCU angel investment funding"
       }
     },
     "aiLearning": {
@@ -78,8 +78,8 @@
       },
       "overview": {
         "label": "01 — OVERVIEW",
-        "heading": "A project at the tipping point of AI education",
-        "body": "In July 2023, I joined the AAPD UI Bootcamp — an intensive program focused on elevating UI design and UX decision-making skills. Over three weeks, I worked with four designers from different industries to complete this project, winning the Gold Award among 200+ participants.\n\nThe timing was critical: ChatGPT had launched just six months prior, and Duolingo along with other global platforms released their AI features in 2023. We chose an AI course learning platform not to chase trends, but based on our judgment that AI-assisted learning was transitioning from concept to product.",
+        "heading": "Project Background & Motivation",
+        "body": "In July 2023, I joined the AAPD UI Bootcamp — an intensive program focused on elevating designers' UI design and UX decision-making skills. Over two weeks, I worked with four designers from different industries to complete this project, winning the Gold Award in a team competition among 200+ participants.\n\nThe timing of this project was special: ChatGPT had launched just six months prior, and Duolingo along with many global platforms released their own AI features around the same time in 2023. We chose an AI course learning platform based on our read of market trends — AI-assisted learning was at the tipping point of moving from concept to product.",
         "calloutTitle": "The market later validated this judgment",
         "calloutBody": "The global AI education market is projected to grow from $5.88B in 2024 to $32.27B by 2030 (CAGR 31.2%). Khan Academy's AI tutor Khanmigo grew from 68K users to over 1.4 million.",
         "calloutSource": "— Grand View Research, 2025; Khan Academy Official Data",
@@ -90,7 +90,7 @@
         "heading": "Leading visual direction & engineering handoff",
         "intro": "In two intense weeks, I was primarily responsible for two things:",
         "card1Title": "Led the overall product design direction",
-        "card1Body": "From moodboard to final visual language, including color system, typography standards, and IP character style direction. The team aligned on my proposed direction before beginning individual interface design work.",
+        "card1Body": "From moodboard to final visual language, including the color system, typography standards, and proposing and leading the product's style direction.",
         "card2Title": "Delivered engineering-ready design specs",
         "card2Body": "UI Flow connections, interaction state annotations for every screen, and component behavior specifications. This is a core competency from my previous work experience, enabling rapid integration within limited time.",
         "leadTag": "I Led",
@@ -160,7 +160,7 @@
         "optionBPros": "Available site-wide, doesn't interrupt current page\nUsers already have a mature mental model for this pattern",
         "optionBCons": "",
         "optionBVerdict": "SELECTED",
-        "reason": "Our AI tutor is positioned as a 'site-wide companion' — not just helping you learn in courses, but helping you find courses on the homepage and resolving purchase hesitations on course pages. The floating panel covers all User Stories simultaneously.",
+        "reason": "Our AI tutor is positioned as a 'site-wide companion' — not just helping you learn within courses, but also helping you find courses on the homepage and resolving purchase hesitations on course pages. The floating panel covers all User Stories simultaneously. Whether the user is exploring on the homepage, hesitating on a course page, or lost in search results, they can summon the AI tutor at any time.",
         "insightTitle": "Later research validated this design",
         "insightBody": "NN/g research indicates that 'conversation starters' are becoming a standard UI pattern in genAI tools, solving the 'blank canvas problem' — users not knowing what to ask. Our 'context tab' design is based on this insight.\n\nThe same research found that users tend to use more direct language with chatbots and heavily rely on preset buttons to reduce input cost.",
         "insightSource": "— Nielsen Norman Group, \"Prompt Controls in GenAI Chatbots\", 2025"
@@ -181,13 +181,13 @@
         "tab3Maps": "→ Post-purchase scenarios",
         "tab3Desc": "Concept clarification, learning progress suggestions, review highlights — letting AI play a true tutor role.",
         "tab3Example": "\"Summarize the three key points of this chapter\"",
-        "decision": "Why tabs instead of pure open input? Context tabs balance two goals: reducing first-use cognitive load while preserving an open input field for advanced users. This design lets users unfamiliar with AI tools get started immediately, rather than facing a blank input box with no idea what to do.",
+        "decision": "Context tabs balance two goals: reducing first-use cognitive load while preserving an open input field for advanced users to ask freely. This design lets users unfamiliar with AI tools get started immediately, rather than facing a blank input box with no idea what to do.",
         "imageCaption": "AI Tutor Panel — Preset context tabs + open input"
       },
       "iteration": {
         "label": "07 — ITERATION",
         "heading": "Restructuring information hierarchy to amplify product highlights",
-        "body": "(I Led) After receiving mentor feedback, I re-proposed the homepage's visual hierarchy and information architecture. The core issue: the original design lacked product character and was indistinguishable from other learning platforms.",
+        "body": "During the design phase, within our limited time, we further sought guidance and feedback from a mentor. The team rethought the architecture, focused more on the product's key highlights, and iterated on the original homepage design.",
         "before1": "Lacked product character, indistinguishable from competitors",
         "before2": "Course card component details could be improved",
         "before3": "AI tutor feature not highlighted",
@@ -197,7 +197,7 @@
       },
       "finalDesign": {
         "label": "08 — FINAL DESIGN",
-        "heading": "Complete Interface Showcase",
+        "heading": "UI Design",
         "body": "Designed intuitive exploration and search functionality based on User Stories, enabling users to quickly find courses matching their needs.",
         "img1Caption": "Homepage — Explore search + trending courses + AI tutor entry",
         "video1Caption": "Prototype Demo — Homepage hero search interaction flow",
@@ -208,7 +208,7 @@
       "handoff": {
         "label": "09 — HANDOFF",
         "heading": "UI Flow & Engineering Handoff",
-        "body": "(I Led) Connecting User Stories to UI Flow with engineering annotations is a core skill I've long been responsible for in past work. Within the limited competition timeline, I rapidly integrated complete page transition logic, interaction state definitions, and component behavior specs.",
+        "body": "Organizing UI Flow based on User Stories and annotating engineering details on the interface is a core part of what I've long been responsible for in past work. So within the limited competition timeline, I rapidly integrated the complete page-transition logic, interaction-state definitions, and component-behavior specs.",
         "imageCaption": "UI Flow — Complete page transition logic & engineering annotations"
       },
       "designSystem": {
@@ -267,7 +267,7 @@
         "metric1Value": "6 → 3",
         "metric1Label": "Abstracted 6-layer fund architecture into 3 user-facing states",
         "metric2Value": "Dual-Layer Token",
-        "metric2Label": "White-label brand switching without modifying any component structure",
+        "metric2Label": "Collaborated with front-end to build a dual-layer Design System Token architecture, enabling one-click switching to create products with different tenant brand styles",
         "metric3Value": "End-to-End",
         "metric3Label": "Research → UX Architecture → Visual Design → Design System → PWA"
       },
@@ -293,7 +293,6 @@
         "heading": "Market Landscape",
         "body": "CEX and DEX each have clear strengths and weaknesses. This persistent trade-off defines the current state of the crypto derivatives trading market.",
         "userProblemTitle": "The User-Side Problem",
-        "userProblemCardTitle": "The Current Trading Experience Compromise",
         "userProblemCardBody": "CEX is smooth but opaque; DEX is transparent but the experience is terrible. This either-or dilemma is a structural problem in the crypto trading market.",
         "insightBody": "Fluidity and transparency shouldn't be an either-or choice. The real design opportunity is: let users simultaneously get CEX operational efficiency and DEX asset transparency without needing to understand the underlying technology — and the way risk information is presented determines whether this experience is safe or dangerous."
       },
@@ -302,9 +301,9 @@
         "heading": "Deep Analysis of Trading Experience Pain Points",
         "body": "With 5 years of crypto trading experience, research can reach the core problems faster — not replacing the user perspective, but more precisely identifying which frictions truly affect trading decisions versus surface-level usability issues during research.",
         "proseQuote": "I clearly wanted to use isolated margin for this position, but after placing the order I realized it was cross-margin 20x.",
-        "proseContext": "This is a real scenario encountered when trading on CEX — switching to a new trading pair, the system defaults to cross-margin 20x leverage. I thought I was using isolated margin to control risk, but my entire account balance was exposed as collateral in a single trade. This doesn't happen every time, but precisely because it's sporadic, users are more likely to overlook it — ",
-        "proseHighlight": "the system's default value silently made a high-risk decision for the user, and the interface gave no reminder.",
-        "proseContextSuffix": "",
+        "proseContext": "This is a real scenario users face when trading on a CEX — when a user switches to a new trading pair, the system defaults to almost cross-margin 20x leverage. Some users are used to controlling risk with isolated margin, yet because of this system default, their entire contract account balance ends up exposed as collateral in a single trade. ",
+        "proseHighlight": "The system's default value silently made a high-risk decision for the user, ",
+        "proseContextSuffix": "and because the interface design was not prominent, users overlooked important parameter settings before opening a position.",
         "proseTakeaway": "This experience directly influenced the research focus — ",
         "proseTakeawayHighlight": "locking onto the core journey from \"deciding to trade\" to \"trade completed,\" identifying critical friction points in the trading flow.",
         "spectrumTitle": "Trader User Profiles",
@@ -319,22 +318,6 @@
         "trader3Sub": "Quant Trader",
         "trader3Desc": "Relies on API stability and ultra-low latency.",
         "spectrumFooter": "Onboarding is a one-time barrier, but trading is the daily core experience.\nFriction happens here. Retention is lost here."
-      },
-      "painPoints": {
-        "label": "CEX PAIN POINT MAP",
-        "heading": "Three Core Experience Problems",
-        "body": "These aren't just \"hard to use\" — they're direct results of the platform's default logic and information architecture.",
-        "card1Title": "Silent Defaults for Leverage & Margin Mode",
-        "card1Body": "When switching to a new trading pair, the system defaults to cross-margin 20x leverage with no reminder that \"this pair's margin mode is different from your last one.\" Users think they're using isolated margin to control risk, but their entire account balance is exposed as collateral in a single trade.",
-        "card2Title": "Liquidation Price Invisible Before Order",
-        "card2Body": "On CEX, liquidation price only appears in the positions panel after a position is established. At the moment of ordering, you don't know \"at what price will this trade be force-liquidated.\" The platform provides a separate calculator tool, but it requires opening separately and manually entering parameters — not in the order flow.",
-        "card3Title": "Funding Rate Accumulated Costs Are Hidden",
-        "card3Body": "The funding rate doesn't show \"how much funding rate has been deducted from this position so far\" in the positions panel. Users think the trade \"made 2%,\" but after deducting accumulated funding rates, net profit might be only 1.3% or even a loss."
-      },
-      "researchConclusion": {
-        "label": "RESEARCH CONCLUSION",
-        "heading": "Three Designable High-Priority Pain Points",
-        "body": "Distinguishing \"what design can solve\" from \"platform architecture/business model choices,\" focusing on the highest-impact intervention points."
       },
       "competitive": {
         "label": "02 — COMPETITIVE ANALYSIS",
@@ -364,11 +347,8 @@
       "designInsight": {
         "label": "04 — CORE DESIGN INSIGHT",
         "heading": "Technical Architecture Is UX's Ceiling — and Its Foundation",
-        "body": "This project has two asymmetric design challenges — surface-level UX problems and deep architectural problems.",
-        "layer1Title": "LAYER 1 — Relatively Visible",
-        "layer1Body": "Default value prominence, liquidation price upfront, funding rate visibility — these have clear design directions.",
-        "layer2Title": "LAYER 2 — The Truly Difficult Part",
-        "layer2Body": "Product architecture involves six-layer fund entities, Agent Key authorization mechanisms, cross-chain settlement — these are PM and engineering team decisions. The design challenge is: fully understand the constraints and boundaries of this system, then translate it into a streamlined experience where users only see three fund states and complete orders in one step."
+        "body": "The pre/during/post-trade experience pain points have clear directions for design intervention. But the truly difficult challenge of this project lies one layer deeper — the product architecture involves a six-layer fund entity structure, an Agent Key authorization mechanism, and cross-chain settlement, which are decisions made by the PM and engineering teams. The design challenge is to fully understand the constraints and boundaries of this underlying knowhow, then translate it into a clean user experience.",
+        "imageCaption": "Independently planned the perpetual-contract order flow, interface design, and product visual style"
       },
       "tradingUX": {
         "label": "05 — DESIGN OUTPUT: TRADING UX",
@@ -382,8 +362,8 @@
       },
       "onboarding": {
         "label": "05 — ONBOARDING EXPERIENCE",
-        "heading": "Eliminating Crypto's Technical Barriers",
-        "body": "Reshaping the deposit and login experience — replacing cumbersome wallet authorization with familiar Google login, and Tenant Vault advance mechanism completely eliminates the waiting feel of cross-chain settlement."
+        "heading": "A Role-Based Login Flow",
+        "body": "The front-end replaces cumbersome wallet authorization with a familiar Google login, while the back-end uses a 2FA login flow."
       },
       "mobilePWA": {
         "label": "07 — MOBILE PWA",
@@ -402,7 +382,7 @@
       "designSystem": {
         "label": "07 — DESIGN SYSTEM",
         "heading": "Building a Scalable Design Language",
-        "body": "Simultaneously meeting three goals: product consistency, multi-tenant white-label customization, and engineering teams building independently without deviating from design intent."
+        "body": "Led the product style, building and maintaining a complete Design System with one-click Light / Dark Mode switching, making it easier for designers on the team to collaborate."
       },
       "collaboration": {
         "label": "08 — AI TOOLING FOR DESIGN SYSTEMS",
@@ -506,6 +486,29 @@
       "projectNav": {
         "prev": "Previous Project",
         "next": "Next Project"
+      },
+      "tradingJourney": {
+        "preTradeLabel": "Pre-Trade",
+        "preTradeCol1": "Pain point",
+        "preTradeCol2": "Description",
+        "preTradeCol3": "Design opportunity",
+        "preRow1Pain": "The silent default of leverage and margin mode",
+        "preRow1Desc": "When switching to a new trading pair, the system defaults to cross-margin 20x leverage — with no prominent design and no reminder.",
+        "preRow1Opportunity": "Present the margin-mode default in a distinct UI style, so users clearly know “this value is the single most critical factor when placing an order.”",
+        "preRow2Pain": "No liquidation price visible before placing an order",
+        "preRow2Desc": "The liquidation price only appears after a position is opened. At the moment of ordering, you don’t know “at what price this trade gets liquidated,” and have to open a calculator and enter it manually.",
+        "preRow2Opportunity": "Calculate and show the estimated liquidation price in real time in the order panel, so the risk boundary is visible before ordering.",
+        "duringTradeLabel": "During Trade",
+        "duringRow1Pain": "DEX orders require repeated wallet confirmations",
+        "duringRow1Desc": "Traditional DEX: tap order → wallet popup → manual confirm → wait for broadcast → fill. Every trade interrupts the flow of thought — hugely costly in fast-moving markets.",
+        "duringRow1Opportunity": "The Agent Key mechanism turns ordering into: tap → instant fill, reducing the technical operation back to a pure trading decision.",
+        "duringRow2Pain": "Accumulated funding-rate cost is not obvious",
+        "duringRow2Desc": "The position panel doesn’t show “how much funding rate this position has been charged so far.” A user who thinks they’re up 2% may, after deductions, be left with only 1.3% — or even a loss.",
+        "duringRow2Opportunity": "Show accumulated funding rate at the position level, improving data readability and transparency.",
+        "postTradeLabel": "Post-Trade",
+        "postRow1Pain": "Position information is scattered",
+        "postRow1Desc": "The position panel consolidates all risk-control information — grasp the full position in a single screen.",
+        "postRow1Opportunity": "The position panel consolidates all key risk-control information — grasp the full position in a single screen."
       }
     },
     "web3vid": {
@@ -749,6 +752,825 @@
         "prev": "Previous Project",
         "next": "Next Project"
       }
+    },
+    "rolling-x": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "WEB3 ・ FINTECH ・ DASHBOARD",
+        "title": "A Stable Annualized Compounding Bot Platform",
+        "subtitle": "Packaging Bitfinex's automated lending algorithm into a product everyday investors can actually use"
+      },
+      "meta": {
+        "roleLabel": "Role",
+        "roleValue": "UI/UX Designer (sole designer)",
+        "resultLabel": "Outcome",
+        "resultValue": "Pilot users saw ~50% higher average APR; exhibited at the 2023 Taoyuan Youth Entrepreneurship Expo; pitched to NCU Angel Ventures",
+        "scopeLabel": "Scope",
+        "scopeValue": "Competitive analysis, feature planning, UX / UI design, design system, logo design, pitch-deck design, expo poster design"
+      },
+      "background": {
+        "label": "01 — BACKGROUND",
+        "heading": "The Bitfinex lending market: high returns, but a steep experience barrier",
+        "intro": "Bitfinex is one of the oldest crypto exchanges in the world. Its P2P lending market lets users lend idle USD or stablecoins to margin traders and earn interest. In recent years the average annual percentage rate (APR) has run around 10–20%, far above traditional bank foreign-currency deposits (about 1.1% in Taiwan, about 4% in the US).",
+        "challengeLabel": "The problem",
+        "challengeTitle": "Manual lending has too high an operational barrier",
+        "challengeBody": "Users have to continuously monitor market rates, manually adjust order parameters, and absorb the efficiency loss of idle capital.",
+        "solutionLabel": "The technical solution",
+        "solutionTitle": "Using the Bitfinex API to optimize lending efficiency",
+        "solutionBody": "An engineer on the team built a higher-performance lending algorithm that automates the lending decisions that previously had to be made by hand.",
+        "taskLabel": "My task",
+        "taskTitle": "Package the algorithm into a product everyday investors can use",
+        "taskBody": "Turn this algorithm into a clear, trustworthy, low-barrier product experience — Rolling.",
+        "whyNow": {
+          "title": "Why Now — why this moment?",
+          "intro": "Rolling's development timing was tightly tied to the crypto market cycle:",
+          "bullet1": "A bull market was projected to arrive between Q2 2024, sharply increasing the number of people buying and holding BTC",
+          "bullet2": "Lending APR around a bull run is usually significantly higher than usual — the best window to acquire users for a lending product",
+          "bullet3": "Bull–bear transition points bring a flood of new investors — exactly the core audience who \"want to earn interest but don't want high volatility\"",
+          "conclusion": "From a long-term investment lens, the market cycle gives a low-risk, stable-yield product like Rolling a natural demand tailwind."
+        },
+        "businessModel": {
+          "title": "",
+          "body": ""
+        }
+      },
+      "competitive": {
+        "label": "02 — COMPETITIVE ANALYSIS",
+        "heading": "Breaking down 5 experience problems in the market leader, Fuly.ai",
+        "body": "Before designing Rolling, I analyzed the competitors in the lending market and identified four main rivals:",
+        "table": {
+          "colName": "Competitor",
+          "colPlatform": "Platforms",
+          "colPricing": "Pricing model",
+          "colFeature": "Key features",
+          "colWeakness": "UX pain points",
+          "row1Name": "Fuly.ai",
+          "row1Platform": "Bitfinex",
+          "row1Pricing": "Subscription (billed quarterly)",
+          "row1Feature": "IBRR algorithm, smart copy-trading mode, AI risk indicators",
+          "row1Weakness": "Tedious onboarding, non-real-time bot status, unintuitive earnings reports",
+          "row2Name": "Coinlend",
+          "row2Platform": "Bitfinex, Liquid",
+          "row2Pricing": "$1–3 weekly + 5% cut of interest",
+          "row2Feature": "Cross-exchange support, AI-optimized algorithm, 24/7 automation",
+          "row2Weakness": "Complex dual-fee structure, dated interface, polarized reviews on returns",
+          "row3Name": "AltInvest",
+          "row3Platform": "Bitfinex",
+          "row3Pricing": "$3–45 monthly + 3% of excess interest",
+          "row3Feature": "Smart-strategy lending, auto-compounding, risk-management settings",
+          "row3Weakness": "Confusing tiered pricing, high barrier on premium plans, short 14-day trial",
+          "row4Name": "EarnUSD",
+          "row4Platform": "Bitfinex",
+          "row4Pricing": "$3 monthly (0% cut)",
+          "row4Feature": "Real-time order updates, auto-refresh every 5 minutes, BTC DCA support",
+          "row4Weakness": "Only 3 currencies, low brand awareness, insufficient community trust"
+        },
+        "caption": "Rolling's differentiated positioning: an edge on both “beginner-friendliness” and “stable yield”",
+        "fulyIntro": "Fuly.ai is the most direct competitor (also a Bitfinex lending bot), so I did a deeper UX teardown of it:",
+        "pain1": {
+          "title": "Onboarding takes 6 steps — a very high barrier for newcomers",
+          "body": "To get set up on Fuly.ai, a user has to: register a Fuly account → register a Bitfinex account → complete KYC verification → generate an API key on Bitfinex (turning on exactly 5 permissions) → paste the API key back into Fuly → move funds from the exchange wallet to the funding wallet. If any step goes wrong, the bot won’t run.",
+          "note": "Note: Bitfinex's KYC review is fairly strict, and identity verification can take several business days."
+        },
+        "pain2": {
+          "title": "Bot startup is delayed and status feedback is lacking",
+          "body": "After funds are deposited, Fuly.ai's bot takes a while before it starts placing orders, and the order information isn't updated in real time. Users can't confirm “is the bot actually working?” — for a financial product involving real money, that's a serious trust problem."
+        },
+        "pain3": {
+          "title": "Performance reports lack intuitiveness",
+          "body": "Fuly.ai's reports are relatively basic and rarely show clearly how a user can quickly grasp their earnings trend on the dashboard."
+        },
+        "auditTitle": "Three key frictions that block newcomers",
+        "auditIntro": "From sign-up to activation to viewing reports, breaking down the points where users are most likely to drop off, step by step.",
+        "auditFocusLabel": "Focus of the teardown",
+        "auditFocusBody": "Sign-up flow complexity, system-status feedback, performance-information clarity",
+        "auditImageAlt": "Three key frictions that block newcomers",
+        "auditCaption": "Fuly.ai's dashboard has an unclear visual hierarchy, and its performance reports lack intuitiveness"
+      },
+      "strategy": {
+        "label": "03 — DESIGN STRATEGY",
+        "heading": "From \"6 steps, 30 minutes\" to \"2 steps, 5 minutes\"",
+        "body": "Based on the findings from the competitive analysis, I defined Rolling’s core design strategy as: <highlight>use a corporate-account architecture to lower the entry barrier, and use dashboard design to build ongoing trust.</highlight>",
+        "table": {
+          "colFuly": "Fuly.ai's problem",
+          "colRolling": "Rolling's design decision",
+          "row1Fuly": "6-step onboarding (self-serve KYC + API integration)",
+          "row1Rolling": "A corporate account manages everything: customers don’t need to do their own KYC or generate an API — users just “register → choose a plan → deposit → start earning”",
+          "row2Fuly": "Opaque bot status",
+          "row2Rolling": "The dashboard home shows three core metrics in real time (cumulative ROI, today’s P&L, cumulative interest), with daily-updated earnings details",
+          "row3Fuly": "Reports not intuitive enough",
+          "row3Rolling": "The earnings overview consolidates currency, date, ROI, and amount, with trend charts planned for the future"
+        },
+        "before": {
+          "tag": "Fuly.ai — about 30 minutes to several days",
+          "step1": "Register Fuly",
+          "step2": "Register Bitfinex",
+          "step3": "KYC verification",
+          "step4": "Generate API key",
+          "step5": "Set 5 permissions",
+          "step6": "Paste API into Fuly",
+          "step7": "Transfer funds to funding wallet",
+          "step8": "Choose a plan",
+          "step9": "Pay in USDT",
+          "step10": "DM support",
+          "step11": "Wait for activation",
+          "step12": "Configure parameters",
+          "step13": "Start lending"
+        },
+        "after": {
+          "tag": "Rolling — about 5 minutes",
+          "step1": "Register Rolling",
+          "step2": "Choose a plan",
+          "step3": "Deposit",
+          "step4": "Lending starts automatically"
+        }
+      },
+      "targetUser": {
+        "label": "04 — TARGET USERS & USER STORY",
+        "heading": "Targeting three user types, converging core needs from competitor pain points",
+        "ta1": {
+          "title": "Crypto-market beginners",
+          "body": "People interested in crypto but scared off by complex operating interfaces. What they need is a “just put it in and earn” experience, not a pile of parameter settings. This is also the user group <highlight>Fuly.ai and Bitfinex’s native tools lose the most.</highlight>"
+        },
+        "ta2": {
+          "title": "Steady, low-risk investors",
+          "body": "People with investment experience who don't want to bear crypto price volatility. Lending's “lend out capital, collect interest” model naturally fits their risk appetite."
+        },
+        "ta3": {
+          "title": "Long-term investors",
+          "body": "People who believe in compounding and are willing to hold long term and let their capital keep rolling. Rolling's product naming and auto-compounding mechanism were designed for exactly this group."
+        },
+        "story1": "As an investor, I want to “see my investment performance at a glance,” so I can understand my gains and losses without opening a spreadsheet to calculate.",
+        "story2": "As an investor, I want to “review daily investment details,” so I can confirm the automated trading bot is genuinely working.",
+        "story3": "As an investor, I want to “withdraw funds anytime,” so I can rest assured my assets won’t be locked up — lowering the psychological barrier to trying a new platform.",
+        "storyHeading": "Converging core needs from user scenarios",
+        "storyIntro": "Translating competitor pain points into three questions the product must answer directly."
+      },
+      "featurePlanning": {
+        "label": "05 — FEATURE PLANNING",
+        "heading": "Planning the overall product features through user scenarios",
+        "body": "Based on the three user stories and the experience gaps identified in the competitive analysis, I drafted Rolling’s feature architecture and information fields. The core principle: every page should directly answer the one question the user cares about most.",
+        "sitemapHeading": "Converged into six core feature modules",
+        "sitemapBody": "I converged the user scenarios into a fitting set of feature categories: asset overview, wallet (deposit / withdraw / records), interest earnings, notifications, account management, and API permission settings — plus proof of reserves as a supporting trust entry point. Each module maps to a clear user task."
+      },
+      "decisions": {
+        "label": "06 — DESIGN DECISIONS",
+        "heading": "The design decisions that shaped the product experience",
+        "body": "Below are three key decisions I made while designing the Rolling dashboard. Each went through multiple options and trade-offs.",
+        "rejected": "Not adopted",
+        "d1": {
+          "title": "Asset overview: what should users see first?",
+          "question": "A lending platform has a lot of data — total assets, live rates, cumulative interest, daily rate, ROI, today's P&L. The information density of the dashboard's first screen directly determines users' sense of trust and retention.",
+          "optionA": {
+            "title": "Option A: one big number",
+            "desc": "Show only total assets; tuck everything else below",
+            "cons": "Users have to scroll to see performance"
+          },
+          "optionB": {
+            "title": "Option B: three cards side by side",
+            "desc": "Cumulative ROI, today's P&L, and cumulative interest side by side",
+            "pros": "Answers the three core questions at a glance",
+            "verdict": "Final choice"
+          },
+          "optionC": {
+            "title": "Option C: gauge-style",
+            "desc": "Donut chart + numbers combined",
+            "cons": "Visually striking but takes a lot of space"
+          },
+          "callout": {
+            "title": "Final decision: Option B — three cards side by side",
+            "body": "Every time a lending user logs in, they most want three questions answered: “How is my return?” “How much did I earn today?” “How much cumulative interest?” The three cards map to these three core questions."
+          }
+        },
+        "d2": {
+          "title": "Decision ② Earnings presentation: table vs. chart?",
+          "question": "Should earnings detail use a “table with precise numbers” or a “line chart where the trend is obvious at a glance”? Each has advantages, depending on the user’s scenario.",
+          "optionA": {
+            "title": "Option A: pure table",
+            "pros": "Precise, auditable",
+            "cons": "Can't see the trend",
+            "verdict": "✅ Shipped in v1"
+          },
+          "optionB": {
+            "title": "Option B: pure line chart",
+            "pros": "Trend is obvious",
+            "cons": "Lacks precise numbers",
+            "verdict": "Not adopted"
+          },
+          "optionC": {
+            "title": "Option C: chart + table",
+            "pros": "Balances trend and precision",
+            "cons": "Longer page",
+            "verdict": "✅ Planned for v2"
+          },
+          "callout": {
+            "title": "Final decision: ship Option A in v1, plan Option C for v2",
+            "body": "Given limited development resources at the MVP stage, I first used a table to satisfy the core “auditing” need. But I simultaneously produced a v2 concept (chart + table combo) to iterate on once user volume reaches a certain scale."
+          }
+        },
+        "d3": {
+          "title": "Decision ③ Trust design: how do you make users comfortable handing money to a bot?",
+          "question": "The user’s biggest psychological hurdle isn’t “is the rate high enough” but “is it safe?” The team had already built a Bitfinex reserve-tracking mechanism (continuously monitoring the exchange’s wallet addresses and token allocation), but none of that security information was reflected on the dashboard.",
+          "optionA": {
+            "title": "Option A: passive",
+            "desc": "Explain the security mechanism on an FAQ page",
+            "cons": "Lowest cost but least effective — users won't go look for it"
+          },
+          "optionB": {
+            "title": "Option B: embedded",
+            "desc": "Add a “platform health” status card to the dashboard",
+            "pros": "Shows Bitfinex reserve amount and token allocation in real time",
+            "verdict": "✅ Final choice"
+          },
+          "optionC": {
+            "title": "Option C: notification",
+            "desc": "Only push an alert when something is abnormal",
+            "cons": "Saves space but can't build trust day to day"
+          },
+          "callout": {
+            "title": "Final decision: Option B — embed Proof of Reserves status in the dashboard",
+            "body": "Trust shouldn’t be passive. Especially for users new to crypto finance, seeing real-time figures right on the dashboard home — “Bitfinex reserves $5.2B, BTC 59%, ETH 9.7%” — effectively lowers trust anxiety. This design turned the security argument the team had only put in the pitch deck into a UI element users see every day."
+          }
+        }
+      },
+      "uiDesign": {
+        "label": "07 — UI DESIGN",
+        "heading": "Final UI design",
+        "labels": [
+          "Asset overview",
+          "Asset overview",
+          "Wallet: deposit",
+          "Wallet: deposit/withdrawal records",
+          "Interest earnings",
+          "Notifications",
+          "Account management",
+          "API permission settings"
+        ]
+      },
+      "designSystem": {
+        "label": "08 — DESIGN SYSTEM",
+        "heading": "A visual system built for the lending scenario",
+        "body": "Rolling's design system is built on a dark theme paired with high-contrast functional colors. <highlight>The dark theme was chosen for two reasons: the professional tone common to financial products, and the visual comfort for lending users who may check their assets in the evening.</highlight>"
+      },
+      "branding": {
+        "label": "09 — BRANDING",
+        "heading": "Stable compounding, like a rolling snowball",
+        "body": "Because the product’s core is a low-risk, long-term, stable-compounding automated lending bot whose gains grow larger over time, I named it Rolling. The logo wraps a dynamic “R” inside a hexagon (echoing crypto’s geometric language), conveying continuous rolling and growth.\n\nThe brand visuals extended to the pitch deck (used for the NCU Angel Ventures pitch) and the expo poster (used at the 2023 Taoyuan Youth Entrepreneurship Expo), ensuring consistency in outward communication."
+      },
+      "results": {
+        "label": "10 — OUTCOME",
+        "heading": "~50% APR improvement in the pilot phase",
+        "stat1": {
+          "value": "~15-20%",
+          "label": "Average APR for pilot users"
+        },
+        "stat2": {
+          "value": "~50%",
+          "label": "Efficiency gain vs. manual lending"
+        },
+        "body1": "In the pilot phase, I tested with 10 users; the Rolling bot's average APR was about 15–20%, roughly a 50% improvement over the 10–13% of manual lending. The gains came mainly from three areas: the bot periodically auto-refreshing orders to reduce idle-capital time, reacting within minutes when rates briefly spiked (e.g., the market hitting 30% APR in April 2024), and auto-compounding contributions accumulating long-term benefit.",
+        "body2": "On the business side, the team targeted a lending pool of 120,000 USDT; modeling 10% APR with compounding projected a yield pool of about 99,200 USDT — figures that were also central to the business-model feasibility argument in the angel-ventures pitch.",
+        "disclaimer": "Note: returns are based on public Bitfinex USD lending-market data and industry benchmarks; actual returns fluctuate with market supply and demand.",
+        "qualitative1": "Pitched at NCU Angel Ventures, completing the product proposal and business-model presentation",
+        "qualitative2": "Exhibited at the 2023 Taoyuan Youth Entrepreneurship Expo, demonstrating the product to investors and potential users",
+        "qualitative3": "Independently delivered the full brand visual suite (logo, dashboard UI, pitch deck, expo poster, design system)"
+      },
+      "reflection": {
+        "label": "11 — REFLECTION",
+        "heading": "If I did it again",
+        "card1": {
+          "title": "What went well",
+          "body": "Starting from competitors’ UX problems to define the design strategy gave every design decision a clear “why.” Using a corporate-account architecture to dramatically simplify the user’s entry barrier was this product’s most core differentiating design."
+        },
+        "card2": {
+          "title": "What could be better",
+          "body": "If I did it again, I’d run more complete user testing early in the design — at least 3–5 target users doing task-based testing — to validate design assumptions with data rather than guesswork."
+        },
+        "card3": {
+          "title": "What I took away",
+          "body": "When designing in crypto finance, <highlight>“trust” carries far more weight than “good looks.”</highlight> Whether users are willing to put in real money depends on whether the product can answer “is it safe?” at every touchpoint. This insight shaped how I thought about features in my later Web3-related projects."
+        }
+      },
+      "projectNav": {
+        "prev": "Previous project",
+        "next": "Next project"
+      }
+    },
+    "playToEarn": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "WEB3 ・ TELEGRAM GAME ・ PLAY TO EARN",
+        "title": "Play to Earn GameFi",
+        "subtitle": "Starting from an 8-page whitepaper, I built the visual language, UX flow, and player-onboarding narrative for a Web3 Telegram mini-game in 2.5 weeks."
+      },
+      "meta": {
+        "roleLabel": "Role",
+        "roleValue": "UI/UX Designer (solo)",
+        "durationLabel": "Timeline",
+        "durationValue": "2.5 weeks (June 2024)",
+        "scopeLabel": "Scope",
+        "scopeValue": "UI/UX design, IP illustration, feature-planning lead, logo design, deck design"
+      },
+      "background": {
+        "label": "01 — BACKGROUND",
+        "heading": "Amid the Tap-to-Earn craze, building a mini-game's design language from scratch",
+        "body": "In mid-2024, Hamster Combat surpassed 100 million monthly active players, and Tap-to-Earn became the hottest entry model in the Telegram ecosystem. The project team seized this market window, planning to finish the visuals and UX within weeks of completing the whitepaper and then launch a public sale.",
+        "constraintLabel": "Design Constraint",
+        "constraintTitle": "The only design reference was an 8-page whitepaper document",
+        "constraintBody": "The document covered the game mechanics, token economy (G8 Coin), and technical architecture (AWS + Next.js + BSC smart contracts), but lacked any comprehensive planning of the product’s features and flows. Every design decision had to be derived from the whitepaper myself."
+      },
+      "coreProblem": {
+        "label": "02 — CORE DESIGN PROBLEM",
+        "heading": "How do you get a new Web3 player through the full game loop?",
+        "questionLabel": "Design Question",
+        "question": "How do you build a visual language and UX flow so that even a player who has never touched Web3 can smoothly complete the full game loop of “deposit → buy a chick → tap to interact → claim rewards”?",
+        "card1Title": "Visual layer",
+        "card1Body": "The IP character, brand colors, and component language all had to be built from scratch — and quickly form a commercially viable game look.",
+        "card2Title": "Experience layer",
+        "card2Body": "Web3 actions like USDT deposits and on-chain interactions on BSC had to be packaged into a flow new players could understand.",
+        "card3Title": "Psychological layer",
+        "card3Body": "The token-reward mechanism couldn’t just convey wins and losses — it also had to manage players’ expectations around reward uncertainty."
+      },
+      "insight": {
+        "label": "03 — DESIGN INSIGHT FROM THE PLAYER’S VIEW",
+        "heading": "Combining my own everyday Web3 experience to organize the feature plan effectively",
+        "body": "Drawing on my past experience playing Hamster Combat, I combined a former player’s perspective with design thinking. Based on the whitepaper, I quickly mapped out a UX flow better suited to the project team’s needs.",
+        "img1Alt": "Supplementary diagram: player perspective and UX judgment",
+        "img2Alt": "Supplementary diagram: player perspective and UX judgment 2"
+      },
+      "aiTools": {
+        "label": "04 — AI TOOLS ACCELERATING EARLY PROPOSALS",
+        "heading": "Using AI to quickly converge the IP design direction",
+        "body": "During the IP-style selection phase, I used Midjourney to quickly generate multiple IP character directions and complete an initial style proposal. Once the project team chose a visual route, I hand-illustrated in Procreate to ensure the IP character’s refinement and completeness.",
+        "imgAlt": "AI-assisted IP character style proposal"
+      },
+      "visualSystem": {
+        "label": "05 — VISUAL SYSTEM",
+        "heading": "Consistency from IP to components",
+        "body": "After establishing the IP style, I systematically extended the illustration’s visual language to the UI components, so players feel the same brand world across the logo, the IP character, and every interface touchpoint.",
+        "imgAlt": "IP visual language extended to UI components",
+        "principle1Title": "Dark outlines",
+        "principle1Body": "Create a cartoon feel and sense of boundary, reinforcing the tappability of clickable objects.",
+        "principle2Title": "Vivid, saturated colors",
+        "principle2Body": "Build the energetic feel of a game atmosphere and improve recognizability within the Telegram environment.",
+        "principle3Title": "Signature shadows",
+        "principle3Body": "Give components a sense of depth, echoing the hand-drawn texture of the IP illustration."
+      },
+      "deliverables": {
+        "label": "06 — DELIVERABLES OVERVIEW",
+        "heading": "A full output, from characters to the promotional deck",
+        "list": [
+          "IP character illustration drawn in Procreate",
+          "Logo and brand identity",
+          "UI for the main game, evolution, and reward-unlock screens",
+          "Complete UX flow (log in → deposit → buy chick → play → win → withdraw)",
+          "Bilingual (EN/ZH) player onboarding deck"
+        ],
+        "slide1Alt": "Final IP character artwork",
+        "slide2Alt": "Bilingual deck cover and inside pages",
+        "prevSlideAria": "Previous slide",
+        "nextSlideAria": "Next slide",
+        "dotAria": "Go to slide {num}"
+      },
+      "projectNav": {
+        "prev": "Previous project",
+        "next": "Next project"
+      }
+    },
+    "datingPwa": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "Case Study — 2023",
+        "title": "35 Social Platform\nOnline-Merge-Offline\nDating for Grown-ups",
+        "subtitle": "An OMO social platform designed for second chances, late marriage, and single parents — letting online connections extend into real, offline interaction within a safe, friendly environment."
+      },
+      "highlightMetrics": {
+        "m1Value": "3.93M",
+        "m1Label": "Taiwan’s mature single population (ages 35–64)",
+        "m2Value": "9.8B",
+        "m2Label": "Annual potential market size (TWD)",
+        "m3Value": "10K+",
+        "m3Label": "Members within 10 months of launch"
+      },
+      "summary": {
+        "label": "PROJECT SUMMARY",
+        "heading": "Taiwan’s first OMO social platform built specifically for the 35+ demographic.",
+        "body": "35 Social Platform is Taiwan’s first OMO social platform designed for people aged 35 and over. As the sole designer, I led the product design from 0 to 1 — from client requirement interviews, competitive analysis, and information architecture to the complete PWA dating platform and brand website. The design output served directly as the core visual material for the Ministry of Economic Affairs’ SBIR grant application, <highlight>helping the client successfully secure government funding</highlight>.",
+        "roleLabel": "Role",
+        "roleValue": "UI/UX Designer · Solo · 1.5 months"
+      },
+      "problem": {
+        "heading": "A 3.93-million-person need, ignored by the entire market",
+        "body": "Taiwan is simultaneously experiencing aging, later marriage, and a high divorce rate. Over a decade, the mature single population aged 35–64 grew by more than 1 million, while the marriage-age single population aged 25–34 shrank by 140,000 — the center of gravity of the dating market is shifting, but product design hasn’t kept up.",
+        "calloutLabel": "The overlooked user group",
+        "calloutHeading": "1.75 million mature singles with prior marriage experience, with no product built for them",
+        "calloutBody": "Mature singles make up 17% of the national population, and 45% of them are divorced or widowed — these 1.75 million people have prior marriage experience, more mature expectations for relationships, and more complex real-life considerations (children, finances, rebuilding social circles). They aren’t “edge-case dating-app users”; they are a complete, overlooked market.",
+        "imageLabel": "Taiwan single-population trend — the crossover of rising mature singles vs. declining marriage-age singles",
+        "gapTitle": "It’s not a lack of features — the product assumptions were never built for these people",
+        "gapBody": "Existing dating platforms are uniformly designed around 18–30-year-old users — lightweight, fast, looks-driven. This design logic has a structural gap with what the 35+ group needs: “a sense of safety, deep understanding, real offline interaction.” This isn’t a problem of missing features — it’s that <highlight>the entire product assumption was never built for these people</highlight>."
+      },
+      "competitive": {
+        "heading": "The market gap: 30+ × serious relationships",
+        "body": "After plotting Taiwan’s major dating platforms on a quadrant of “age positioning” and “relationship seriousness,” the top-right corner (30+ × serious relationships) is almost empty — only Qianshou 50 (766K members) reaches this segment, but its product form leans toward traditional matchmaking services and lacks the experience of a modern social platform.",
+        "imageLabel": "Competitive positioning map — age × relationship-seriousness quadrant, marking Tinder / Paktor / Qianshou 50, etc.",
+        "insightTitle": "Social scenarios matter more than the matching algorithm",
+        "insightBody": "The market gap isn’t just age coverage — it’s a gap in product form. What the 35+ group needs isn’t “Tinder but a bit older,” but a social platform that fully connects online to offline (OMO) — single-parent family trips, mature-age light travel, talks and meetups, relationship advisors. <highlight>Social scenarios matter more than the matching algorithm</highlight>."
+      },
+      "process": {
+        "heading": "0 → 1: from requirement interviews to design delivery",
+        "body": "As the sole designer, I started from scratch — discussing feature requirements with the client, organizing the overall feature plan, and finally producing and handing off the design to engineers. The whole process had four phases, with design, engineering, and client-side tasks advancing in parallel.",
+        "imageLabel": "The four-step 0-to-1 product development flow",
+        "step1Title": "Client requirement interviews",
+        "step1Body": "I held several rounds of requirement interviews with the founder to define the MVP feature scope, inventory existing resources and technical constraints, and compile a complete requirements list. The client had 15 years of e-commerce experience and a clear market read on the product; the designer’s role was to translate that business vision into an executable product structure.",
+        "step2Title": "Early task planning",
+        "step2Body": "Three sides advanced in sync: design ran competitive analysis, feature planning, and wireframing; engineering researched the Ministry of the Interior identity-verification API and payment-integration options; the client set membership pricing rules and prepared legal documents like terms of use and privacy policy.",
+        "step3Title": "Design proposal",
+        "step3Body": "I created multi-direction visual proposals on key screens, so the client could make a style decision on concrete screens rather than abstract descriptions.",
+        "step4Title": "Full design",
+        "step4Body": "Once the style was locked, I expanded into full-page design — meeting regularly with the client and engineers to dynamically adjust the design based on technical feasibility and business needs."
+      },
+      "style": {
+        "heading": "Finding a visual language that’s “warm but not childish”",
+        "body": "The 35+ group’s visual preferences differ sharply from younger users — too flashy reads as not serious enough, too corporate loses social warmth. The proposal phase explored multiple style directions and finally converged on a “warm, mature, trustworthy” visual tone, so the platform signals a different positioning from Tinder and Bumble at first glance.",
+        "imageLabel": "Design style proposals — the exploration of multiple directions"
+      },
+      "pwa": {
+        "heading": "A mobile-first dating experience",
+        "body": "Built as a PWA so users can use it without downloading from the App Store. Core features cover profile creation, match browsing, chat, and event sign-up — integrating the full journey from meeting online to meeting offline within a single product.",
+        "imageLabel1": "Full UI scroll image of the PWA dating platform",
+        "imageLabel2": "Full UI scroll image of the PWA dating platform (second set of pages)"
+      },
+      "web": {
+        "heading": "Brand image and content entry point",
+        "body": "Beyond the PWA dating platform, I designed the brand website and blog system in parallel. The brand pages convey positioning and trust to the outside world, while the blog serves as an SEO content entry point and an extension of community building — continuously bringing organic traffic to the platform.",
+        "imageLabel1": "Full UI scroll image of the brand & blog website",
+        "imageLabel2": "Full UI scroll image of the brand & blog website (second set of pages)"
+      },
+      "impact": {
+        "heading": "How design shaped the product outcomes",
+        "body": "From winning the grant to launching and operating the product, the design output had concrete impact on multiple levels.",
+        "metric1Value": "SBIR",
+        "metric1Label": "Successfully won the MOEA SBIR grant",
+        "metric2Value": "10K+",
+        "metric2Label": "Surpassed 10,000 members within 10 months of launch",
+        "metric3Value": "1.5 months",
+        "metric3Label": "PWA + web designed end-to-end by one person",
+        "card1Title": "Core material for the SBIR application",
+        "card1Body": "The designs served directly as the core visual material for the MOEA SBIR grant application, concretely presenting the product positioning, user flow, and platform style, and helping the review committee understand the product’s market differentiation and feasibility. Design quality directly affected the proposal’s persuasiveness.",
+        "card2Title": "From design to a launched product",
+        "card2Body": "The platform entered official trial operation in February 2024 and surpassed 10,000 members by December 2024. During this period the client continued partnering with the Taoyuan City Government Youth Affairs Bureau on public-interest events, taking the product from design concept to real social impact."
+      },
+      "testimonial": {
+        "heading": "Feedback from the client",
+        "quote": "“The final deliverables not only met expectations — they exceeded them.”",
+        "body": "Truly grateful for JS’s professionalism and attention to detail, ensuring every design detail was thoroughly considered so the design is <highlight>both practical and beautiful</highlight>. Throughout communication, JS always listened patiently to needs and grasped the direction precisely. Working with JS was a pleasure — a truly reliable partner!",
+        "author": "Karen",
+        "authorMeta": "35+ CEO"
+      },
+      "reflection": {
+        "heading": "Understanding the client’s problem matters more than understanding their requirements",
+        "p1": "This was a 1.5-month, one-person 0-to-1 client project. Looking back, the most critical design decision didn’t happen in Figma — it happened during the requirement-interview phase.",
+        "p2": "The client came with a clear market read: she knew the 35+ mature single demographic was an overlooked market, and she knew OMO was the right product form. <highlight>The designer’s value wasn’t to tell her “what to build,” but to translate her business intuition into a product structure users could understand.</highlight>",
+        "p3": "After launch, membership quickly broke 10,000 — validating one thing: when a market gap is real enough, design’s job isn’t to create demand, but to <highlight>remove friction — so the right people can find the platform built for them with the lowest possible barrier</highlight>."
+      },
+      "projectNav": {
+        "prev": "Previous project",
+        "next": "Next project"
+      }
+    },
+    "bookingApp": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "alt": "Buddy — course-booking platform hero",
+        "title": "A course-booking platform: bilateral system design from a 2C booking app to a 2B merchant backend",
+        "subtitle": "Turning the client’s vague brief of “build a Taiwanese ClassPass” into a bilateral system where a 2C booking app and a 2B merchant-management backend mesh and run together."
+      },
+      "meta": {
+        "roleLabel": "Role",
+        "roleValue": "UI/UX Designer (solo, App & Web)",
+        "scopeLabel": "Scope",
+        "scopeValue": "Product Planning · UX · UI & Branding · 2B Backend System",
+        "platformLabel": "Platforms",
+        "platformValue": "App · Web · Admin Backend"
+      },
+      "summaryTags": [
+        "0→1 product",
+        "Two-sided platform",
+        "Information architecture",
+        "2B backend system",
+        "Cross-functional delivery"
+      ],
+      "summary": {
+        "label": "PROJECT SUMMARY",
+        "heading": "Converging a vague market vision into a complete design blueprint for a two-sided product.",
+        "body": "This is a Taiwanese course-booking app modeled on ClassPass. The core design task was handling the essential challenge of a “two-sided product” — the barrier of getting 2C users to switch from their existing habits, and a 2B merchant backend complete enough that merchants are willing to entrust their operations to it. With no existing product spec, I independently completed the feature planning, information architecture, and the 2C app and brand-website design, <highlight>and reverse-engineered the complete 2B merchant-management backend from the front-end interface.</highlight>",
+        "roleLabel": "Role",
+        "roleValue": "UI/UX Designer (solo, App & Web)"
+      },
+      "background": {
+        "label": "01 — BACKGROUND",
+        "heading": "To take three different classes, you first have to add three official LINE accounts",
+        "body": "Overseas, course-aggregation platforms connect thousands of venues through a single app; but this model never truly served Taiwanese users — and the client saw this gap and its potential.",
+        "calloutLabel": "The user-side problem",
+        "calloutHeading": "A booking experience scattered everywhere",
+        "calloutBody": "To take a yoga class, a boxing class, and a kettlebell class in Taiwan, you have to add three official LINE accounts, remember three sets of booking rules, and read three different schedule formats. There’s nowhere to “see all the nearby classes you can take in one place” — the cost of choosing a class is indirectly pushed onto the user.",
+        "axisLabel": "Bilateral System ／ the two-sided relationship",
+        "axisHeading": "Course data is the axis between 2C and 2B",
+        "axisBody": "For a two-sided platform to work, both sides must have a meshing, consistent understanding of “the same data” — every field a 2C user sees corresponds to a record a 2B merchant maintains in the backend.",
+        "demandTitle": "2C user side",
+        "demandDesc": "People who want to find and book a class",
+        "axisCenterTitle": "Course-data axis",
+        "axisCenterDesc": "The same data shared by both sides",
+        "supplyTitle": "2B merchant side",
+        "supplyDesc": "Venues that want to grow their classes",
+        "axisRows": [
+          {
+            "consumer": "Discover nearby classes by location on the search/explore page",
+            "dataLabel": "Course list",
+            "merchant": "Create and list/unlist courses in the backend"
+          },
+          {
+            "consumer": "Pick a time slot that works for them",
+            "dataLabel": "Sessions ／ schedule",
+            "merchant": "Set the schedule, bind coaches and venues"
+          },
+          {
+            "consumer": "Compare price and remaining spots, then decide",
+            "dataLabel": "Capacity ／ price",
+            "merchant": "Set capacity limits and course pricing"
+          },
+          {
+            "consumer": "Confirm the booking and complete payment",
+            "dataLabel": "Orders",
+            "merchant": "View the booking roster; spots deduct in real time"
+          },
+          {
+            "consumer": "See cancellation and reschedule rules before booking",
+            "dataLabel": "Cancellation rules",
+            "merchant": "Set refund/reschedule policies in one place"
+          },
+          {
+            "consumer": "Leave a review after the class, shaping the next decision",
+            "dataLabel": "Reviews",
+            "merchant": "Read rating feedback as a basis for operational improvement"
+          }
+        ],
+        "opportunityTitle": "Not just an app design problem — it’s the design of a two-sided system",
+        "opportunityBody": "The real design challenge wasn’t building the booking feature; it was answering two opposite questions at once — why would a 2C user switch from their existing LINE habit? And why would a 2B merchant entrust their course operations to a new platform with no user base yet? If either side’s experience is off-balance, the platform won’t turn."
+      },
+      "market": {
+        "label": "02 — COMPETITORS & MARKET OPPORTUNITY",
+        "heading": "A persistent market opportunity",
+        "body": "Positioning this platform’s market situation requires seeing two things at once: the absence of international brands, and the footprints of local predecessors.",
+        "tableHeading": "Two market signals pointing to the same conclusion",
+        "colDim": "Dimension",
+        "colIntl": "International brand (e.g. ClassPass)",
+        "colLocal": "Local predecessors (17Fit / KFit, 2014)",
+        "row1Dim": "Market coverage",
+        "row1Intl": "Serves thousands of cities worldwide",
+        "row1Local": "Inspired by them, rooted locally",
+        "row2Dim": "Relationship with Taiwan",
+        "row2Intl": "Never entered",
+        "row2Local": "Tried, but never grew",
+        "row3Dim": "Proof for the market",
+        "row3Intl": "The model holds long-term in other countries",
+        "row3Local": "People in Taiwan genuinely need this service",
+        "row4Dim": "Signal left behind",
+        "row4Intl": "The gap is still there, with no incumbent to compete against",
+        "row4Local": "“Built it” ≠ “made it work”",
+        "insightCaption": "A vacuum exists, but the model is hard to scale — what this project had to solve wasn’t just the “feature problem,” but a two-sided platform’s “recruitment problem.”",
+        "cardTitle": "The need is real, but the model is hard to scale",
+        "cardBody": "International course-aggregation platforms (like ClassPass) serve thousands of cities worldwide, yet never entered the Taiwanese market. And as early as 2014, Taiwan saw inspired local attempts (such as 17Fit and KFit) — they proved the need genuinely exists, but none grew into a large-enough platform.",
+        "img1Alt": "Visual presentation 01",
+        "img2Alt": "Visual presentation 02"
+      },
+      "challenge": {
+        "label": "03 — CORE DESIGN CHALLENGE",
+        "heading": "A product facing both 2C and 2B at once",
+        "card1Layer": "2C side",
+        "card1Title": "Simple enough to be “worth replacing the existing habit”",
+        "card1Body": "Users are already used to LINE or other ways of booking classes. To get them to switch, the new experience can’t just “also work” — it has to be noticeably less effort: see all the options in one place, complete a booking through a smoother flow. This converged into making “discover classes & book classes” the product’s core feature plan.",
+        "card2Layer": "2B side",
+        "card2Title": "Complete enough that “merchants are willing to hand over operations”",
+        "card2Body": "The merchant backend serves venue owners who list and manage their own classes. The product must cover the merchant’s full operational workflow, and its logic must align with every field on the front end. With no PM spec, this entire system had to be derived independently and designed into reality.",
+        "asymLabel": "Asymmetric Challenge ／ design-weight comparison",
+        "asymHeading": "The same product, two sides with nearly opposite design trade-offs",
+        "asymBody": "The two cards above describe the nature of the two challenges — this table turns it into a quantifiable comparison, making the “asymmetry” visible.",
+        "col2cTitle": "Design orientation: subtraction",
+        "col2cDesc": "Remove everything unnecessary; leave the shortest path to a decision",
+        "col2bTitle": "Design orientation: addition",
+        "col2bDesc": "Fill in everything necessary to support the full operational flow",
+        "rows": [
+          {
+            "label": "Success criterion",
+            "consumer": "Whether it’s less effort than the existing LINE flow",
+            "merchant": "Whether it can replace the Excel and message-based reconciliation merchants use now"
+          },
+          {
+            "label": "Main scope",
+            "consumer": "3 core screens: Discover ／ Book ／ Done",
+            "merchant": "8+ operational modules: courses · schedule · venues · coaches · orders · cancel/reschedule · reviews · reports"
+          },
+          {
+            "label": "Unit of measure",
+            "consumer": "Speed and smoothness of the user experience",
+            "merchant": "Workflow completeness (every front-end field has a backend source)"
+          },
+          {
+            "label": "What failure looks like",
+            "consumer": "One extra tap, one extra thought → fall back to LINE",
+            "merchant": "One missing field, one missing action → fall back to reconciling in Excel"
+          }
+        ],
+        "readingCaption": "The 2C column should be as short as possible, the 2B column as complete as possible: in the same product, “doing it well” means two opposite things on the two sides.",
+        "col2bName": "2B Backend"
+      },
+      "process": {
+        "label": "04 — 0~1 DESIGN PROCESS",
+        "heading": "From a vague brief to an executable blueprint",
+        "body": "The client brought a direction, not a spec. The core task of the design process was to converge it, step by step, into a product blueprint that could be handed off to engineering.",
+        "step1Title": "Client requirement interviews",
+        "step1Body": "Through interviews, I clarified the business goals and target audience, and defined the MVP scope against the ClassPass model — distinguishing “the minimum feature set that makes the platform turn” from “features that can wait for later iterations.”",
+        "step2Title": "Feature mapping",
+        "step2Body": "I drew wireframes to map out the feature flows and aligned on requirements with the client one by one. Here, the wireframe’s role wasn’t the screen but aligning language — making “the features the client describes” and “the interface to actually design” the same thing.",
+        "step3Title": "Style proposal",
+        "step3Body": "I first proposed the product’s color and style direction; once the style was anchored, I designed the app home as the overall visual baseline before expanding to the rest of the interfaces.",
+        "step4Title": "Full design & delivery",
+        "step4Body": "I held regular meetings with the client and engineers, dynamically adjusted design requirements, and handed off the design output to engineers for implementation."
+      },
+      "app": {
+        "label": "05 — DESIGN OUTPUT: 2C APP",
+        "heading": "App UI & UX",
+        "body": "The 2C app had a single design goal — make “finding and booking a class” noticeably less effort than the existing flow of “Google it yourself, add an official LINE to book.”",
+        "flowImgAlt": "2C app main flow scroll image: Discover → Book → Done",
+        "decisionsLabel": "Key design decisions",
+        "decisionsHeading": "Walking with the user through every moment inside the app",
+        "decisionsBody": "Below are a few key interface-design judgments from this project.",
+        "d1Stage": "01 — DISCOVERY",
+        "d1Moment": "“I’ll have some free time soon — what can I take nearby?”",
+        "d1Title": "The search/explore page organizes classes by “nearby”",
+        "d1Body": "The real situation when a user opens the app is “I’ll have time soon, what’s nearby that I can take,” so the search/explore page organizes classes around location and category.",
+        "d2Stage": "02 — BROWSE",
+        "d2Moment": "“Is this class worth tapping into?”",
+        "d2Title": "Course cards carry only the info “needed to decide”",
+        "d2Body": "Cards are filtered by the standard of “is it worth the user tapping in,” so they keep only the class name, duration, location, and rating; everything else is saved for the detail page.",
+        "d3Stage": "03 — BOOKING",
+        "d3Moment": "“Wait, I thought I could cancel?”",
+        "d3Title": "The cancellation policy is surfaced before “confirm booking”",
+        "d3Body": "The biggest source of complaints in booking-type products is “I thought I could cancel.” Putting cancellation and reschedule rules before the confirm-booking step — rather than hiding them in a terms page — lets users understand the rules before they pay any cost.",
+        "d4Stage": "04 — SYSTEM",
+        "d4Moment": "“Every field on the front end is a design decision behind the scenes”",
+        "d4Title": "The app backend is designed in sync with 2C",
+        "d4Body": "Every dynamic field in the 2C app needs an input source behind it. The app backend was planned in sync with the front end to ensure front-end presentation and backend maintenance stay consistent — which also leads into the backend-system design in the next section.",
+        "prevAria": "Previous design decision",
+        "nextAria": "Next design decision",
+        "dotAria": "Go to chapter {num} ／ {stage}",
+        "img1Alt": "App key screen 01: with design-decision annotations",
+        "img2Alt": "App screen 02"
+      },
+      "web": {
+        "label": "06 — BRAND WEBSITES",
+        "heading": "Brand-website design facing both 2C & 2B",
+        "card1Tag": "2C brand site",
+        "card1Pitch": "Selling <highlight>convenience</highlight>",
+        "card1Audience": "Users looking for classes",
+        "card1Points": [
+          "Course variety",
+          "Booking simplicity",
+          "Pricing flexibility"
+        ],
+        "card1Cta": "Download the app",
+        "card2Tag": "2B brand site",
+        "card2Pitch": "Selling <highlight>business</highlight>",
+        "card2Audience": "Venue merchants considering joining",
+        "card2Points": [
+          "Platform exposure benefits",
+          "Effort saved by the backend",
+          "Application to join"
+        ],
+        "card2Cta": "Contact us to join / apply",
+        "audienceLabel": "Audience",
+        "pointsLabel": "Key content",
+        "ctaLabel": "CTA",
+        "caption": "Designing different content structures and visual tones for the two user types, so each page focuses on persuading just one kind of person — this is where a two-sided platform’s “recruiting both sides” lands at the brand layer.",
+        "img1Alt": "2C brand site: aimed at users looking for classes, leading with course variety, booking simplicity, and pricing flexibility",
+        "img2Alt": "2B brand site: aimed at venue merchants considering joining, leading with platform exposure and backend management"
+      },
+      "backend": {
+        "label": "07 — DESIGN OUTPUT: 2B BACKEND SYSTEM",
+        "heading": "Every piece of information the front-end user sees is a designed input decision in the backend",
+        "body": "The 2B backend is a standalone system serving venue merchants who “manage their own classes.” With no existing spec, the entire backend’s content and structure was reverse-engineered all the way from the front end and defined independently. The 2C app and the 2B backend look like two products, but they are really two sides of the same data. Below is the method I used to derive the backend from scratch.",
+        "method1Title": "List every functional field",
+        "method1Body": "First, going screen by screen through the “front-end user scenario,” I inventoried which fields are variable and editable; then I switched to the “backend administrator scenario” to consider what information merchants need to see and operate on.",
+        "method2Title": "Plan the sidebar top-level categories",
+        "method2Body": "I grouped the inventoried features into the backend’s navigation structure; features needing special handling (e.g. content requiring review) became their own top-level category.",
+        "method3Title": "Present information in lists",
+        "method3Body": "Under each top-level category, data is presented as lists. For special data displays (like charts), I traced back to ask “where does this number’s data come from” to ensure the backend can fetch it.",
+        "method4Title": "Plan the detailed fields",
+        "method4Body": "A list implies corresponding editable fields and create/edit/delete interfaces, so I designed the editing details of each object one by one.",
+        "method5Title": "Review and verify",
+        "method5Body": "I went back to the front-end interface and compared field by field, checking the backend for omissions — any front-end field without an input source in the backend is a hole.",
+        "ifaceLabel": "Backend interface",
+        "ifaceHeading": "How a single course card decides what the backend looks like",
+        "ifaceBody": "Take the “course card” a user sees in the app: every one of its fields maps to a designed input in the backend.",
+        "mapHeading": "Course detail page → field mapping to the backend edit form",
+        "mapColFront": "Front end (shown on the 2C app course detail page)",
+        "mapColBack": "Backend (input in the 2B course edit form)",
+        "mapRows": [
+          [
+            "Course name",
+            "Text input field"
+          ],
+          [
+            "Class time",
+            "Schedule planner: pick date and time slot"
+          ],
+          [
+            "Class location",
+            "Venue dropdown (bound to the merchant’s existing venues)"
+          ],
+          [
+            "Coach",
+            "Coach dropdown (bound to the merchant’s existing coach list)"
+          ],
+          [
+            "Course price",
+            "Number input field"
+          ],
+          [
+            "Spots remaining",
+            "Capacity-limit input + system deducts in real time based on bookings"
+          ],
+          [
+            "Course rating",
+            "Read-only, filled in by users’ post-booking ratings"
+          ]
+        ],
+        "mapCaption": "On the front end, each field is more than “an input box” in the backend — it involves who maintains the field, what interface it’s entered through, and how it relates to other data.",
+        "img1Alt": "Object relationship diagram: course → session → order",
+        "img2Alt": "Field-mapping diagram: front-end course card ↔ backend edit form"
+      },
+      "impact": {
+        "label": "08 — Impact & Scope",
+        "heading": "The design scope delivered by one person",
+        "body": "Design delivery ends at “complete and ready to hand off to engineering.” Below it’s shown across two levels: design scope and experience change.",
+        "metric1Value": "5",
+        "metric1Label": "Product interfaces designed",
+        "metric1Sub": "App · App backend · 2C web · 2B web · 2B backend",
+        "metric2Value": "2",
+        "metric2Label": "Two-sided system feature plans",
+        "metric2Sub": "2C user side + 2B merchant side",
+        "experienceHeading": "Experience change",
+        "baColDim": "Aspect",
+        "baColBefore": "Before (current state)",
+        "baColAfter": "After (this platform’s design)",
+        "baRows": [
+          [
+            "Finding classes",
+            "Add multiple venues’ official LINE accounts separately",
+            "See all nearby classes in one app"
+          ],
+          [
+            "Comparing classes",
+            "Three schedule formats, each looked up separately",
+            "One unified browse-and-filter interface"
+          ],
+          [
+            "Awareness of cancellation rules",
+            "Rules scattered, discovered only after the fact",
+            "Cancellation and reschedule policy stated up front, before booking"
+          ],
+          [
+            "Merchant-side operations",
+            "No unified management tool",
+            "One 2B backend covering everything from listing to reconciliation"
+          ],
+          [
+            "Front-/back-end consistency",
+            "—",
+            "Every backend field maps to a front-end display, verified field by field"
+          ]
+        ]
+      },
+      "reflection": {
+        "label": "09 — Reflection",
+        "heading": "Given another chance, I’d move “validation” earlier next time",
+        "p1": "This project let me fully experience designing a two-sided product from 0 to delivery. The biggest takeaway was the method of “reverse-engineering the backend system from the front end” — it later became my approach to front-/back-end feature-integration design.",
+        "p2": "But if I did it again, there are two things I’d choose to do differently.",
+        "sub1": "“Move market validation earlier”",
+        "p3": "The requirements this time came mainly from the client’s market observations, and within the project’s schedule constraints, there wasn’t enough time to research Taiwan’s existing competitor attempts more deeply. If I’d clarified earlier “why this business model didn’t seem to scale before,” the design could have responded sooner to the real risks — like the merchant cold-start that’s hardest for two-sided platforms — rather than just getting the features right.",
+        "sub2": "“Plant measurable metrics for the design outcome”",
+        "p4": "This delivery ended at “complete and ready to hand off to engineering,” missing post-launch data feedback. In the future I’ll define success metrics with the client during the design phase (e.g. booking-completion rate, time for merchants to list a course), so the design’s value can be validated, not just delivered.",
+        "p5": "In a 0-to-1 project, the most valuable experience is often not making the interface pretty, but — when information is incomplete — still being able to break a vague vision into a system that meshes together and can be executed. This project gave me much more experience in front-/back-end feature-integration design."
+      },
+      "projectStatus": {
+        "label": "Project Status —",
+        "body": "The design was delivered and published to TestFlight for beta testing; due to contractual factors between the client and the company, the product did not reach official launch."
+      },
+      "projectNav": {
+        "prev": "Previous project",
+        "next": "Next project"
+      }
     }
   },
   "workingWithAI": {
@@ -756,12 +1578,12 @@
     "subtitle": "Integrating AI into workflows, focusing on key decisions and experience essentials",
     "items": {
       "prototyping": {
-        "title": "AI Prototyping",
-        "description": "Using v0, Claude Code, Cursor, and Figma MCP to rapidly produce high-fidelity prototypes, efficiently aligning design and interaction logic with PM & engineering teams."
+        "title": "AI-Driven Workflow",
+        "description": "Passionate about researching the latest AI frontier applications, skilled at deconstructing and restructuring based on each project's needs, and bringing the right AI applications and tools into the team. Currently relying primarily on Claude Code and Codex to accelerate end-to-end delivery and collaboration."
       },
       "workflow": {
         "title": "Design Workflow",
-        "description": "Leveraging AI to deconstruct product UX, simulate scenarios and optimize information architecture. Self-hosting OpenClaw to long-term track and train AI Personas that simulate real user behavior, modularizing user flows to accelerate development and product iteration."
+        "description": "Using AI to deconstruct product UX and optimize information architecture, and self-hosting OpenClaw to collaborate on routine work. Also skilled at organizing and modularizing user flows to accelerate development understanding and product iteration."
       },
       "imageGen": {
         "title": "Image Generation",
@@ -769,7 +1591,7 @@
       },
       "vibeCoding": {
         "title": "AI Building",
-        "description": "AI tool research enthusiast, developing DCA asset management concept products as side projects, exploring AI and product feature integration possibilities."
+        "description": "An AI tool research enthusiast who enjoys building small side-project utilities and crafting Skills, exploring the possibilities of integrating AI with product features."
       }
     }
   },
@@ -815,9 +1637,11 @@
     "title": "Kind Words",
     "testimonials": {
       "karen": {
+        "title": "@ Hope Equation Co., Ltd. CEO",
         "quote": "Truly grateful for JS's professionalism and attention to detail. Every design decision is thoughtful, balancing both usability and aesthetics. Communication was always patient and precise — the final deliverables exceeded expectations. A truly reliable partner!"
       },
       "kyle": {
+        "title": "@ Bitget CN Marketing Lead",
         "quote": "Working with JS was incredibly smooth — quick to understand requirements and translate them into polished designs that match brand tone. JS is passionate about Web3 and communicates efficiently, offering detailed UX suggestions that elevate the final product. A designer with both creativity and professionalism!"
       }
     }
@@ -900,7 +1724,8 @@
       "paragraph4": "Feel free to check out my portfolio, or let's chat about product design, AI tools, or investment trading!",
       "btnResume": "View Resume →",
       "btnWork": "View Work →",
-      "location": "📍 Taipei, Taiwan"
+      "location": "📍 Taipei, Taiwan",
+      "paragraph2Highlight": "As a crypto trader of 5 years myself, "
     },
     "values": {
       "sectionLabel": "Design Values",

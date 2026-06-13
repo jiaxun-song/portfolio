@@ -195,7 +195,7 @@ export default function ExoraClient() {
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <Image
           src="/images/projects/exora/context-overview.jpg"
-          alt="市場現況"
+          alt={t('context.heading')}
           width={1920}
           height={1080}
           className="w-full h-auto rounded-xl opacity-90"
@@ -627,7 +627,7 @@ export default function ExoraClient() {
             sizes="(min-width: 768px) 80vw, 100vw"
           />
           <p className="mt-3 text-center text-[15px] leading-relaxed text-accent">
-            獨立規劃用戶合約交易下單流程、介面設計＆產品視覺風格
+            {t('designInsight.imageCaption')}
           </p>
         </div>
       </div>
