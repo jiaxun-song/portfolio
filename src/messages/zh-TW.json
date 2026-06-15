@@ -207,8 +207,19 @@
         "heading": "AI 驅動的設計應用",
         "body": "使用 Claude Code 建立與前端協作的多租戶多風格 Design System 工具，為了因應主軸產品未來會產出多租戶的設計系統模式。"
       },
+      "uiDesign": {
+        "label": "09 — Dashboard Design",
+        "heading": "多租戶後台系統 ＆ 錢包後台系統設計",
+        "labels": [
+          "錢包後台系統 - 充幣訂單",
+          "錢包後台系統 - 編輯節點",
+          "多租戶後台系統 - 租戶詳情",
+          "多租戶後台系統 - 服務商管理",
+          "多租戶後台系統 - 新增商戶"
+        ]
+      },
       "impact": {
-        "label": "09 — IMPACT & OUTCOMES",
+        "label": "10 — IMPACT & OUTCOMES",
         "heading": "設計如何影響產品結果",
         "body": "從交易體驗、Design System、產品戰略三個層面量化設計貢獻。",
         "metric1Value": "6→3",
@@ -286,7 +297,7 @@
         ]
       },
       "reflection": {
-        "label": "10 — REFLECTION",
+        "label": "11 — REFLECTION",
         "heading": "在高波動市場做設計的反思",
         "card1": {
           "title": "用交易者視角找對問題",

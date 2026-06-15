@@ -1,7 +1,8 @@
 'use client';
 
+import { useEffect, useRef, useState } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import ScrollReveal from '@/components/ui/ScrollReveal';
@@ -15,6 +16,15 @@ const CURRENT_ID = 'exora';
 const currentIdx = navigableProjects.findIndex((p) => p.id === CURRENT_ID);
 const prevProject = navigableProjects[(currentIdx - 1 + navigableProjects.length) % navigableProjects.length];
 const nextProject = navigableProjects[(currentIdx + 1) % navigableProjects.length];
+
+/* Final UI design gallery — ui-design-N.png in /public/images/projects/exora */
+const uiDesignImages = [
+  { width: 3840, height: 2160 },
+  { width: 3840, height: 2160 },
+  { width: 3840, height: 2160 },
+  { width: 3840, height: 2160 },
+  { width: 3840, height: 2160 },
+];
 
 /* Placeholder for missing images */
 function Placeholder({ name, ratio = '16/10' }: { name: string; ratio?: string }) {
@@ -31,6 +41,45 @@ function Placeholder({ name, ratio = '16/10' }: { name: string; ratio?: string }
 export default function ExoraClient() {
   const t = useTranslations('caseStudy.exora');
   const tp = useTranslations('projectsPage');
+
+  const uiSectionRef = useRef<HTMLElement | null>(null);
+  const uiViewportRef = useRef<HTMLDivElement | null>(null);
+  const uiTrackRef = useRef<HTMLDivElement | null>(null);
+  const [uiMaxX, setUiMaxX] = useState(0);
+  const [uiScrollDistance, setUiScrollDistance] = useState(0);
+  const { scrollYProgress: uiScrollProgress } = useScroll({
+    target: uiSectionRef,
+    offset: ['start start', 'end end'],
+  });
+  const uiX = useTransform(uiScrollProgress, [0, 1], [0, -uiMaxX]);
+
+  useEffect(() => {
+    const measureGallery = () => {
+      const viewport = uiViewportRef.current;
+      const track = uiTrackRef.current;
+      if (!viewport || !track) return;
+
+      const viewportStyle = window.getComputedStyle(viewport);
+      const viewportPaddingX =
+        parseFloat(viewportStyle.paddingLeft) + parseFloat(viewportStyle.paddingRight);
+      const viewportContentWidth = viewport.clientWidth - viewportPaddingX;
+      const maxX = Math.max(0, track.scrollWidth - viewportContentWidth);
+      setUiMaxX(maxX);
+      setUiScrollDistance(maxX + window.innerHeight);
+    };
+
+    measureGallery();
+
+    const resizeObserver = new ResizeObserver(measureGallery);
+    if (uiViewportRef.current) resizeObserver.observe(uiViewportRef.current);
+    if (uiTrackRef.current) resizeObserver.observe(uiTrackRef.current);
+    window.addEventListener('resize', measureGallery);
+
+    return () => {
+      resizeObserver.disconnect();
+      window.removeEventListener('resize', measureGallery);
+    };
+  }, []);
 
   return (
     <>
@@ -754,7 +803,58 @@ export default function ExoraClient() {
         </div>
       </div>
 
-      {/* ========== 12 — IMPACT & OUTCOMES ========== */}
+      {/* ========== 09 — FINAL UI DESIGN (horizontal scroll gallery) ========== */}
+      <section
+        ref={uiSectionRef}
+        className="relative mb-[var(--cs-section-gap)]"
+        style={{ height: uiScrollDistance ? `${uiScrollDistance}px` : '180vh' }}
+      >
+        <div className="sticky top-0 flex h-screen items-center overflow-hidden">
+          <div className="w-full">
+            <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
+              <SectionLabel label={t('uiDesign.label')} />
+              <div className="mb-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
+                <h2 className="font-[var(--font-display)] text-2xl md:text-[32px] font-semibold text-text-primary">
+                  {t('uiDesign.heading')}
+                </h2>
+                <p className="font-[var(--font-mono)] text-xs uppercase tracking-[1.5px] text-text-muted">
+                  Scroll to explore
+                </p>
+              </div>
+            </div>
+
+            <div ref={uiViewportRef} className="mx-auto max-w-[var(--cs-wide-max-width)] overflow-hidden px-6 md:px-12">
+              <motion.div ref={uiTrackRef} className="flex gap-8 pr-[28vw]" style={{ x: uiX }}>
+                {uiDesignImages.map(({ width, height }, index) => (
+                  <div
+                    key={index}
+                    className="w-[72vw] max-w-[860px] flex-none overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02] shadow-[0_24px_80px_rgba(0,0,0,0.28)]"
+                  >
+                    <Image
+                      src={`/images/projects/exora/ui-design-${index + 1}.png`}
+                      alt={`${t('uiDesign.heading')} ${index + 1}`}
+                      width={width}
+                      height={height}
+                      className="h-auto w-full"
+                      sizes="(max-width: 768px) 72vw, 860px"
+                    />
+                    <div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3">
+                      <span className="font-[var(--font-mono)] text-[11px] uppercase tracking-[1.5px] text-accent">
+                        {(t.raw('uiDesign.labels') as string[])[index]}
+                      </span>
+                      <span className="font-[var(--font-mono)] text-[11px] text-text-muted">
+                        {String(index + 1).padStart(2, '0')} / {String(uiDesignImages.length).padStart(2, '0')}
+                      </span>
+                    </div>
+                  </div>
+                ))}
+              </motion.div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ========== 10 — IMPACT & OUTCOMES ========== */}
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-8">
         <SectionLabel label={t('impact.label')} />
         <h2 className="font-[var(--font-display)] text-2xl md:text-[32px] font-semibold text-text-primary mb-8">
@@ -845,7 +945,7 @@ export default function ExoraClient() {
         </div>
       </ScrollReveal>
 
-      {/* ========== 12 — REFLECTION ========== */}
+      {/* ========== 11 — REFLECTION ========== */}
       <ScrollReveal className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12 mb-[var(--cs-section-gap)]">
         <SectionLabel label={t('reflection.label')} />
         <h2 className="font-[var(--font-display)] text-2xl md:text-[32px] font-semibold text-text-primary mb-8">
