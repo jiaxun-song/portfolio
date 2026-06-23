@@ -1739,22 +1739,20 @@
       "location": "📍 Taipei, Taiwan"
     },
     "values": {
-      "sectionLabel": "Design Values",
-      "title": "Design Values",
-      "desc": "在設計職涯中，我淬鍊出幾個核心價值，作為支撐每一次設計決策的基礎原則。",
+      "sectionLabel": "Product Mindset",
+      "title": "Product Mindset",
       "card1Title": "從 0 到 1 的產品經驗",
-      "card1Desc": "經手的專案大多是從零開始打造的，也因此有不少參與產品策略與功能規劃的經驗。習慣在動手設計之前，先判斷這個功能該不該做、市場趨勢是否支持這個方向。",
+      "card1Desc": "經歷的專案大多是從零開始打造的，也因此有不少參與產品策略與功能規劃的經驗。在設計之前，會透過市場競品分析，評估產品功能的規劃。",
       "card2Title": "在限制裡找最佳解",
-      "card2Desc": "每個產品都有技術與商業上的限制，設計時沒辦法忽略這些現實。習慣在工程可行性、商業目標跟用戶體驗之間，找到能真正上線的方案。",
-      "card3Title": "把複雜的東西變得好懂",
-      "card3Desc": "將專業的資訊架構與流程，轉化成用戶可以直覺操作的介面。讓老手效率高，新手也不會被嚇跑。",
+      "card2Desc": "過去在乙方公司執行專案期間，會需要直接與甲方進行需求訪談與功能規劃。擅長在工程可行性、商業目標以及用戶體驗之間，找到能真正上線的方案。",
+      "card3Title": "Spec-Driven Development (SDD)",
+      "card3Desc": "規劃 User Flow、Design.md、Spec 與 Design QA，並透過模組化規格協助 AI 與工程團隊理解需求。讓產品從規劃到實作擁有一致脈絡，縮短設計到上線的距離。",
       "card4Title": "用趨勢洞察輔助產品決策",
-      "card4Desc": "平常就在關注產業趨勢與市場動態，在參與功能規劃時能提出有依據的建議——不只是「這樣比較好用」，而是「現在市場需要這個」。"
+      "card4Desc": "擅長結合市場趨勢、商業目標與使用者需求進行產品思考。在功能規劃與方案評估時，不只關注體驗品質，也思考產品是否具備長期價值與市場競爭力。"
     },
     "skills": {
-      "sectionLabel": "Soft Skills",
-      "title": "Soft Skills",
-      "desc": "穩定的硬實力之外，我同樣重視溝通協作與持續學習——這些特質往往是讓專案順利推進的關鍵。",
+      "sectionLabel": "Beyond Design",
+      "title": "Beyond Design",
       "card1Title": "跨角色溝通協作",
       "card1Desc": "習慣用 flow chart、prototype、design spec 等視覺化方式，把設計意圖轉譯成工程師、PM、合規團隊都能理解的語言。",
       "card2Title": "自發性 AI 工具研究",

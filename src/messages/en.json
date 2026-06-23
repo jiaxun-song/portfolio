@@ -1739,22 +1739,20 @@
       "paragraph2Highlight": "As a crypto trader of 5 years myself, "
     },
     "values": {
-      "sectionLabel": "Design Values",
-      "title": "Design Values",
-      "desc": "Over the course of my design career, I've distilled a few core values that serve as the foundation for every design decision I make.",
+      "sectionLabel": "Product Mindset",
+      "title": "Product Mindset",
       "card1Title": "0-to-1 Product Experience",
-      "card1Desc": "Most of my projects were built from scratch, which means hands-on involvement in product strategy and feature planning. I tend to assess whether a feature should be built before jumping into design.",
+      "card1Desc": "Most of my projects were built from scratch, which means hands-on involvement in product strategy and feature planning. Before designing, I evaluate feature planning through market and competitive analysis.",
       "card2Title": "Finding the Best Solution Within Constraints",
-      "card2Desc": "Every product has technical and business constraints. I work within the intersection of engineering feasibility, business goals, and user experience to find solutions that can actually ship.",
-      "card3Title": "Making Complexity Understandable",
-      "card3Desc": "Translating complex information architecture and workflows into interfaces users can operate intuitively. Efficient for power users, approachable for newcomers.",
+      "card2Desc": "While delivering projects at an agency, I worked directly with clients on requirement interviews and feature planning. I excel at finding solutions that can actually ship — balancing engineering feasibility, business goals, and user experience.",
+      "card3Title": "Spec-Driven Development (SDD)",
+      "card3Desc": "Planning User Flows, Design.md, Specs, and Design QA, using modular specifications to help AI and engineering teams understand requirements. Giving the product a consistent context from planning to implementation, shortening the distance from design to launch.",
       "card4Title": "Trend Insights for Product Decisions",
-      "card4Desc": "I stay on top of industry trends and market dynamics, which helps me contribute informed suggestions during feature planning — not just 'this is more usable,' but 'the market needs this right now.'"
+      "card4Desc": "I approach product thinking by combining market trends, business goals, and user needs. During feature planning and solution evaluation, I focus not only on experience quality but also on whether the product holds long-term value and market competitiveness."
     },
     "skills": {
-      "sectionLabel": "Soft Skills",
-      "title": "Soft Skills",
-      "desc": "Beyond solid hard skills, I value communication, collaboration, and continuous learning — traits that keep projects moving smoothly.",
+      "sectionLabel": "Beyond Design",
+      "title": "Beyond Design",
       "card1Title": "Cross-functional Communication",
       "card1Desc": "I use flow charts, fund flow diagrams, and design specs to translate design intent into language that engineers, PMs, and compliance teams can all understand.",
       "card2Title": "Self-driven AI Tool Research",

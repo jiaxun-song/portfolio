@@ -18,17 +18,12 @@ export default function SoftSkills() {
 
         {/* Section Header */}
         <ScrollReveal>
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-14">
             <span className="w-3 h-3 rounded-full bg-accent-orange" />
             <h2 className="text-3xl md:text-4xl font-bold font-[var(--font-display)] text-text-primary">
               {t('title')}
             </h2>
           </div>
-        </ScrollReveal>
-        <ScrollReveal delay={0.1}>
-          <p className="text-[var(--color-text-secondary)] text-base max-w-[600px] mb-14 font-light">
-            {t('desc')}
-          </p>
         </ScrollReveal>
 
         {/* 3-col Grid — 三張並排 */}

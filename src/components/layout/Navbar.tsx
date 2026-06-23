@@ -10,7 +10,6 @@ import LanguageSwitcher from './LanguageSwitcher';
 const navLinks = [
   { label: 'Projects', href: '/work' },
   { label: 'About', href: '/about' },
-  { label: 'Resume', href: 'https://drive.google.com/drive/u/5/folders/1jTFXeVDkk5sfFede1RY9_F6DIogl7pvu?usp=sharing', external: true },
 ] as const;
 
 export default function Navbar() {
