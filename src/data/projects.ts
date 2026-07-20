@@ -79,8 +79,8 @@ export const navigableProjects = visibleProjects.filter((project) => project.lin
 export const vibeCodingProjects: Project[] = [
   {
     id: 'inspiration-library',
-    tags: ['Claude Code', 'AI Tool', 'Personal Project'],
+    tags: ['Claude Code', 'AI Classifier', 'PWA', 'Personal Project'],
     image: '/images/projects/IdeaBox.jpg',
-    link: '',
+    link: '/work/goodshit',
   },
 ];
