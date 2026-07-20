@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { Link } from '@/i18n/navigation';
 
 interface ArticleCover {
   kicker: string;
@@ -40,7 +41,7 @@ export default function ArticleCard({
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.7, delay: index * 0.1, ease: [0.16, 1, 0.3, 1] }}
     >
-      <a href={article.href} data-cursor-hover className="block">
+      <Link href={article.href} data-cursor-hover className="block">
         <article
           className="case-card group cursor-pointer overflow-hidden rounded-[32px] transform-gpu transition-[border-color,transform] duration-300 ease-out hover:-translate-y-1"
           style={{
@@ -87,7 +88,7 @@ export default function ArticleCard({
             </div>
           </div>
         </article>
-      </a>
+      </Link>
     </motion.div>
   );
 }

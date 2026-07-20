@@ -9,8 +9,8 @@ import ArticleCard from '@/components/ui/ArticleCard';
 const articles = [
   {
     id: 'fable5-review',
-    href: '/articles/fable5-review/',
-    date: '2026.07.16',
+    href: '/article/fable5-review',
+    date: '2026.07',
     eyebrow: 'AIPost Field Test — LLM × Landing Page',
     cover: {
       kicker: 'FIELD TEST',
