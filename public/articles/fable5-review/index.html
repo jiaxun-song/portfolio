@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="用同一份 Three.js Landing Page 需求實測 Fable 5、Claude Opus、GPT 5.5、Gemini 3.1 Pro，兩輪迭代後的完整評測與選用建議。">
-<title>Fable 5 值得用嗎？三個真實任務後的實測結論｜AIPost 模型實測</title>
+<title>Fable 5 值得用嗎？三個真實任務後的實測結論</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+TC:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -66,15 +66,16 @@ p{color:var(--tx-1)}
 strong{color:var(--tx-0);font-weight:600}
 .hl{color:var(--accent)}
 
-/* ============ Masthead ============ */
-.masthead{position:sticky;top:0;z-index:60;background:rgba(255,255,255,.03);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid rgba(255,255,255,.06)}
-.masthead .in-bar{max-width:var(--wide);margin-inline:auto;padding:14px clamp(20px,5vw,48px);display:flex;align-items:center;justify-content:space-between;gap:16px}
-.brand{font-family:var(--font-m);font-size:13px;letter-spacing:2.4px;color:var(--tx-0);font-weight:600}
-.brand em{color:var(--accent);font-style:normal}
-.masthead nav{display:flex;gap:22px}
-.masthead nav a{font-family:var(--font-m);font-size:12px;letter-spacing:1.6px;color:var(--tx-2)}
-.masthead nav a:hover{color:var(--tx-0)}
-@media (max-width:640px){.masthead nav{display:none}}
+/* ============ Site Header（與作品集一致） ============ */
+.site-header{position:sticky;top:0;z-index:60;background:rgba(20,20,20,.5);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.site-header .in-bar{max-width:1280px;margin-inline:auto;padding:0 clamp(24px,5vw,64px);height:64px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.site-logo{font-family:var(--font-d);font-size:20px;font-weight:900;letter-spacing:-.02em;color:var(--tx-0)}
+.site-nav{display:flex;gap:32px}
+.site-nav a{position:relative;font-family:var(--font-b);font-size:14px;color:var(--tx-1);transition:color .3s}
+.site-nav a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:0;background:var(--accent);transition:width .3s}
+.site-nav a:hover{color:var(--tx-0)}
+.site-nav a:hover::after{width:100%}
+@media (max-width:640px){.site-nav{gap:20px}.site-nav a{font-size:13px}}
 
 /* ============ Hero ============ */
 .hero{position:relative;min-height:72vh;display:flex;align-items:flex-end;overflow:hidden;padding:120px 0 72px;margin-bottom:80px}
@@ -269,28 +270,27 @@ td .na{color:var(--tx-2);font-family:var(--font-m)}
 .src-list a,.src-list .dead{font-family:var(--font-m);font-size:12.5px;word-break:break-all}
 .src-list .dead{color:var(--tx-2)}
 
-/* ============ Footer ============ */
-footer{border-top:1px solid var(--line);padding:52px 0 68px;margin-top:var(--gap-section)}
-.f-line{font-size:15px;color:var(--tx-1);margin-bottom:18px}
-.f-line strong{color:var(--tx-0)}
-.f-id{font-family:var(--font-m);font-size:12px;letter-spacing:1.8px;color:var(--tx-2);text-transform:uppercase}
-.f-id b{color:var(--accent);font-weight:600}
+/* ============ Site Footer（與作品集一致） ============ */
+footer.site-footer{border-top:1px solid var(--line);padding:48px 0;margin-top:var(--gap-section)}
+.site-footer .in-bar{max-width:1280px;margin-inline:auto;padding-inline:clamp(24px,5vw,64px);display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.site-footer .copy{font-size:14px;color:var(--tx-2)}
+.site-footer .f-links{display:flex;gap:32px}
+.site-footer .f-links a{font-family:var(--font-b);font-size:14px;font-weight:500;color:var(--tx-1);transition:color .3s}
+.site-footer .f-links a:hover{color:var(--tx-0)}
 </style>
 </head>
 <body>
 
 <div class="orbs" aria-hidden="true"><div class="orb orb-1"></div><div class="orb orb-2"></div></div>
 
-<header class="masthead">
+<header class="site-header">
   <div class="in-bar">
-    <span class="brand">AIPOST <em>·</em> 模型實測</span>
-    <nav aria-label="文章章節">
-      <a href="#method">實測方法</a>
-      <a href="#results">成果</a>
-      <a href="#audience">適合對象</a>
-      <a href="#sources">來源</a>
+    <a class="site-logo" href="/zh-TW">JADE</a>
+    <nav class="site-nav" aria-label="主導覽">
+      <a href="/zh-TW/work">Projects</a>
+      <a href="/zh-TW/article">Article</a>
+      <a href="/zh-TW/about">About</a>
     </nav>
-    <span class="brand" style="letter-spacing:1.6px;color:var(--tx-2)">2026.07.16</span>
   </div>
 </header>
 
@@ -299,7 +299,7 @@ footer{border-top:1px solid var(--line);padding:52px 0 68px;margin-top:var(--gap
   <div class="hero-bg" aria-hidden="true"></div>
   <div class="hero-fade" aria-hidden="true"></div>
   <div class="wide">
-    <span class="eyebrow">AIPost Field Test — LLM × Landing Page</span>
+    <span class="eyebrow">Field Test — LLM × Landing Page · 2026.07</span>
     <h1>Fable 5 值得用嗎<span class="q">？</span><span class="sub-t">三個真實任務後的實測結論</span></h1>
     <p class="lede">同一份需求、同一套修改指令，讓 <strong>Fable 5、Claude Opus、GPT 5.5、Gemini 3.1 Pro</strong> 各自做出一個 Three.js 互動 Landing Page。兩輪迭代實測之後，值得使用的選擇，與想像中的排名，相似又不相似。</p>
     <div class="hero-meta">
@@ -831,10 +831,13 @@ Opus — Hero Section 的設計完全不行，過於凌亂，請換一個</pre>
 
 </main>
 
-<footer>
-  <div class="prose">
-    <p class="f-line">以上為 <strong>Jade</strong> 的實測產出結果——題目設計、兩輪修改指令、六個網站成品與所有評分心得，皆為第一手紀錄。</p>
-    <p class="f-id"><b>Jade</b> · Product Designer　—　AIPOST 模型實測 · 2026.07</p>
+<footer class="site-footer">
+  <div class="in-bar">
+    <p class="copy">Copyright © 2026 Jade Song</p>
+    <div class="f-links">
+      <a href="https://www.behance.net/zx98979897d9dd" target="_blank" rel="noopener noreferrer">Behance</a>
+      <a href="https://drive.google.com/drive/u/5/folders/1jTFXeVDkk5sfFede1RY9_F6DIogl7pvu?usp=sharing" target="_blank" rel="noopener noreferrer">Resume</a>
+    </div>
   </div>
 </footer>
 
