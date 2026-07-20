@@ -2,8 +2,20 @@
   "nav": {
     "work": "作品",
     "projects": "專案",
+    "article": "文章",
     "about": "關於",
     "resume": "履歷"
+  },
+  "articlePage": {
+    "pageTitle": "Article",
+    "subtitle": "把真實專案裡的觀察與判斷，寫成可以慢慢讀的長文。",
+    "read": "閱讀文章",
+    "articles": {
+      "fable5-review": {
+        "title": "Fable 5 值得用嗎？三個真實任務後的實測結論",
+        "description": "同一份需求、同一套修改指令，讓 Fable 5、Claude Opus、GPT 5.5、Gemini 3.1 Pro 各自做出一個 Three.js 互動 Landing Page。兩輪迭代之後的完整評測與選用建議。"
+      }
+    }
   },
   "hero": {
     "greeting": "嗨！我是 Jade Song",
@@ -1249,6 +1261,135 @@
         "next": "下一則作品"
       }
     },
+    "goodshit": {
+      "backToProjects": "返回專案列表",
+      "hero": {
+        "label": "個人專案 — 2026 · Vibe Coding",
+        "title": "GOODSHIT\n丟進來就自動歸檔的\nAI 靈感庫",
+        "subtitle": "在 Threads、IG、YouTube 看到好東西，分享給私人 Telegram bot。AI 自動抓取連結資訊、判定分類、加上標籤，回到主畫面的 PWA，就看到整理好的 feed。"
+      },
+      "highlightMetrics": {
+        "m1Value": "2 步",
+        "m1Label": "完成收藏 — 分享面板點 Telegram、送出，整理全部交給 AI",
+        "m2Value": "2 天",
+        "m2Label": "從設計 spec 到 Vercel 正式上線",
+        "m3Value": "$0",
+        "m3Label": "每月營運成本 — Neon + Groq + Vercel 全免費方案"
+      },
+      "summary": {
+        "label": "PROJECT SUMMARY",
+        "heading": "把散落四處的靈感收進單一入口，整理的工作交給 AI。",
+        "body": "GOODSHIT 是一個用 Claude Code 從頭到尾做完的個人「稍後閱讀」PWA。過去收藏散落在 Threads 珍藏、IG 收藏、YouTube 稍後觀看——收了等於丟了。現在只要傳一則 Telegram 訊息：後端抓取連結的 og meta，LLM 從 17 個鎖定分類中判定歸屬並加上標籤，主畫面的 feed 自動維持整齊。<highlight>設計、規格、實作到部署由一人完成，兩天上線——AI 就是整個工程團隊</highlight>。",
+        "roleLabel": "Role",
+        "roleValue": "Designer & Solo Builder（with Claude Code）"
+      },
+      "problem": {
+        "heading": "收藏很容易，找不回來才是靈感的死因",
+        "body": "好東西散落在 Threads、Instagram、YouTube 和各種部落格，每個平台都有自己的收藏按鈕：按下去只要兩秒，之後那份清單就再也不會被打開。因為它們沒有分類、沒有能用的搜尋，自然也沒有讓你回頭翻的理由。",
+        "calloutLabel": "真正的限制條件",
+        "calloutHeading": "收藏當下必須零摩擦，否則系統不會被使用",
+        "calloutBody": "任何要求我打開 app、選資料夾、打標籤的工具，都輸給平台原生的收藏按鈕。所以設計約束非常嚴格：收藏必須維持在分享面板兩步完成，所有整理工作都必須發生在連結離手之後——由機器做，不是由我做。",
+        "imageLabel": "收藏散落問題示意——四個平台各自的收藏清單，沒有一個找得回來",
+        "gapTitle": "缺口不是再做一個收藏 app，而是「歸檔的工作由誰來做」",
+        "gapBody": "稍後閱讀工具早就存在，但<highlight>分類、標籤、歸檔這些整理工作，仍然留給使用者自己做</highlight>，而這正是永遠不會被做的那部分。GOODSHIT 想驗證的事情很單純：只要 LLM 分類夠準，整理就可以完全不經過人手，收藏的東西才有機會真的被翻出來用。",
+        "alternativesTitle": "為什麼不直接用現成的？",
+        "alternativesBody": "評估過再決定自己做。mymind 最接近「自動歸檔」的想像，但它是訂閱制——月費違反這個工具「永遠不需要為自己辯護」的生存條件；Raindrop 的資料夾和標籤終究還是我來整理，摩擦回到原點。更關鍵的是兩個非標準需求：分類必須是我自己的 17 個工作分類（AI 工具、IP 操盤、剪輯……），不是通用的 Article / Video；入口必須是 Telegram——它已經在每個平台的分享面板上，不用另裝 extension。這兩點決定了自建，而不是「想寫 code」。"
+      },
+      "solution": {
+        "heading": "一則訊息進來，一張歸好檔的卡片出去",
+        "body": "整個系統是一條直線 pipeline：把網址分享給私人 Telegram bot，它落到 Vercel 上的 Next.js serverless route。Route 抓取 og:title、og:description、og:image，送給 Groq 免費的 llama-3.3-70b API 分類，再寫進 Neon Postgres。PWA 讀同一個資料庫，以分類分組渲染 feed。",
+        "imageLabel": "系統架構圖 — Telegram → Vercel serverless → og-scrape → Groq 分類 → Neon Postgres → PWA feed",
+        "step1Title": "入口：Telegram 就是大門",
+        "step1Body": "不自建 share extension，入口直接用 Telegram bot——它本來就在每個平台的分享面板上，兩步可達。Bot 只做一件事：把網址 POST 給 API route，沒有需要維護的客戶端。",
+        "step2Title": "理解：抓取 og meta",
+        "step2Body": "Serverless route 抓取連結的 Open Graph 標題、描述、圖片。刻意做淺——多數來源（Threads、IG）在登入牆後面，og meta 是唯一可靠的訊號，而它對分類來說已經足夠。",
+        "step3Title": "分類：LLM 當圖書館員",
+        "step3Body": "Groq 的 llama-3.3-70b 收到 meta 後，必須以嚴格 schema 回答：17 個鎖定分類擇一，加上 2–3 個標籤。分類 enum 由 UI 讀取的同一份 categories.ts 生成——單一資料來源，prompt 和介面永遠不會漂移分岔。",
+        "step4Title": "儲存與呈現：Neon 到 PWA",
+        "step4Body": "結果寫入 Neon Postgres（資料表首次查詢時自動建立）。PWA 以雙欄 masonry 依分類分組渲染，可安裝到 iPhone 主畫面——沒有 App Store、不用登入，設計上就是單人使用。"
+      },
+      "process": {
+        "heading": "把規格寫死，然後放手讓 AI 跑",
+        "body": "這次開發反轉了慣常的比例：人的時間大多花在規格上——Open Design 產出的完整視覺 spec，和一份寫得像合約的 CLAUDE.md——實作幾乎全部由 Claude Code 完成。從第一個 commit 到正式上線，兩天。",
+        "step1Title": "用 Open Design 探索風格，再鎖定規格",
+        "step1Body": "寫任何程式之前，先用開源設計工具 Open Design 做風格探索：平行產出多個視覺方向——光是 app icon 就比了 Letterform、North Star、Stacked Rails 三個概念——收斂後匯出完整 mockup：27 個 OKLCH design tokens、字體堆疊、卡片網格、空狀態。匯出的 spec 視為唯讀——設計要改就回 Open Design 重新生成，絕不手改到規格與實作脫鉤。",
+        "step2Title": "CLAUDE.md 就是合約",
+        "step2Body": "Repo 的 CLAUDE.md 釘死 AI 不偏航所需的一切：鎖定的 17 分類表、技術棧、資料夾結構，以及每個決策和它的理由——連被否決的方案也記下來，免得日後被重新提案。",
+        "step3Title": "分階段建置，逐段驗證",
+        "step3Body": "六個階段——設計採集、PWA scaffold、資料庫與 ingest route、AI 分類、PWA 打磨、部署——每段完成即驗證，再進下一段。Commit 歷史讀起來像計畫書，因為計畫真的先寫好了。",
+        "step4Title": "Rebrand 而不動資料",
+        "step4Body": "中途 IdeaBox 改名 GOODSHIT，分類從 13 個擴成 17 個。原則只有一條：顯示名稱隨品牌走、隨時可改；資料庫 slug 一律不動。所以整次 rebrand 做完，既有資料一筆都沒斷。",
+        "imageLabel1": "Open Design 視覺規格——tokens、網格與 icon 概念，在寫程式之前就已匯出",
+        "imageLabel2": "CLAUDE.md——AI 據以開發的規格文件，含鎖定的分類表"
+      },
+      "style": {
+        "heading": "刻意不做成另一個深色 SaaS",
+        "body": "介面底色是帶暖調的米白——oklch(98.5% 0.005 60)——選它正是因為它不像一個通用生產力工具：這是一座私人靈感庫，視覺的參照對象是雜誌和書架，不是 dashboard。紫紅漸層只出現在三個地方：app icon、空狀態插圖、hero 角落光暈；其他地方保持安靜，把顏色的工作留給 17 個分類色相。連結沒有 og:image 時，卡片退回 letterform 漸層卡——用品牌字母配分類色相生成，放在 feed 裡是一張成立的卡，不是破圖（截圖服務被否決：主要來源都在登入牆後面，只會截到登入頁）。",
+        "calloutTitle": "顏色是節奏，不是編碼",
+        "calloutBody": "分類色相是位置驅動的——色彩順序跟著列的順序走，feed 由上而下永遠讀得到穩定的顏色節奏。這是刻意的反慣例：傳統做法是每個分類擁有一個固定色，但 17 個分類早就超出人能記住顏色對應的數量，固定配色只剩維護成本、沒有辨識收益。改做「色彩節奏」之後，重新排序分類不會破壞任何東西，新增分類也不用搶色票。",
+        "imageLabel": "Design tokens 與 letterform 保底卡——暖米白基底、17 個位置色相"
+      },
+      "pwa": {
+        "heading": "住在主畫面上的 feed",
+        "body": "以 391×844 為主斷點的 mobile-first 設計，透過「加入主畫面」安裝——想法和上線之間沒有 App Store。iOS icon 用 letterform「i」概念，180px 源檔配 22.5% 圓角。介面上每個看得到的選擇，背後都有同一個問題在把關：回訪的時候，這裡怎麼被使用？",
+        "d1Title": "雙欄 masonry，而不是列表",
+        "d1Body": "這個 feed 的用途是「翻」，不是「查」：回訪時多半不記得標題，記得的是那張圖的長相。列表會把縮圖壓成等高小方塊，視覺記憶就廢了；雙欄讓 og:image 保持原始比例、391px 寬下縮圖仍可辨識，三欄則會縮到跟列表一樣不可讀。",
+        "d2Title": "卡片層級跟著回想順序走",
+        "d2Body": "縮圖最大（視覺記憶）、標題次之（確認是不是它）、域名和標籤第三（判斷值不值得點開）、相對時間最弱（僅供定位）。五級評分掛在卡片上，回訪時可以只翻「超讚」。",
+        "d3Title": "依分類分組，而不是純時間流",
+        "d3Body": "純時間流是收件匣，分類分組才是圖書館。回訪的動機幾乎都是任務式的——「上次存的那個 3D 工具」——入口是分類，不是日期。",
+        "d4Title": "空狀態就是 onboarding",
+        "d4Body": "單人 app 不做教學導覽，首次開啟的空狀態一句話講完唯一要學的事：傳一個連結給 bot。它和有內容的 feed 獲得同等的設計關注，因為它是每個新裝置的第一印象。",
+        "imageLabel1": "PWA feed——雙欄 masonry、分類色相、og:image 卡片與 letterform 保底",
+        "imageLabel2": "安裝流程與空狀態——加入主畫面、首次開啟引導"
+      },
+      "impact": {
+        "heading": "第一天跑起來的閉環，和接下來要驗證的事",
+        "body": "個人工具沒必要掰用戶數，值得檢驗的是三件事：閉環有沒有跑起來、AI 歸檔是不是真的準、東西有沒有真的被翻出來用。第一件已經有答案，後兩件正在累積數據——這裡誠實分開寫。",
+        "metric1Value": "21",
+        "metric1Label": "條真實連結——上線 24 小時內經 bot 收進",
+        "metric2Value": "100%",
+        "metric2Label": "自動歸檔率——全部由 AI 分類上架，零手動整理、零 pipeline 失敗",
+        "metric3Value": "1",
+        "metric3Label": "人，從頭到尾——設計、規格、建置、部署",
+        "card1Title": "完整閉環，正式運行",
+        "card1Body": "Telegram ingest、og 抓取、LLM 分類、Postgres 儲存、可安裝 PWA，全部在 Vercel 上線。從任何 app 分享連結，幾秒內完成歸檔。",
+        "card2Title": "月費 $0 的技術棧",
+        "card2Body": "Neon serverless Postgres、Groq 免費 llama-3.3-70b API、Vercel hobby 方案。個人工具一旦有月費，遲早會在某次整理訂閱時被砍掉；全部跑在免費方案上，才能放著讓它一直跑。",
+        "verifyLabel": "接下來四週",
+        "verifyTitle": "兩個還沒被驗證的假設",
+        "verifyIntro": "這兩個——而不是上面的建置數字——才是專案的成敗指標。四週後回填實際結果。",
+        "verify1Title": "分類準確率",
+        "verify1Body": "核心賭注是「LLM 分類夠準，圖書館就能自己維護自己」。每次手動改分類都記一筆，四週後回填準確率 = 1 −（修正數 ÷ 收藏數）。低於九成，fallback 策略就要重新設計。",
+        "verify2Title": "回訪率",
+        "verify2Body": "Problem 說「找不回來才是靈感的死因」，所以真正的成功指標是「翻出來用」有沒有發生：每週至少一次帶著任務打開 feed 並找到目標，連續四週成立，這個工具才算解決了它宣稱的問題。"
+      },
+      "phase2": {
+        "heading": "從單人工具，到團隊的共用靈感庫",
+        "body": "單人閉環驗證跑通之後，下一步已經規劃好：把 GOODSHIT 開放給團隊和工程師朋友一起用。核心的資料模型變更只有一個——評分從「掛在卡片上的欄位」變成「人 × 卡片」的關係——其他產品特色都從這一步長出來。",
+        "card1Title": "共用 feed，看見彼此在研究什麼",
+        "card1Body": "所有人存的連結進同一個 feed，卡片右下角顯示存入者頭像，評分區變成疊起來的彩色評分點——誰用過、誰覺得超讚，掃一眼就知道。",
+        "card2Title": "「用過了沒」標記與熱度排序",
+        "card2Body": "每個人可以標記用過與否、留下五級評分。Feed 新增篩選：只看我存的、還沒人用過的（團隊待辦）、有人標超讚的（精選）；排序加上熱度——用過人數 × 評分加權。",
+        "card3Title": "一句話評語，比評分更值錢",
+        "card3Body": "「為什麼超讚、踩了什麼雷」才是幫別人省時間的關鍵。評分時順手填一句、限一行、選填——刻意不做討論串，保持輕量。",
+        "card4Title": "把發現的迴圈接回 Telegram",
+        "card4Body": "有人標超讚就由 bot 推播到群組；每週 digest 彙整本週新增與新獲超讚的卡片。登入走極簡路線：邀請碼進站 + 挑個名字頭像，零依賴。",
+        "calloutTitle": "刻意不做的功能",
+        "calloutBody": "留言討論串、按讚、通知中心——這些會把工具變成社群，維護成本高。評分加一句話評語，就足以回答「誰在研究什麼、什麼值得先試」。"
+      },
+      "reflection": {
+        "heading": "槓桿在規格，不在程式碼",
+        "p1": "GOODSHIT 花了兩天——但這兩天能成立，靠的是之前投入的那些小時：鎖定 design tokens、寫好分類表、把決策和理由記進 CLAUDE.md。當實作交給 AI，規格本身就是工作。",
+        "p2": "最有價值的架構習慣也是最小的那個：<highlight>分類只有一份定義，分類器的 prompt 和 UI 讀同一份 categories.ts</highlight>。AI 系統的失敗模式不是程式壞掉，而是兩份「真相」安靜地漂移分岔。",
+        "p3": "Rebrand 則留下一條命名原則：顯示名稱給人看，隨時可以改；識別碼給系統用，定了就不要動。<highlight>IdeaBox 改名 GOODSHIT，資料庫裡沒有一筆資料需要跟著動</highlight>。",
+        "p4": "誠實地說，兩天證明的是「建得起來」，不是「賭注成立」。<highlight>分類準確率和回訪率才是這個產品的生死線，而它們只能用時間換</highlight>。出貨日不是驗證日——上線那天，實驗才剛開始。"
+      },
+      "projectNav": {
+        "backLabel": "更多專案",
+        "backTitle": "回所有專案"
+      }
+    },
     "bookingApp": {
       "backToProjects": "返回作品集",
       "hero": {
@@ -1706,8 +1847,8 @@
         "description": "前台電商平台、直銷後台設計"
       },
       "inspiration-library": {
-        "title": "使用 Claude Code 建置的靈感搜集庫",
-        "description": "自用的隨手靈感搜集庫與筆記，透過 AI 快速自適應整理分類"
+        "title": "GOODSHIT — 丟進來就自動歸檔的 AI 靈感庫",
+        "description": "用 Claude Code 打造的 AI 靈感庫——連結傳給 Telegram，AI 自動分類上標籤，收進主畫面的 PWA feed"
       }
     }
   },

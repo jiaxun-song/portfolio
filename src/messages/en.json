@@ -2,8 +2,20 @@
   "nav": {
     "work": "Work",
     "projects": "Projects",
+    "article": "Article",
     "about": "About",
     "resume": "Resume"
+  },
+  "articlePage": {
+    "pageTitle": "Article",
+    "subtitle": "Long-form writing — observations and judgment calls drawn from real projects.",
+    "read": "Read article",
+    "articles": {
+      "fable5-review": {
+        "title": "Is Fable 5 Worth It? A Verdict After Three Real Tasks",
+        "description": "One brief, one set of revision prompts — Fable 5, Claude Opus, GPT 5.5 and Gemini 3.1 Pro each build a Three.js interactive landing page. The full evaluation and my picks after two rounds of iteration."
+      }
+    }
   },
   "hero": {
     "greeting": "Hi! I'm Jade Song",
@@ -1249,6 +1261,135 @@
         "next": "Next project"
       }
     },
+    "goodshit": {
+      "backToProjects": "Back to Projects",
+      "hero": {
+        "label": "Personal Project — 2026 · Vibe Coding",
+        "title": "GOODSHIT\nA Read-It-Later\nThat Files Itself",
+        "subtitle": "See something good on Threads, IG, or YouTube — send it to a private Telegram bot. AI fetches the link's meta, picks a category, adds tags, and it shows up neatly filed in a PWA on the home screen."
+      },
+      "highlightMetrics": {
+        "m1Value": "2 taps",
+        "m1Label": "To save — share to Telegram, send. AI does all the filing",
+        "m2Value": "2 days",
+        "m2Label": "From design spec to production on Vercel",
+        "m3Value": "$0",
+        "m3Label": "Monthly running cost — Neon + Groq + Vercel free tiers"
+      },
+      "summary": {
+        "label": "PROJECT SUMMARY",
+        "heading": "A single inbox for scattered inspiration — where AI does the librarian work.",
+        "body": "GOODSHIT is a personal read-it-later PWA built end-to-end with Claude Code. Saved links used to scatter across Threads bookmarks, IG collections, and YouTube's watch-later — collected, then never seen again. Now one Telegram message files anything: the backend scrapes the link's og meta, an LLM assigns one of 17 locked categories plus tags, and the feed on the home screen stays organized without me lifting a finger. <highlight>Designed, specced, and shipped by one person in two days — with AI as the entire engineering team</highlight>.",
+        "roleLabel": "Role",
+        "roleValue": "Designer & Solo Builder (with Claude Code)"
+      },
+      "problem": {
+        "heading": "Saving is easy. Finding it again is where inspiration dies.",
+        "body": "Good references show up on Threads, Instagram, YouTube, and random blogs, and every platform has its own bookmark button: two taps to save, and then that list never gets opened again. No categories, no working search, no reason to come back.",
+        "calloutLabel": "The real constraint",
+        "calloutHeading": "Zero friction at save time, or the system doesn't get used",
+        "calloutBody": "Any tool that asks me to open an app, pick a folder, and type tags loses to the platform's native bookmark button. So the design constraint was strict: saving must stay a two-tap share action, and all organizing must happen after the link leaves my hands — done by machines, not by me.",
+        "imageLabel": "The scattered-bookmarks problem — saved items across four platforms, none of them findable",
+        "gapTitle": "The gap isn't another bookmark app — it's who does the filing",
+        "gapBody": "Read-it-later tools already exist, but <highlight>the sorting, tagging, and filing is still left to the user</highlight> — and that is exactly the part that never gets done. GOODSHIT set out to test one simple thing: if an LLM classifies well enough, organizing can happen without a human touching it, and saved things finally stand a chance of being used.",
+        "alternativesTitle": "Why not just use what exists?",
+        "alternativesBody": "The build decision came after evaluating the alternatives. mymind comes closest to auto-filing, but it's subscription-based — a monthly fee breaks this tool's survival condition of never having to justify itself. Raindrop still leaves the folders and tags to me, which puts the friction right back. And two requirements were non-negotiable: the categories had to be my own 17 working categories (AI tools, IP ops, video editing…), not generic Article / Video buckets; and the entry point had to be Telegram — already sitting in every platform's share sheet, nothing to install. Those two constraints decided the build, not an itch to write code."
+      },
+      "solution": {
+        "heading": "One message in, one filed card out",
+        "body": "The whole system is a straight pipeline: share a URL to a private Telegram bot and it lands in a Next.js serverless route on Vercel. The route scrapes og:title, og:description, and og:image, sends them to Groq's free llama-3.3-70b API for classification, and writes the result to Neon Postgres. The PWA reads the same database and renders the feed grouped by category.",
+        "imageLabel": "System architecture — Telegram → Vercel serverless → og-scrape → Groq classify → Neon Postgres → PWA feed",
+        "step1Title": "Ingest: Telegram as the front door",
+        "step1Body": "Instead of building a share extension, the entry point is a Telegram bot — already on every platform's share sheet, two taps away. The bot just POSTs the URL to the API route; there's no custom client to maintain.",
+        "step2Title": "Understand: scrape the og meta",
+        "step2Body": "The serverless route fetches the link's Open Graph title, description, and image. Deliberately shallow — most sources (Threads, IG) sit behind login walls, so og meta is the only reliable signal, and it's enough for classification.",
+        "step3Title": "Classify: LLM as librarian",
+        "step3Body": "Groq's llama-3.3-70b receives the meta and must answer in a strict schema: one of 17 locked categories plus 2–3 tags. The category enum is generated from the same categories.ts file the UI reads — a single source of truth, so the prompt and the interface can never drift apart.",
+        "step4Title": "Store & serve: Neon to PWA",
+        "step4Body": "Results land in Neon Postgres (the table auto-creates on first query). The PWA renders a two-column masonry feed grouped by category, installable to the iPhone home screen — no App Store, no login, single-user by design."
+      },
+      "process": {
+        "heading": "Spec hard, then let the AI run",
+        "body": "The build inverted the usual ratio: most of the human time went into specs — a full visual spec from Open Design, and a CLAUDE.md that reads like a contract — while Claude Code did essentially all of the implementation. Two days from first commit to production.",
+        "step1Title": "Explore style in Open Design, then lock the spec",
+        "step1Body": "Before any code, style exploration ran through Open Design, an open-source design tool: multiple visual directions generated in parallel — the app icon alone was compared across three concepts (letterform, north star, stacked rails) — then converged into a full mockup: 27 OKLCH design tokens, type stack, card grid, empty states. The exported spec is treated as read-only — if the design changes, it regenerates in Open Design; it never gets hand-edited into drift.",
+        "step2Title": "CLAUDE.md as the contract",
+        "step2Body": "The repo's CLAUDE.md pins down everything an AI needs to stay on the road: the locked 17-category table, the tech stack, the folder layout, and each decision with its reasons — including rejected alternatives, so they don't get re-proposed.",
+        "step3Title": "Build in phases, verify each",
+        "step3Body": "Six phases — design capture, PWA scaffold, database + ingest route, AI classification, PWA polish, deploy — each shipped and verified before the next. The commit history reads like the plan, because the plan was written first.",
+        "step4Title": "Rebrand without breaking data",
+        "step4Body": "Midway, IdeaBox became GOODSHIT and 13 categories grew to 17. One rule kept it painless: display names follow the brand and can change anytime; database slugs never move. The whole rebrand shipped without orphaning a single row.",
+        "imageLabel1": "The Open Design visual spec — tokens, grid, and icon concept, exported before any code",
+        "imageLabel2": "CLAUDE.md — the spec document the AI builds against, with the locked category table"
+      },
+      "style": {
+        "heading": "Deliberately not another dark SaaS app",
+        "body": "The background is a warm-tinted off-white — oklch(98.5% 0.005 60) — chosen precisely because it doesn't read as a generic productivity tool: this is a private inspiration library, and its visual reference is magazines and bookshelves, not dashboards. The purple-magenta gradient appears in exactly three places — app icon, empty-state illustration, hero corner glow; everywhere else stays quiet and leaves the color work to the 17 category hues. When a link has no og:image, the card falls back to a letterform gradient card — a designed state, not a broken one (screenshot services were rejected: most sources sit behind login walls, so they'd only capture login pages).",
+        "calloutTitle": "Color as rhythm, not as code",
+        "calloutBody": "Category hues are position-driven — the color sequence follows row order, so the feed always reads with a stable rhythm top to bottom. It's a deliberate break with convention: the standard move is one fixed color per category, but 17 categories is far past what anyone can memorize, so fixed colors carry all the maintenance cost with none of the recognition payoff. Treating color as rhythm means reordering breaks nothing, and new categories never fight over swatches.",
+        "imageLabel": "Design tokens and the letterform fallback card — warm off-white base, 17 positional hues"
+      },
+      "pwa": {
+        "heading": "A feed that lives on the home screen",
+        "body": "Mobile-first at 391×844, installed via Add to Home Screen — no App Store between an idea and shipping. The iOS icon is the letterform 'i' concept at a 22.5% corner radius. Every visible choice in the interface answers the same question: how does this get used on a return visit?",
+        "d1Title": "Two-column masonry, not a list",
+        "d1Body": "This feed is for browsing, not querying: on a return visit you rarely remember the title — you remember what the image looked like. A list crushes thumbnails into uniform slivers and kills that visual memory; two columns keep og:images at their own aspect ratio and a recognizable size at 391px, while three would shrink them back to illegibility.",
+        "d2Title": "Card hierarchy follows recall order",
+        "d2Body": "Thumbnail largest (visual memory), title second (confirming it's the one), domain and tags third (worth opening?), relative time last (orientation only). A five-level rating sits on the card, so a return visit can browse only the 'great' ones.",
+        "d3Title": "Grouped by category, not a timeline",
+        "d3Body": "A pure timeline is an inbox; category groups are a library. Return visits are almost always task-shaped — 'that 3D tool I saved' — and the entry point is the category, not the date.",
+        "d4Title": "The empty state is the onboarding",
+        "d4Body": "A single-user app gets no tutorial. The first-launch empty state teaches the only thing there is to learn, in one line: send a link to the bot. It got the same design attention as the populated feed, because it's the first impression on every new device.",
+        "imageLabel1": "PWA feed — two-column masonry, category hues, og:image cards with letterform fallbacks",
+        "imageLabel2": "Install flow and empty state — Add to Home Screen, first-launch guidance"
+      },
+      "impact": {
+        "heading": "A loop that closed on day one — and what's still to prove",
+        "body": "A personal tool has no business inventing user numbers. Three things are worth checking: whether the loop closed, whether the AI filing is actually accurate, and whether saved things actually get found again. The first has an answer; the other two are accumulating data — kept honestly separate here.",
+        "metric1Value": "21",
+        "metric1Label": "Real links ingested through the bot in the first 24 hours",
+        "metric2Value": "100%",
+        "metric2Label": "Auto-filed — every link classified and shelved by AI, zero manual sorting, zero pipeline failures",
+        "metric3Value": "1",
+        "metric3Label": "Person end to end — design, spec, build, and deploy",
+        "card1Title": "The full loop, live",
+        "card1Body": "Telegram ingest, og scraping, LLM classification, Postgres storage, and the installable PWA are all in production on Vercel. Sharing a link from any app files it within seconds.",
+        "card2Title": "A $0/month stack",
+        "card2Body": "Neon's serverless Postgres, Groq's free llama-3.3-70b API, Vercel's hobby tier. A personal tool with a monthly fee eventually gets cut in some subscription purge; one that runs entirely on free tiers can simply be left running.",
+        "verifyLabel": "Next four weeks",
+        "verifyTitle": "Two hypotheses still unverified",
+        "verifyIntro": "These two — not the build stats above — are the project's success metrics. Real numbers get backfilled after four weeks.",
+        "verify1Title": "Classification accuracy",
+        "verify1Body": "The core bet is that an LLM classifies well enough for the library to maintain itself. Every manual re-categorization gets logged; after four weeks, accuracy = 1 − (corrections ÷ links saved). Below 90%, the fallback strategy gets redesigned.",
+        "verify2Title": "Return-visit rate",
+        "verify2Body": "The problem statement says inspiration dies when you can't find things again — so the real success metric is retrieval: at least one task-driven visit per week that finds its target, four weeks running, before this tool can claim to solve the problem it names."
+      },
+      "phase2": {
+        "heading": "From a personal tool to a team's shared library",
+        "body": "With the single-user loop proven, the next phase is already planned: opening GOODSHIT up to a team of engineer friends. One data-model change sits at the core — ratings move from a column on the card to a person × card relationship — and every product feature below grows out of that single step.",
+        "card1Title": "A shared feed that shows who's researching what",
+        "card1Body": "Everyone's links land in one feed. Each card carries its saver's avatar, and the rating area becomes a stack of colored dots — who tried it and who loved it, readable at a glance.",
+        "card2Title": "\"Tried it yet?\" marks and a heat sort",
+        "card2Body": "Each person marks whether they've used a link and leaves a five-level rating. The feed gains filters — mine only, untried (the team backlog), rated-awesome (the picks) — plus a heat sort weighted by triers × ratings.",
+        "card3Title": "A one-line comment beats the score",
+        "card3Body": "\"Why it's great\" or \"what tripped me up\" is what actually saves a teammate's time. Ratings take an optional single-line note — and deliberately no comment threads, to stay lightweight.",
+        "card4Title": "Close the discovery loop back in Telegram",
+        "card4Body": "When someone rates a link awesome, the bot announces it to the group chat; a weekly digest rounds up newly added and newly loved cards. Login stays minimal: an invite code plus a name and avatar, zero dependencies.",
+        "calloutTitle": "Deliberately not building",
+        "calloutBody": "Comment threads, likes, a notification center — these turn a tool into a social network with real upkeep. Ratings plus a one-line note are enough to answer who's researching what, and what to try first."
+      },
+      "reflection": {
+        "heading": "The leverage is in the spec, not the code",
+        "p1": "GOODSHIT took two days — but the two days only worked because of the hours spent before them: locking design tokens, writing the category table, recording decisions and their reasons in CLAUDE.md. When AI does the implementation, the spec is the work.",
+        "p2": "The most valuable architectural habit was also the smallest: <highlight>a single source of truth for the categories, read by both the classifier prompt and the UI</highlight>. In AI systems the failure mode isn't broken code — it's two definitions of the truth drifting apart quietly.",
+        "p3": "The rebrand left behind one naming rule: display names are for humans and can change anytime; identifiers are for systems and stay put once set. <highlight>IdeaBox became GOODSHIT without a single database row having to move</highlight>.",
+        "p4": "Honestly: two days proved it could be built, not that the bet holds. <highlight>Classification accuracy and return visits are the product's real vital signs, and they can only be bought with time</highlight>. Ship day isn't validation day — the day it went live is the day the experiment started."
+      },
+      "projectNav": {
+        "backLabel": "More projects",
+        "backTitle": "Back to all projects"
+      }
+    },
     "bookingApp": {
       "backToProjects": "Back to Projects",
       "hero": {
@@ -1706,8 +1847,8 @@
         "description": "Front-end e-commerce platform with MLM back-office dashboard design"
       },
       "inspiration-library": {
-        "title": "An Inspiration Library Built with Claude Code",
-        "description": "A personal notes and inspiration repository — categorized adaptively by AI on the fly"
+        "title": "GOODSHIT — A Read-It-Later That Files Itself",
+        "description": "An AI inspiration library built with Claude Code — send a link to Telegram, AI categorizes and tags it into a home-screen PWA feed"
       }
     }
   },

@@ -9,6 +9,7 @@ import LanguageSwitcher from './LanguageSwitcher';
 
 const navLinks = [
   { label: 'Projects', href: '/work' },
+  { label: 'Article', href: '/article' },
   { label: 'About', href: '/about' },
 ] as const;
 
