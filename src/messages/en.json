@@ -15,6 +15,10 @@
       "fable5-review": {
         "title": "Is Fable 5 Worth It? A Verdict After Three Real Tasks",
         "description": "One brief, one set of revision prompts — Fable 5, Claude Opus, GPT 5.5 and Gemini 3.1 Pro each build a Three.js interactive landing page. The full evaluation and my picks after two rounds of iteration."
+      },
+      "street-interview-kit": {
+        "title": "Building an AI Short-Video Editing Workflow",
+        "description": "A full teardown of a restaurant street-interview AI editing workflow."
       }
     }
   },

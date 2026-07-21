@@ -20,6 +20,19 @@ const articles = [
     },
     tags: ['LLM 實測', 'Landing Page', 'Three.js', 'AI 協作'],
   },
+  {
+    id: 'street-interview-kit',
+    href: '/article/street-interview-kit',
+    date: '2026.07',
+    eyebrow: 'Workflow Teardown — 手工 × 可複製產線',
+    cover: {
+      kicker: 'WORKFLOW TEARDOWN',
+      title: '一支街訪',
+      question: '→ 產線',
+      models: ['橫轉直', '黑金版式', '切鏡引擎', '設計凍結'],
+    },
+    tags: ['AI 剪輯工作流', '短影音產線', 'Claude Code', '餐飲街訪'],
+  },
 ];
 
 export default function ArticleClient() {

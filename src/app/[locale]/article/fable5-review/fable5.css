@@ -23,6 +23,9 @@
 }
 .fable5 ::selection{background:transparent}
 .fable5{-webkit-user-select:none;-moz-user-select:none;user-select:none;-webkit-touch-callout:none}
+/* Opt-in: temporarily re-enable copy/selection for articles that add `.copyable` */
+.fable5.copyable{-webkit-user-select:text;-moz-user-select:text;user-select:text;-webkit-touch-callout:default}
+.fable5.copyable ::selection{background:rgba(0,229,208,.28)}
 .fable5 ::-webkit-scrollbar{width:6px}
 .fable5 ::-webkit-scrollbar-track{background:transparent}
 .fable5 ::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:3px}

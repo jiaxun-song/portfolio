@@ -15,6 +15,10 @@
       "fable5-review": {
         "title": "Fable 5 值得用嗎？三個真實任務後的實測結論",
         "description": "同一份需求、同一套修改指令，讓 Fable 5、Claude Opus、GPT 5.5、Gemini 3.1 Pro 各自做出一個 Three.js 互動 Landing Page。兩輪迭代之後的完整評測與選用建議。"
+      },
+      "street-interview-kit": {
+        "title": "AI 短影音剪輯 Workflow 開發",
+        "description": "一個餐飲街訪 AI 剪輯工作流的拆解全記錄。"
       }
     }
   },
