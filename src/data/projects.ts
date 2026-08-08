@@ -14,9 +14,9 @@ export const allProjects: Project[] = [
   },
   {
     id: 'prediction-market',
-    tags: ['Fintech', 'Functional Planning', 'Brand Design'],
+    tags: ['Fintech', 'AI Workflow', 'Design System'],
     image: '/images/projects/prediction-market-cover.jpg',
-    link: '',
+    link: '/work/prediction-market',
   },
 {
     id: 'cex-web',

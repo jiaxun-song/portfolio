@@ -7,7 +7,7 @@ import GlowButton from '@/components/ui/GlowButton';
 
 const projects = [
   { id: 'exora',      tags: ['Fintech', 'Trading UX', 'Design System'], link: '/work/exora' as const, image: '/images/projects/exora-cover.jpg' },
-  { id: 'prediction-market', tags: ['Fintech', 'Functional Planning', 'Brand Design'], link: undefined, image: '/images/projects/prediction-market-cover.jpg' },
+  { id: 'prediction-market', tags: ['Fintech', 'AI Workflow', 'Design System'], link: '/work/prediction-market' as const, image: '/images/projects/prediction-market-cover.jpg' },
   { id: 'booking-app', tags: ['APP', 'Web', 'Dashboard', 'Brand Design'], link: '/work/booking-app' as const, image: '/images/projects/Buddy Cover.jpg' },
   { id: 'rolling-x',  tags: ['Fintech', 'Subscription Platform', 'Brand Design'], link: '/work/rolling-x' as const, image: '/images/projects/rolling-cover.jpg' },
 ];
@@ -82,15 +82,6 @@ export default function CaseStudyGrid() {
                               className="object-cover"
                               sizes="(min-width: 768px) 50vw, 100vw"
                             />
-                            {!project.link && (
-                              <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-                                {project.id === 'prediction-market' ? (
-                                  <i className="ri-lock-line text-3xl text-white" aria-label="Locked" />
-                                ) : (
-                                  <span className="text-white text-lg font-semibold tracking-wide">Coming Soon</span>
-                                )}
-                              </div>
-                            )}
                           </div>
                         </div>
                       </div>
