@@ -17,7 +17,7 @@ const nextProject = navigableProjects[(currentIdx + 1) % navigableProjects.lengt
 
 const metaItems = [
   { label: 'Scope', value: 'Research · Product Spec · UX/UI Design · Design System · Frontend Build · AI Workflow Governance' },
-  { label: 'Platform', value: 'Web App — Trading Front (28 pages) + Admin Console (24 pages)' },
+  { label: 'Platform', value: 'Web App — Trading Front + Admin Console' },
 ];
 
 const summaryTags = ['AI Workflow', 'Product Design', 'Design System', 'Spec-Driven', 'Multi-Tenant'];
@@ -313,8 +313,53 @@ export default function PredictionMarketClient() {
         </div>
       </section>
 
+      {/* TL;DR */}
+      <ScrollReveal className={`${SECTION} mt-20 mb-8`}>
+        <div className="glass-medium rounded-2xl border border-accent/20 p-8 md:p-10">
+          <p className="mb-7 inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5 font-[var(--font-mono)] text-[13px] font-semibold uppercase tracking-[1.4px] text-accent">
+            {t('tldr.label')}
+          </p>
+          <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
+            <div>
+              <p className="mb-1.5 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-text-muted">
+                {t('tldr.problemLabel')}
+              </p>
+              <p className="text-[15px] leading-[1.7] text-text-secondary">{t('tldr.problemBody')}</p>
+            </div>
+            <div>
+              <p className="mb-1.5 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-text-muted">
+                {t('tldr.roleLabel')}
+              </p>
+              <p className="text-[15px] leading-[1.7] text-text-secondary">{t('tldr.roleBody')}</p>
+            </div>
+          </div>
+          <div className="mb-6 border-t border-white/[0.08]" />
+          <p className="mb-3 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-text-muted">
+            {t('tldr.decisionsLabel')}
+          </p>
+          <ul className="mb-6 flex flex-col gap-2.5">
+            {[1, 2, 3].map((n) => (
+              <li key={n} className="flex gap-3 text-[15px] leading-[1.7] text-text-secondary">
+                <span className="mt-[2px] shrink-0 font-[var(--font-mono)] text-[13px] font-bold text-accent">
+                  0{n}
+                </span>
+                <span>{t(`tldr.d${n}`)}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="rounded-xl border border-amber-400/20 bg-amber-400/[0.06] p-4 md:p-5">
+            <p className="text-[14px] leading-[1.7] text-text-secondary">
+              <span className="mr-2 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-amber-300/80">
+                {t('tldr.statusLabel')}
+              </span>
+              {t('tldr.statusBody')}
+            </p>
+          </div>
+        </div>
+      </ScrollReveal>
+
       {/* Highlight Metrics Strip */}
-      <ScrollReveal className={`${SECTION} mt-20 mb-[var(--cs-section-gap)]`}>
+      <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {[1, 2, 3].map((n) => (
             <div
@@ -471,6 +516,23 @@ export default function PredictionMarketClient() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <CalloutCard title={t('research.industryTitle')} body={t('research.industryBody')} />
           <CalloutCard title={t('research.chartTitle')} body={t('research.chartBody')} />
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal className={`${SECTION} mb-8`}>
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+          <figure>
+            <ImagePlaceholder label={t('research.baBeforeLabel')} ratio="16/10" />
+            <figcaption className="mt-3 text-center text-[13px] text-text-muted">
+              {t('research.baBeforeCaption')}
+            </figcaption>
+          </figure>
+          <figure>
+            <ImagePlaceholder label={t('research.baAfterLabel')} ratio="16/10" />
+            <figcaption className="mt-3 text-center text-[13px] text-text-muted">
+              {t('research.baAfterCaption')}
+            </figcaption>
+          </figure>
         </div>
       </ScrollReveal>
 
@@ -734,10 +796,16 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-8 mt-16`}>
         <SubHeading label="5F — SITEWIDE FOUNDATIONS" title={t('front.subFTitle')} />
         <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">{t('front.subFBody')}</p>
-        <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
-          {[1, 2, 3, 4].map((n) => (
-            <CalloutCard key={n} title={t(`front.f${n}Title`)} body={t(`front.f${n}Body`)} />
-          ))}
+        <div className="mb-8">
+          <DataTable
+            columns={[t('front.fColArea'), t('front.fColDecision'), t('front.fColTradeoff')]}
+            rows={[1, 2, 3, 4].map((n) => [
+              t(`front.fRow${n}Area`),
+              t(`front.fRow${n}Decision`),
+              t(`front.fRow${n}Tradeoff`),
+            ])}
+            firstColAccent
+          />
         </div>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <CaptionedImage
@@ -956,7 +1024,7 @@ export default function PredictionMarketClient() {
         <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
           {[1, 2, 3, 4].map((n) => (
             <div key={n} className="glass-medium rounded-2xl p-6 text-center">
-              <span className="mb-2 block font-[var(--font-mono)] text-4xl font-bold text-accent md:text-5xl">
+              <span className="mb-2 block font-[var(--font-mono)] text-3xl font-bold text-accent md:text-4xl">
                 {t(`impact.metric${n}Value`)}
               </span>
               <p className="text-[13px] leading-[1.5] text-text-muted">{t(`impact.metric${n}Label`)}</p>
@@ -979,10 +1047,10 @@ export default function PredictionMarketClient() {
           {t('reflection.heading')}
         </h2>
         <div className="glass-medium rounded-2xl p-8 md:p-10">
-          {[1, 2, 3, 4, 5].map((n) => (
+          {[1, 2, 3, 4, 5, 6].map((n) => (
             <p
               key={n}
-              className={`text-[18px] leading-[1.7] text-text-secondary ${n < 5 ? 'mb-5' : ''}`}
+              className={`text-[18px] leading-[1.7] text-text-secondary ${n < 6 ? 'mb-5' : ''}`}
             >
               {t.rich(`reflection.p${n}`, { highlight })}
             </p>

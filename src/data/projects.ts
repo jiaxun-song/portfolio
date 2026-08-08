@@ -1,9 +1,28 @@
+export interface UnlockGate {
+  /** Epoch ms. Until this moment the card shows a padlock + countdown instead of linking through. */
+  at: number;
+  /** Full countdown length in ms — the value the timer shows before the client clock takes over. */
+  windowMs: number;
+}
+
+/** `unlockGate('2026-08-09T05:41:00+08:00', 6.5)` → unlocks at that moment after a 6.5h countdown. */
+function unlockGate(unlockAtISO: string, countdownHours: number): UnlockGate {
+  return { at: Date.parse(unlockAtISO), windowMs: countdownHours * 60 * 60 * 1000 };
+}
+
 export interface Project {
   id: string;
   tags: string[];
   image: string;
   link: string;
+  unlock?: UnlockGate;
 }
+
+/** Augur case study: 6.5-hour countdown started 23:11 on 2026-08-08 (UTC+8). */
+export const AUGUR_UNLOCK = unlockGate('2026-08-09T05:41:00+08:00', 6.5);
+
+/** Goodstuff / inspiration-library case study: 16-hour countdown started 23:19 on 2026-08-08 (UTC+8). */
+export const GOODSTUFF_UNLOCK = unlockGate('2026-08-09T15:19:00+08:00', 16);
 
 export const allProjects: Project[] = [
   {
@@ -17,6 +36,7 @@ export const allProjects: Project[] = [
     tags: ['Fintech', 'AI Workflow', 'Design System'],
     image: '/images/projects/prediction-market-cover.jpg',
     link: '/work/prediction-market',
+    unlock: AUGUR_UNLOCK,
   },
 {
     id: 'cex-web',
@@ -81,6 +101,7 @@ export const vibeCodingProjects: Project[] = [
     id: 'inspiration-library',
     tags: ['Claude Code', 'AI Classifier', 'PWA', 'Personal Project'],
     image: '/images/projects/IdeaBox.jpg',
-    link: '/work/goodshit',
+    link: '/work/goodstuff',
+    unlock: GOODSTUFF_UNLOCK,
   },
 ];

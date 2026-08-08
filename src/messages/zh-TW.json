@@ -17,7 +17,7 @@
         "description": "同一份需求、同一套修改指令，讓 Fable 5、Claude Opus、GPT 5.5、Gemini 3.1 Pro 各自做出一個 Three.js 互動 Landing Page。兩輪迭代之後的完整評測與選用建議。"
       },
       "street-interview-kit": {
-        "title": "AI 短影音剪輯 Workflow 開發",
+        "title": "短影音自動剪輯 AI Workflow 開發",
         "description": "一個餐飲街訪 AI 剪輯工作流的拆解全記錄。"
       }
     }
@@ -1266,11 +1266,11 @@
         "next": "下一則作品"
       }
     },
-    "goodshit": {
+    "goodstuff": {
       "backToProjects": "返回專案列表",
       "hero": {
         "label": "個人專案 — 2026 · Vibe Coding",
-        "title": "GOODSHIT\n丟進來就自動歸檔的\nAI 靈感庫",
+        "title": "GOODSTUFF\n丟進來就自動歸檔的\nAI 靈感庫",
         "subtitle": "在 Threads、IG、YouTube 看到好東西，分享給私人 Telegram bot。AI 自動抓取連結資訊、判定分類、加上標籤，回到主畫面的 PWA，就看到整理好的 feed。"
       },
       "highlightMetrics": {
@@ -1284,7 +1284,7 @@
       "summary": {
         "label": "PROJECT SUMMARY",
         "heading": "把散落四處的靈感收進單一入口，整理的工作交給 AI。",
-        "body": "GOODSHIT 是一個用 Claude Code 從頭到尾做完的個人「稍後閱讀」PWA。過去收藏散落在 Threads 珍藏、IG 收藏、YouTube 稍後觀看——收了等於丟了。現在只要傳一則 Telegram 訊息：後端抓取連結的 og meta，LLM 從 17 個鎖定分類中判定歸屬並加上標籤，主畫面的 feed 自動維持整齊。<highlight>設計、規格、實作到部署由一人完成，兩天上線——AI 就是整個工程團隊</highlight>。",
+        "body": "GOODSTUFF 是一個用 Claude Code 從頭到尾做完的個人「稍後閱讀」PWA。過去收藏散落在 Threads 珍藏、IG 收藏、YouTube 稍後觀看——收了等於丟了。現在只要傳一則 Telegram 訊息：後端抓取連結的 og meta，LLM 從 17 個鎖定分類中判定歸屬並加上標籤，主畫面的 feed 自動維持整齊。<highlight>設計、規格、實作到部署由一人完成，兩天上線——AI 就是整個工程團隊</highlight>。",
         "roleLabel": "Role",
         "roleValue": "Designer & Solo Builder（with Claude Code）"
       },
@@ -1296,7 +1296,7 @@
         "calloutBody": "任何要求我打開 app、選資料夾、打標籤的工具，都輸給平台原生的收藏按鈕。所以設計約束非常嚴格：收藏必須維持在分享面板兩步完成，所有整理工作都必須發生在連結離手之後——由機器做，不是由我做。",
         "imageLabel": "收藏散落問題示意——四個平台各自的收藏清單，沒有一個找得回來",
         "gapTitle": "缺口不是再做一個收藏 app，而是「歸檔的工作由誰來做」",
-        "gapBody": "稍後閱讀工具早就存在，但<highlight>分類、標籤、歸檔這些整理工作，仍然留給使用者自己做</highlight>，而這正是永遠不會被做的那部分。GOODSHIT 想驗證的事情很單純：只要 LLM 分類夠準，整理就可以完全不經過人手，收藏的東西才有機會真的被翻出來用。",
+        "gapBody": "稍後閱讀工具早就存在，但<highlight>分類、標籤、歸檔這些整理工作，仍然留給使用者自己做</highlight>，而這正是永遠不會被做的那部分。GOODSTUFF 想驗證的事情很單純：只要 LLM 分類夠準，整理就可以完全不經過人手，收藏的東西才有機會真的被翻出來用。",
         "alternativesTitle": "為什麼不直接用現成的？",
         "alternativesBody": "評估過再決定自己做。mymind 最接近「自動歸檔」的想像，但它是訂閱制——月費違反這個工具「永遠不需要為自己辯護」的生存條件；Raindrop 的資料夾和標籤終究還是我來整理，摩擦回到原點。更關鍵的是兩個非標準需求：分類必須是我自己的 17 個工作分類（AI 工具、IP 操盤、剪輯……），不是通用的 Article / Video；入口必須是 Telegram——它已經在每個平台的分享面板上，不用另裝 extension。這兩點決定了自建，而不是「想寫 code」。"
       },
@@ -1323,7 +1323,7 @@
         "step3Title": "分階段建置，逐段驗證",
         "step3Body": "六個階段——設計採集、PWA scaffold、資料庫與 ingest route、AI 分類、PWA 打磨、部署——每段完成即驗證，再進下一段。Commit 歷史讀起來像計畫書，因為計畫真的先寫好了。",
         "step4Title": "Rebrand 而不動資料",
-        "step4Body": "中途 IdeaBox 改名 GOODSHIT，分類從 13 個擴成 17 個。原則只有一條：顯示名稱隨品牌走、隨時可改；資料庫 slug 一律不動。所以整次 rebrand 做完，既有資料一筆都沒斷。",
+        "step4Body": "中途 IdeaBox 改名 GOODSTUFF，分類從 13 個擴成 17 個。原則只有一條：顯示名稱隨品牌走、隨時可改；資料庫 slug 一律不動。所以整次 rebrand 做完，既有資料一筆都沒斷。",
         "imageLabel1": "Open Design 視覺規格——tokens、網格與 icon 概念，在寫程式之前就已匯出",
         "imageLabel2": "CLAUDE.md——AI 據以開發的規格文件，含鎖定的分類表"
       },
@@ -1371,7 +1371,7 @@
       },
       "phase2": {
         "heading": "從單人工具，到團隊的共用靈感庫",
-        "body": "單人閉環驗證跑通之後，下一步已經規劃好：把 GOODSHIT 開放給團隊和工程師朋友一起用。核心的資料模型變更只有一個——評分從「掛在卡片上的欄位」變成「人 × 卡片」的關係——其他產品特色都從這一步長出來。",
+        "body": "單人閉環驗證跑通之後，下一步已經規劃好：把 GOODSTUFF 開放給團隊和工程師朋友一起用。核心的資料模型變更只有一個——評分從「掛在卡片上的欄位」變成「人 × 卡片」的關係——其他產品特色都從這一步長出來。",
         "card1Title": "共用 feed，看見彼此在研究什麼",
         "card1Body": "所有人存的連結進同一個 feed，卡片右下角顯示存入者頭像，評分區變成疊起來的彩色評分點——誰用過、誰覺得超讚，掃一眼就知道。",
         "card2Title": "「用過了沒」標記與熱度排序",
@@ -1385,9 +1385,9 @@
       },
       "reflection": {
         "heading": "槓桿在規格，不在程式碼",
-        "p1": "GOODSHIT 花了兩天——但這兩天能成立，靠的是之前投入的那些小時：鎖定 design tokens、寫好分類表、把決策和理由記進 CLAUDE.md。當實作交給 AI，規格本身就是工作。",
+        "p1": "GOODSTUFF 花了兩天——但這兩天能成立，靠的是之前投入的那些小時：鎖定 design tokens、寫好分類表、把決策和理由記進 CLAUDE.md。當實作交給 AI，規格本身就是工作。",
         "p2": "最有價值的架構習慣也是最小的那個：<highlight>分類只有一份定義，分類器的 prompt 和 UI 讀同一份 categories.ts</highlight>。AI 系統的失敗模式不是程式壞掉，而是兩份「真相」安靜地漂移分岔。",
-        "p3": "Rebrand 則留下一條命名原則：顯示名稱給人看，隨時可以改；識別碼給系統用，定了就不要動。<highlight>IdeaBox 改名 GOODSHIT，資料庫裡沒有一筆資料需要跟著動</highlight>。",
+        "p3": "Rebrand 則留下一條命名原則：顯示名稱給人看，隨時可以改；識別碼給系統用，定了就不要動。<highlight>IdeaBox 改名 GOODSTUFF，資料庫裡沒有一筆資料需要跟著動</highlight>。",
         "p4": "誠實地說，兩天證明的是「建得起來」，不是「賭注成立」。<highlight>分類準確率和回訪率才是這個產品的生死線，而它們只能用時間換</highlight>。出貨日不是驗證日——上線那天，實驗才剛開始。"
       },
       "projectNav": {
@@ -1400,29 +1400,42 @@
       "hero": {
         "label": "FINTECH · AI WORKFLOW · 2026",
         "title": "導入 AI 工作流的端到端交付\nSpec、設計、前端切版一人完成",
-        "subtitle": "Augur 是一個白標預測市場 SaaS——品牌方在它的基礎設施上經營自己的預測市場。我一個人負責從市場研究、產品規格、前台與後台設計到 52 頁前端切版的完整交付，而真正的挑戰不是做得快，是把 AI 當團隊來治理。"
+        "subtitle": "Augur 是一個白標預測市場 SaaS——品牌方在它的基礎設施上經營自己的預測市場。我一個人負責從市場研究、產品規格、前台與後台設計到前端切版的完整交付，而真正的挑戰不是做得快，是把 AI 當團隊來治理。"
+      },
+      "tldr": {
+        "label": "TL;DR — 30 秒版本",
+        "problemLabel": "產品",
+        "problemBody": "白標預測市場 SaaS——品牌方在 Augur 的基礎設施上經營自己的預測市場，底層聚合 Polymarket 流動性。",
+        "roleLabel": "我的角色",
+        "roleBody": "一人負責研究、規格、前台與後台設計、前端切版與驗收；AI 是產能，我負責讓產能可控。",
+        "decisionsLabel": "三個代表性決策",
+        "d1": "研究推翻上游交付物——Binary 走勢圖從雙線改為單線，產業對齊的優先級壓過 handoff 的視覺保真。",
+        "d2": "規範長牙齒——hook 在 AI 寫入當下攔截違規、CI 棘輪基線只准降不准升，設計系統是每天被機器執行的合約。",
+        "d3": "每條決策附被否決方案——D1–D10、Q1–Q5、S1–S12，連「不做什麼」都有商業理由。",
+        "statusLabel": "誠實現況",
+        "statusBody": "前端與設計閉環已完成；後端為 mock（API contract 已反推交付）、尚未經真實使用者驗證——這是上線前的下一步，不是被遺忘的洞。"
       },
       "highlightMetrics": {
         "m1Value": "1 人 = 5 角色",
         "m1Label": "PM、設計、前端、QA、文件書記——從需求到驗收一條鏈一人扛",
-        "m2Value": "0.8 行",
-        "m2Label": "每寫 1 行程式碼，背後有 0.8 行規格——36,794 行 spec 撐起 45,124 行 Vue",
+        "m2Value": "27 條",
+        "m2Label": "拍板紀錄——D1–D10、Q1–Q5、S1–S12，每一條都附被否決方案與理由",
         "m3Value": "6 支",
         "m3Label": "自建 Claude subagent：寫規格、驗畫面、評推版、回填文件"
       },
       "summary": {
         "label": "PROJECT SUMMARY",
         "heading": "一個人 + 一套被治理的 AI 工作流，交付一座平台級產品",
-        "body": "Augur 定位是「預測市場界的 Shopify」——多租戶白標 SaaS，聚合 Polymarket 流動性。這個專案的整條產品鏈由我一人產出：<highlight>101 條 user story 全數親自撰寫、每一份功能規劃 Spec 親自定義、前端畫面設計與切版親自完成，連 Design QA 體系都是自己建的</highlight>（截圖驗收 agent + 12 項判準的驗收計畫）。3.7 個月，從 20 個來源的產業調研到 52 頁前端、1,163 行的機器可讀設計系統。AI 負責產出，我負責<highlight>讓產出可控</highlight>——需求、規格、設計、切版、驗收，一條鏈沒有斷點。",
+        "body": "Augur 定位是「預測市場界的 Shopify」——多租戶白標 SaaS，聚合 Polymarket 流動性。這個專案的整條產品鏈由我一人產出：<highlight>101 條 user story 全數親自撰寫、每一份功能規劃 Spec 親自定義、前端畫面設計與切版親自完成，連 Design QA 體系都是自己建的</highlight>（截圖驗收 agent + 12 項判準的驗收計畫）。3.7 個月，從 20 個來源的產業調研到完整的交易前台、運營後台，與一套機器可讀的設計系統。AI 負責產出，我負責<highlight>讓產出可控</highlight>——需求、規格、設計、切版、驗收，一條鏈沒有斷點。",
         "roleLabel": "ROLE",
         "roleValue": "Product Designer & Frontend Builder（with Claude Code）"
       },
       "context": {
-        "heading": "一個人要交付的不是頁面，是一座平台",
+        "heading": "從交易平台到運營後台 獨自設計＆規劃",
         "body": "Augur 讓媒體、社群與加密項目方在同一套基礎設施上經營自己品牌的預測市場，底層聚合 Polymarket 流動性。要成立，需要的不只是交易前台，還有一個能管市場、賠率、租戶、金庫的運營後台——而設計與前端資源，只有我一個人。",
-        "scope1Title": "前台交易站 · 28 頁",
+        "scope1Title": "前台交易站",
         "scope1Body": "市場列表與搜尋、四種市場詳情型別、下單與限價、持倉與平倉、錢包出入金、排行榜、通知、個人頁——完整的交易閉環。",
-        "scope2Title": "運營後台 · 24 頁",
+        "scope2Title": "運營後台",
         "scope2Body": "總覽儀表板、賠率管理、市場控制、對沖監控、六角色權限、租戶管理與自訂域名審核、金庫與轉帳。",
         "scope3Title": "金流架構文件",
         "scope3Body": "從入金錢包、跨鏈 Swap 到 Polymarket Peg-in 的四階段資金路徑：方案比較、失敗處理、風控閾值，一份寫給後端的完整藍圖。",
@@ -1430,18 +1443,18 @@
         "chainTitle": "從需求到驗收，一條鏈沒有斷點",
         "chain1Title": "User Story ×101",
         "chain1Sub": "11 個 Epic，全數親自撰寫——含驗收條件與跨 epic 依賴",
-        "chain2Title": "功能規劃 Spec ×122 份",
+        "chain2Title": "功能規劃 Spec",
         "chain2Sub": "每個 domain 的行為定義、拍板紀錄與被否決方案",
         "chain3Title": "畫面設計",
-        "chain3Sub": "四型別詳情頁 × 設計系統 × 後台 24 頁的資訊架構",
+        "chain3Sub": "四型別詳情頁 × 設計系統 × 整座運營後台的資訊架構",
         "chain4Title": "前端切版",
-        "chain4Sub": "228 個元件、45,124 行 Vue，mobile first",
+        "chain4Sub": "設計系統驅動的元件化切版，mobile first",
         "chain5Title": "Design QA",
         "chain5Sub": "自建驗收體系：design-qa agent + 12 項判準 + 三組截圖",
         "chainOutro": "一般團隊裡，這是 PM、PO、Designer、Frontend、QA <highlight>五個角色的工作</highlight>——在這個專案裡，是同一個人、同一套標準、同一條品質線。",
         "gapLabel": "THE REAL PROBLEM",
         "gapTitle": "單人 + AI 的瓶頸不在生成速度，在品質控制",
-        "gapBody": "一個人用 AI 可以很快做出「一頁」，但 52 頁、228 個元件的規模下，AI 每天生成的程式碼會系統性地長歪——顏色寫死、按鈕各寫各的、同一種彈窗五種寫法。所以這個專案我真正設計的東西有兩層：<highlight>產品本身，和「讓 AI 穩定產出這個產品」的生產線</highlight>。",
+        "gapBody": "一個人用 AI 可以很快做出「一頁」，但在整座平台的規模下，AI 每天生成的程式碼會系統性地長歪——顏色寫死、按鈕各寫各的、同一種彈窗五種寫法。所以這個專案我真正設計的東西有兩層：<highlight>產品本身，和「讓 AI 穩定產出這個產品」的生產線</highlight>。",
         "imageCaption": "前台首頁——LIVE 定時漲跌輪播卡、熱門市場排行、分類篩選，未登入即可自由瀏覽"
       },
       "research": {
@@ -1466,17 +1479,21 @@
         "row3Model": "shares、entry price、每日與未實現損益怎麼變化",
         "conclusionLabel": "RESEARCH CONCLUSION",
         "conclusionTitle": "取三家之長，但講人話",
-        "conclusionBody": "「像 Polymarket 一樣快速可交易，像 Kalshi 一樣可信且可解釋，像 Opinion.Trade 一樣有足夠 P&L 深度，<highlight>但對一般使用者使用更少術語</highlight>。」這句結論後來直接落地成 Portfolio 的金額語言設計（見 5E）。"
+        "conclusionBody": "「像 Polymarket 一樣快速可交易，像 Kalshi 一樣可信且可解釋，像 Opinion.Trade 一樣有足夠 P&L 深度，<highlight>但對一般使用者使用更少術語</highlight>。」這句結論後來直接落地成 Portfolio 的金額語言設計（見 5E）。",
+        "baBeforeLabel": "BEFORE — Handoff 雙線原案",
+        "baBeforeCaption": "AI 設計工具的 handoff：Yes/No 雙線並畫——NO 線永遠是 YES 的鏡像，兩個訊號打架",
+        "baAfterLabel": "AFTER — 單線 YES 定稿",
+        "baAfterCaption": "產業對齊決議：只畫一條 YES 線，header 並列 Yes/No 兩側數字補償"
       },
       "spec": {
-        "heading": "程式碼還沒寫，規則先立好",
-        "body": "寫給 AI 的規格和寫給人的不一樣：人可以問、可以補腦，AI 只會照字面執行。所以這個專案的文件密度接近工程團隊等級——122 份 Markdown、36,794 行、19 個 domain 資料夾，文件與程式碼是同節奏交付的兩條軌。這裡沒有 PM 給我規格：101 條 user story 和每一份 domain Spec 都是我親自撰寫——從行為定義、驗收條件到被否決方案的紀錄。",
+        "heading": "Spec-Driven Development",
+        "body": "此專案僅有區塊鏈產品顧問可以作為功能開發上的諮詢對象，但並沒有 PM 給予文件進行設計，因此獨立規劃了產品開發的 Epic、規劃功能、定義 User story 、Spec 撰寫 ＆ Design QA 驗收",
         "step1Title": "商業層",
         "step1Body": "House Model 商業藍圖 + 金流架構文件：四階段資金路徑、兩方案比較、失敗處理與風控閾值，附可執行的程式範例，後來成為風控 user story 的主要引用來源。",
         "step2Title": "需求層",
         "step2Body": "工程 PRD 拆出 10 個 Epic、97 條功能需求；前台 11 個 Epic、101 條 user story 與跨 epic 依賴圖；後台另立 14 個 Admin Epic。",
         "step3Title": "Domain 層",
-        "step3Body": "每個 domain 一組三件套：User Stories、Spec、QA 驗收清單。光是錢包一個 domain，就是 60K 規格 + 44K wireframe + 三份 QA。",
+        "step3Body": "每個 domain 一組三件套：User Stories、Spec、QA 驗收清單。光是錢包一個 domain，就有完整的行為規格、wireframe 與三份 QA 清單。",
         "step4Title": "治理層",
         "step4Body": "《Design Workflow》定義設計任何頁面前要讀哪四層文件，並拍板衝突優先序：設計系統 > domain Spec > 討論紀錄 > Figma 視覺稿——連「文件打架時聽誰的」都是規格的一部分。",
         "reviewTitle": "跨職能把關：PM Review 分級制",
@@ -1506,11 +1523,11 @@
         "principle2Title": "決定權留在人身上",
         "principle2Body": "推版指令的原文是：「agent 是唯讀的，修不修、推不推我自己決定。」AI 給 verdict，人做 decision。",
         "principle3Title": "先立工作流，再寫產品",
-        "principle3Body": "Repo 的第二個 commit 不是功能，是一份 392 行的設計師 Git Playbook——用產品語言重寫 Git 心智模型，附十段可直接複製的協作 prompt。"
+        "principle3Body": "Repo 的第二個 commit 不是功能，是一份設計師 Git Playbook——用產品語言重寫 Git 心智模型，附十段可直接複製的協作 prompt。"
       },
       "front": {
         "heading": "前台設計規劃：定義一套交易語言",
-        "body": "前台設計不是「畫 28 頁」，而是定義一套交易語言：什麼是市場、怎麼下單、怎麼退出、錢怎麼看得懂。101 條 user story 裡，下單佔 12 條、持倉佔 10 條、市場探索佔 9 條。以下是每一塊的關鍵決策——每一條都留有被否決的替代方案。",
+        "body": "前台設計不是「畫頁面」，而是定義一套交易語言：什麼是市場、怎麼下單、怎麼退出、錢怎麼看得懂。101 條 user story 裡，下單佔 12 條、持倉佔 10 條、市場探索佔 9 條。以下是每一塊的關鍵決策——每一條都留有被否決的替代方案。",
         "subATitle": "市場型別分類學：先訂清楚什麼做、什麼不做、為什麼",
         "subABody": "產業術語混亂（binary / categorical / scalar / conditional 常被混用），我先建立 8 種市場型態的分類表，每種標註 MVP 支援度——4 種 P0 支援、2 種 Post-MVP、2 種明確不做。資料語意也在此鎖死：binary 的 outcomes 陣列只放 YES 側（NO 由 100 − probability 推導）、價格一律 string 避免浮點誤差、全站禁用 bet / wager / gamble 等賭博語彙。",
         "rejectTitle": "拒絕要有商業理由，不是能力問題",
@@ -1591,17 +1608,9 @@
         "e4Title": "公開個人頁的安全決策",
         "e4Body": "不做「private portfolio 加個公開開關」——那是研究報告裡明寫的危險做法。改為後端產生 public projection、獨立路由 /u/:username：「交易績效公開應該是 user opt-in。」",
         "subFTitle": "全站體驗的地板：狀態、搜尋、認證、出入金",
-        "subFBody": "體驗的下限由這些「看不見的設計」決定——它們各自有完整的規格與拍板紀錄。",
-        "f1Title": "三態規範：25 個情境",
-        "f1Body": "全站盤點 8 個整頁錯誤、3 個路由攔截、10 個跨頁空態、4 個特殊終態，S1–S12 決議每條附不採方案。核心原則：「整頁 error 是逃生艙，不是常態。」聚合器特有狀態也被設計：上游掛掉走 503「報價暫時無法取得」，與自家 500 區分——避免「誤導用戶以為是 Augur 壞了」。",
-        "f2Title": "搜尋：S1–S9 互動契約",
-        "f2Body": "debounce 300ms、少於 2 字不觸發、top 5、完整鍵盤導航與 a11y 鏈（combobox / listbox / aria-activedescendant）、最近搜尋上限 5。斷點決策：手機全螢幕 overlay、桌機常駐 input + dropdown。查證 Polymarket 搜尋確實含 profiles 後，才加「市場／用戶」雙 tab——連加一個 tab 都有依據。",
-        "f3Title": "Auth：未登入可自由瀏覽",
-        "f3Body": "Passwordless（Email OTP + Google + Passkey）、全流程單一 popup 首頁不離場。「未登入可自由瀏覽」是刻意的差異化——只有在詳情頁按下下單鈕那一刻才檢查登入。OTP 六格填完後 focus 自動移到「驗證」按鈕，鍵盤使用者可直接 Enter 送出。",
-        "f4Title": "錢包提現：交易所級的謹慎",
-        "f4Body": "單頁表單重構為兩步驟（選幣 → 發送），URL 驅動、瀏覽器返回鍵可退回；欄位順序對齊幣安式「地址 → 主網 → 金額」。大額 T+1 提示用 amber 禁用紅色——「避免誤判為失敗」；錯誤分級到「哪些不關 dialog 讓用戶改、哪些關 dialog、哪些根本不讓進 dialog」。",
+        "subFBody": "體驗的下限由這些「看不見的設計」決定——三態規範、搜尋、認證、出入金各自有完整規格與拍板紀錄，這裡收成一張摘要表，細節在面試時展開。",
         "insightLabel": "WHY IT HOLDS TOGETHER",
-        "insightTitle": "28 頁的一致性，是被幾百次「不採」撐住的",
+        "insightTitle": "整個前台的一致性，是被幾百次「不採」撐住的",
         "insightBody": "規格寫到這個密度，AI 切版的產出才會穩定。<highlight>每一條「不採」都是一次設計判斷</highlight>——D1–D10、Q1–Q5、S1–S12 這些拍板紀錄，就是這個產品的設計履歷。",
         "typeImg1Caption": "Binary 詳情頁——單線 YES 走勢圖（產業對齊決議）、固定 360px 下單面板、掛單凍結金額明示",
         "typeImg2Caption": "Categorical 詳情頁——領先大格價格條 + outcome 切換層",
@@ -1616,11 +1625,26 @@
         "rwdBody": "md 是主要排版斷點、lg 是側欄出現點——這條規則寫在設計系統裡，也體現在每一頁：桌機的側欄與雙欄佈局，在手機上收斂為單欄堆疊 + 底部導覽，資訊層級不變、動線重排。",
         "rwdPhone1Caption": "首頁——輪播卡與市場列表堆疊",
         "rwdPhone2Caption": "Portfolio——KPI 卡直向排列",
-        "rwdPhone3Caption": "錢包充值——表單全寬、鍵盤友善"
+        "rwdPhone3Caption": "錢包充值——表單全寬、鍵盤友善",
+        "fColArea": "區塊",
+        "fColDecision": "關鍵決策",
+        "fColTradeoff": "代表性取捨",
+        "fRow1Area": "三態規範",
+        "fRow1Decision": "全站盤點 25 個情境（整頁錯誤、路由攔截、跨頁空態、特殊終態）；「整頁 error 是逃生艙，不是常態」",
+        "fRow1Tradeoff": "上游掛掉走 503「報價暫時無法取得」，與自家 500 區分——避免誤導用戶以為是 Augur 壞了",
+        "fRow2Area": "搜尋",
+        "fRow2Decision": "debounce 300ms、top 5、完整鍵盤導航與 a11y 鏈；手機全螢幕 overlay、桌機常駐 dropdown",
+        "fRow2Tradeoff": "查證 Polymarket 搜尋確實含 profiles 後，才加「市場／用戶」雙 tab——連加一個 tab 都有依據",
+        "fRow3Area": "Auth",
+        "fRow3Decision": "Passwordless（Email OTP + Google + Passkey）、單一 popup 首頁不離場",
+        "fRow3Tradeoff": "未登入可自由瀏覽是刻意差異化——下單那一刻才檢查登入，不急著要人註冊",
+        "fRow4Area": "錢包提現",
+        "fRow4Decision": "兩步驟（選幣 → 發送）、URL 驅動可返回、幣安式欄位順序、錯誤分級到 dialog 行為",
+        "fRow4Tradeoff": "大額 T+1 提示用 amber 禁用紅色——避免誤判為失敗"
       },
       "design": {
         "heading": "一套寫給 AI 讀的設計系統",
-        "body": "設計系統正典 Design.md 的第一段就講明白它的讀者：「這份文件是給 AI 讀的權威來源。鐵則：能用現成元件就不要自寫；能用 semantic token 就不要寫死顏色。」1,163 行、17 章，從 tokens、按鈕系統、元件正典索引到 AI Codegen 規則——它不是掛在牆上的 style guide，是每天被機器讀取執行的合約。",
+        "body": "設計系統正典 Design.md 的第一段就講明白它的讀者：「這份文件是給 AI 讀的權威來源。鐵則：能用現成元件就不要自寫；能用 semantic token 就不要寫死顏色。」17 章，從 tokens、按鈕系統、元件正典索引到 AI Codegen 規則——它不是掛在牆上的 style guide，是每天被機器讀取執行的合約。",
         "card1Title": "Dark-only 玻璃質感",
         "card1Body": "金融產品的資訊密度適合深底。不用傳統灰階，改用半透明白疊深底、五級文字透明度——整個介面的層次由透明度構成，而不是色票。",
         "card2Title": "語意鎖死，杜絕歧義",
@@ -1646,9 +1670,9 @@
       },
       "admin": {
         "heading": "後台設計規劃：B2B 生意的產品本體",
-        "body": "後台不是前台的附屬品——它是白標生意的產品本體。七月一個月內，我從資訊架構開始規劃並交付整個運營後台（24 頁）：先畫 sitemap 與角色可見性矩陣，再逐模組落地。",
+        "body": "後台不是前台的附屬品——它是白標生意的產品本體。七月一個月內，我從資訊架構開始規劃並交付整個運營後台：先畫 sitemap 與角色可見性矩陣，再逐模組落地。",
         "card1Title": "六角色權限體系",
-        "card1Body": "權限樹元件 + 六角色可見性矩陣，80K 的權限規格文件；權限樹有單元測試守著——權限錯了是資安事件，不是 UI bug。",
+        "card1Body": "權限樹元件 + 六角色可見性矩陣與完整的權限規格；權限樹有單元測試守著——權限錯了是資安事件，不是 UI bug。",
         "card2Title": "多租戶生命週期",
         "card2Body": "租戶開通管線、自訂前台域名的 DNS 綁定與審核面板；租戶設置的 11 個寫入動作全部落地留痕——取代原本 setTimeout 假存、零日誌的狀態。",
         "card3Title": "金庫與雙人閘",
@@ -1691,25 +1715,25 @@
       },
       "impact": {
         "heading": "數字要禁得起核對",
-        "body": "一人團隊的成果要禁得起檢驗——以下數字全部來自 repo 與 git 歷史，可逐項核對。",
-        "metric1Value": "52",
-        "metric1Label": "頁面（前台 28 + 後台 24）",
-        "metric2Value": "228",
-        "metric2Label": "Vue 元件（14 個 domain）",
-        "metric3Value": "45k",
-        "metric3Label": "行前端程式碼",
-        "metric4Value": "101",
-        "metric4Label": "條 user story（11 個 Epic）",
+        "body": "一人團隊的成果要禁得起檢驗——以下全部來自 repo 與 git 歷史，可逐項核對。挑出來的不是產出量，是決策與品質的證據。",
+        "metric1Value": "27",
+        "metric1Label": "條拍板紀錄——每條附被否決方案",
+        "metric2Value": "89%",
+        "metric2Label": "commits 本人完成，支援僅限 CI 基建",
+        "metric3Value": "25",
+        "metric3Label": "個全站狀態情境——空態、錯誤、攔截全盤點",
+        "metric4Value": "168→109",
+        "metric4Label": "design drift 棘輪基線，只准降不准升",
         "tableColDim": "維度",
         "tableColValue": "數字",
         "r1Label": "交付週期",
         "r1Value": "3.7 個月（2026-04 → 2026-08）",
         "r2Label": "Commits",
         "r2Value": "121 筆，本人 108 筆（89%）；同事支援僅限 CI 與部署基建",
-        "r3Label": "前端",
-        "r3Value": "52 頁 · 228 元件 · 45,124 行 Vue · 四種市場型別",
-        "r4Label": "規格",
-        "r4Value": "122 份文件 · 36,794 行 · 11 Epic · 101 story · 97 FR",
+        "r3Label": "拍板紀錄",
+        "r3Value": "下單 D1–D10 · 平倉 Q1–Q5 · 狀態 S1–S12——每條附被否決方案",
+        "r4Label": "規格治理",
+        "r4Value": "PM Review 三級分級 · 5 個 Blocking 缺口全數補齊 · 未決事項 TODO 標記制",
         "r5Label": "前台設計",
         "r5Value": "25 個狀態情境 · 平倉 7 狀態 · 8 種下單 gate · 9 條詳情頁反例",
         "r6Label": "研究",
@@ -1725,7 +1749,8 @@
         "p2": "<highlight>研究要能推翻交付物才有意義。</highlight>Binary 圖表那次，產業對齊的優先級壓過了 handoff 的 pixel-perfect 要求。沒有立場的研究只是裝飾。",
         "p3": "<highlight>規範必須長牙齒。</highlight>寫在文件裡的規範會被 AI（和人）遺忘；掛在 hook 和 CI 上的規範才會被執行。按鈕禁令之所以有效，是因為違規的那一刻就被攔下，而不是 review 時才被抓到。",
         "p4": "<highlight>技術債要棘輪化。</highlight>全面禁止會讓存量債把你卡死，放任不管會讓債滾雪球。新增 drift 直接擋、存量債分期還、基線只准降不准升——這是單人專案唯一還得起債的方式。",
-        "p5": "<highlight>誠實邊界。</highlight>這個專案後端仍是 mock（contract 已由 agent 反推交付）、i18n 只預留了 UI 與規範、測試是關鍵路徑抽樣。一人交付的意思是「產品設計與前端的完整閉環」，不是一個人蓋完整個系統——知道邊界在哪，才知道下一步找誰補位。"
+        "p5": "<highlight>誠實邊界。</highlight>這個專案後端仍是 mock（contract 已由 agent 反推交付）、i18n 只預留了 UI 與規範、測試是關鍵路徑抽樣。一人交付的意思是「產品設計與前端的完整閉環」，不是一個人蓋完整個系統——知道邊界在哪，才知道下一步找誰補位。",
+        "p6": "<highlight>治理是可以帶走的。</highlight>這套工作流不是單幹的紀念品：hook 與棘輪可以直接成為團隊的 design ops、12 項驗收判準可以變成 review checklist、拍板紀錄的格式可以變成團隊的決策文化。一個人練出來的治理，價值在讓下一個團隊跑得更快——而不是證明不需要團隊。"
       },
       "projectNav": {
         "prev": "上一則作品",
@@ -2189,7 +2214,7 @@
         "description": "前台電商平台、直銷後台設計"
       },
       "inspiration-library": {
-        "title": "GOODSHIT — 丟進來就自動歸檔的 AI 靈感庫",
+        "title": "GOODSTUFF — 丟進來就自動歸檔的 AI 靈感庫",
         "description": "用 Claude Code 打造的 AI 靈感庫——連結傳給 Telegram，AI 自動分類上標籤，收進主畫面的 PWA feed"
       }
     }

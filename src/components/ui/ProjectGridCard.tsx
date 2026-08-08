@@ -5,6 +5,8 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Link } from '@/i18n/navigation';
 import type { Project } from '@/data/projects';
+import { useUnlockCountdown } from '@/hooks/useUnlockCountdown';
+import LockedOverlay from '@/components/ui/LockedOverlay';
 
 interface ProjectGridCardProps {
   project: Project;
@@ -14,10 +16,11 @@ interface ProjectGridCardProps {
 export default function ProjectGridCard({ project, index }: ProjectGridCardProps) {
   const t = useTranslations('projectsPage');
 
-  const hasLink = !!project.link;
+  const { locked, remaining } = useUnlockCountdown(project.unlock);
+  const hasLink = !!project.link && !locked;
 
   const card = (
-    <article data-cursor-hover className="group glass-medium rounded-[32px] md:rounded-[32px] overflow-hidden cursor-pointer transition-all duration-400 hover:-translate-y-1.5 hover:border-white/[0.14] hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] h-full flex flex-col"
+    <article data-cursor-hover className={`group glass-medium rounded-[32px] md:rounded-[32px] overflow-hidden ${locked ? 'cursor-default' : 'cursor-pointer'} transition-all duration-400 hover:-translate-y-1.5 hover:border-white/[0.14] hover:shadow-[0_20px_60px_rgba(0,0,0,0.35)] h-full flex flex-col`}
       style={{
         backgroundImage: 'linear-gradient(135deg, rgba(0, 229, 208, 0.03) 0%, rgba(0, 0, 0, 0) 50%)',
       }}
@@ -31,14 +34,14 @@ export default function ProjectGridCard({ project, index }: ProjectGridCardProps
           className="object-cover transition-transform duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
           sizes="(max-width: 768px) 100vw, 50vw"
         />
-        {!hasLink && (
-          <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
-            {project.id === 'prediction-market' ? (
-              <i className="ri-lock-line text-3xl text-white" aria-label="Locked" />
-            ) : (
+        {locked ? (
+          <LockedOverlay remaining={remaining} />
+        ) : (
+          !project.link && (
+            <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-300">
               <span className="text-white text-lg font-semibold tracking-wide">Coming Soon</span>
-            )}
-          </div>
+            </div>
+          )
         )}
       </div>
 

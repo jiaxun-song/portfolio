@@ -122,8 +122,8 @@ function StepCard({
   );
 }
 
-export default function GoodshitClient() {
-  const t = useTranslations('caseStudy.goodshit');
+export default function GoodstuffClient() {
+  const t = useTranslations('caseStudy.goodstuff');
 
   return (
     <>
@@ -152,7 +152,7 @@ export default function GoodshitClient() {
           animate={{ scale: 1 }}
           transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
         >
-          {/* GOODSHIT brand: purple-magenta spectrum glow on dark */}
+          {/* GOODSTUFF brand: purple-magenta spectrum glow on dark */}
           <div className="h-full w-full bg-[radial-gradient(circle_at_80%_20%,rgba(217,70,239,0.20),transparent_40%),radial-gradient(circle_at_15%_70%,rgba(139,92,246,0.22),transparent_42%),linear-gradient(135deg,#121016_0%,#0A0A0A_55%,#16101A_100%)]" />
         </motion.div>
         <div className="absolute inset-0 bg-gradient-to-t from-bg-primary via-bg-primary/25 to-transparent" />

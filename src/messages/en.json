@@ -1266,11 +1266,11 @@
         "next": "Next project"
       }
     },
-    "goodshit": {
+    "goodstuff": {
       "backToProjects": "Back to Projects",
       "hero": {
         "label": "Personal Project — 2026 · Vibe Coding",
-        "title": "GOODSHIT\nA Read-It-Later\nThat Files Itself",
+        "title": "GOODSTUFF\nA Read-It-Later\nThat Files Itself",
         "subtitle": "See something good on Threads, IG, or YouTube — send it to a private Telegram bot. AI fetches the link's meta, picks a category, adds tags, and it shows up neatly filed in a PWA on the home screen."
       },
       "highlightMetrics": {
@@ -1284,7 +1284,7 @@
       "summary": {
         "label": "PROJECT SUMMARY",
         "heading": "A single inbox for scattered inspiration — where AI does the librarian work.",
-        "body": "GOODSHIT is a personal read-it-later PWA built end-to-end with Claude Code. Saved links used to scatter across Threads bookmarks, IG collections, and YouTube's watch-later — collected, then never seen again. Now one Telegram message files anything: the backend scrapes the link's og meta, an LLM assigns one of 17 locked categories plus tags, and the feed on the home screen stays organized without me lifting a finger. <highlight>Designed, specced, and shipped by one person in two days — with AI as the entire engineering team</highlight>.",
+        "body": "GOODSTUFF is a personal read-it-later PWA built end-to-end with Claude Code. Saved links used to scatter across Threads bookmarks, IG collections, and YouTube's watch-later — collected, then never seen again. Now one Telegram message files anything: the backend scrapes the link's og meta, an LLM assigns one of 17 locked categories plus tags, and the feed on the home screen stays organized without me lifting a finger. <highlight>Designed, specced, and shipped by one person in two days — with AI as the entire engineering team</highlight>.",
         "roleLabel": "Role",
         "roleValue": "Designer & Solo Builder (with Claude Code)"
       },
@@ -1296,7 +1296,7 @@
         "calloutBody": "Any tool that asks me to open an app, pick a folder, and type tags loses to the platform's native bookmark button. So the design constraint was strict: saving must stay a two-tap share action, and all organizing must happen after the link leaves my hands — done by machines, not by me.",
         "imageLabel": "The scattered-bookmarks problem — saved items across four platforms, none of them findable",
         "gapTitle": "The gap isn't another bookmark app — it's who does the filing",
-        "gapBody": "Read-it-later tools already exist, but <highlight>the sorting, tagging, and filing is still left to the user</highlight> — and that is exactly the part that never gets done. GOODSHIT set out to test one simple thing: if an LLM classifies well enough, organizing can happen without a human touching it, and saved things finally stand a chance of being used.",
+        "gapBody": "Read-it-later tools already exist, but <highlight>the sorting, tagging, and filing is still left to the user</highlight> — and that is exactly the part that never gets done. GOODSTUFF set out to test one simple thing: if an LLM classifies well enough, organizing can happen without a human touching it, and saved things finally stand a chance of being used.",
         "alternativesTitle": "Why not just use what exists?",
         "alternativesBody": "The build decision came after evaluating the alternatives. mymind comes closest to auto-filing, but it's subscription-based — a monthly fee breaks this tool's survival condition of never having to justify itself. Raindrop still leaves the folders and tags to me, which puts the friction right back. And two requirements were non-negotiable: the categories had to be my own 17 working categories (AI tools, IP ops, video editing…), not generic Article / Video buckets; and the entry point had to be Telegram — already sitting in every platform's share sheet, nothing to install. Those two constraints decided the build, not an itch to write code."
       },
@@ -1323,7 +1323,7 @@
         "step3Title": "Build in phases, verify each",
         "step3Body": "Six phases — design capture, PWA scaffold, database + ingest route, AI classification, PWA polish, deploy — each shipped and verified before the next. The commit history reads like the plan, because the plan was written first.",
         "step4Title": "Rebrand without breaking data",
-        "step4Body": "Midway, IdeaBox became GOODSHIT and 13 categories grew to 17. One rule kept it painless: display names follow the brand and can change anytime; database slugs never move. The whole rebrand shipped without orphaning a single row.",
+        "step4Body": "Midway, IdeaBox became GOODSTUFF and 13 categories grew to 17. One rule kept it painless: display names follow the brand and can change anytime; database slugs never move. The whole rebrand shipped without orphaning a single row.",
         "imageLabel1": "The Open Design visual spec — tokens, grid, and icon concept, exported before any code",
         "imageLabel2": "CLAUDE.md — the spec document the AI builds against, with the locked category table"
       },
@@ -1371,7 +1371,7 @@
       },
       "phase2": {
         "heading": "From a personal tool to a team's shared library",
-        "body": "With the single-user loop proven, the next phase is already planned: opening GOODSHIT up to a team of engineer friends. One data-model change sits at the core — ratings move from a column on the card to a person × card relationship — and every product feature below grows out of that single step.",
+        "body": "With the single-user loop proven, the next phase is already planned: opening GOODSTUFF up to a team of engineer friends. One data-model change sits at the core — ratings move from a column on the card to a person × card relationship — and every product feature below grows out of that single step.",
         "card1Title": "A shared feed that shows who's researching what",
         "card1Body": "Everyone's links land in one feed. Each card carries its saver's avatar, and the rating area becomes a stack of colored dots — who tried it and who loved it, readable at a glance.",
         "card2Title": "\"Tried it yet?\" marks and a heat sort",
@@ -1385,9 +1385,9 @@
       },
       "reflection": {
         "heading": "The leverage is in the spec, not the code",
-        "p1": "GOODSHIT took two days — but the two days only worked because of the hours spent before them: locking design tokens, writing the category table, recording decisions and their reasons in CLAUDE.md. When AI does the implementation, the spec is the work.",
+        "p1": "GOODSTUFF took two days — but the two days only worked because of the hours spent before them: locking design tokens, writing the category table, recording decisions and their reasons in CLAUDE.md. When AI does the implementation, the spec is the work.",
         "p2": "The most valuable architectural habit was also the smallest: <highlight>a single source of truth for the categories, read by both the classifier prompt and the UI</highlight>. In AI systems the failure mode isn't broken code — it's two definitions of the truth drifting apart quietly.",
-        "p3": "The rebrand left behind one naming rule: display names are for humans and can change anytime; identifiers are for systems and stay put once set. <highlight>IdeaBox became GOODSHIT without a single database row having to move</highlight>.",
+        "p3": "The rebrand left behind one naming rule: display names are for humans and can change anytime; identifiers are for systems and stay put once set. <highlight>IdeaBox became GOODSTUFF without a single database row having to move</highlight>.",
         "p4": "Honestly: two days proved it could be built, not that the bet holds. <highlight>Classification accuracy and return visits are the product's real vital signs, and they can only be bought with time</highlight>. Ship day isn't validation day — the day it went live is the day the experiment started."
       },
       "projectNav": {
@@ -1852,7 +1852,7 @@
         "description": "Front-end e-commerce platform with MLM back-office dashboard design"
       },
       "inspiration-library": {
-        "title": "GOODSHIT — A Read-It-Later That Files Itself",
+        "title": "GOODSTUFF — A Read-It-Later That Files Itself",
         "description": "An AI inspiration library built with Claude Code — send a link to Telegram, AI categorizes and tags it into a home-screen PWA feed"
       }
     }

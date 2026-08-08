@@ -1,7 +1,7 @@
 import { setRequestLocale } from 'next-intl/server';
-import GoodshitClient from './GoodshitClient';
+import GoodstuffClient from './GoodstuffClient';
 
-export default async function GoodshitPage({
+export default async function GoodstuffPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
@@ -9,5 +9,5 @@ export default async function GoodshitPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  return <GoodshitClient />;
+  return <GoodstuffClient />;
 }

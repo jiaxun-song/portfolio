@@ -8,7 +8,7 @@ import ProjectGridCard from '@/components/ui/ProjectGridCard';
 import GlowButton from '@/components/ui/GlowButton';
 import CTASection from '@/components/sections/CTASection';
 
-const tabs = ['Works', 'Vibe Coding'] as const;
+const tabs = ['Works', 'AI Building'] as const;
 
 export default function WorkClient() {
   const t = useTranslations('projectsPage');
@@ -18,7 +18,7 @@ export default function WorkClient() {
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
     if (params.get('tab') === 'vibe-coding') {
-      setActiveTab('Vibe Coding');
+      setActiveTab('AI Building');
     }
   }, []);
 
