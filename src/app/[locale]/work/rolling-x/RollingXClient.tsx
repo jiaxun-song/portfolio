@@ -8,13 +8,10 @@ import { Link } from '@/i18n/navigation';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionLabel from '@/components/ui/SectionLabel';
 import VideoEmbed from '@/components/ui/VideoEmbed';
-import { navigableProjects } from '@/data/projects';
+import { useProjectNav } from '@/hooks/useProjectNav';
 
 const IMG = '/images/projects/rolling-x';
 const CURRENT_ID = 'rolling-x';
-const currentIdx = navigableProjects.findIndex((p) => p.id === CURRENT_ID);
-const prevProject = navigableProjects[(currentIdx - 1 + navigableProjects.length) % navigableProjects.length];
-const nextProject = navigableProjects[(currentIdx + 1) % navigableProjects.length];
 const uiDesignImages = [
   { width: 3022, height: 1714 },
   { width: 3024, height: 1720 },
@@ -31,6 +28,7 @@ const decisionOptionImages = {
 };
 
 export default function RollingXClient() {
+  const { prev: prevProject, next: nextProject } = useProjectNav(CURRENT_ID);
   const t = useTranslations('caseStudy.rolling-x');
   const tp = useTranslations('projectsPage');
   const uiSectionRef = useRef<HTMLElement | null>(null);

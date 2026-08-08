@@ -8,17 +8,15 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionLabel from '@/components/ui/SectionLabel';
 import ImageBlock from '@/components/ui/ImageBlock';
 import VideoEmbed from '@/components/ui/VideoEmbed';
-import { navigableProjects } from '@/data/projects';
+import { useProjectNav } from '@/hooks/useProjectNav';
 
 const IMG = '/images/projects/ai-learning-platform';
 const CURRENT_ID = 'ai-learning';
-const currentIdx = navigableProjects.findIndex((p) => p.id === CURRENT_ID);
-const prevProject = navigableProjects[(currentIdx - 1 + navigableProjects.length) % navigableProjects.length];
-const nextProject = navigableProjects[(currentIdx + 1) % navigableProjects.length];
 
 const TAB_ICONS = ['ri-search-line', 'ri-question-line', 'ri-book-open-line'] as const;
 
 export default function AILearningClient() {
+  const { prev: prevProject, next: nextProject } = useProjectNav(CURRENT_ID);
   const t = useTranslations('caseStudy.aiLearning');
   const tp = useTranslations('projectsPage');
 

@@ -7,13 +7,10 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionLabel from '@/components/ui/SectionLabel';
-import { navigableProjects } from '@/data/projects';
+import { useProjectNav } from '@/hooks/useProjectNav';
 
 const IMG = '/images/projects/prediction-market';
 const CURRENT_ID = 'prediction-market';
-const currentIdx = navigableProjects.findIndex((p) => p.id === CURRENT_ID);
-const prevProject = navigableProjects[(currentIdx - 1 + navigableProjects.length) % navigableProjects.length];
-const nextProject = navigableProjects[(currentIdx + 1) % navigableProjects.length];
 
 const metaItems = [
   { label: 'Scope', value: 'Research · Product Spec · UX/UI Design · Design System · Frontend Build · AI Workflow Governance' },
@@ -245,6 +242,7 @@ function DataTable({
 const SECTION = 'mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12';
 
 export default function PredictionMarketClient() {
+  const { prev: prevProject, next: nextProject } = useProjectNav(CURRENT_ID);
   const t = useTranslations('caseStudy.predictionMarket');
   const tp = useTranslations('projectsPage');
 

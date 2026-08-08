@@ -7,13 +7,10 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionLabel from '@/components/ui/SectionLabel';
-import { navigableProjects } from '@/data/projects';
+import { useProjectNav } from '@/hooks/useProjectNav';
 
 const IMG = '/images/projects/play-to-earn';
 const CURRENT_ID = 'play-to-earn';
-const currentIdx = navigableProjects.findIndex((p) => p.id === CURRENT_ID);
-const prevProject = navigableProjects[(currentIdx - 1 + navigableProjects.length) % navigableProjects.length];
-const nextProject = navigableProjects[(currentIdx + 1) % navigableProjects.length];
 
 const metaKeys = ['role', 'duration', 'scope'] as const;
 
@@ -35,6 +32,7 @@ const deliverableSlides = [
 ] as const;
 
 export default function PlayToEarnClient() {
+  const { prev: prevProject, next: nextProject } = useProjectNav(CURRENT_ID);
   const t = useTranslations('caseStudy.playToEarn');
   const tp = useTranslations('projectsPage');
   const [slideIndex, setSlideIndex] = useState(0);

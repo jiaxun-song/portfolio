@@ -38,15 +38,26 @@ export interface UnlockCountdown {
 }
 
 /**
+ * Reads the shared clock. `null` on the server and on the first client paint, so anything derived
+ * from it must treat "unknown time" as "still locked" for SSR and hydration to agree.
+ * Pass `enabled: false` to opt out of the tick entirely.
+ */
+export function useUnlockClock(enabled = true): number | null {
+  return useSyncExternalStore(enabled ? subscribeToClock : noopSubscribe, getClock, getServerClock);
+}
+
+/** Whether a gate is still shut at `now` (`null` = clock not read yet → treat as shut). */
+export function isGateLocked(gate: UnlockGate | undefined, now: number | null): boolean {
+  if (!gate) return false;
+  return now === null || now < gate.at;
+}
+
+/**
  * Counts down to a gate's absolute unlock timestamp. Renders as "locked, full window" on the server
  * and on the first client paint, then ticks once mounted — so SSR and hydration always agree.
  */
 export function useUnlockCountdown(gate?: UnlockGate): UnlockCountdown {
-  const now = useSyncExternalStore(
-    gate ? subscribeToClock : noopSubscribe,
-    getClock,
-    getServerClock,
-  );
+  const now = useUnlockClock(Boolean(gate));
 
   if (!gate) return { locked: false, remaining: null };
 

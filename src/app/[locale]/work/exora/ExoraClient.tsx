@@ -9,13 +9,10 @@ import ScrollReveal from '@/components/ui/ScrollReveal';
 import SectionLabel from '@/components/ui/SectionLabel';
 import ImageBlock from '@/components/ui/ImageBlock';
 import VideoEmbed from '@/components/ui/VideoEmbed';
-import { navigableProjects } from '@/data/projects';
+import { useProjectNav } from '@/hooks/useProjectNav';
 
 const IMG = '/images/case-studies/exora';
 const CURRENT_ID = 'exora';
-const currentIdx = navigableProjects.findIndex((p) => p.id === CURRENT_ID);
-const prevProject = navigableProjects[(currentIdx - 1 + navigableProjects.length) % navigableProjects.length];
-const nextProject = navigableProjects[(currentIdx + 1) % navigableProjects.length];
 
 /* Final UI design gallery — ui-design-N.png in /public/images/projects/exora */
 const uiDesignImages = [
@@ -39,6 +36,7 @@ function Placeholder({ name, ratio = '16/10' }: { name: string; ratio?: string }
 }
 
 export default function ExoraClient() {
+  const { prev: prevProject, next: nextProject } = useProjectNav(CURRENT_ID);
   const t = useTranslations('caseStudy.exora');
   const tp = useTranslations('projectsPage');
 
