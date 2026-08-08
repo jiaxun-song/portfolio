@@ -13,8 +13,16 @@ const IMG = '/images/projects/prediction-market';
 const CURRENT_ID = 'prediction-market';
 
 const metaItems = [
-  { label: 'Scope', value: 'Research · Product Spec · UX/UI Design · Design System · Frontend Build · AI Workflow Governance' },
-  { label: 'Platform', value: 'Web App — Trading Front + Admin Console' },
+  {
+    label: 'Scope',
+    icon: 'ri-focus-2-line',
+    items: ['Research', 'Product Spec', 'UX/UI Design', 'Design System', 'Frontend Build', 'AI Workflow Governance'],
+  },
+  {
+    label: 'Platform',
+    icon: 'ri-window-2-line',
+    items: ['Web App', 'Trading Front', 'Admin Console'],
+  },
 ];
 
 const summaryTags = ['AI Workflow', 'Product Design', 'Design System', 'Spec-Driven', 'Multi-Tenant'];
@@ -311,53 +319,8 @@ export default function PredictionMarketClient() {
         </div>
       </section>
 
-      {/* TL;DR */}
-      <ScrollReveal className={`${SECTION} mt-20 mb-8`}>
-        <div className="glass-medium rounded-2xl border border-accent/20 p-8 md:p-10">
-          <p className="mb-7 inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5 font-[var(--font-mono)] text-[13px] font-semibold uppercase tracking-[1.4px] text-accent">
-            {t('tldr.label')}
-          </p>
-          <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
-            <div>
-              <p className="mb-1.5 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-text-muted">
-                {t('tldr.problemLabel')}
-              </p>
-              <p className="text-[15px] leading-[1.7] text-text-secondary">{t('tldr.problemBody')}</p>
-            </div>
-            <div>
-              <p className="mb-1.5 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-text-muted">
-                {t('tldr.roleLabel')}
-              </p>
-              <p className="text-[15px] leading-[1.7] text-text-secondary">{t('tldr.roleBody')}</p>
-            </div>
-          </div>
-          <div className="mb-6 border-t border-white/[0.08]" />
-          <p className="mb-3 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-text-muted">
-            {t('tldr.decisionsLabel')}
-          </p>
-          <ul className="mb-6 flex flex-col gap-2.5">
-            {[1, 2, 3].map((n) => (
-              <li key={n} className="flex gap-3 text-[15px] leading-[1.7] text-text-secondary">
-                <span className="mt-[2px] shrink-0 font-[var(--font-mono)] text-[13px] font-bold text-accent">
-                  0{n}
-                </span>
-                <span>{t(`tldr.d${n}`)}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="rounded-xl border border-amber-400/20 bg-amber-400/[0.06] p-4 md:p-5">
-            <p className="text-[14px] leading-[1.7] text-text-secondary">
-              <span className="mr-2 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-amber-300/80">
-                {t('tldr.statusLabel')}
-              </span>
-              {t('tldr.statusBody')}
-            </p>
-          </div>
-        </div>
-      </ScrollReveal>
-
       {/* Highlight Metrics Strip */}
-      <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
+      <ScrollReveal className={`${SECTION} mt-20 mb-5`}>
         <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
           {[1, 2, 3].map((n) => (
             <div
@@ -385,12 +348,28 @@ export default function PredictionMarketClient() {
           {metaItems.map((item) => (
             <div
               key={item.label}
-              className="relative overflow-hidden rounded-2xl border border-accent/15 bg-accent/[0.045] p-6"
+              className="group relative overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.03] p-7 backdrop-blur-xl transition-all duration-500 hover:border-accent/30 md:p-8"
             >
-              <p className="mb-4 inline-flex rounded-full border border-accent/20 bg-accent/10 px-3 py-1.5 font-[var(--font-mono)] text-[13px] font-semibold uppercase tracking-[1.4px] text-accent">
-                {item.label}
-              </p>
-              <p className="text-[16px] leading-[1.65] text-text-secondary">{item.value}</p>
+              <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-accent/50 via-accent/10 to-transparent" />
+              <div className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-accent/[0.06] blur-3xl transition-colors duration-700 group-hover:bg-accent/[0.12]" />
+              <div className="relative mb-5 flex items-center gap-3.5">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl border border-accent/25 bg-accent/10 text-accent shadow-[inset_0_1px_0_rgba(255,255,255,0.12)] transition-colors duration-500 group-hover:border-accent/45 group-hover:bg-accent/15">
+                  <i className={`${item.icon} text-[18px]`} />
+                </div>
+                <span className="font-[var(--font-mono)] text-[11px] font-medium uppercase tracking-[2.4px] text-accent/75">
+                  {item.label}
+                </span>
+              </div>
+              <div className="relative flex flex-wrap gap-2">
+                {item.items.map((chip) => (
+                  <span
+                    key={chip}
+                    className="rounded-full border border-white/[0.1] bg-white/[0.04] px-3 py-1.5 text-[13px] leading-none text-text-secondary transition-colors duration-300 group-hover:border-white/[0.16]"
+                  >
+                    {chip}
+                  </span>
+                ))}
+              </div>
             </div>
           ))}
         </div>
