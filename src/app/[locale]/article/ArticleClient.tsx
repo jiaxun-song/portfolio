@@ -57,9 +57,6 @@ export default function ArticleClient() {
             {t('pageTitle')}
           </h1>
         </div>
-        <p className="mt-6 max-w-xl px-6 text-center text-sm text-text-secondary md:text-base">
-          {t('subtitle')}
-        </p>
       </motion.div>
 
       {/* Article Cards */}
