@@ -1515,7 +1515,7 @@
         "bench4Platform": "Polymarket",
         "bench4Adopt": "binary 市場只顯示一側機率、把當下最好的買賣價直接秀給用戶",
         "bench4Reject": "把原始訂單簿直接丟給用戶——對一般用戶太複雜",
-        "subDTitle": "平倉：兩段式報價的 7 狀態機",
+        "subDTitle": "平倉：兩段式報價流程 ＆ 7 狀態情境設計",
         "subDBody": "平倉是整個產品風險感最高的時刻——用戶要在價格變動中決定認賠或獲利了結。設計成兩段式：先拿一份 30 秒過期的報價，再確認送出；彈窗共 7 個狀態，9 個錯誤碼收斂成 3 種行為。",
         "statesTitle": "七個狀態，逐一定義",
         "statesNote": "以一筆真實部位（250 股 Yes、均價 $0.42、成本 $105.00）模擬設計所有平倉狀態。",
@@ -1543,7 +1543,7 @@
         "e2Title": "狀態細分與去 crypto 化",
         "e2Body": "持倉狀態從 2 種細分成 6 種，各自定義可用動作。UX copy 全面去 crypto 化：Oracle price → Final reference price、Redeem → Claim payout——把 API 術語翻譯成人話。",
         "e2ListLabel": "6 種持倉狀態",
-        "subFTitle": "其他功能與畫面：狀態、搜尋、認證、出入金",
+        "subFTitle": "其他功能與畫面",
         "typeImg1Caption": "Binary 詳情頁——單線 YES 走勢圖（產業對齊決議）、固定 360px 下單面板、掛單凍結金額明示",
         "typeImg2Caption": "Categorical 詳情頁——領先大格價格條 + outcome 切換層",
         "typeImg3Caption": "Grouped 詳情頁——移除走勢圖，逐列內嵌訂單簿的減法設計",
@@ -1556,7 +1556,7 @@
         "walletImgCaption": "錢包充值——兩步驟流程、交易所式欄位順序",
         "leaderboardImgCaption": "排行榜——公開交易履歷的入口",
         "leaderboardImg2Caption": "排行榜完整榜單——獲利／交易量兩維度 × 四時段，Top 100 排名列表",
-        "rwdTitle": "同一套設計語言，從 1440 到 375",
+        "rwdTitle": "從 1440 到 375 的 PWA 設計",
         "rwdPhone1Caption": "首頁——輪播卡與市場列表堆疊",
         "rwdPhone2Caption": "Portfolio——KPI 卡直向排列",
         "rwdPhone3Caption": "錢包充值——表單全寬、鍵盤友善",
@@ -1597,7 +1597,8 @@
         "card4Title": "平台／租戶雙視角",
         "card4Body": "全站「平台視角 / 租戶視角」切換器 + 全域狀態，列表頁掛載、詳情頁做 403 越權守門——同一套後台，兩種身分看到的世界不同。",
         "image1Caption": "運營後台總覽——資產、活躍市場、未對沖金額與交易量一屏掌握",
-        "image2Caption": "運營後台登入頁——玻璃卡與品牌漸層 CTA"
+        "image2Caption": "運營後台登入頁——玻璃卡與品牌漸層 CTA",
+        "image3Caption": "充值訂單——用戶充值與平台入金雙視角，唯讀鏡像 KL 金流紀錄"
       },
       "impact": {
         "heading": "AI 協作後的實際產能",

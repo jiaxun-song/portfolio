@@ -333,8 +333,10 @@ const designCardMeta = [
 
 function ArrowGallery({
   slides,
+  fit = "cover",
 }: {
   slides: { src?: string; caption: string }[];
+  fit?: "cover" | "contain";
 }) {
   const [active, setActive] = useState(0);
   const slide = slides[active];
@@ -362,7 +364,7 @@ function ArrowGallery({
                   src={slide.src}
                   alt={slide.caption}
                   fill
-                  className="object-cover"
+                  className={fit === "contain" ? "object-contain" : "object-cover"}
                   sizes="(max-width: 768px) 100vw, 1200px"
                 />
               ) : (
@@ -1038,15 +1040,15 @@ function CloseStateCard({
   spec: DialogSpec;
 }) {
   return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.05] via-white/[0.02] to-transparent p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_28px_70px_-20px_rgba(0,229,208,0.16)]">
+    <div className="relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.05] via-white/[0.02] to-transparent p-6 backdrop-blur-xl">
       {/* top hairline + corner glow */}
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-accent/50 via-accent/10 to-transparent" />
-      <div className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full bg-accent/[0.05] blur-3xl transition-colors duration-700 group-hover:bg-accent/[0.12]" />
+      <div className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full bg-accent/[0.05] blur-3xl" />
 
       {/* watermark state number */}
       <span
         aria-hidden
-        className="pointer-events-none absolute -top-4 right-4 select-none font-[var(--font-display)] text-[72px] font-bold leading-none tracking-tight text-transparent transition-transform duration-700 group-hover:-translate-y-1"
+        className="pointer-events-none absolute -top-4 right-4 select-none font-[var(--font-display)] text-[72px] font-bold leading-none tracking-tight text-transparent"
         style={{ WebkitTextStroke: "1.2px rgba(0,229,208,0.14)" }}
       >
         {String(index).padStart(2, "0")}
@@ -1056,7 +1058,7 @@ function CloseStateCard({
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/10 font-[var(--font-mono)] text-[12px] font-bold text-accent shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
           {String(index).padStart(2, "0")}
         </span>
-        <span className="rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 font-[var(--font-mono)] text-[10px] uppercase tracking-[1.6px] text-text-muted transition-colors duration-500 group-hover:border-accent/20 group-hover:text-accent/80">
+        <span className="rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 font-[var(--font-mono)] text-[10px] uppercase tracking-[1.6px] text-text-muted">
           {code}
         </span>
       </div>
@@ -1944,23 +1946,14 @@ export default function PredictionMarketClient() {
         </div>
       </ScrollReveal>
 
-      <ScrollReveal className={`${SECTION} mb-8`}>
-        <CaptionedImage
-          src={`${IMG}/admin-overview.png`}
-          alt={t("admin.image1Caption")}
-          caption={t("admin.image1Caption")}
-          width={3024}
-          height={1718}
-        />
-      </ScrollReveal>
-
       <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
-        <CaptionedImage
-          src={`${IMG}/admin-login.png`}
-          alt={t("admin.image2Caption")}
-          caption={t("admin.image2Caption")}
-          width={1440}
-          height={1000}
+        <ArrowGallery
+          fit="contain"
+          slides={[
+            { src: `${IMG}/admin-overview.png`, caption: t("admin.image1Caption") },
+            { src: `${IMG}/admin-deposits.png`, caption: t("admin.image3Caption") },
+            { src: `${IMG}/admin-login.png`, caption: t("admin.image2Caption") },
+          ]}
         />
       </ScrollReveal>
 
