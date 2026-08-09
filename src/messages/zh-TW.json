@@ -1432,7 +1432,7 @@
         "scopeStep2Sub": "可運作的畫面",
         "chainLabel": "END-TO-END OWNERSHIP",
         "chainTitle": "獨自負責從需求到驗收的端到端交付",
-        "chain1Title": "User Story ×101",
+        "chain1Title": "User Story 規劃",
         "chain1Sub": "與工程端共同規劃 Epic，並再依此規劃出 User Story 的各種情境",
         "chain2Title": "功能規劃 Spec",
         "chain2Sub": "每個 domain 的行為定義、拍板紀錄與被否決方案",
@@ -1487,8 +1487,8 @@
       "front": {
         "heading": "前台設計規劃：定義一套交易語言",
         "body": "前台設計不只是畫頁面，而是定義一套完整流暢的交易功能：什麼是市場、怎麼下單、怎麼平倉、盈虧＆金流狀態的呈現。",
-        "subBTitle": "詳情頁架構：一套共通骨架＋四種微調客製",
-        "subBBody": "四種市場型別的詳情頁，架構決策是「一套共通骨架＋四種微調客製」，因此我先定義與設計出四種市場詳情頁的共通欄位，再根據不同種類的詳情頁，去客製化差異處，目的是將所有詳情頁視覺一致，讓使用者切換不同 type 不會覺得跑到別的產品。",
+        "subBTitle": "詳情頁架構：一套共通骨架＋四種功能客製",
+        "subBBody": "四種市場型別的詳情頁，架構決策是「一套共通骨架＋四種功能客製」，因此我先定義與設計出四種市場詳情頁的共通欄位，再根據不同種類的詳情頁，去客製化差異處，目的是將所有詳情頁視覺一致，讓使用者切換不同 type 不會覺得跑到別的產品。",
         "type1Title": "Binary",
         "type1Body": "走勢圖只畫 1 條 YES 線（產業對齊決議），header 並列 Yes/No 兩側數字補償；雙按鈕對立的下單面板。",
         "type2Title": "Categorical",
@@ -1582,7 +1582,7 @@
         "card1Title": "Dark-only 玻璃質感",
         "card1Body": "金融產品的資訊密度適合深底。不用傳統灰階，改用半透明白疊深底——整個介面的層次由透明度構成，而不是色票。",
         "card2Title": "語意鎖死，杜絕歧義",
-        "card2Body": "Yes 一律 emerald、No 一律柔化紅（特調 #ea4d61 避開預設刺眼紅）；數字與金額一律 Space Mono。規範明文「禁止用近似色代替」——因為 AI 會鑽字面的漏洞。",
+        "card2Body": "Yes 一律使用顏色 emerald、No 一律柔化紅（特調 #ea4d61 避開預設刺眼紅），規範明文「禁止用近似色代替」——因為 AI 會鑽字面的漏洞。",
         "card3Title": "design-qa agent：交付前驗收",
         "card3Body": "原始碼掃不到「render 出來的畫面」，所以讓 agent 實際截圖三組（mobile / desktop / dark）逐項驗收。",
         "imageLabel": "建立、迭代與維護 同時應用於前台與後台的 Design System"
