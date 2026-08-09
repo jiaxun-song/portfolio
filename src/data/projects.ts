@@ -19,9 +19,6 @@ export interface Project {
   unlock?: UnlockGate;
 }
 
-/** Augur case study: locked, with no countdown shown. */
-export const AUGUR_UNLOCK = INDEFINITE_LOCK;
-
 /** Goodstuff / inspiration-library case study: locked, with no countdown shown. */
 export const GOODSTUFF_UNLOCK = INDEFINITE_LOCK;
 
@@ -31,7 +28,6 @@ export const allProjects: Project[] = [
     tags: ['Fintech', 'AI Workflow', 'Design System'],
     image: '/images/projects/prediction-market-cover.jpg',
     link: '/work/prediction-market',
-    unlock: AUGUR_UNLOCK,
   },
   {
     id: 'exora',

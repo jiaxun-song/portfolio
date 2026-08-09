@@ -4,9 +4,6 @@ import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
 import Image from 'next/image';
 import GlowButton from '@/components/ui/GlowButton';
-import LockedOverlay from '@/components/ui/LockedOverlay';
-import { useUnlockCountdown } from '@/hooks/useUnlockCountdown';
-import { AUGUR_UNLOCK } from '@/data/projects';
 
 const projects = [
   { id: 'prediction-market', tags: ['Fintech', 'AI Workflow', 'Design System'], link: '/work/prediction-market' as const, image: '/images/projects/prediction-market-cover.jpg' },
@@ -19,8 +16,6 @@ const TOTAL = projects.length;
 
 export default function CaseStudyGrid() {
   const t = useTranslations('caseStudy');
-  // Only the Augur card is gated, so one gate check at the top beats a hook per card.
-  const augur = useUnlockCountdown(AUGUR_UNLOCK);
   return (
     <section id="case-study" className="relative py-20">
       <div className="mx-auto max-w-6xl px-6 md:px-12">
@@ -41,10 +36,9 @@ export default function CaseStudyGrid() {
                 }}
               >
                 {(() => {
-                  const locked = project.id === 'prediction-market' && augur.locked;
                   const card = (
                     <div
-                      className={`case-card group rounded-[32px] transform-gpu transition-[border-color,transform] duration-300 ease-out hover:-translate-y-1 ${locked ? 'cursor-default' : 'cursor-pointer'}`}
+                      className="case-card group rounded-[32px] transform-gpu transition-[border-color,transform] duration-300 ease-out hover:-translate-y-1 cursor-pointer"
                       style={{
                         background: 'radial-gradient(ellipse at 15% 10%, #252830 0%, #101114 50%)',
                         border: '1px solid var(--case-card-border)',
@@ -88,14 +82,13 @@ export default function CaseStudyGrid() {
                               className="object-cover"
                               sizes="(min-width: 768px) 50vw, 100vw"
                             />
-                            {locked && <LockedOverlay remaining={augur.remaining} />}
                           </div>
                         </div>
                       </div>
                     </div>
                   );
 
-                  return project.link && !locked ? (
+                  return project.link ? (
                     <Link href={project.link} className="block">
                       {card}
                     </Link>
