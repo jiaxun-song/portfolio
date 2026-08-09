@@ -19,7 +19,7 @@ const TOTAL = projects.length;
 
 export default function CaseStudyGrid() {
   const t = useTranslations('caseStudy');
-  // Only the Augur card is gated, so one countdown at the top beats a hook per card.
+  // Only the Augur card is gated, so one gate check at the top beats a hook per card.
   const augur = useUnlockCountdown(AUGUR_UNLOCK);
   return (
     <section id="case-study" className="relative py-20">

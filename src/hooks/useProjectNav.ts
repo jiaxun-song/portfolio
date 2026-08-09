@@ -3,7 +3,10 @@
 import { navigableProjects, type Project } from '@/data/projects';
 import { isGateLocked, useUnlockClock } from './useUnlockCountdown';
 
-const hasAnyGate = navigableProjects.some((project) => project.unlock);
+/* Only timed gates need the clock — a timer-less gate reads as locked without it. */
+const hasTimedGate = navigableProjects.some(
+  (project) => project.unlock && project.unlock.windowMs !== null,
+);
 
 export interface ProjectNav {
   prev: Project;
@@ -16,7 +19,7 @@ export interface ProjectNav {
  * countdown clock, so the skipped project slots back in the moment it unlocks.
  */
 export function useProjectNav(currentId: string): ProjectNav {
-  const now = useUnlockClock(hasAnyGate);
+  const now = useUnlockClock(hasTimedGate);
 
   /* Keep the current project in the ring even if it is itself locked — it anchors the index. */
   const reachable = navigableProjects.filter(

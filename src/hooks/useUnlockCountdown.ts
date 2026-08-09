@@ -33,7 +33,10 @@ const getServerClock = () => null;
 
 export interface UnlockCountdown {
   locked: boolean;
-  /** Milliseconds left, clamped to the gate's window. `null` when the item has no unlock gate. */
+  /**
+   * Milliseconds left, clamped to the gate's window. `null` when the item has no unlock gate, or
+   * when the gate is timer-less (`windowMs: null`) and so shows no countdown.
+   */
   remaining: number | null;
 }
 
@@ -55,11 +58,14 @@ export function isGateLocked(gate: UnlockGate | undefined, now: number | null): 
 /**
  * Counts down to a gate's absolute unlock timestamp. Renders as "locked, full window" on the server
  * and on the first client paint, then ticks once mounted — so SSR and hydration always agree.
+ * A timer-less gate (`windowMs: null`) skips the clock: it stays locked and reports no remaining time.
  */
 export function useUnlockCountdown(gate?: UnlockGate): UnlockCountdown {
-  const now = useUnlockClock(Boolean(gate));
+  const now = useUnlockClock(Boolean(gate) && gate?.windowMs !== null);
 
   if (!gate) return { locked: false, remaining: null };
+
+  if (gate.windowMs === null) return { locked: true, remaining: null };
 
   const remaining =
     now === null

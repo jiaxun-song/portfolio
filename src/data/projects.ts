@@ -1,14 +1,15 @@
 export interface UnlockGate {
-  /** Epoch ms. Until this moment the card shows a padlock + countdown instead of linking through. */
+  /** Epoch ms. Until this moment the card shows a padlock instead of linking through. */
   at: number;
-  /** Full countdown length in ms — the value the timer shows before the client clock takes over. */
-  windowMs: number;
+  /**
+   * Full countdown length in ms — the value the timer shows before the client clock takes over.
+   * `null` hides the timer entirely, leaving just the padlock.
+   */
+  windowMs: number | null;
 }
 
-/** `unlockGate('2026-08-09T05:41:00+08:00', 6.5)` → unlocks at that moment after a 6.5h countdown. */
-function unlockGate(unlockAtISO: string, countdownHours: number): UnlockGate {
-  return { at: Date.parse(unlockAtISO), windowMs: countdownHours * 60 * 60 * 1000 };
-}
+/** Locked with no announced unlock date — padlock + "Coming Soon", no countdown. */
+const INDEFINITE_LOCK: UnlockGate = { at: Number.POSITIVE_INFINITY, windowMs: null };
 
 export interface Project {
   id: string;
@@ -18,11 +19,11 @@ export interface Project {
   unlock?: UnlockGate;
 }
 
-/** Augur case study: 10.5-hour countdown started 23:11 on 2026-08-08 (UTC+8). */
-export const AUGUR_UNLOCK = unlockGate('2026-08-09T09:41:00+08:00', 10.5);
+/** Augur case study: locked, with no countdown shown. */
+export const AUGUR_UNLOCK = INDEFINITE_LOCK;
 
-/** Goodstuff / inspiration-library case study: 24-hour countdown started 23:19 on 2026-08-08 (UTC+8). */
-export const GOODSTUFF_UNLOCK = unlockGate('2026-08-09T23:19:00+08:00', 24);
+/** Goodstuff / inspiration-library case study: locked, with no countdown shown. */
+export const GOODSTUFF_UNLOCK = INDEFINITE_LOCK;
 
 export const allProjects: Project[] = [
   {
