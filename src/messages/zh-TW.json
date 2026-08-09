@@ -1405,20 +1405,20 @@
       "highlightMetrics": {
         "m1Value": "3.5 個月",
         "m1Label": "從 Spec 一路到前端切版，建立 Design System，並完成前後台功能規劃與設計",
-        "m2Value": "6 支",
+        "m2Value": "Subagent 開發*6",
         "m2Label": "自建 Claude subagent：寫規格、驗畫面、評推版、回填文件"
       },
       "summary": {
         "label": "PROJECT SUMMARY",
         "heading": "0 → 1，預測市場產品設計",
-        "body": "Augur 定位是「預測市場界的 Shopify」——多租戶白標 SaaS，聚合 Polymarket 流動性。這個專案為 0-1 的開發，<highlight>我運用 Claude Code + Codex 與 Figma MCP 的協作，解決團隊裡原本沒有 PM 的角色產出文件與功能規劃，以及沒有前端工程師進行畫面切版的缺漏。</highlight>透過 Git 的操作進行畫面上的迭代與交付，同時設計出<highlight>完整的 Design System Codebase</highlight>，讓工程師也可以依此產出畫面，加速溝通效率。",
+        "body": "Augur 定位是「預測市場界的 Shopify」——多租戶白標 SaaS，聚合 Polymarket 流動性。這個專案為 0-1 的開發，<highlight>我運用 Claude Code + Codex 與 Figma MCP 的協作，解決團隊裡原本沒有 PM 的角色產出文件與功能規劃，以及沒有前端工程師進行畫面切版的缺漏。</highlight>透過 Git 的操作進行畫面上的迭代與交付，同時設計出<highlight>可同時應用於前後台的 Design System</highlight>，讓工程師也可以依此產出畫面，透過團隊成員皆能產出 Prototype 的方式，加速溝通與開發效率。",
         "roleLabel": "ROLE",
         "roleValue": "Product Designer & Frontend Builder（with Claude Code）"
       },
       "context": {
         "heading": "從交易平台到運營後台 獨自設計＆規劃",
         "chainLabel": "END-TO-END OWNERSHIP",
-        "chainTitle": "負責從需求到驗收的端到端交付",
+        "chainTitle": "獨自負責從需求到驗收的端到端交付",
         "chain1Title": "User Story ×101",
         "chain1Sub": "與工程端共同規劃 Epic，並再依此規劃出 User Story 的各種情境",
         "chain2Title": "功能規劃 Spec",
@@ -1430,8 +1430,8 @@
         "chain5Title": "Design QA",
         "chain5Sub": "自建驗收體系：design-qa agent + 12 項判準 + 三組截圖",
         "gapLabel": "THE REAL PROBLEM",
-        "gapTitle": "單人 + AI 的瓶頸不在生成速度，在品質控制",
-        "gapBody": "一個人用 AI 可以很快做出「一頁」，但在整座平台的規模下，AI 每天生成的程式碼會系統性地長歪——顏色寫死、按鈕各寫各的、同一種彈窗五種寫法。所以在這個專案設計的主要方向有兩層：<highlight>一為產品本身，二為「讓 AI 穩定產出這個產品」的 workflow</highlight>。",
+        "gapTitle": "AI 的瓶頸不在生成速度，在品質控制",
+        "gapBody": "一個人用 AI 可以很快做出「一頁」，但在整座平台的規模下，AI 每天生成的程式碼會系統性地長歪——顏色寫死、按鈕各寫各的、同一種彈窗五種寫法。<highlight>所以在這個專案設計的主要方向有兩層：一為產品本身，二為「讓 AI 穩定產出這個產品」的 workflow。</highlight>",
         "imageCaption": "前台首頁——LIVE 定時漲跌輪播卡、熱門市場排行、分類篩選，未登入即可自由瀏覽"
       },
       "spec": {
@@ -1587,7 +1587,7 @@
         "image2Caption": "運營後台登入頁——玻璃卡與品牌漸層 CTA"
       },
       "impact": {
-        "heading": "數字要禁得起核對",
+        "heading": "AI 協作後的實際產能",
         "body": "透過來自 repo 與 git 歷史，檢視自己端到端負責的情況。",
         "metric2Value": "89%",
         "metric2Label": "commits 本人完成，支援僅限 CI 基建",
