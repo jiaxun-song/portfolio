@@ -1404,7 +1404,7 @@
       },
       "highlightMetrics": {
         "m1Value": "3.5 個月",
-        "m1Label": "從 Spec 一路到前端切版，建立 Design System，並完成前後台功能規劃與設計",
+        "m1Label": "從 Spec 一路到前端切版，並完成前台＆後台功能規劃與設計",
         "m2Value": "Subagent 開發*6",
         "m2Label": "自建 Claude subagent：寫規格、驗畫面、評推版、回填文件"
       },
@@ -1417,6 +1417,19 @@
       },
       "context": {
         "heading": "從交易平台到運營後台 獨自設計＆規劃",
+        "subheading": "小團隊、人力有限。挑戰在於如何規劃功能，並把設計做成能交付給後端的可運作前端。",
+        "teamLabel": "TEAM · 5 人團隊",
+        "role1": "區塊鏈產品顧問 ×1",
+        "role2": "全端工程師 ×1",
+        "role3": "後端工程師 ×1",
+        "role4": "DevOps ×1",
+        "role5": "UI/UX 設計師 ×1（我）",
+        "scopeLabel": "MY SCOPE",
+        "scopeBadge": "最大的挑戰",
+        "scopeStep1": "拆規格",
+        "scopeStep1Sub": "狀態・操作・資料流",
+        "scopeStep2": "切前端",
+        "scopeStep2Sub": "可運作的畫面",
         "chainLabel": "END-TO-END OWNERSHIP",
         "chainTitle": "獨自負責從需求到驗收的端到端交付",
         "chain1Title": "User Story ×101",

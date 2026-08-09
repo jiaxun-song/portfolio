@@ -1,199 +1,236 @@
-'use client';
+"use client";
 
-import type { ReactNode } from 'react';
-import { useEffect, useRef, useState } from 'react';
-import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
-import Image from 'next/image';
-import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/navigation';
-import ScrollReveal from '@/components/ui/ScrollReveal';
-import VideoEmbed from '@/components/ui/VideoEmbed';
-import SectionLabel from '@/components/ui/SectionLabel';
-import { useProjectNav } from '@/hooks/useProjectNav';
+import type { ReactNode } from "react";
+import { useEffect, useRef, useState } from "react";
+import {
+  AnimatePresence,
+  motion,
+  useScroll,
+  useTransform,
+} from "framer-motion";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/navigation";
+import ScrollReveal from "@/components/ui/ScrollReveal";
+import VideoEmbed from "@/components/ui/VideoEmbed";
+import SectionLabel from "@/components/ui/SectionLabel";
+import { useProjectNav } from "@/hooks/useProjectNav";
 
-const IMG = '/images/projects/prediction-market';
-const CURRENT_ID = 'prediction-market';
+const IMG = "/images/projects/prediction-market";
+const CURRENT_ID = "prediction-market";
 
-const summaryTags = ['AI Workflow', 'Product Design', 'Design System', 'Spec-Driven', 'Multi-Tenant'];
+const summaryTags = [
+  "AI Workflow",
+  "Product Design",
+  "Design System",
+  "Spec-Driven",
+  "Multi-Tenant",
+];
 
-const highlight = (chunks: ReactNode) => <span className="text-accent">{chunks}</span>;
+const highlight = (chunks: ReactNode) => (
+  <span className="text-accent">{chunks}</span>
+);
 
 const specStepMeta = [
-  { icon: 'ri-compass-3-line', tag: 'BUSINESS' },
-  { icon: 'ri-list-check-2', tag: 'EPICS' },
-  { icon: 'ri-folder-chart-line', tag: 'DOMAIN' },
-  { icon: 'ri-git-merge-line', tag: 'GOVERNANCE' },
+  { icon: "ri-compass-3-line", tag: "BUSINESS" },
+  { icon: "ri-list-check-2", tag: "EPICS" },
+  { icon: "ri-folder-chart-line", tag: "DOMAIN" },
+  { icon: "ri-git-merge-line", tag: "GOVERNANCE" },
 ];
 
 const agentMeta = [
-  { name: 'spec-writer', icon: 'ri-draft-line' },
-  { name: 'design-qa', icon: 'ri-screenshot-2-line' },
-  { name: 'push-readiness', icon: 'ri-shield-check-line' },
-  { name: 'spec-backfill', icon: 'ri-history-line' },
-  { name: 'consolidation-scout', icon: 'ri-radar-line' },
-  { name: 'backend-handoff', icon: 'ri-swap-box-line' },
+  { name: "spec-writer", icon: "ri-draft-line" },
+  { name: "design-qa", icon: "ri-screenshot-2-line" },
+  { name: "push-readiness", icon: "ri-shield-check-line" },
+  { name: "spec-backfill", icon: "ri-history-line" },
+  { name: "consolidation-scout", icon: "ri-radar-line" },
+  { name: "backend-handoff", icon: "ri-swap-box-line" },
 ];
 
 const principleMeta = [
   {
-    tag: 'PERMISSION',
-    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.14) 0%, rgba(14, 165, 233, 0.04) 100%)',
-    border: 'rgba(56, 189, 248, 0.22)',
-    glow: 'rgba(56, 189, 248, 0.08)',
-    hue: 'rgb(125, 211, 252)',
+    tag: "PERMISSION",
+    gradient:
+      "linear-gradient(135deg, rgba(56, 189, 248, 0.14) 0%, rgba(14, 165, 233, 0.04) 100%)",
+    border: "rgba(56, 189, 248, 0.22)",
+    glow: "rgba(56, 189, 248, 0.08)",
+    hue: "rgb(125, 211, 252)",
   },
   {
-    tag: 'AUTHORITY',
-    gradient: 'linear-gradient(135deg, rgba(0, 229, 208, 0.14) 0%, rgba(20, 184, 166, 0.04) 100%)',
-    border: 'rgba(0, 229, 208, 0.22)',
-    glow: 'rgba(0, 229, 208, 0.08)',
-    hue: 'var(--color-accent)',
+    tag: "AUTHORITY",
+    gradient:
+      "linear-gradient(135deg, rgba(0, 229, 208, 0.14) 0%, rgba(20, 184, 166, 0.04) 100%)",
+    border: "rgba(0, 229, 208, 0.22)",
+    glow: "rgba(0, 229, 208, 0.08)",
+    hue: "var(--color-accent)",
   },
   {
-    tag: 'SEQUENCE',
-    gradient: 'linear-gradient(135deg, rgba(52, 211, 153, 0.14) 0%, rgba(16, 185, 129, 0.04) 100%)',
-    border: 'rgba(52, 211, 153, 0.22)',
-    glow: 'rgba(52, 211, 153, 0.08)',
-    hue: 'rgb(110, 231, 183)',
+    tag: "SEQUENCE",
+    gradient:
+      "linear-gradient(135deg, rgba(52, 211, 153, 0.14) 0%, rgba(16, 185, 129, 0.04) 100%)",
+    border: "rgba(52, 211, 153, 0.22)",
+    glow: "rgba(52, 211, 153, 0.08)",
+    hue: "rgb(110, 231, 183)",
   },
 ] as const;
 
 /** 平倉彈窗 7 個狀態的規格 specimen——樣式與文案對齊 Augur 產品實際彈窗 */
-type DialogRow = { k: string; v: string; tone?: 'up'; strong?: boolean; dim?: boolean; rule?: boolean };
+type DialogRow = {
+  k: string;
+  v: string;
+  tone?: "up";
+  strong?: boolean;
+  dim?: boolean;
+  rule?: boolean;
+};
 type DialogSpec = {
   title: string;
   market: string;
   pill: string;
   shares: string;
-  banner?: { icon: string; text: string; tone: 'ok' | 'warn' | 'neutral' | 'danger' };
+  banner?: {
+    icon: string;
+    text: string;
+    tone: "ok" | "warn" | "neutral" | "danger";
+  };
   rows?: DialogRow[];
   foot?: string;
   expiry?: { label: string; time: string; pct: number; warn?: boolean };
   actions: { label: string; primary?: boolean; working?: boolean }[];
 };
 
-const MARKET_Q = 'BTC 年底是否突破 $100,000?';
+const MARKET_Q = "BTC 年底是否突破 $100,000?";
 
 const closeStates: { code: string; spec: DialogSpec }[] = [
   {
-    code: 'QUOTE_READY',
+    code: "QUOTE_READY",
     spec: {
-      title: '平倉',
+      title: "平倉",
       market: MARKET_Q,
-      pill: 'YES',
-      shares: '120 股',
+      pill: "YES",
+      shares: "120 股",
       rows: [
-        { k: '平均成本', v: '$0.6200' },
-        { k: '現價', v: '$0.7400' },
-        { k: '預估賣出價', v: '$0.7326', rule: true },
-        { k: '預估回收金額', v: '$87.91' },
-        { k: '預估已實現損益', v: '+$13.51', tone: 'up', strong: true },
+        { k: "平均成本", v: "$0.6200" },
+        { k: "現價", v: "$0.7400" },
+        { k: "預估賣出價", v: "$0.7326", rule: true },
+        { k: "預估回收金額", v: "$87.91" },
+        { k: "預估已實現損益", v: "+$13.51", tone: "up", strong: true },
       ],
-      foot: '不會以低於 $0.7179 的價格賣出——平台設定的 2% 滑點保護。',
-      expiry: { label: '價格保留中', time: '0:24', pct: 80 },
-      actions: [{ label: '取消' }, { label: '賣出 120 股', primary: true }],
+      foot: "不會以低於 $0.7179 的價格賣出——平台設定的 2% 滑點保護。",
+      expiry: { label: "價格保留中", time: "0:24", pct: 80 },
+      actions: [{ label: "取消" }, { label: "賣出 120 股", primary: true }],
     },
   },
   {
-    code: 'QUOTE_EXPIRING',
+    code: "QUOTE_EXPIRING",
     spec: {
-      title: '平倉',
+      title: "平倉",
       market: MARKET_Q,
-      pill: 'YES',
-      shares: '120 股',
+      pill: "YES",
+      shares: "120 股",
       rows: [
-        { k: '預估回收金額', v: '$87.91' },
-        { k: '預估已實現損益', v: '+$13.51', tone: 'up', strong: true },
+        { k: "預估回收金額", v: "$87.91" },
+        { k: "預估已實現損益", v: "+$13.51", tone: "up", strong: true },
       ],
-      expiry: { label: '價格即將過期', time: '0:04', pct: 13, warn: true },
-      actions: [{ label: '取消' }, { label: '賣出 120 股', primary: true }],
+      expiry: { label: "價格即將過期", time: "0:04", pct: 13, warn: true },
+      actions: [{ label: "取消" }, { label: "賣出 120 股", primary: true }],
     },
   },
   {
-    code: 'ORDER_ACCEPTED',
+    code: "ORDER_ACCEPTED",
     spec: {
-      title: '賣出中',
+      title: "賣出中",
       market: MARKET_Q,
-      pill: 'YES',
-      shares: '120 股',
+      pill: "YES",
+      shares: "120 股",
       banner: {
-        icon: 'ri-time-line',
-        tone: 'warn',
-        text: '賣單已送出市場，通常幾秒內完成。你可以關閉此視窗——完成後我們會通知你並更新持倉。',
+        icon: "ri-time-line",
+        tone: "warn",
+        text: "賣單已送出市場，通常幾秒內完成。你可以關閉此視窗——完成後我們會通知你並更新持倉。",
       },
-      rows: [{ k: '預估回收金額', v: '$87.91' }],
-      actions: [{ label: '處理中…', working: true }],
+      rows: [{ k: "預估回收金額", v: "$87.91" }],
+      actions: [{ label: "處理中…", working: true }],
     },
   },
   {
-    code: 'FILLED',
+    code: "FILLED",
     spec: {
-      title: '已平倉',
+      title: "已平倉",
       market: MARKET_Q,
-      pill: 'YES',
-      shares: '120 股',
-      banner: { icon: 'ri-check-line', tone: 'ok', text: '已賣出全部 120 股。' },
-      rows: [
-        { k: '成交均價', v: '$0.7363' },
-        { k: '回收金額', v: '$88.36' },
-        { k: '已實現損益', v: '+$13.96', tone: 'up', strong: true },
-      ],
-      actions: [{ label: '完成', primary: true }],
-    },
-  },
-  {
-    code: 'PARTIALLY_FILLED',
-    spec: {
-      title: '部分平倉',
-      market: 'SpaceX 是否在 2025 年完成 IPO?',
-      pill: 'YES',
-      shares: '剩餘 70 股',
+      pill: "YES",
+      shares: "120 股",
       banner: {
-        icon: 'ri-alert-line',
-        tone: 'warn',
-        text: '買家不足以吃下全部持倉。已賣出 130 股，你仍持有 70 股。',
+        icon: "ri-check-line",
+        tone: "ok",
+        text: "已賣出全部 120 股。",
       },
       rows: [
-        { k: '已賣出', v: '130 股 @ $0.4214' },
-        { k: '回收金額', v: '$54.79' },
-        { k: '已實現損益', v: '+$1.49', tone: 'up', strong: true, rule: true },
-        { k: '仍持有', v: '70 股' },
+        { k: "成交均價", v: "$0.7363" },
+        { k: "回收金額", v: "$88.36" },
+        { k: "已實現損益", v: "+$13.96", tone: "up", strong: true },
       ],
-      actions: [{ label: '完成' }, { label: '賣出剩餘 70 股', primary: true }],
+      actions: [{ label: "完成", primary: true }],
     },
   },
   {
-    code: 'QUOTE_EXPIRED',
+    code: "PARTIALLY_FILLED",
     spec: {
-      title: '平倉',
-      market: MARKET_Q,
-      pill: 'YES',
-      shares: '120 股',
+      title: "部分平倉",
+      market: "SpaceX 是否在 2025 年完成 IPO?",
+      pill: "YES",
+      shares: "剩餘 70 股",
       banner: {
-        icon: 'ri-refresh-line',
-        tone: 'neutral',
-        text: '你考慮的時候價格變了，請取得最新價格後繼續。',
+        icon: "ri-alert-line",
+        tone: "warn",
+        text: "買家不足以吃下全部持倉。已賣出 130 股，你仍持有 70 股。",
       },
       rows: [
-        { k: '預估回收金額', v: '$87.91', dim: true },
-        { k: '預估已實現損益', v: '+$13.51', tone: 'up', dim: true, strong: true },
+        { k: "已賣出", v: "130 股 @ $0.4214" },
+        { k: "回收金額", v: "$54.79" },
+        { k: "已實現損益", v: "+$1.49", tone: "up", strong: true, rule: true },
+        { k: "仍持有", v: "70 股" },
       ],
-      actions: [{ label: '取消' }, { label: '刷新價格', primary: true }],
+      actions: [{ label: "完成" }, { label: "賣出剩餘 70 股", primary: true }],
     },
   },
   {
-    code: 'INSUFFICIENT_LIQUIDITY',
+    code: "QUOTE_EXPIRED",
     spec: {
-      title: '目前無法平倉',
-      market: '美國是否在 4 月加碼伊朗制裁?',
-      pill: 'YES',
-      shares: '40 股',
+      title: "平倉",
+      market: MARKET_Q,
+      pill: "YES",
+      shares: "120 股",
       banner: {
-        icon: 'ri-close-line',
-        tone: 'danger',
-        text: '目前沒有人在買這個結果，暫時沒有可賣出的價格。你的持倉沒有變動，請稍後再試。',
+        icon: "ri-refresh-line",
+        tone: "neutral",
+        text: "你考慮的時候價格變了，請取得最新價格後繼續。",
       },
-      actions: [{ label: '關閉', primary: true }],
+      rows: [
+        { k: "預估回收金額", v: "$87.91", dim: true },
+        {
+          k: "預估已實現損益",
+          v: "+$13.51",
+          tone: "up",
+          dim: true,
+          strong: true,
+        },
+      ],
+      actions: [{ label: "取消" }, { label: "刷新價格", primary: true }],
+    },
+  },
+  {
+    code: "INSUFFICIENT_LIQUIDITY",
+    spec: {
+      title: "目前無法平倉",
+      market: "美國是否在 4 月加碼伊朗制裁?",
+      pill: "YES",
+      shares: "40 股",
+      banner: {
+        icon: "ri-close-line",
+        tone: "danger",
+        text: "目前沒有人在買這個結果，暫時沒有可賣出的價格。你的持倉沒有變動，請稍後再試。",
+      },
+      actions: [{ label: "關閉", primary: true }],
     },
   },
 ];
@@ -201,82 +238,104 @@ const closeStates: { code: string; spec: DialogSpec }[] = [
 /** Portfolio 的語意表卡片：把散在句子裡的術語清單拉成可讀的 chip rail */
 const glossaryMeta = [
   {
-    key: 'e1',
-    items: ['Available', 'Invested', 'Current Value', 'Unrealized', 'Realized', 'Max Payout', 'Reserved'],
+    key: "e1",
+    items: [
+      "Available",
+      "Invested",
+      "Current Value",
+      "Unrealized",
+      "Realized",
+      "Max Payout",
+      "Reserved",
+    ],
   },
   {
-    key: 'e2',
-    items: ['Active', 'Pending Resolution', 'Claimable', 'Settled Won', 'Settled Lost', 'Closed'],
+    key: "e2",
+    items: [
+      "Active",
+      "Pending Resolution",
+      "Claimable",
+      "Settled Won",
+      "Settled Lost",
+      "Closed",
+    ],
   },
 ];
 
 /** 後台能力域，樣式與 04 段 PrincipleCard 對齊；`n` 對應訊息檔的 card 編號 */
 const adminModuleMeta = [
   {
-    tag: 'RBAC',
+    tag: "RBAC",
     n: 1,
-    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.14) 0%, rgba(14, 165, 233, 0.04) 100%)',
-    border: 'rgba(56, 189, 248, 0.22)',
-    glow: 'rgba(56, 189, 248, 0.08)',
-    hue: 'rgb(125, 211, 252)',
+    gradient:
+      "linear-gradient(135deg, rgba(56, 189, 248, 0.14) 0%, rgba(14, 165, 233, 0.04) 100%)",
+    border: "rgba(56, 189, 248, 0.22)",
+    glow: "rgba(56, 189, 248, 0.08)",
+    hue: "rgb(125, 211, 252)",
   },
   {
-    tag: 'TREASURY',
+    tag: "TREASURY",
     n: 3,
-    gradient: 'linear-gradient(135deg, rgba(0, 229, 208, 0.14) 0%, rgba(20, 184, 166, 0.04) 100%)',
-    border: 'rgba(0, 229, 208, 0.22)',
-    glow: 'rgba(0, 229, 208, 0.08)',
-    hue: 'var(--color-accent)',
+    gradient:
+      "linear-gradient(135deg, rgba(0, 229, 208, 0.14) 0%, rgba(20, 184, 166, 0.04) 100%)",
+    border: "rgba(0, 229, 208, 0.22)",
+    glow: "rgba(0, 229, 208, 0.08)",
+    hue: "var(--color-accent)",
   },
   {
-    tag: 'VIEW SCOPE',
+    tag: "VIEW SCOPE",
     n: 4,
-    gradient: 'linear-gradient(135deg, rgba(52, 211, 153, 0.14) 0%, rgba(16, 185, 129, 0.04) 100%)',
-    border: 'rgba(52, 211, 153, 0.22)',
-    glow: 'rgba(52, 211, 153, 0.08)',
-    hue: 'rgb(110, 231, 183)',
+    gradient:
+      "linear-gradient(135deg, rgba(52, 211, 153, 0.14) 0%, rgba(16, 185, 129, 0.04) 100%)",
+    border: "rgba(52, 211, 153, 0.22)",
+    glow: "rgba(52, 211, 153, 0.08)",
+    hue: "rgb(110, 231, 183)",
   },
 ] as const;
 
 const marketTypeMeta = [
-  { icon: 'ri-toggle-line', tag: 'BINARY' },
-  { icon: 'ri-list-radio', tag: 'CATEGORICAL' },
-  { icon: 'ri-stack-line', tag: 'GROUPED' },
-  { icon: 'ri-timer-flash-line', tag: 'UPDOWN' },
+  { icon: "ri-toggle-line", tag: "BINARY" },
+  { icon: "ri-list-radio", tag: "CATEGORICAL" },
+  { icon: "ri-stack-line", tag: "GROUPED" },
+  { icon: "ri-timer-flash-line", tag: "UPDOWN" },
 ];
 
 /** 05 — Design System 三張規則卡：每張的 footer 直接用 UI 示範自己講的規則 */
 const designCardMeta = [
   {
-    icon: 'ri-contrast-drop-line',
-    tag: 'SURFACE',
-    hue: 'rgba(255, 255, 255, 0.72)',
-    border: 'rgba(255, 255, 255, 0.13)',
+    icon: "ri-contrast-drop-line",
+    tag: "SURFACE",
+    hue: "rgba(255, 255, 255, 0.72)",
+    border: "rgba(255, 255, 255, 0.13)",
     gradient:
-      'linear-gradient(155deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.015) 55%, rgba(255, 255, 255, 0.045) 100%)',
-    glow: 'rgba(255, 255, 255, 0.05)',
+      "linear-gradient(155deg, rgba(255, 255, 255, 0.075) 0%, rgba(255, 255, 255, 0.015) 55%, rgba(255, 255, 255, 0.045) 100%)",
+    glow: "rgba(255, 255, 255, 0.05)",
   },
   {
-    icon: 'ri-lock-2-line',
-    tag: 'COLOR SEMANTICS',
-    hue: 'rgb(110, 231, 183)',
-    border: 'rgba(52, 211, 153, 0.22)',
+    icon: "ri-lock-2-line",
+    tag: "COLOR SEMANTICS",
+    hue: "rgb(110, 231, 183)",
+    border: "rgba(52, 211, 153, 0.22)",
     gradient:
-      'linear-gradient(155deg, rgba(52, 211, 153, 0.12) 0%, rgba(16, 185, 129, 0.02) 55%, rgba(52, 211, 153, 0.05) 100%)',
-    glow: 'rgba(52, 211, 153, 0.07)',
+      "linear-gradient(155deg, rgba(52, 211, 153, 0.12) 0%, rgba(16, 185, 129, 0.02) 55%, rgba(52, 211, 153, 0.05) 100%)",
+    glow: "rgba(52, 211, 153, 0.07)",
   },
   {
-    icon: 'ri-screenshot-2-line',
-    tag: 'DESIGN QA',
-    hue: 'var(--color-accent)',
-    border: 'rgba(0, 229, 208, 0.22)',
+    icon: "ri-screenshot-2-line",
+    tag: "DESIGN QA",
+    hue: "var(--color-accent)",
+    border: "rgba(0, 229, 208, 0.22)",
     gradient:
-      'linear-gradient(155deg, rgba(0, 229, 208, 0.12) 0%, rgba(20, 184, 166, 0.02) 55%, rgba(0, 229, 208, 0.05) 100%)',
-    glow: 'rgba(0, 229, 208, 0.07)',
+      "linear-gradient(155deg, rgba(0, 229, 208, 0.12) 0%, rgba(20, 184, 166, 0.02) 55%, rgba(0, 229, 208, 0.05) 100%)",
+    glow: "rgba(0, 229, 208, 0.07)",
   },
 ] as const;
 
-function ArrowGallery({ slides }: { slides: { src?: string; caption: string }[] }) {
+function ArrowGallery({
+  slides,
+}: {
+  slides: { src?: string; caption: string }[];
+}) {
   const [active, setActive] = useState(0);
   const slide = slides[active];
 
@@ -327,7 +386,7 @@ function ArrowGallery({ slides }: { slides: { src?: string; caption: string }[] 
                 aria-label="Previous"
                 onClick={() => setActive((p) => Math.max(0, p - 1))}
                 className={`absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/[0.14] bg-black/45 text-white shadow-[0_8px_24px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-300 hover:border-accent/60 hover:text-accent hover:shadow-[0_8px_28px_rgba(0,229,208,0.25)] active:scale-95 ${
-                  active === 0 ? 'pointer-events-none opacity-0' : 'opacity-100'
+                  active === 0 ? "pointer-events-none opacity-0" : "opacity-100"
                 }`}
               >
                 <i className="ri-arrow-left-s-line text-[20px]" />
@@ -335,9 +394,13 @@ function ArrowGallery({ slides }: { slides: { src?: string; caption: string }[] 
               <button
                 type="button"
                 aria-label="Next"
-                onClick={() => setActive((p) => Math.min(slides.length - 1, p + 1))}
+                onClick={() =>
+                  setActive((p) => Math.min(slides.length - 1, p + 1))
+                }
                 className={`absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/[0.14] bg-black/45 text-white shadow-[0_8px_24px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-300 hover:border-accent/60 hover:text-accent hover:shadow-[0_8px_28px_rgba(0,229,208,0.25)] active:scale-95 ${
-                  active === slides.length - 1 ? 'pointer-events-none opacity-0' : 'opacity-100'
+                  active === slides.length - 1
+                    ? "pointer-events-none opacity-0"
+                    : "opacity-100"
                 }`}
               >
                 <i className="ri-arrow-right-s-line text-[20px]" />
@@ -362,7 +425,9 @@ function ArrowGallery({ slides }: { slides: { src?: string; caption: string }[] 
               aria-label={`Slide ${i + 1}`}
               onClick={() => setActive(i)}
               className={`h-1.5 rounded-full transition-all duration-500 ${
-                i === active ? 'w-6 bg-accent' : 'w-1.5 bg-white/[0.18] hover:bg-white/[0.35]'
+                i === active
+                  ? "w-6 bg-accent"
+                  : "w-1.5 bg-white/[0.18] hover:bg-white/[0.35]"
               }`}
             />
           ))}
@@ -373,7 +438,13 @@ function ArrowGallery({ slides }: { slides: { src?: string; caption: string }[] 
 }
 
 /** 七個平倉狀態的橫向 carousel：一頁露出約 2.5 張，靠左右箭頭捲動 */
-function StateCarousel({ children, total }: { children: ReactNode; total: number }) {
+function StateCarousel({
+  children,
+  total,
+}: {
+  children: ReactNode;
+  total: number;
+}) {
   const trackRef = useRef<HTMLDivElement>(null);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
@@ -397,7 +468,7 @@ function StateCarousel({ children, total }: { children: ReactNode; total: number
     if (!el) return;
     const card = el.firstElementChild as HTMLElement | null;
     const step = card ? card.offsetWidth + 20 : el.clientWidth;
-    el.scrollBy({ left: dir * step, behavior: 'smooth' });
+    el.scrollBy({ left: dir * step, behavior: "smooth" });
   };
 
   return (
@@ -412,7 +483,8 @@ function StateCarousel({ children, total }: { children: ReactNode; total: number
 
       <div className="mt-4 flex items-center justify-end gap-3">
         <span className="font-[var(--font-mono)] text-[13px] tracking-[1px] text-text-muted">
-          <span className="text-accent">{String(page).padStart(2, '0')}</span> / {String(total).padStart(2, '0')}
+          <span className="text-accent">{String(page).padStart(2, "0")}</span> /{" "}
+          {String(total).padStart(2, "0")}
         </span>
         <button
           type="button"
@@ -453,9 +525,17 @@ function CaptionedImage({
   return (
     <figure>
       <div className="overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.025]">
-        <Image src={src} alt={alt} width={width} height={height} className="h-auto w-full" />
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          className="h-auto w-full"
+        />
       </div>
-      <figcaption className="mt-3 text-center text-[13px] text-text-muted">{caption}</figcaption>
+      <figcaption className="mt-3 text-center text-[13px] text-text-muted">
+        {caption}
+      </figcaption>
     </figure>
   );
 }
@@ -463,22 +543,42 @@ function CaptionedImage({
 const SHOT_W = 2000;
 const SHOT_H = 1250;
 
-function PhoneShot({ src, alt, caption }: { src: string; alt: string; caption: string }) {
+// front-detail-* 四張市場類型截圖的實際尺寸（與 SHOT_W/H 的 gallery 圖不同）
+const TYPE_SHOT_W = 2380;
+const TYPE_SHOT_H = 1350;
+
+function PhoneShot({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt: string;
+  caption: string;
+}) {
   return (
     <figure className="flex flex-col items-center">
       <div className="w-full overflow-hidden rounded-[2rem] border-[5px] border-white/10 bg-bg-tertiary shadow-[0_24px_60px_-20px_rgba(0,0,0,0.7)]">
-        <Image src={src} alt={alt} width={900} height={1949} className="h-auto w-full" />
+        <Image
+          src={src}
+          alt={alt}
+          width={900}
+          height={1949}
+          className="h-auto w-full"
+        />
       </div>
-      <figcaption className="mt-3 text-center text-[13px] text-text-muted">{caption}</figcaption>
+      <figcaption className="mt-3 text-center text-[13px] text-text-muted">
+        {caption}
+      </figcaption>
     </figure>
   );
 }
 
 const typeGalleryImages: { file?: string; tag: string }[] = [
-  { file: 'front-detail-binary.png', tag: 'BINARY 01' },
-  { file: 'front-detail-categorical.png', tag: 'CATEGORICAL 02' },
-  { file: 'front-detail-grouped.png', tag: 'GROUPED 03' },
-  { file: 'front-detail-updown.png', tag: 'UPDOWN 04' },
+  { file: "front-detail-binary.png", tag: "BINARY 01" },
+  { file: "front-detail-categorical.png", tag: "CATEGORICAL 02" },
+  { file: "front-detail-grouped.png", tag: "GROUPED 03" },
+  { file: "front-detail-updown.png", tag: "UPDOWN 04" },
 ];
 
 function SubHeading({ label, title }: { label: string; title: string }) {
@@ -494,17 +594,29 @@ function SubHeading({ label, title }: { label: string; title: string }) {
   );
 }
 
-function InsightCard({ label, title, body }: { label: string; title: string; body: ReactNode }) {
+function InsightCard({
+  label,
+  title,
+  body,
+}: {
+  label: string;
+  title: string;
+  body: ReactNode;
+}) {
   return (
     <div className="glass-medium relative overflow-hidden rounded-2xl border border-accent/20 p-8 md:p-10">
       <div className="absolute left-0 top-0 h-px w-full bg-gradient-to-r from-transparent via-accent/50 to-transparent" />
       <div className="pointer-events-none absolute -top-24 left-1/2 h-48 w-64 -translate-x-1/2 rounded-full bg-accent/5 blur-3xl" />
       <div className="relative">
-        <p className="mb-4 font-[var(--font-mono)] text-[12px] uppercase tracking-[3px] text-accent">{label}</p>
+        <p className="mb-4 font-[var(--font-mono)] text-[12px] uppercase tracking-[3px] text-accent">
+          {label}
+        </p>
         <p className="mb-3 font-[var(--font-display)] text-xl font-semibold text-text-primary md:text-2xl">
           {title}
         </p>
-        <p className="max-w-3xl text-[16px] leading-[1.7] text-text-secondary">{body}</p>
+        <p className="max-w-3xl text-[16px] leading-[1.7] text-text-secondary">
+          {body}
+        </p>
       </div>
     </div>
   );
@@ -513,7 +625,9 @@ function InsightCard({ label, title, body }: { label: string; title: string; bod
 function CalloutCard({ title, body }: { title: string; body: string }) {
   return (
     <div className="glass-medium rounded-2xl border-l-[3px] border-l-accent p-6 md:p-8">
-      <h4 className="mb-3 font-[var(--font-display)] text-lg font-semibold text-text-primary">{title}</h4>
+      <h4 className="mb-3 font-[var(--font-display)] text-lg font-semibold text-text-primary">
+        {title}
+      </h4>
       <p className="text-[15px] leading-[1.75] text-text-secondary">{body}</p>
     </div>
   );
@@ -522,7 +636,7 @@ function CalloutCard({ title, body }: { title: string; body: string }) {
 /** footer specimen：每張卡用一小段真的 UI 示範自己的規則 */
 function DesignCardSpecimen({ index }: { index: number }) {
   const chip =
-    'inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 font-[var(--font-mono)] text-[11px] tracking-[0.5px]';
+    "inline-flex items-center gap-1.5 rounded-md px-2.5 py-1.5 font-[var(--font-mono)] text-[11px] tracking-[0.5px]";
 
   if (index === 0) {
     /* 玻璃：同一塊白，三段透明度 */
@@ -549,17 +663,29 @@ function DesignCardSpecimen({ index }: { index: number }) {
       <div className="flex flex-wrap items-center gap-1.5">
         <span
           className={chip}
-          style={{ color: 'rgb(52,211,153)', background: 'rgba(52,211,153,0.1)', border: '1px solid rgba(52,211,153,0.28)' }}
+          style={{
+            color: "rgb(52,211,153)",
+            background: "rgba(52,211,153,0.1)",
+            border: "1px solid rgba(52,211,153,0.28)",
+          }}
         >
           YES 0.74
         </span>
         <span
           className={chip}
-          style={{ color: '#ea4d61', background: 'rgba(234,77,97,0.1)', border: '1px solid rgba(234,77,97,0.28)' }}
+          style={{
+            color: "#ea4d61",
+            background: "rgba(234,77,97,0.1)",
+            border: "1px solid rgba(234,77,97,0.28)",
+          }}
         >
           NO 0.26
         </span>
-        <span className={`${chip} border border-white/[0.1] bg-white/[0.04] text-text-secondary`}>$1,204.36</span>
+        <span
+          className={`${chip} border border-white/[0.1] bg-white/[0.04] text-text-secondary`}
+        >
+          $1,204.36
+        </span>
       </div>
     );
   }
@@ -568,11 +694,14 @@ function DesignCardSpecimen({ index }: { index: number }) {
   return (
     <div className="flex flex-wrap items-center gap-1.5">
       {[
-        { icon: 'ri-smartphone-line', label: 'MOBILE' },
-        { icon: 'ri-macbook-line', label: 'DESKTOP' },
-        { icon: 'ri-moon-line', label: 'DARK' },
+        { icon: "ri-smartphone-line", label: "MOBILE" },
+        { icon: "ri-macbook-line", label: "DESKTOP" },
+        { icon: "ri-moon-line", label: "DARK" },
       ].map(({ icon, label }) => (
-        <span key={label} className={`${chip} border border-white/[0.1] bg-white/[0.04] text-text-secondary`}>
+        <span
+          key={label}
+          className={`${chip} border border-white/[0.1] bg-white/[0.04] text-text-secondary`}
+        >
           <i aria-hidden className={`${icon} text-[13px] text-accent`} />
           {label}
         </span>
@@ -603,15 +732,22 @@ function DesignSystemCard({
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-70" />
       <div
         className="pointer-events-none absolute right-0 top-0 h-24 w-24 rounded-full opacity-20 blur-2xl"
-        style={{ background: meta.border, transform: 'translate(30%, -30%)' }}
+        style={{ background: meta.border, transform: "translate(30%, -30%)" }}
       />
 
       <div className="relative mb-5 flex items-center justify-between">
         <span
           className="flex h-11 w-11 items-center justify-center rounded-xl"
-          style={{ border: `1px solid ${meta.border}`, background: 'rgba(255,255,255,0.04)' }}
+          style={{
+            border: `1px solid ${meta.border}`,
+            background: "rgba(255,255,255,0.04)",
+          }}
         >
-          <i aria-hidden className={`${meta.icon} text-lg`} style={{ color: meta.hue }} />
+          <i
+            aria-hidden
+            className={`${meta.icon} text-lg`}
+            style={{ color: meta.hue }}
+          />
         </span>
         <span
           className="font-[var(--font-mono)] text-[10px] uppercase tracking-[2.4px]"
@@ -624,7 +760,9 @@ function DesignSystemCard({
       <h4 className="relative mb-3 font-[var(--font-display)] text-lg font-semibold leading-snug text-text-primary">
         {title}
       </h4>
-      <p className="relative flex-1 text-[15px] leading-[1.75] text-text-secondary">{body}</p>
+      <p className="relative flex-1 text-[15px] leading-[1.75] text-text-secondary">
+        {body}
+      </p>
 
       <div className="relative mt-6 border-t border-white/[0.08] pt-5">
         <DesignCardSpecimen index={index} />
@@ -662,7 +800,7 @@ function PrincipleCard({
       <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-white/25 to-transparent opacity-70" />
       <div
         className="pointer-events-none absolute right-0 top-0 h-24 w-24 rounded-full opacity-20 blur-2xl"
-        style={{ background: border, transform: 'translate(30%, -30%)' }}
+        style={{ background: border, transform: "translate(30%, -30%)" }}
       />
 
       <div className="relative flex flex-1 gap-4">
@@ -675,7 +813,10 @@ function PrincipleCard({
           <span
             aria-hidden
             className="mt-2 w-px flex-1"
-            style={{ background: `linear-gradient(to bottom, ${hue}, transparent)`, opacity: 0.45 }}
+            style={{
+              background: `linear-gradient(to bottom, ${hue}, transparent)`,
+              opacity: 0.45,
+            }}
           />
         </div>
 
@@ -689,7 +830,9 @@ function PrincipleCard({
           <h4 className="mb-3 font-[var(--font-display)] text-lg font-semibold leading-snug text-text-primary">
             {title}
           </h4>
-          <p className="text-[15px] leading-[1.75] text-text-secondary">{body}</p>
+          <p className="text-[15px] leading-[1.75] text-text-secondary">
+            {body}
+          </p>
         </div>
       </div>
     </div>
@@ -697,10 +840,22 @@ function PrincipleCard({
 }
 
 const bannerTone = {
-  ok: { box: 'border-emerald-400/30 bg-emerald-400/[0.06]', icon: 'text-emerald-400' },
-  warn: { box: 'border-amber-400/30 bg-amber-400/[0.05]', icon: 'text-amber-400' },
-  neutral: { box: 'border-fuchsia-400/25 bg-fuchsia-400/[0.05]', icon: 'text-fuchsia-400' },
-  danger: { box: 'border-rose-400/30 bg-rose-400/[0.05]', icon: 'text-rose-400' },
+  ok: {
+    box: "border-emerald-400/30 bg-emerald-400/[0.06]",
+    icon: "text-emerald-400",
+  },
+  warn: {
+    box: "border-amber-400/30 bg-amber-400/[0.05]",
+    icon: "text-amber-400",
+  },
+  neutral: {
+    box: "border-fuchsia-400/25 bg-fuchsia-400/[0.05]",
+    icon: "text-fuchsia-400",
+  },
+  danger: {
+    box: "border-rose-400/30 bg-rose-400/[0.05]",
+    icon: "text-rose-400",
+  },
 } as const;
 
 function MiniDialog({ spec }: { spec: DialogSpec }) {
@@ -712,22 +867,30 @@ function MiniDialog({ spec }: { spec: DialogSpec }) {
       </div>
 
       <div className="mt-3 rounded-xl border border-[#20243a] bg-[#131624] px-3 py-2.5">
-        <p className="text-[12px] font-medium leading-snug text-gray-200">{spec.market}</p>
+        <p className="text-[12px] font-medium leading-snug text-gray-200">
+          {spec.market}
+        </p>
         <div className="mt-2 flex items-center gap-2">
           <span className="rounded-full border border-emerald-400/40 bg-emerald-400/10 px-2 py-[1px] font-[var(--font-mono)] text-[9px] font-bold tracking-[0.5px] text-emerald-400">
             {spec.pill}
           </span>
-          <span className="font-[var(--font-mono)] text-[10px] text-[#8a90a3]">{spec.shares}</span>
+          <span className="font-[var(--font-mono)] text-[10px] text-[#8a90a3]">
+            {spec.shares}
+          </span>
         </div>
       </div>
 
       {spec.banner && (
-        <div className={`mt-3 flex gap-2 rounded-xl border px-3 py-2.5 ${bannerTone[spec.banner.tone].box}`}>
+        <div
+          className={`mt-3 flex gap-2 rounded-xl border px-3 py-2.5 ${bannerTone[spec.banner.tone].box}`}
+        >
           <i
             aria-hidden
             className={`${spec.banner.icon} mt-[1px] text-[11px] ${bannerTone[spec.banner.tone].icon}`}
           />
-          <p className="text-[11px] leading-[1.6] text-gray-300">{spec.banner.text}</p>
+          <p className="text-[11px] leading-[1.6] text-gray-300">
+            {spec.banner.text}
+          </p>
         </div>
       )}
 
@@ -735,31 +898,41 @@ function MiniDialog({ spec }: { spec: DialogSpec }) {
         <div className="mt-3 flex flex-col gap-2">
           {spec.rows.map((row) => (
             <div key={row.k}>
-              <div className={`flex items-baseline justify-between gap-3 ${row.dim ? 'opacity-40' : ''}`}>
-                <span className={`text-[11px] text-[#8a90a3] ${row.strong ? 'font-semibold text-gray-300' : ''}`}>
+              <div
+                className={`flex items-baseline justify-between gap-3 ${row.dim ? "opacity-40" : ""}`}
+              >
+                <span
+                  className={`text-[11px] text-[#8a90a3] ${row.strong ? "font-semibold text-gray-300" : ""}`}
+                >
                   {row.k}
                 </span>
                 <span
-                  className={`font-[var(--font-mono)] text-[12px] ${row.strong ? 'font-bold' : ''} ${
-                    row.tone === 'up' ? 'text-emerald-400' : 'text-gray-100'
+                  className={`font-[var(--font-mono)] text-[12px] ${row.strong ? "font-bold" : ""} ${
+                    row.tone === "up" ? "text-emerald-400" : "text-gray-100"
                   }`}
                 >
                   {row.v}
                 </span>
               </div>
-              {row.rule && <div className="mt-2 w-full border-t border-dashed border-white/10" />}
+              {row.rule && (
+                <div className="mt-2 w-full border-t border-dashed border-white/10" />
+              )}
             </div>
           ))}
         </div>
       )}
 
-      {spec.foot && <p className="mt-3 text-[10px] leading-[1.6] text-[#6b7186]">{spec.foot}</p>}
+      {spec.foot && (
+        <p className="mt-3 text-[10px] leading-[1.6] text-[#6b7186]">
+          {spec.foot}
+        </p>
+      )}
 
       {spec.expiry && (
         <div className="mt-3">
           <div
             className={`mb-1.5 flex items-baseline justify-between text-[10px] ${
-              spec.expiry.warn ? 'text-amber-400' : 'text-[#8a90a3]'
+              spec.expiry.warn ? "text-amber-400" : "text-[#8a90a3]"
             }`}
           >
             <span>{spec.expiry.label}</span>
@@ -767,7 +940,7 @@ function MiniDialog({ spec }: { spec: DialogSpec }) {
           </div>
           <div className="h-[3px] w-full overflow-hidden rounded-full bg-white/[0.08]">
             <div
-              className={`h-full rounded-full ${spec.expiry.warn ? 'bg-amber-400' : 'bg-gray-300/80'}`}
+              className={`h-full rounded-full ${spec.expiry.warn ? "bg-amber-400" : "bg-gray-300/80"}`}
               style={{ width: `${spec.expiry.pct}%` }}
             />
           </div>
@@ -780,14 +953,17 @@ function MiniDialog({ spec }: { spec: DialogSpec }) {
             key={action.label}
             className={`flex flex-1 items-center justify-center gap-1.5 rounded-lg px-3 py-2 text-[11px] font-semibold ${
               action.primary
-                ? 'bg-[linear-gradient(135deg,#5b5fe8,#8a8df8)] text-white'
+                ? "bg-[linear-gradient(135deg,#5b5fe8,#8a8df8)] text-white"
                 : action.working
-                  ? 'border border-[#262b3a] bg-[#161927] text-[#8a90a3]'
-                  : 'border border-[#2a2e3f] bg-[#161927] text-gray-200'
+                  ? "border border-[#262b3a] bg-[#161927] text-[#8a90a3]"
+                  : "border border-[#2a2e3f] bg-[#161927] text-gray-200"
             }`}
           >
             {action.working && (
-              <i aria-hidden className="ri-loader-4-line animate-spin text-[12px] motion-reduce:animate-none" />
+              <i
+                aria-hidden
+                className="ri-loader-4-line animate-spin text-[12px] motion-reduce:animate-none"
+              />
             )}
             {action.label}
           </span>
@@ -813,12 +989,21 @@ function GlossaryCard({
   return (
     <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101010]/90 p-6 backdrop-blur-xl transition-colors duration-500 hover:border-accent/25 md:p-8">
       <div className="mb-4 flex items-center gap-2.5">
-        <span aria-hidden className="h-1.5 w-1.5 shrink-0 rounded-[1px] bg-accent" />
-        <span className="font-[var(--font-mono)] text-[11px] uppercase tracking-[2.4px] text-accent/75">{tag}</span>
+        <span
+          aria-hidden
+          className="h-1.5 w-1.5 shrink-0 rounded-[1px] bg-accent"
+        />
+        <span className="font-[var(--font-mono)] text-[11px] uppercase tracking-[2.4px] text-accent/75">
+          {tag}
+        </span>
       </div>
 
-      <h4 className="mb-3 font-[var(--font-display)] text-lg font-semibold leading-snug text-text-primary">{title}</h4>
-      <p className="mb-6 text-[15px] leading-[1.75] text-text-secondary">{body}</p>
+      <h4 className="mb-3 font-[var(--font-display)] text-lg font-semibold leading-snug text-text-primary">
+        {title}
+      </h4>
+      <p className="mb-6 text-[15px] leading-[1.75] text-text-secondary">
+        {body}
+      </p>
 
       <div className="mt-auto border-t border-white/[0.07] pt-5">
         <p className="mb-3 font-[var(--font-mono)] text-[10px] uppercase tracking-[1.8px] text-text-muted">
@@ -862,14 +1047,14 @@ function CloseStateCard({
       <span
         aria-hidden
         className="pointer-events-none absolute -top-4 right-4 select-none font-[var(--font-display)] text-[72px] font-bold leading-none tracking-tight text-transparent transition-transform duration-700 group-hover:-translate-y-1"
-        style={{ WebkitTextStroke: '1.2px rgba(0,229,208,0.14)' }}
+        style={{ WebkitTextStroke: "1.2px rgba(0,229,208,0.14)" }}
       >
-        {String(index).padStart(2, '0')}
+        {String(index).padStart(2, "0")}
       </span>
 
       <div className="relative mb-3 flex items-center gap-2.5">
         <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/10 font-[var(--font-mono)] text-[12px] font-bold text-accent shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
-          {String(index).padStart(2, '0')}
+          {String(index).padStart(2, "0")}
         </span>
         <span className="rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 font-[var(--font-mono)] text-[10px] uppercase tracking-[1.6px] text-text-muted transition-colors duration-500 group-hover:border-accent/20 group-hover:text-accent/80">
           {code}
@@ -878,7 +1063,9 @@ function CloseStateCard({
       <h4 className="relative mb-2 font-[var(--font-display)] text-[16px] font-semibold leading-snug text-text-primary">
         {title}
       </h4>
-      <p className="relative mb-5 text-[13px] leading-[1.7] text-text-secondary">{note}</p>
+      <p className="relative mb-5 text-[13px] leading-[1.7] text-text-secondary">
+        {note}
+      </p>
 
       {/* specimen stage: recessed well the popup sits on */}
       <div className="relative rounded-xl border border-white/[0.05] bg-[#07070c]/80 p-3 shadow-[inset_0_1px_8px_rgba(0,0,0,0.55)]">
@@ -912,7 +1099,7 @@ function StepCard({
       <span
         aria-hidden
         className="pointer-events-none absolute -top-6 right-5 select-none font-[var(--font-display)] text-[88px] font-bold leading-none tracking-tight text-transparent transition-transform duration-700 group-hover:-translate-y-1 md:text-[104px]"
-        style={{ WebkitTextStroke: '1.5px rgba(0,229,208,0.16)' }}
+        style={{ WebkitTextStroke: "1.5px rgba(0,229,208,0.16)" }}
       >
         0{index}
       </span>
@@ -935,7 +1122,9 @@ function StepCard({
       <h3 className="relative mb-3 pr-14 font-[var(--font-display)] text-lg font-semibold leading-snug text-text-primary md:text-xl">
         {title}
       </h3>
-      <p className="relative flex-1 text-[15px] leading-[1.75] text-text-secondary">{body}</p>
+      <p className="relative flex-1 text-[15px] leading-[1.75] text-text-secondary">
+        {body}
+      </p>
     </div>
   );
 }
@@ -965,7 +1154,10 @@ function DataTable({
           <thead>
             <tr className="border-b border-white/[0.08]">
               {columns.map((col) => (
-                <th key={col} className="px-4 py-4 text-left font-medium text-text-muted md:px-6">
+                <th
+                  key={col}
+                  className="px-4 py-4 text-left font-medium text-text-muted md:px-6"
+                >
                   {col}
                 </th>
               ))}
@@ -973,16 +1165,19 @@ function DataTable({
           </thead>
           <tbody>
             {rows.map((row, i) => (
-              <tr key={i} className="border-b border-white/[0.05] last:border-b-0">
+              <tr
+                key={i}
+                className="border-b border-white/[0.05] last:border-b-0"
+              >
                 {row.map((cell, j) => (
                   <td
                     key={j}
                     className={`px-4 py-5 align-top md:px-6 ${
                       j === 0
                         ? firstColAccent
-                          ? 'whitespace-nowrap font-medium text-accent'
-                          : 'font-medium text-text-primary'
-                        : 'text-text-secondary'
+                          ? "whitespace-nowrap font-medium text-accent"
+                          : "font-medium text-text-primary"
+                        : "text-text-secondary"
                     }`}
                   >
                     {cell}
@@ -997,12 +1192,12 @@ function DataTable({
   );
 }
 
-const SECTION = 'mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12';
+const SECTION = "mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12";
 
 export default function PredictionMarketClient() {
   const { prev: prevProject, next: nextProject } = useProjectNav(CURRENT_ID);
-  const t = useTranslations('caseStudy.predictionMarket');
-  const tp = useTranslations('projectsPage');
+  const t = useTranslations("caseStudy.predictionMarket");
+  const tp = useTranslations("projectsPage");
   const uiSectionRef = useRef<HTMLElement | null>(null);
   const uiViewportRef = useRef<HTMLDivElement | null>(null);
   const uiTrackRef = useRef<HTMLDivElement | null>(null);
@@ -1010,7 +1205,7 @@ export default function PredictionMarketClient() {
   const [uiScrollDistance, setUiScrollDistance] = useState(0);
   const { scrollYProgress: uiScrollProgress } = useScroll({
     target: uiSectionRef,
-    offset: ['start start', 'end end'],
+    offset: ["start start", "end end"],
   });
   const uiX = useTransform(uiScrollProgress, [0, 1], [0, -uiMaxX]);
 
@@ -1022,7 +1217,8 @@ export default function PredictionMarketClient() {
 
       const viewportStyle = window.getComputedStyle(viewport);
       const viewportPaddingX =
-        parseFloat(viewportStyle.paddingLeft) + parseFloat(viewportStyle.paddingRight);
+        parseFloat(viewportStyle.paddingLeft) +
+        parseFloat(viewportStyle.paddingRight);
       const viewportContentWidth = viewport.clientWidth - viewportPaddingX;
       const maxX = Math.max(0, track.scrollWidth - viewportContentWidth);
       setUiMaxX(maxX);
@@ -1034,11 +1230,11 @@ export default function PredictionMarketClient() {
     const resizeObserver = new ResizeObserver(measureGallery);
     if (uiViewportRef.current) resizeObserver.observe(uiViewportRef.current);
     if (uiTrackRef.current) resizeObserver.observe(uiTrackRef.current);
-    window.addEventListener('resize', measureGallery);
+    window.addEventListener("resize", measureGallery);
 
     return () => {
       resizeObserver.disconnect();
-      window.removeEventListener('resize', measureGallery);
+      window.removeEventListener("resize", measureGallery);
     };
   }, []);
 
@@ -1056,7 +1252,8 @@ export default function PredictionMarketClient() {
             href="/work"
             className="text-sm text-text-muted transition-colors duration-300 hover:text-text-primary"
           >
-            <i className="ri-arrow-left-line mr-1 text-accent" /> {t('backToProjects')}
+            <i className="ri-arrow-left-line mr-1 text-accent" />{" "}
+            {t("backToProjects")}
           </Link>
         </div>
       </motion.div>
@@ -1071,7 +1268,7 @@ export default function PredictionMarketClient() {
         >
           <Image
             src="/images/projects/prediction-market-cover.jpg"
-            alt={t('hero.title')}
+            alt={t("hero.title")}
             fill
             className="object-cover"
             priority
@@ -1086,7 +1283,7 @@ export default function PredictionMarketClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
           >
-            {t('hero.label')}
+            {t("hero.label")}
           </motion.span>
           <motion.h1
             className="mb-3 max-w-4xl whitespace-pre-line font-[var(--font-display)] text-[32px] font-bold leading-[1.18] text-text-primary md:text-[52px]"
@@ -1094,7 +1291,7 @@ export default function PredictionMarketClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.45, ease: [0.16, 1, 0.3, 1] }}
           >
-            {t('hero.title')}
+            {t("hero.title")}
           </motion.h1>
           <motion.p
             className="max-w-2xl text-base text-text-secondary md:text-xl"
@@ -1102,7 +1299,7 @@ export default function PredictionMarketClient() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
           >
-            {t('hero.subtitle')}
+            {t("hero.subtitle")}
           </motion.p>
         </div>
       </section>
@@ -1116,15 +1313,17 @@ export default function PredictionMarketClient() {
               className="relative overflow-hidden rounded-2xl p-8 text-center"
               style={{
                 background:
-                  'linear-gradient(135deg, rgba(0, 229, 208, 0.08) 0%, rgba(0, 229, 208, 0.02) 100%)',
-                border: '1px solid rgba(0, 229, 208, 0.15)',
-                boxShadow: '0 4px 24px rgba(0, 229, 208, 0.06)',
+                  "linear-gradient(135deg, rgba(0, 229, 208, 0.08) 0%, rgba(0, 229, 208, 0.02) 100%)",
+                border: "1px solid rgba(0, 229, 208, 0.15)",
+                boxShadow: "0 4px 24px rgba(0, 229, 208, 0.06)",
               }}
             >
               <span className="mb-3 block font-[var(--font-mono)] text-xl font-bold text-accent md:text-2xl">
                 {t(`highlightMetrics.m${n}Value`)}
               </span>
-              <p className="text-[14px] leading-[1.6] text-text-secondary">{t(`highlightMetrics.m${n}Label`)}</p>
+              <p className="text-[14px] leading-[1.6] text-text-secondary">
+                {t(`highlightMetrics.m${n}Label`)}
+              </p>
             </div>
           ))}
         </div>
@@ -1134,21 +1333,23 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
         <div className="glass-medium rounded-2xl border-l-[3px] border-l-accent p-8 md:p-10">
           <p className="mb-6 font-[var(--font-mono)] text-xs uppercase tracking-[2px] text-accent">
-            {t('summary.label')}
+            {t("summary.label")}
           </p>
           <h2 className="mb-5 font-[var(--font-display)] text-xl font-semibold leading-snug text-text-primary md:text-2xl">
-            {t('summary.heading')}
+            {t("summary.heading")}
           </h2>
           <p className="mb-8 text-[16px] leading-[1.7] text-text-secondary">
-            {t.rich('summary.body', { highlight })}
+            {t.rich("summary.body", { highlight })}
           </p>
           <div className="mb-6 border-t border-white/[0.08]" />
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
             <div>
               <p className="mb-1 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-text-muted">
-                {t('summary.roleLabel')}
+                {t("summary.roleLabel")}
               </p>
-              <p className="text-[16px] font-medium text-text-secondary">{t('summary.roleValue')}</p>
+              <p className="text-[16px] font-medium text-text-secondary">
+                {t("summary.roleValue")}
+              </p>
             </div>
             <div className="flex flex-wrap gap-2">
               {summaryTags.map((tag) => (
@@ -1168,19 +1369,98 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-8`}>
         <SectionLabel label="01 — CONTEXT" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          {t('context.heading')}
+          {t("context.heading")}
         </h2>
+        <p className="-mt-4 mb-8 text-[16px] leading-[1.75] text-text-secondary">
+          {t("context.subheading")}
+        </p>
       </ScrollReveal>
 
       <ScrollReveal className={`${SECTION} mb-8`}>
-        <div className="glass-medium rounded-2xl p-8 md:p-10">
-          <p className="mb-3 font-[var(--font-mono)] text-[12px] uppercase tracking-[3px] text-accent">
-            {t('context.chainLabel')}
+        {/* Team + My Scope */}
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2">
+          <div className="glass-medium flex h-full flex-col rounded-2xl p-6 md:p-8">
+            <p className="mb-5 font-[var(--font-mono)] text-[12px] uppercase tracking-[2.4px] text-accent/75">
+              {t("context.teamLabel")}
+            </p>
+            <div className="grid flex-1 grid-cols-1 content-start gap-3 sm:grid-cols-2">
+              {[1, 2, 3, 4].map((n) => (
+                <div
+                  key={n}
+                  className="flex items-center gap-2.5 rounded-xl border border-white/[0.08] bg-white/[0.02] px-4 py-3"
+                >
+                  <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent/50" />
+                  <span className="text-[14px] text-text-secondary">
+                    {t(`context.role${n}`)}
+                  </span>
+                </div>
+              ))}
+              <div className="col-span-full flex items-center gap-2.5 rounded-xl border border-accent/25 bg-accent/[0.06] px-4 py-3">
+                <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+                <span className="text-[14px] font-medium text-text-primary">
+                  {t("context.role5")}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div className="glass-medium flex h-full flex-col rounded-2xl p-6 md:p-8">
+            <div className="mb-5 flex items-center gap-2">
+              <p className="font-[var(--font-mono)] text-[12px] uppercase tracking-[2.4px] text-accent/75">
+                {t("context.scopeLabel")}
+              </p>
+              <span className="rounded-full border border-accent/25 bg-accent/10 px-2.5 py-0.5 font-[var(--font-mono)] text-[10px] uppercase tracking-[1.2px] text-accent">
+                {t("context.scopeBadge")}
+              </span>
+            </div>
+            <div className="flex flex-1 items-stretch gap-3">
+              <div className="flex flex-1 flex-col justify-center rounded-xl border border-accent/20 bg-accent/[0.06] p-5 text-center">
+                <p className="mb-1 font-[var(--font-display)] text-[17px] font-semibold text-accent">
+                  {t("context.scopeStep1")}
+                </p>
+                <p className="text-[12px] text-text-muted">
+                  {t("context.scopeStep1Sub")}
+                </p>
+              </div>
+              <i
+                aria-hidden
+                className="ri-arrow-right-line shrink-0 self-center text-xl text-accent/50"
+              />
+              <div className="flex flex-1 flex-col justify-center rounded-xl border border-white/[0.08] bg-white/[0.03] p-5 text-center">
+                <p className="mb-1 font-[var(--font-display)] text-[17px] font-semibold text-text-primary">
+                  {t("context.scopeStep2")}
+                </p>
+                <p className="text-[12px] text-text-muted">
+                  {t("context.scopeStep2Sub")}
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
+
+      <ScrollReveal className={`${SECTION} mb-8`}>
+        <div
+          className="relative overflow-hidden rounded-2xl border border-accent/[0.12] p-8 md:p-10"
+          style={{
+            background:
+              "linear-gradient(135deg, rgba(0,229,208,0.08) 0%, rgba(0,229,208,0.03) 40%, rgba(0,229,208,0.01) 100%)",
+          }}
+        >
+          <span
+            aria-hidden
+            className="pointer-events-none absolute left-6 top-4 select-none text-[120px] font-bold leading-none text-accent/[0.06] md:left-8 md:text-[160px]"
+            style={{ fontFamily: "Georgia, serif" }}
+          >
+            &ldquo;
+          </span>
+          <p className="relative mb-3 font-[var(--font-mono)] text-[12px] uppercase tracking-[3px] text-accent">
+            {t("context.chainLabel")}
           </p>
-          <h3 className="mb-8 font-[var(--font-display)] text-xl font-semibold text-text-primary md:text-2xl">
-            {t('context.chainTitle')}
+          <h3 className="relative mb-8 font-[var(--font-display)] text-xl font-semibold text-text-primary md:text-2xl">
+            {t("context.chainTitle")}
           </h3>
-          <div className="grid grid-cols-1 gap-4 md:grid-cols-5">
+          <div className="relative grid grid-cols-1 gap-4 md:grid-cols-5">
             {[1, 2, 3, 4, 5].map((n) => (
               <div
                 key={n}
@@ -1192,7 +1472,9 @@ export default function PredictionMarketClient() {
                 <p className="mb-1.5 font-[var(--font-display)] text-[15px] font-semibold leading-snug text-text-primary">
                   {t(`context.chain${n}Title`)}
                 </p>
-                <p className="text-[13px] leading-[1.6] text-text-muted">{t(`context.chain${n}Sub`)}</p>
+                <p className="text-[13px] leading-[1.6] text-text-muted">
+                  {t(`context.chain${n}Sub`)}
+                </p>
                 {n < 5 && (
                   <i
                     aria-hidden
@@ -1206,14 +1488,19 @@ export default function PredictionMarketClient() {
       </ScrollReveal>
 
       <div className={`${SECTION} mb-8`}>
-        <VideoEmbed videoId="J6USuZNWh2U" width="wide" padded={false} caption={t('context.imageCaption')} />
+        <VideoEmbed
+          videoId="J6USuZNWh2U"
+          width="wide"
+          padded={false}
+          caption={t("context.imageCaption")}
+        />
       </div>
 
       <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
         <InsightCard
-          label={t('context.gapLabel')}
-          title={t('context.gapTitle')}
-          body={t.rich('context.gapBody', { highlight })}
+          label={t("context.gapLabel")}
+          title={t("context.gapTitle")}
+          body={t.rich("context.gapBody", { highlight })}
         />
       </ScrollReveal>
 
@@ -1221,9 +1508,11 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-8`}>
         <SectionLabel label="02 — SPEC SYSTEM" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          {t('spec.heading')}
+          {t("spec.heading")}
         </h2>
-        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">{t('spec.body')}</p>
+        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
+          {t("spec.body")}
+        </p>
       </ScrollReveal>
 
       <ScrollReveal className={`${SECTION} mb-8`}>
@@ -1243,9 +1532,9 @@ export default function PredictionMarketClient() {
 
       <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
         <InsightCard
-          label={t('spec.insightLabel')}
-          title={t('spec.insightTitle')}
-          body={t.rich('spec.insightBody', { highlight })}
+          label={t("spec.insightLabel")}
+          title={t("spec.insightTitle")}
+          body={t.rich("spec.insightBody", { highlight })}
         />
       </ScrollReveal>
 
@@ -1253,9 +1542,11 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-8`}>
         <SectionLabel label="03 — AI WORKFLOW" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          {t('workflow.heading')}
+          {t("workflow.heading")}
         </h2>
-        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">{t('workflow.body')}</p>
+        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
+          {t("workflow.body")}
+        </p>
       </ScrollReveal>
 
       <ScrollReveal className={`${SECTION} mb-8`}>
@@ -1287,7 +1578,9 @@ export default function PredictionMarketClient() {
                   <i className={`${agent.icon} text-[18px]`} />
                 </div>
                 <div>
-                  <p className="font-[var(--font-mono)] text-[13px] font-semibold text-accent">{agent.name}</p>
+                  <p className="font-[var(--font-mono)] text-[13px] font-semibold text-accent">
+                    {agent.name}
+                  </p>
                   <p className="font-[var(--font-mono)] text-[11px] uppercase tracking-[1.6px] text-text-muted">
                     {t(`workflow.agent${i + 1}Role`)}
                   </p>
@@ -1305,15 +1598,22 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-12`}>
         <SectionLabel label="04 — TRADING FRONT DESIGN" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          {t('front.heading')}
+          {t("front.heading")}
         </h2>
-        <p className="text-[18px] leading-[1.7] text-text-secondary">{t('front.body')}</p>
+        <p className="text-[18px] leading-[1.7] text-text-secondary">
+          {t("front.body")}
+        </p>
       </ScrollReveal>
 
       {/* 4a — Detail page architecture */}
       <ScrollReveal className={`${SECTION} mb-8 mt-16`}>
-        <SubHeading label="4A — DETAIL PAGE ARCHITECTURE" title={t('front.subBTitle')} />
-        <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">{t('front.subBBody')}</p>
+        <SubHeading
+          label="4A — DETAIL PAGE ARCHITECTURE"
+          title={t("front.subBTitle")}
+        />
+        <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">
+          {t("front.subBBody")}
+        </p>
         <div className="mb-6 grid grid-cols-1 gap-6 md:grid-cols-2">
           {[1, 2, 3, 4].map((n) => (
             <StepCard
@@ -1332,14 +1632,14 @@ export default function PredictionMarketClient() {
       <section
         ref={uiSectionRef}
         className="relative mb-8"
-        style={{ height: uiScrollDistance ? `${uiScrollDistance}px` : '180vh' }}
+        style={{ height: uiScrollDistance ? `${uiScrollDistance}px` : "180vh" }}
       >
         <div className="sticky top-0 flex h-screen items-center overflow-hidden">
           <div className="w-full">
             <div className="mx-auto max-w-[var(--cs-wide-max-width)] px-6 md:px-12">
               <div className="mb-12 flex flex-col gap-3 md:flex-row md:items-end md:justify-between">
                 <h3 className="font-[var(--font-display)] text-xl font-semibold text-text-primary md:text-2xl">
-                  {t('front.subBTitle')}
+                  {t("front.subBTitle")}
                 </h3>
                 <p className="font-[var(--font-mono)] text-xs uppercase tracking-[1.5px] text-text-muted">
                   Scroll to explore
@@ -1347,8 +1647,15 @@ export default function PredictionMarketClient() {
               </div>
             </div>
 
-            <div ref={uiViewportRef} className="mx-auto max-w-[var(--cs-wide-max-width)] overflow-hidden px-6 md:px-12">
-              <motion.div ref={uiTrackRef} className="flex gap-8 pr-[28vw]" style={{ x: uiX }}>
+            <div
+              ref={uiViewportRef}
+              className="mx-auto max-w-[var(--cs-wide-max-width)] overflow-hidden px-6 md:px-12"
+            >
+              <motion.div
+                ref={uiTrackRef}
+                className="flex gap-8 pr-[28vw]"
+                style={{ x: uiX }}
+              >
                 {typeGalleryImages.map(({ file, tag }, index) => (
                   <div
                     key={tag}
@@ -1358,15 +1665,15 @@ export default function PredictionMarketClient() {
                       <Image
                         src={`${IMG}/${file}`}
                         alt={t(`front.typeImg${index + 1}Caption`)}
-                        width={SHOT_W}
-                        height={SHOT_H}
+                        width={TYPE_SHOT_W}
+                        height={TYPE_SHOT_H}
                         className="h-auto w-full"
                         sizes="(max-width: 768px) 72vw, 860px"
                       />
                     ) : (
                       <div
                         className="relative flex w-full items-center justify-center border-b-0 bg-gradient-to-br from-accent/[0.08] via-white/[0.025] to-accent/[0.05]"
-                        style={{ aspectRatio: `${SHOT_W}/${SHOT_H}` }}
+                        style={{ aspectRatio: `${TYPE_SHOT_W}/${TYPE_SHOT_H}` }}
                       >
                         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,229,208,0.12),transparent_42%)]" />
                         <p className="relative px-6 text-center font-[var(--font-mono)] text-[12px] uppercase tracking-[1.6px] text-text-muted">
@@ -1379,7 +1686,8 @@ export default function PredictionMarketClient() {
                         {tag}
                       </span>
                       <span className="font-[var(--font-mono)] text-[11px] text-text-muted">
-                        {String(index + 1).padStart(2, '0')} / {String(typeGalleryImages.length).padStart(2, '0')}
+                        {String(index + 1).padStart(2, "0")} /{" "}
+                        {String(typeGalleryImages.length).padStart(2, "0")}
                       </span>
                     </div>
                   </div>
@@ -1392,12 +1700,21 @@ export default function PredictionMarketClient() {
 
       {/* 4b — Order UX */}
       <ScrollReveal className={`${SECTION} mb-8 mt-36`}>
-        <SubHeading label="4B — ORDER EXPERIENCE" title={t('front.subCTitle')} />
-        <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">{t('front.subCBody')}</p>
+        <SubHeading
+          label="4B — ORDER EXPERIENCE"
+          title={t("front.subCTitle")}
+        />
+        <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">
+          {t("front.subCBody")}
+        </p>
         <div className="mb-6">
           <DataTable
-            title={t('front.benchTitle')}
-            columns={[t('front.benchColPlatform'), t('front.benchColAdopt'), t('front.benchColReject')]}
+            title={t("front.benchTitle")}
+            columns={[
+              t("front.benchColPlatform"),
+              t("front.benchColAdopt"),
+              t("front.benchColReject"),
+            ]}
             rows={[1, 2, 3, 4].map((n) => [
               t(`front.bench${n}Platform`),
               t(`front.bench${n}Adopt`),
@@ -1412,31 +1729,35 @@ export default function PredictionMarketClient() {
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           <PhoneShot
             src={`${IMG}/mobile-order-sheet.png`}
-            alt={t('front.orderImg2Caption')}
-            caption={t('front.orderImg2Caption')}
+            alt={t("front.orderImg2Caption")}
+            caption={t("front.orderImg2Caption")}
           />
           <PhoneShot
             src={`${IMG}/mobile-order-review.png`}
-            alt={t('front.orderImg3Caption')}
-            caption={t('front.orderImg3Caption')}
+            alt={t("front.orderImg3Caption")}
+            caption={t("front.orderImg3Caption")}
           />
           <PhoneShot
             src={`${IMG}/mobile-order-success.png`}
-            alt={t('front.orderImg4Caption')}
-            caption={t('front.orderImg4Caption')}
+            alt={t("front.orderImg4Caption")}
+            caption={t("front.orderImg4Caption")}
           />
         </div>
       </ScrollReveal>
 
       {/* 4c — Close position */}
       <ScrollReveal className={`${SECTION} mb-8 mt-36`}>
-        <SubHeading label="4C — CLOSE POSITION" title={t('front.subDTitle')} />
-        <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">{t('front.subDBody')}</p>
+        <SubHeading label="4C — CLOSE POSITION" title={t("front.subDTitle")} />
+        <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">
+          {t("front.subDBody")}
+        </p>
         <div className="mb-6">
           <p className="mb-2 font-[var(--font-display)] text-lg font-semibold text-text-primary">
-            {t('front.statesTitle')}
+            {t("front.statesTitle")}
           </p>
-          <p className="mb-6 text-[15px] leading-[1.75] text-text-secondary">{t('front.statesNote')}</p>
+          <p className="mb-6 text-[15px] leading-[1.75] text-text-secondary">
+            {t("front.statesNote")}
+          </p>
           <StateCarousel total={closeStates.length}>
             {closeStates.map((state, i) => (
               <div
@@ -1458,8 +1779,10 @@ export default function PredictionMarketClient() {
 
       {/* 4d — Portfolio */}
       <ScrollReveal className={`${SECTION} mb-8 mt-36`}>
-        <SubHeading label="4D — PORTFOLIO" title={t('front.subETitle')} />
-        <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">{t('front.subEBody')}</p>
+        <SubHeading label="4D — PORTFOLIO" title={t("front.subETitle")} />
+        <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">
+          {t("front.subEBody")}
+        </p>
         <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
           {glossaryMeta.map((g) => (
             <GlossaryCard
@@ -1474,20 +1797,39 @@ export default function PredictionMarketClient() {
         </div>
         <ArrowGallery
           slides={[
-            { src: `${IMG}/front-portfolio.png`, caption: t('front.portfolioImgCaption') },
-            { src: `${IMG}/front-portfolio-positions.png`, caption: t('front.portfolioImg2Caption') },
-            { src: `${IMG}/front-portfolio-orders.png`, caption: t('front.portfolioImg3Caption') },
-            { src: `${IMG}/front-portfolio-activity.png`, caption: t('front.portfolioImg4Caption') },
+            {
+              src: `${IMG}/front-portfolio.png`,
+              caption: t("front.portfolioImgCaption"),
+            },
+            {
+              src: `${IMG}/front-portfolio-positions.png`,
+              caption: t("front.portfolioImg2Caption"),
+            },
+            {
+              src: `${IMG}/front-portfolio-orders.png`,
+              caption: t("front.portfolioImg3Caption"),
+            },
+            {
+              src: `${IMG}/front-portfolio-activity.png`,
+              caption: t("front.portfolioImg4Caption"),
+            },
           ]}
         />
       </ScrollReveal>
 
       {/* 4e — Sitewide floor */}
       <ScrollReveal className={`${SECTION} mb-8 mt-36`}>
-        <SubHeading label="4E — SITEWIDE FOUNDATIONS" title={t('front.subFTitle')} />
+        <SubHeading
+          label="4E — SITEWIDE FOUNDATIONS"
+          title={t("front.subFTitle")}
+        />
         <div className="mb-8">
           <DataTable
-            columns={[t('front.fColArea'), t('front.fColDecision'), t('front.fColTradeoff')]}
+            columns={[
+              t("front.fColArea"),
+              t("front.fColDecision"),
+              t("front.fColTradeoff"),
+            ]}
             rows={[3, 4, 5].map((n) => [
               t(`front.fRow${n}Area`),
               t(`front.fRow${n}Decision`),
@@ -1498,32 +1840,44 @@ export default function PredictionMarketClient() {
         </div>
         <ArrowGallery
           slides={[
-            { src: `${IMG}/front-auth-login.png`, caption: t('front.authImgCaption') },
-            { src: `${IMG}/front-wallet-deposit.png`, caption: t('front.walletImgCaption') },
-            { src: `${IMG}/front-leaderboard.png`, caption: t('front.leaderboardImgCaption') },
-            { src: `${IMG}/front-leaderboard-list.png`, caption: t('front.leaderboardImg2Caption') },
+            {
+              src: `${IMG}/front-auth-login.png`,
+              caption: t("front.authImgCaption"),
+            },
+            {
+              src: `${IMG}/front-wallet-deposit.png`,
+              caption: t("front.walletImgCaption"),
+            },
+            {
+              src: `${IMG}/front-leaderboard.png`,
+              caption: t("front.leaderboardImgCaption"),
+            },
+            {
+              src: `${IMG}/front-leaderboard-list.png`,
+              caption: t("front.leaderboardImg2Caption"),
+            },
           ]}
         />
       </ScrollReveal>
 
       {/* RWD phone strip */}
       <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)] mt-36`}>
-        <SubHeading label="4F — RESPONSIVE" title={t('front.rwdTitle')} />
+        <SubHeading label="4F — RESPONSIVE" title={t("front.rwdTitle")} />
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           <PhoneShot
             src={`${IMG}/mobile-home.png`}
-            alt={t('front.rwdPhone1Caption')}
-            caption={t('front.rwdPhone1Caption')}
+            alt={t("front.rwdPhone1Caption")}
+            caption={t("front.rwdPhone1Caption")}
           />
           <PhoneShot
             src={`${IMG}/mobile-portfolio.png`}
-            alt={t('front.rwdPhone2Caption')}
-            caption={t('front.rwdPhone2Caption')}
+            alt={t("front.rwdPhone2Caption")}
+            caption={t("front.rwdPhone2Caption")}
           />
           <PhoneShot
             src={`${IMG}/mobile-wallet-deposit.png`}
-            alt={t('front.rwdPhone3Caption')}
-            caption={t('front.rwdPhone3Caption')}
+            alt={t("front.rwdPhone3Caption")}
+            caption={t("front.rwdPhone3Caption")}
           />
         </div>
       </ScrollReveal>
@@ -1532,15 +1886,22 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-8`}>
         <SectionLabel label="05 — DESIGN SYSTEM" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          {t('design.heading')}
+          {t("design.heading")}
         </h2>
-        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">{t('design.body')}</p>
+        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
+          {t("design.body")}
+        </p>
       </ScrollReveal>
 
       <ScrollReveal className={`${SECTION} mb-8`}>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {[1, 2, 3].map((n) => (
-            <DesignSystemCard key={n} index={n - 1} title={t(`design.card${n}Title`)} body={t(`design.card${n}Body`)} />
+            <DesignSystemCard
+              key={n}
+              index={n - 1}
+              title={t(`design.card${n}Title`)}
+              body={t(`design.card${n}Body`)}
+            />
           ))}
         </div>
       </ScrollReveal>
@@ -1550,7 +1911,7 @@ export default function PredictionMarketClient() {
           videoId="APXhAmcMlHU"
           width="wide"
           padded={false}
-          caption={t('design.imageLabel')}
+          caption={t("design.imageLabel")}
           captionTone="accent"
         />
       </div>
@@ -1559,9 +1920,11 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-8`}>
         <SectionLabel label="06 — ADMIN CONSOLE" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          {t('admin.heading')}
+          {t("admin.heading")}
         </h2>
-        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">{t('admin.body')}</p>
+        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
+          {t("admin.body")}
+        </p>
       </ScrollReveal>
 
       <ScrollReveal className={`${SECTION} mb-8`}>
@@ -1584,8 +1947,8 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-8`}>
         <CaptionedImage
           src={`${IMG}/admin-overview.png`}
-          alt={t('admin.image1Caption')}
-          caption={t('admin.image1Caption')}
+          alt={t("admin.image1Caption")}
+          caption={t("admin.image1Caption")}
           width={3024}
           height={1718}
         />
@@ -1594,8 +1957,8 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
         <CaptionedImage
           src={`${IMG}/admin-login.png`}
-          alt={t('admin.image2Caption')}
-          caption={t('admin.image2Caption')}
+          alt={t("admin.image2Caption")}
+          caption={t("admin.image2Caption")}
           width={1440}
           height={1000}
         />
@@ -1605,9 +1968,11 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-8`}>
         <SectionLabel label="07 — IMPACT & SCOPE" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          {t('impact.heading')}
+          {t("impact.heading")}
         </h2>
-        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">{t('impact.body')}</p>
+        <p className="mb-8 text-[18px] leading-[1.7] text-text-secondary">
+          {t("impact.body")}
+        </p>
       </ScrollReveal>
 
       <ScrollReveal className={`${SECTION} mb-8`}>
@@ -1617,7 +1982,9 @@ export default function PredictionMarketClient() {
               <span className="mb-2 block font-[var(--font-mono)] text-3xl font-bold text-accent md:text-4xl">
                 {t(`impact.metric${n}Value`)}
               </span>
-              <p className="text-[13px] leading-[1.5] text-text-muted">{t(`impact.metric${n}Label`)}</p>
+              <p className="text-[13px] leading-[1.5] text-text-muted">
+                {t(`impact.metric${n}Label`)}
+              </p>
             </div>
           ))}
         </div>
@@ -1625,8 +1992,11 @@ export default function PredictionMarketClient() {
 
       <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
         <DataTable
-          columns={[t('impact.tableColDim'), t('impact.tableColValue')]}
-          rows={[1, 2, 3, 4, 5, 6, 7, 8].map((n) => [t(`impact.r${n}Label`), t(`impact.r${n}Value`)])}
+          columns={[t("impact.tableColDim"), t("impact.tableColValue")]}
+          rows={[1, 2, 3, 4, 5, 6, 7, 8].map((n) => [
+            t(`impact.r${n}Label`),
+            t(`impact.r${n}Value`),
+          ])}
         />
       </ScrollReveal>
 
@@ -1634,7 +2004,7 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
         <SectionLabel label="08 — REFLECTION" />
         <h2 className="mb-8 font-[var(--font-display)] text-2xl font-semibold text-text-primary md:text-[32px]">
-          {t('reflection.heading')}
+          {t("reflection.heading")}
         </h2>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {[1, 2, 3].map((n) => (
@@ -1643,7 +2013,7 @@ export default function PredictionMarketClient() {
               className="glass-medium rounded-2xl p-6 transition-colors duration-300 hover:border-white/[0.15] md:p-8"
             >
               <span className="mb-4 block font-[var(--font-mono)] text-5xl font-bold text-accent/30">
-                {String(n).padStart(2, '0')}
+                {String(n).padStart(2, "0")}
               </span>
               <h3 className="mb-2 font-[var(--font-display)] text-lg font-semibold text-text-primary">
                 {t(`reflection.card${n}.title`)}
@@ -1665,15 +2035,18 @@ export default function PredictionMarketClient() {
           >
             <span className="mb-3 flex items-center gap-1.5 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-text-muted transition-colors duration-300 group-hover:text-accent">
               <i className="ri-arrow-left-s-line text-sm" />
-              {t('projectNav.prev')}
+              {t("projectNav.prev")}
             </span>
             <p className="text-lg font-semibold text-text-primary transition-colors duration-300 group-hover:text-accent md:text-xl">
               {tp(`cards.${prevProject.id}.title`)}
             </p>
           </Link>
-          <Link href={nextProject.link} className="group px-6 py-10 text-right md:px-10 md:py-12">
+          <Link
+            href={nextProject.link}
+            className="group px-6 py-10 text-right md:px-10 md:py-12"
+          >
             <span className="mb-3 flex items-center justify-end gap-1.5 font-[var(--font-mono)] text-[12px] uppercase tracking-[2px] text-text-muted transition-colors duration-300 group-hover:text-accent">
-              {t('projectNav.next')}
+              {t("projectNav.next")}
               <i className="ri-arrow-right-s-line text-sm" />
             </span>
             <p className="text-lg font-semibold text-text-primary transition-colors duration-300 group-hover:text-accent md:text-xl">

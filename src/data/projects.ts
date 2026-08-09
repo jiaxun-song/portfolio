@@ -21,8 +21,8 @@ export interface Project {
 /** Augur case study: 10.5-hour countdown started 23:11 on 2026-08-08 (UTC+8). */
 export const AUGUR_UNLOCK = unlockGate('2026-08-09T09:41:00+08:00', 10.5);
 
-/** Goodstuff / inspiration-library case study: 16-hour countdown started 23:19 on 2026-08-08 (UTC+8). */
-export const GOODSTUFF_UNLOCK = unlockGate('2026-08-09T15:19:00+08:00', 16);
+/** Goodstuff / inspiration-library case study: 24-hour countdown started 23:19 on 2026-08-08 (UTC+8). */
+export const GOODSTUFF_UNLOCK = unlockGate('2026-08-09T23:19:00+08:00', 24);
 
 export const allProjects: Project[] = [
   {
