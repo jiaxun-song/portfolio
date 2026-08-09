@@ -94,7 +94,7 @@ export default function PlayToEarnClient() {
             {t('hero.title')}
           </motion.h1>
           <motion.p
-            className="max-w-2xl text-base text-text-secondary md:text-xl"
+            className="max-w-2xl text-sm leading-6 text-text-secondary md:text-base md:leading-7"
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}

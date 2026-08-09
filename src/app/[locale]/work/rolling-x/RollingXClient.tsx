@@ -126,7 +126,7 @@ export default function RollingXClient() {
               {t('hero.title')}
             </motion.h1>
             <motion.p
-              className="text-base md:text-xl text-text-secondary max-w-2xl"
+              className="text-sm leading-6 md:text-base md:leading-7 text-text-secondary max-w-2xl"
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
