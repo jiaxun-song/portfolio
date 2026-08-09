@@ -9,8 +9,8 @@ import { useUnlockCountdown } from '@/hooks/useUnlockCountdown';
 import { AUGUR_UNLOCK } from '@/data/projects';
 
 const projects = [
-  { id: 'exora',      tags: ['Fintech', 'Trading UX', 'Design System'], link: '/work/exora' as const, image: '/images/projects/exora-cover.jpg' },
   { id: 'prediction-market', tags: ['Fintech', 'AI Workflow', 'Design System'], link: '/work/prediction-market' as const, image: '/images/projects/prediction-market-cover.jpg' },
+  { id: 'exora',      tags: ['Fintech', 'Trading UX', 'Design System'], link: '/work/exora' as const, image: '/images/projects/exora-cover.jpg' },
   { id: 'booking-app', tags: ['APP', 'Web', 'Dashboard', 'Brand Design'], link: '/work/booking-app' as const, image: '/images/projects/Buddy Cover.jpg' },
   { id: 'rolling-x',  tags: ['Fintech', 'Subscription Platform', 'Brand Design'], link: '/work/rolling-x' as const, image: '/images/projects/rolling-cover.jpg' },
 ];

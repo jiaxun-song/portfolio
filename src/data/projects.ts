@@ -26,17 +26,17 @@ export const GOODSTUFF_UNLOCK = unlockGate('2026-08-09T15:19:00+08:00', 16);
 
 export const allProjects: Project[] = [
   {
-    id: 'exora',
-    tags: ['Fintech', 'Trading UX', 'Design System'],
-    image: '/images/projects/exora-cover.jpg',
-    link: '/work/exora',
-  },
-  {
     id: 'prediction-market',
     tags: ['Fintech', 'AI Workflow', 'Design System'],
     image: '/images/projects/prediction-market-cover.jpg',
     link: '/work/prediction-market',
     unlock: AUGUR_UNLOCK,
+  },
+  {
+    id: 'exora',
+    tags: ['Fintech', 'Trading UX', 'Design System'],
+    image: '/images/projects/exora-cover.jpg',
+    link: '/work/exora',
   },
 {
     id: 'cex-web',

@@ -2,7 +2,7 @@
 
 import type { ReactNode } from 'react';
 import { useEffect, useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { AnimatePresence, motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { Link } from '@/i18n/navigation';
@@ -198,6 +198,18 @@ const closeStates: { code: string; spec: DialogSpec }[] = [
   },
 ];
 
+/** Portfolio 的語意表卡片：把散在句子裡的術語清單拉成可讀的 chip rail */
+const glossaryMeta = [
+  {
+    key: 'e1',
+    items: ['Available', 'Invested', 'Current Value', 'Unrealized', 'Realized', 'Max Payout', 'Reserved'],
+  },
+  {
+    key: 'e2',
+    items: ['Active', 'Pending Resolution', 'Claimable', 'Settled Won', 'Settled Lost', 'Closed'],
+  },
+];
+
 /** 後台能力域 + 一條體例治理，卡片以「控制台模組」的語彙呈現；`n` 對應訊息檔的 card 編號 */
 const adminModuleMeta = [
   { tag: 'RBAC', icon: 'ri-shield-keyhole-line', n: 1 },
@@ -248,56 +260,91 @@ function ArrowGallery({ slides }: { slides: { src?: string; caption: string }[] 
   const slide = slides[active];
 
   return (
-    <div className="glass-medium overflow-hidden rounded-2xl border border-white/[0.08]">
+    <div className="glass-medium group/gallery relative overflow-hidden rounded-2xl border border-white/[0.08] transition-colors duration-500 hover:border-accent/25">
+      <div className="absolute inset-x-0 top-0 z-10 h-px bg-gradient-to-r from-accent/40 via-accent/10 to-transparent" />
+
       <div className="p-4 md:p-5">
-        {slide.src ? (
-          <div className="overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.02]">
-            <Image
-              src={slide.src}
-              alt={slide.caption}
-              width={SHOT_W}
-              height={SHOT_H}
-              className="h-auto w-full"
-            />
-          </div>
-        ) : (
-          <div
-            className="relative flex w-full items-center justify-center overflow-hidden rounded-xl border border-dashed border-accent/20 bg-gradient-to-br from-accent/[0.08] via-white/[0.025] to-accent/[0.05]"
-            style={{ aspectRatio: `${SHOT_W}/${SHOT_H}` }}
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,229,208,0.12),transparent_42%)]" />
-            <p className="relative px-6 text-center font-[var(--font-mono)] text-[12px] uppercase tracking-[1.6px] text-text-muted">
-              Image Slot — {slide.caption}
-            </p>
-          </div>
-        )}
+        <div
+          className="relative overflow-hidden rounded-xl border border-white/[0.08] bg-white/[0.02]"
+          style={{ aspectRatio: `${SHOT_W}/${SHOT_H}` }}
+        >
+          <AnimatePresence initial={false}>
+            <motion.div
+              key={active}
+              className="absolute inset-0"
+              initial={{ opacity: 0, scale: 1.015 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.45, ease: [0.16, 1, 0.3, 1] }}
+            >
+              {slide.src ? (
+                <Image
+                  src={slide.src}
+                  alt={slide.caption}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                />
+              ) : (
+                <div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-accent/[0.08] via-white/[0.025] to-accent/[0.05]">
+                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,229,208,0.12),transparent_42%)]" />
+                  <p className="relative px-6 text-center font-[var(--font-mono)] text-[12px] uppercase tracking-[1.6px] text-text-muted">
+                    Image Slot — {slide.caption}
+                  </p>
+                </div>
+              )}
+            </motion.div>
+          </AnimatePresence>
+
+          {slides.length > 1 && (
+            <>
+              <div className="pointer-events-none absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-black/40 to-transparent opacity-0 transition-opacity duration-500 group-hover/gallery:opacity-100" />
+              <div className="pointer-events-none absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-black/40 to-transparent opacity-0 transition-opacity duration-500 group-hover/gallery:opacity-100" />
+
+              <button
+                type="button"
+                aria-label="Previous"
+                onClick={() => setActive((p) => Math.max(0, p - 1))}
+                className={`absolute left-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/[0.14] bg-black/45 text-white shadow-[0_8px_24px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-300 hover:border-accent/60 hover:text-accent hover:shadow-[0_8px_28px_rgba(0,229,208,0.25)] active:scale-95 ${
+                  active === 0 ? 'pointer-events-none opacity-0' : 'opacity-100'
+                }`}
+              >
+                <i className="ri-arrow-left-s-line text-[20px]" />
+              </button>
+              <button
+                type="button"
+                aria-label="Next"
+                onClick={() => setActive((p) => Math.min(slides.length - 1, p + 1))}
+                className={`absolute right-4 top-1/2 flex h-10 w-10 -translate-y-1/2 items-center justify-center rounded-full border border-white/[0.14] bg-black/45 text-white shadow-[0_8px_24px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-300 hover:border-accent/60 hover:text-accent hover:shadow-[0_8px_28px_rgba(0,229,208,0.25)] active:scale-95 ${
+                  active === slides.length - 1 ? 'pointer-events-none opacity-0' : 'opacity-100'
+                }`}
+              >
+                <i className="ri-arrow-right-s-line text-[20px]" />
+              </button>
+            </>
+          )}
+        </div>
       </div>
+
       <div className="flex items-center justify-between gap-4 border-t border-white/[0.08] px-5 py-4 md:px-6">
         <p className="min-w-0 flex-1 truncate text-[13px] text-text-secondary md:text-[14px]">
+          <span className="mr-2.5 font-[var(--font-mono)] text-[11px] font-semibold tracking-[1px] text-accent">
+            0{active + 1} / 0{slides.length}
+          </span>
           {slide.caption}
         </p>
-        <div className="flex shrink-0 items-center gap-3">
-          <button
-            type="button"
-            aria-label="Previous"
-            onClick={() => setActive((p) => Math.max(0, p - 1))}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.1] text-text-muted transition-colors duration-300 hover:border-accent/40 hover:text-accent disabled:opacity-30"
-            disabled={active === 0}
-          >
-            <i className="ri-arrow-left-s-line text-[18px]" />
-          </button>
-          <span className="font-[var(--font-mono)] text-[13px] tracking-[1px] text-text-muted">
-            <span className="text-accent">0{active + 1}</span> / 0{slides.length}
-          </span>
-          <button
-            type="button"
-            aria-label="Next"
-            onClick={() => setActive((p) => Math.min(slides.length - 1, p + 1))}
-            className="flex h-8 w-8 items-center justify-center rounded-full border border-white/[0.1] text-text-muted transition-colors duration-300 hover:border-accent/40 hover:text-accent disabled:opacity-30"
-            disabled={active === slides.length - 1}
-          >
-            <i className="ri-arrow-right-s-line text-[18px]" />
-          </button>
+        <div className="flex shrink-0 items-center gap-1.5">
+          {slides.map((s, i) => (
+            <button
+              key={s.caption}
+              type="button"
+              aria-label={`Slide ${i + 1}`}
+              onClick={() => setActive(i)}
+              className={`h-1.5 rounded-full transition-all duration-500 ${
+                i === active ? 'w-6 bg-accent' : 'w-1.5 bg-white/[0.18] hover:bg-white/[0.35]'
+              }`}
+            />
+          ))}
         </div>
       </div>
     </div>
@@ -406,11 +453,11 @@ function PhoneShot({ src, alt, caption }: { src: string; alt: string; caption: s
   );
 }
 
-const typeGalleryImages = [
+const typeGalleryImages: { file?: string; tag: string }[] = [
   { file: 'front-detail-binary.png', tag: 'BINARY' },
-  { file: 'front-detail-categorical.png', tag: 'CATEGORICAL' },
-  { file: 'front-detail-grouped.png', tag: 'GROUPED' },
-  { file: 'front-detail-updown.png', tag: 'UPDOWN' },
+  { tag: 'CATEGORICAL' },
+  { tag: 'GROUPED' },
+  { tag: 'UPDOWN' },
 ];
 
 function SubHeading({ label, title }: { label: string; title: string }) {
@@ -724,6 +771,48 @@ function MiniDialog({ spec }: { spec: DialogSpec }) {
             {action.label}
           </span>
         ))}
+      </div>
+    </div>
+  );
+}
+
+function GlossaryCard({
+  tag,
+  title,
+  body,
+  listLabel,
+  items,
+}: {
+  tag: string;
+  title: string;
+  body: string;
+  listLabel: string;
+  items: readonly string[];
+}) {
+  return (
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101010]/90 p-6 backdrop-blur-xl transition-colors duration-500 hover:border-accent/25 md:p-8">
+      <div className="mb-4 flex items-center gap-2.5">
+        <span aria-hidden className="h-1.5 w-1.5 shrink-0 rounded-[1px] bg-accent" />
+        <span className="font-[var(--font-mono)] text-[11px] uppercase tracking-[2.4px] text-accent/75">{tag}</span>
+      </div>
+
+      <h4 className="mb-3 font-[var(--font-display)] text-lg font-semibold leading-snug text-text-primary">{title}</h4>
+      <p className="mb-6 text-[15px] leading-[1.75] text-text-secondary">{body}</p>
+
+      <div className="mt-auto border-t border-white/[0.07] pt-5">
+        <p className="mb-3 font-[var(--font-mono)] text-[10px] uppercase tracking-[1.8px] text-text-muted">
+          {listLabel}
+        </p>
+        <ul className="flex flex-wrap gap-2">
+          {items.map((item) => (
+            <li
+              key={item}
+              className="rounded-md border border-white/[0.09] bg-white/[0.04] px-2.5 py-1 font-[var(--font-mono)] text-[11px] text-text-secondary transition-colors duration-300 group-hover:border-accent/20"
+            >
+              {item}
+            </li>
+          ))}
+        </ul>
       </div>
     </div>
   );
@@ -1248,17 +1337,29 @@ export default function PredictionMarketClient() {
               <motion.div ref={uiTrackRef} className="flex gap-8 pr-[28vw]" style={{ x: uiX }}>
                 {typeGalleryImages.map(({ file, tag }, index) => (
                   <div
-                    key={file}
+                    key={tag}
                     className="w-[72vw] max-w-[860px] flex-none overflow-hidden rounded-2xl border border-white/[0.08] bg-white/[0.02] shadow-[0_24px_80px_rgba(0,0,0,0.28)]"
                   >
-                    <Image
-                      src={`${IMG}/${file}`}
-                      alt={t(`front.typeImg${index + 1}Caption`)}
-                      width={SHOT_W}
-                      height={SHOT_H}
-                      className="h-auto w-full"
-                      sizes="(max-width: 768px) 72vw, 860px"
-                    />
+                    {file ? (
+                      <Image
+                        src={`${IMG}/${file}`}
+                        alt={t(`front.typeImg${index + 1}Caption`)}
+                        width={SHOT_W}
+                        height={SHOT_H}
+                        className="h-auto w-full"
+                        sizes="(max-width: 768px) 72vw, 860px"
+                      />
+                    ) : (
+                      <div
+                        className="relative flex w-full items-center justify-center border-b-0 bg-gradient-to-br from-accent/[0.08] via-white/[0.025] to-accent/[0.05]"
+                        style={{ aspectRatio: `${SHOT_W}/${SHOT_H}` }}
+                      >
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(0,229,208,0.12),transparent_42%)]" />
+                        <p className="relative px-6 text-center font-[var(--font-mono)] text-[12px] uppercase tracking-[1.6px] text-text-muted">
+                          Image Slot — {tag}
+                        </p>
+                      </div>
+                    )}
                     <div className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3">
                       <span className="font-[var(--font-mono)] text-[11px] uppercase tracking-[1.5px] text-accent">
                         {tag}
@@ -1276,7 +1377,7 @@ export default function PredictionMarketClient() {
       </section>
 
       {/* 4b — Order UX */}
-      <ScrollReveal className={`${SECTION} mb-8 mt-28`}>
+      <ScrollReveal className={`${SECTION} mb-8 mt-36`}>
         <SubHeading label="4B — ORDER EXPERIENCE" title={t('front.subCTitle')} />
         <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">{t('front.subCBody')}</p>
         <div className="mb-6">
@@ -1314,7 +1415,7 @@ export default function PredictionMarketClient() {
       </ScrollReveal>
 
       {/* 4c — Close position */}
-      <ScrollReveal className={`${SECTION} mb-8 mt-28`}>
+      <ScrollReveal className={`${SECTION} mb-8 mt-36`}>
         <SubHeading label="4C — CLOSE POSITION" title={t('front.subDTitle')} />
         <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">{t('front.subDBody')}</p>
         <div className="mb-6">
@@ -1342,9 +1443,21 @@ export default function PredictionMarketClient() {
       </ScrollReveal>
 
       {/* 4d — Portfolio */}
-      <ScrollReveal className={`${SECTION} mb-8 mt-28`}>
+      <ScrollReveal className={`${SECTION} mb-8 mt-36`}>
         <SubHeading label="4D — PORTFOLIO" title={t('front.subETitle')} />
         <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">{t('front.subEBody')}</p>
+        <div className="mb-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+          {glossaryMeta.map((g) => (
+            <GlossaryCard
+              key={g.key}
+              tag={t(`front.${g.key}Tag`)}
+              title={t(`front.${g.key}Title`)}
+              body={t(`front.${g.key}Body`)}
+              listLabel={t(`front.${g.key}ListLabel`)}
+              items={g.items}
+            />
+          ))}
+        </div>
         <ArrowGallery
           slides={[
             { src: `${IMG}/front-portfolio.png`, caption: t('front.portfolioImgCaption') },
@@ -1356,13 +1469,12 @@ export default function PredictionMarketClient() {
       </ScrollReveal>
 
       {/* 4e — Sitewide floor */}
-      <ScrollReveal className={`${SECTION} mb-8 mt-28`}>
+      <ScrollReveal className={`${SECTION} mb-8 mt-36`}>
         <SubHeading label="4E — SITEWIDE FOUNDATIONS" title={t('front.subFTitle')} />
-        <p className="mb-8 text-[16px] leading-[1.75] text-text-secondary">{t('front.subFBody')}</p>
         <div className="mb-8">
           <DataTable
             columns={[t('front.fColArea'), t('front.fColDecision'), t('front.fColTradeoff')]}
-            rows={[2, 3, 4].map((n) => [
+            rows={[3, 4, 5].map((n) => [
               t(`front.fRow${n}Area`),
               t(`front.fRow${n}Decision`),
               t(`front.fRow${n}Tradeoff`),
@@ -1370,26 +1482,16 @@ export default function PredictionMarketClient() {
             firstColAccent
           />
         </div>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <CaptionedImage
-            src={`${IMG}/front-wallet-deposit.png`}
-            alt={t('front.walletImgCaption')}
-            caption={t('front.walletImgCaption')}
-            width={SHOT_W}
-            height={SHOT_H}
-          />
-          <CaptionedImage
-            src={`${IMG}/front-leaderboard.png`}
-            alt={t('front.leaderboardImgCaption')}
-            caption={t('front.leaderboardImgCaption')}
-            width={SHOT_W}
-            height={SHOT_H}
-          />
-        </div>
+        <ArrowGallery
+          slides={[
+            { src: `${IMG}/front-wallet-deposit.png`, caption: t('front.walletImgCaption') },
+            { src: `${IMG}/front-leaderboard.png`, caption: t('front.leaderboardImgCaption') },
+          ]}
+        />
       </ScrollReveal>
 
       {/* RWD phone strip */}
-      <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)] mt-16`}>
+      <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)] mt-36`}>
         <SubHeading label="4F — RESPONSIVE" title={t('front.rwdTitle')} />
         <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
           <PhoneShot
@@ -1428,7 +1530,13 @@ export default function PredictionMarketClient() {
       </ScrollReveal>
 
       <div className={`${SECTION} mb-[var(--cs-section-gap)]`}>
-        <VideoEmbed videoId="APXhAmcMlHU" width="wide" padded={false} caption={t('design.imageLabel')} />
+        <VideoEmbed
+          videoId="APXhAmcMlHU"
+          width="wide"
+          padded={false}
+          caption={t('design.imageLabel')}
+          captionTone="accent"
+        />
       </div>
 
       {/* 06 — Admin Console */}

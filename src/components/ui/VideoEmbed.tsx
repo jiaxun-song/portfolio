@@ -7,6 +7,8 @@ interface VideoEmbedProps {
   caption?: string;
   width?: 'content' | 'wide' | 'bleed';
   padded?: boolean;
+  /** 圖說顏色，預設為次要灰；需要強調時可傳 accent */
+  captionTone?: 'muted' | 'accent';
 }
 
 const maxWidths = {
@@ -15,7 +17,13 @@ const maxWidths = {
   bleed: 'max-w-[1440px]',
 };
 
-export default function VideoEmbed({ videoId, caption, width = 'wide', padded = true }: VideoEmbedProps) {
+export default function VideoEmbed({
+  videoId,
+  caption,
+  width = 'wide',
+  padded = true,
+  captionTone = 'muted',
+}: VideoEmbedProps) {
   const src = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1&loop=1&playlist=${videoId}&controls=0&showinfo=0&rel=0&modestbranding=1&playsinline=1&vq=hd1080`;
 
   return (
@@ -40,7 +48,13 @@ export default function VideoEmbed({ videoId, caption, width = 'wide', padded = 
         />
       </div>
       {caption && (
-        <p className="text-[14px] text-text-muted text-center mt-3">{caption}</p>
+        <p
+          className={`text-[14px] text-center mt-3 ${
+            captionTone === 'accent' ? 'text-accent font-medium' : 'text-text-muted'
+          }`}
+        >
+          {caption}
+        </p>
       )}
     </motion.div>
   );
