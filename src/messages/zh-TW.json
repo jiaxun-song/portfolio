@@ -17,7 +17,7 @@
         "description": "同一份需求、同一套修改指令，讓 Fable 5、Claude Opus、GPT 5.5、Gemini 3.1 Pro 各自做出一個 Three.js 互動 Landing Page。兩輪迭代之後的完整評測與選用建議。"
       },
       "street-interview-kit": {
-        "title": "短影音自動剪輯 AI Workflow 開發",
+        "title": "使用 Claude Code 開發短影音自動剪輯 AI Workflow",
         "description": "一個餐飲街訪 AI 剪輯工作流的拆解全記錄。"
       }
     }
@@ -1411,7 +1411,7 @@
       "summary": {
         "label": "PROJECT SUMMARY",
         "heading": "0 → 1，預測市場產品設計",
-        "body": "Augur 定位是「預測市場界的 Shopify」——多租戶白標 SaaS，聚合 Polymarket 流動性。這個專案為 0-1 的開發，我運用 <highlight>Claude Code + Codex 與 Figma MCP 的協作</highlight>，解決團隊裡沒有 PM 的角色產出文件與功能規劃，以及沒有前端工程師進行畫面切版的缺漏。透過 Git 的操作進行畫面上的迭代與交付，同時設計出<highlight>完整的 Design System Codebase</highlight>，讓工程師也可以依此產出畫面，加速溝通效率。",
+        "body": "Augur 定位是「預測市場界的 Shopify」——多租戶白標 SaaS，聚合 Polymarket 流動性。這個專案為 0-1 的開發，<highlight>我運用 Claude Code + Codex 與 Figma MCP 的協作，解決團隊裡原本沒有 PM 的角色產出文件與功能規劃，以及沒有前端工程師進行畫面切版的缺漏。</highlight>透過 Git 的操作進行畫面上的迭代與交付，同時設計出<highlight>完整的 Design System Codebase</highlight>，讓工程師也可以依此產出畫面，加速溝通效率。",
         "roleLabel": "ROLE",
         "roleValue": "Product Designer & Frontend Builder（with Claude Code）"
       },
@@ -1423,7 +1423,7 @@
         "chain1Sub": "與工程端共同規劃 Epic，並再依此規劃出 User Story 的各種情境",
         "chain2Title": "功能規劃 Spec",
         "chain2Sub": "每個 domain 的行為定義、拍板紀錄與被否決方案",
-        "chain3Title": "畫面設計",
+        "chain3Title": "畫面設計 UI / UX",
         "chain3Sub": "四型別詳情頁 × 設計系統 × 整座運營後台的資訊架構",
         "chain4Title": "前端切版",
         "chain4Sub": "設計系統驅動的元件化切版，PWA 的思維進行設計",
@@ -1485,7 +1485,7 @@
         "type4Title": "UpDown",
         "type4Body": "圖表換標的 K 線 + 開盤基準線，時間軸換倒數計時，插入回合導覽列，由 upcoming / live / resolving / resolved 回合狀態機驅動下單開關。",
         "subCTitle": "下單體驗：對標四平台，再做合適的取捨",
-        "subCBody": "先做競品研究，每個平台明確分析出「可借鏡什麼、不採納什麼」；交易流程定為 4 階段（Compose → Review → Submitting → Result）。",
+        "subCBody": "以競品研究，每個平台明確分析出「可借鏡什麼、不採納什麼」；並將交易流程定為 4 階段（Compose → Review → Submitting → Result）。",
         "benchTitle": "下單對標：借鏡與不採納理由",
         "benchColPlatform": "平台",
         "benchColAdopt": "借鏡",
@@ -1539,8 +1539,10 @@
         "orderImg3Caption": "確認訂單——總成本含滑點緩衝，命中／未命中兩種結果先講清楚",
         "orderImg4Caption": "下單成功——回填實際成交數量與均價，並給三個下一步出口",
         "portfolioImgCaption": "Portfolio 總覽——帳戶總價值、未實現／已實現損益分列、7 日走勢、持倉平倉入口，首屏回答八個問題",
+        "authImgCaption": "登入彈窗——Email OTP + Google，全程單一 popup 不離開首頁",
         "walletImgCaption": "錢包充值——兩步驟流程、交易所式欄位順序",
         "leaderboardImgCaption": "排行榜——公開交易履歷的入口",
+        "leaderboardImg2Caption": "排行榜完整榜單——獲利／交易量兩維度 × 四時段，Top 100 排名列表",
         "rwdTitle": "同一套設計語言，從 1440 到 375",
         "rwdPhone1Caption": "首頁——輪播卡與市場列表堆疊",
         "rwdPhone2Caption": "Portfolio——KPI 卡直向排列",
@@ -1562,7 +1564,7 @@
         "portfolioImg4Caption": "我的活動——下單、平倉、出入金的完整歷史紀錄"
       },
       "design": {
-        "heading": "一套寫給 AI 讀的設計系統",
+        "heading": "一套設計給 AI 讀的 Design System",
         "body": "設計系統不是單一文件，而是一組分工明確的文件架構：Design.md 定義 tokens、按鈕系統、元件索引與 AI Codegen 規則，所有文件衝突時以它為準；CLAUDE.md 是它的執行摘要，每次對話自動載入給 AI 的不可違反鐵則；它是每天被 AI 讀取執行的基準文件。",
         "card1Title": "Dark-only 玻璃質感",
         "card1Body": "金融產品的資訊密度適合深底。不用傳統灰階，改用半透明白疊深底——整個介面的層次由透明度構成，而不是色票。",
@@ -1570,7 +1572,7 @@
         "card2Body": "Yes 一律 emerald、No 一律柔化紅（特調 #ea4d61 避開預設刺眼紅）；數字與金額一律 Space Mono。規範明文「禁止用近似色代替」——因為 AI 會鑽字面的漏洞。",
         "card3Title": "design-qa agent：交付前驗收",
         "card3Body": "原始碼掃不到「render 出來的畫面」，所以讓 agent 實際截圖三組（mobile / desktop / dark）逐項驗收。",
-        "imageLabel": "同時應用於前台與後台的 Design System 建立、迭代與維護"
+        "imageLabel": "建立、迭代與維護 同時應用於前台與後台的 Design System"
       },
       "admin": {
         "heading": "後台設計規劃：B2B 的多租戶後台系統設計",
@@ -1581,8 +1583,6 @@
         "card3Body": "金庫總覽、轉帳、與外部錢包後台的兩後台密鑰握手綁定：三態生命週期、啟用與轉帳都要走二次確認——關鍵資訊複述一遍、明確輸入確認才放行，把金融操作的謹慎設計進流程。",
         "card4Title": "平台／租戶雙視角",
         "card4Body": "全站「平台視角 / 租戶視角」切換器 + 全域狀態，列表頁掛載、詳情頁做 403 越權守門——同一套後台，兩種身分看到的世界不同。",
-        "styleTitle": "體例治理：以「帳號管理」為基準對齊",
-        "styleBody": "後台頁面體例統一對齊單一基準頁（工具列、搜尋文案、按鈕尺寸、欄位命名）；彈窗積木收斂成七件套共用元件，表格收斂進 AdminDataTable + useAdminTable——10 個列表頁全遷，3 個特殊結構評估後保留。",
         "image1Caption": "運營後台總覽——資產、活躍市場、未對沖金額與交易量一屏掌握",
         "image2Caption": "運營後台登入頁——玻璃卡與品牌漸層 CTA"
       },

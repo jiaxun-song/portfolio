@@ -4,7 +4,7 @@ export const articleHtml = `<!-- ============ HERO ============ -->
   <div class="hero-fade" aria-hidden="true"></div>
   <div class="wide">
     <span class="eyebrow">Workflow Teardown — 手工 × 可複製產線 · 2026.07</span>
-    <h1>短影音自動剪輯 AI <span class="q">Workflow</span> 開發<span class="sub-t">一個餐飲街訪 AI 剪輯工作流的拆解全記錄</span></h1>
+    <h1>使用 Claude Code 開發短影音自動剪輯 AI <span class="q">Workflow</span><span class="sub-t">一個餐飲街訪 AI 剪輯工作流的拆解全記錄</span></h1>
     <p class="lede">這篇記錄我怎麼加速企劃執行的產出，把餐飲街訪長影片，從「每次都要重來的手工剪輯」，一步步收斂成一套能上 GitHub、給同事下載就能產出同級成品的<strong>「餐飲街訪短影音自動剪輯的 AI 工具」</strong>。</p>
     <div class="hero-meta">
       <span class="chip"><b>2</b> 階段流程</span>

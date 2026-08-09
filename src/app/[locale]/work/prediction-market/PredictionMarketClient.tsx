@@ -210,12 +210,33 @@ const glossaryMeta = [
   },
 ];
 
-/** 後台能力域 + 一條體例治理，卡片以「控制台模組」的語彙呈現；`n` 對應訊息檔的 card 編號 */
+/** 後台能力域，樣式與 04 段 PrincipleCard 對齊；`n` 對應訊息檔的 card 編號 */
 const adminModuleMeta = [
-  { tag: 'RBAC', icon: 'ri-shield-keyhole-line', n: 1 },
-  { tag: 'TREASURY', icon: 'ri-safe-2-line', n: 3 },
-  { tag: 'VIEW SCOPE', icon: 'ri-eye-line', n: 4 },
-];
+  {
+    tag: 'RBAC',
+    n: 1,
+    gradient: 'linear-gradient(135deg, rgba(56, 189, 248, 0.14) 0%, rgba(14, 165, 233, 0.04) 100%)',
+    border: 'rgba(56, 189, 248, 0.22)',
+    glow: 'rgba(56, 189, 248, 0.08)',
+    hue: 'rgb(125, 211, 252)',
+  },
+  {
+    tag: 'TREASURY',
+    n: 3,
+    gradient: 'linear-gradient(135deg, rgba(0, 229, 208, 0.14) 0%, rgba(20, 184, 166, 0.04) 100%)',
+    border: 'rgba(0, 229, 208, 0.22)',
+    glow: 'rgba(0, 229, 208, 0.08)',
+    hue: 'var(--color-accent)',
+  },
+  {
+    tag: 'VIEW SCOPE',
+    n: 4,
+    gradient: 'linear-gradient(135deg, rgba(52, 211, 153, 0.14) 0%, rgba(16, 185, 129, 0.04) 100%)',
+    border: 'rgba(52, 211, 153, 0.22)',
+    glow: 'rgba(52, 211, 153, 0.08)',
+    hue: 'rgb(110, 231, 183)',
+  },
+] as const;
 
 const marketTypeMeta = [
   { icon: 'ri-toggle-line', tag: 'BINARY' },
@@ -454,10 +475,10 @@ function PhoneShot({ src, alt, caption }: { src: string; alt: string; caption: s
 }
 
 const typeGalleryImages: { file?: string; tag: string }[] = [
-  { file: 'front-detail-binary.png', tag: 'BINARY' },
-  { tag: 'CATEGORICAL' },
-  { tag: 'GROUPED' },
-  { tag: 'UPDOWN' },
+  { file: 'front-detail-binary.png', tag: 'BINARY 01' },
+  { file: 'front-detail-categorical.png', tag: 'CATEGORICAL 02' },
+  { file: 'front-detail-grouped.png', tag: 'GROUPED 03' },
+  { file: 'front-detail-updown.png', tag: 'UPDOWN 04' },
 ];
 
 function SubHeading({ label, title }: { label: string; title: string }) {
@@ -818,35 +839,6 @@ function GlossaryCard({
   );
 }
 
-function ModuleCard({ tag, icon, title, body }: { tag: string; icon: string; title: string; body: string }) {
-  return (
-    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-[#101010]/90 p-6 backdrop-blur-xl transition-colors duration-500 hover:border-accent/25 md:p-8">
-      {/* 角落框線：控制台模組的識別記號 */}
-      <span
-        aria-hidden
-        className="pointer-events-none absolute left-4 top-4 h-4 w-4 border-l border-t border-accent/30 transition-colors duration-500 group-hover:border-accent/70"
-      />
-      <span
-        aria-hidden
-        className="pointer-events-none absolute bottom-4 right-4 h-4 w-4 border-b border-r border-accent/30 transition-colors duration-500 group-hover:border-accent/70"
-      />
-
-      <div className="mb-5 flex items-center gap-3">
-        <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/[0.07] text-accent transition-colors duration-500 group-hover:border-accent/45">
-          <i aria-hidden className={`${icon} text-[17px]`} />
-        </span>
-        <span className="shrink-0 font-[var(--font-mono)] text-[11px] uppercase tracking-[2.4px] text-accent/75">
-          {tag}
-        </span>
-        <span aria-hidden className="h-px flex-1 bg-gradient-to-r from-white/[0.12] to-transparent" />
-      </div>
-
-      <h4 className="mb-3 font-[var(--font-display)] text-lg font-semibold leading-snug text-text-primary">{title}</h4>
-      <p className="text-[15px] leading-[1.75] text-text-secondary">{body}</p>
-    </div>
-  );
-}
-
 function CloseStateCard({
   index,
   code,
@@ -861,17 +853,39 @@ function CloseStateCard({
   spec: DialogSpec;
 }) {
   return (
-    <div className="flex h-full flex-col rounded-2xl border border-white/[0.08] bg-[#111111]/90 p-5 backdrop-blur-xl">
-      <div className="mb-1.5 flex items-center gap-2">
-        <span className="font-[var(--font-mono)] text-[11px] font-semibold text-accent">
+    <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-b from-white/[0.05] via-white/[0.02] to-transparent p-6 backdrop-blur-xl transition-all duration-500 hover:-translate-y-1 hover:border-accent/30 hover:shadow-[0_28px_70px_-20px_rgba(0,229,208,0.16)]">
+      {/* top hairline + corner glow */}
+      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-accent/50 via-accent/10 to-transparent" />
+      <div className="pointer-events-none absolute -right-14 -top-14 h-44 w-44 rounded-full bg-accent/[0.05] blur-3xl transition-colors duration-700 group-hover:bg-accent/[0.12]" />
+
+      {/* watermark state number */}
+      <span
+        aria-hidden
+        className="pointer-events-none absolute -top-4 right-4 select-none font-[var(--font-display)] text-[72px] font-bold leading-none tracking-tight text-transparent transition-transform duration-700 group-hover:-translate-y-1"
+        style={{ WebkitTextStroke: '1.2px rgba(0,229,208,0.14)' }}
+      >
+        {String(index).padStart(2, '0')}
+      </span>
+
+      <div className="relative mb-3 flex items-center gap-2.5">
+        <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg border border-accent/25 bg-accent/10 font-[var(--font-mono)] text-[12px] font-bold text-accent shadow-[inset_0_1px_0_rgba(255,255,255,0.1)]">
           {String(index).padStart(2, '0')}
         </span>
-        <span className="font-[var(--font-mono)] text-[10px] uppercase tracking-[1.6px] text-text-muted">{code}</span>
+        <span className="rounded-full border border-white/[0.08] bg-white/[0.04] px-2.5 py-1 font-[var(--font-mono)] text-[10px] uppercase tracking-[1.6px] text-text-muted transition-colors duration-500 group-hover:border-accent/20 group-hover:text-accent/80">
+          {code}
+        </span>
       </div>
-      <h4 className="mb-2 font-[var(--font-display)] text-[15px] font-semibold text-text-primary">{title}</h4>
-      <p className="mb-4 text-[13px] leading-[1.7] text-text-secondary">{note}</p>
-      <div>
-        <MiniDialog spec={spec} />
+      <h4 className="relative mb-2 font-[var(--font-display)] text-[16px] font-semibold leading-snug text-text-primary">
+        {title}
+      </h4>
+      <p className="relative mb-5 text-[13px] leading-[1.7] text-text-secondary">{note}</p>
+
+      {/* specimen stage: recessed well the popup sits on */}
+      <div className="relative rounded-xl border border-white/[0.05] bg-[#07070c]/80 p-3 shadow-[inset_0_1px_8px_rgba(0,0,0,0.55)]">
+        <div className="pointer-events-none absolute inset-0 rounded-xl bg-[radial-gradient(ellipse_at_50%_0%,rgba(0,229,208,0.05),transparent_55%)]" />
+        <div className="relative">
+          <MiniDialog spec={spec} />
+        </div>
       </div>
     </div>
   );
@@ -1484,8 +1498,10 @@ export default function PredictionMarketClient() {
         </div>
         <ArrowGallery
           slides={[
+            { src: `${IMG}/front-auth-login.png`, caption: t('front.authImgCaption') },
             { src: `${IMG}/front-wallet-deposit.png`, caption: t('front.walletImgCaption') },
             { src: `${IMG}/front-leaderboard.png`, caption: t('front.leaderboardImgCaption') },
+            { src: `${IMG}/front-leaderboard-list.png`, caption: t('front.leaderboardImg2Caption') },
           ]}
         />
       </ScrollReveal>
@@ -1551,24 +1567,18 @@ export default function PredictionMarketClient() {
       <ScrollReveal className={`${SECTION} mb-8`}>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
           {adminModuleMeta.map((m) => (
-            <ModuleCard
+            <PrincipleCard
               key={m.tag}
               tag={m.tag}
-              icon={m.icon}
+              gradient={m.gradient}
+              border={m.border}
+              glow={m.glow}
+              hue={m.hue}
               title={t(`admin.card${m.n}Title`)}
               body={t(`admin.card${m.n}Body`)}
             />
           ))}
         </div>
-      </ScrollReveal>
-
-      <ScrollReveal className={`${SECTION} mb-8`}>
-        <ModuleCard
-          tag="CONSISTENCY"
-          icon="ri-ruler-line"
-          title={t('admin.styleTitle')}
-          body={t('admin.styleBody')}
-        />
       </ScrollReveal>
 
       <ScrollReveal className={`${SECTION} mb-8`}>
