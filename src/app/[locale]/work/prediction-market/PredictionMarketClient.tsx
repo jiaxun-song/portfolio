@@ -1340,8 +1340,12 @@ export default function PredictionMarketClient() {
           <h2 className="mb-5 font-[var(--font-display)] text-xl font-semibold leading-snug text-text-primary md:text-2xl">
             {t("summary.heading")}
           </h2>
-          <p className="mb-8 text-[16px] leading-[1.7] text-text-secondary">
+          <p className="mb-5 text-[16px] leading-[1.7] text-text-secondary">
             {t.rich("summary.body", { highlight })}
+          </p>
+          <p className="mb-8 flex items-start gap-2 text-[13px] leading-[1.6] text-text-muted">
+            <span className="mt-[7px] h-1 w-1 shrink-0 rounded-full bg-accent/60" />
+            <span>{t("summary.note")}</span>
           </p>
           <div className="mb-6 border-t border-white/[0.08]" />
           <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

@@ -1411,6 +1411,7 @@
         "label": "PROJECT SUMMARY",
         "heading": "0 → 1，預測市場產品設計",
         "body": "Augur 定位是「預測市場界的 Shopify」——多租戶白標 SaaS，聚合 Polymarket 流動性。這個專案為 0-1 的開發，<highlight>我運用 Claude Code + Codex 與 Figma MCP 的協作，解決團隊裡原本沒有 PM 的角色產出文件與功能規劃，以及沒有前端工程師進行畫面切版的缺漏。</highlight>透過 Git 的操作進行畫面上的迭代與交付，同時設計出<highlight>可同時應用於前後台的 Design System</highlight>，讓工程師也可以依此產出畫面，透過團隊成員皆能產出 Prototype 的方式，加速溝通與開發效率。",
+        "note": "備註：本專案為 0 → 1 產品，目前尚未上線，預計 2026 Q4 正式上線。",
         "roleLabel": "ROLE",
         "roleValue": "Product Designer & Frontend Builder（with Claude Code）"
       },
