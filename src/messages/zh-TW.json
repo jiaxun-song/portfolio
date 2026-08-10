@@ -1581,7 +1581,7 @@
         "body": "設計系統不是單一文件，而是一組分工明確的文件架構：Design.md 定義 tokens、按鈕系統、元件索引與 AI Codegen 規則，所有文件衝突時以它為準；CLAUDE.md 是它的執行摘要，每次對話自動載入給 AI 的不可違反鐵則；它是每天被 AI 讀取執行的基準文件。",
         "card1Title": "Dark-only 玻璃質感",
         "card1Body": "金融產品的資訊密度適合深底。不用傳統灰階，改用半透明白疊深底——整個介面的層次由透明度構成，而不是色票。",
-        "card2Title": "語意鎖死，杜絕歧義",
+        "card2Title": "明確訂定準則",
         "card2Body": "Yes 一律使用顏色 emerald、No 一律柔化紅（特調 #ea4d61 避開預設刺眼紅），規範明文「禁止用近似色代替」——因為 AI 會鑽字面的漏洞。",
         "card3Title": "design-qa agent：交付前驗收",
         "card3Body": "原始碼掃不到「render 出來的畫面」，所以讓 agent 實際截圖三組（mobile / desktop / dark）逐項驗收。",
