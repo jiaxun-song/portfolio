@@ -1444,8 +1444,7 @@
         "chain5Sub": "自建驗收體系：design-qa agent + 12 項判準 + 三組截圖",
         "gapLabel": "THE REAL PROBLEM",
         "gapTitle": "AI 的瓶頸不在生成速度，在品質控制",
-        "gapBody": "一個人用 AI 可以很快做出「一頁」，但在整座平台的規模下，AI 每天生成的程式碼會系統性地長歪——顏色寫死、按鈕各寫各的、同一種彈窗五種寫法。<highlight>所以在這個專案設計的主要方向有兩層：一為產品本身，二為「讓 AI 穩定產出這個產品」的 workflow。</highlight>",
-        "imageCaption": "前台首頁——LIVE 定時漲跌輪播卡、熱門市場排行、分類篩選，未登入即可自由瀏覽"
+        "gapBody": "一個人用 AI 可以很快做出「一頁」，但在整座平台的規模下，AI 每天生成的程式碼會系統性地長歪——顏色寫死、按鈕各寫各的、同一種彈窗五種寫法。<highlight>所以在這個專案設計的主要方向有兩層：一為產品本身，二為「讓 AI 穩定產出這個產品」的 workflow。</highlight>"
       },
       "spec": {
         "heading": "Spec-Driven Development",
@@ -1476,13 +1475,7 @@
         "agent5Role": "重構偵察兵",
         "agent5Duty": "linter 抓違規，它抓「還沒被立為正典的重複」——因為誤報比漏報更傷收斂的工。",
         "agent6Role": "後端窗口",
-        "agent6Duty": "掃描全部 mock 資料層反推 API contract，同時是一座即時的「mock 債儀表板」。",
-        "principle1Title": "權限最小化",
-        "principle1Body": "每支 agent 都有工具白名單：QA 與守門 agent 一律唯讀，書記官只能動 docs。AI 的權限邊界，就是它的職責邊界。",
-        "principle2Title": "決定權留在人身上",
-        "principle2Body": "推版指令的原文是：「agent 是唯讀的，修不修、推不推我自己決定。」AI 給 verdict，人做 decision。",
-        "principle3Title": "先立工作流，再寫產品",
-        "principle3Body": "Repo 的第二個 commit 不是功能，是一份設計師 Git Playbook——開發初期與工程端討論設計師透過 Git 的交付模式與 Prototype 形式。"
+        "agent6Duty": "掃描全部 mock 資料層反推 API contract，同時是一座即時的「mock 債儀表板」。"
       },
       "front": {
         "heading": "前台設計規劃：定義一套交易語言",

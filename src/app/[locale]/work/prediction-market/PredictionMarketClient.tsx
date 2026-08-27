@@ -47,33 +47,6 @@ const agentMeta = [
   { name: "backend-handoff", icon: "ri-swap-box-line" },
 ];
 
-const principleMeta = [
-  {
-    tag: "PERMISSION",
-    gradient:
-      "linear-gradient(135deg, rgba(56, 189, 248, 0.14) 0%, rgba(14, 165, 233, 0.04) 100%)",
-    border: "rgba(56, 189, 248, 0.22)",
-    glow: "rgba(56, 189, 248, 0.08)",
-    hue: "rgb(125, 211, 252)",
-  },
-  {
-    tag: "AUTHORITY",
-    gradient:
-      "linear-gradient(135deg, rgba(0, 229, 208, 0.14) 0%, rgba(20, 184, 166, 0.04) 100%)",
-    border: "rgba(0, 229, 208, 0.22)",
-    glow: "rgba(0, 229, 208, 0.08)",
-    hue: "var(--color-accent)",
-  },
-  {
-    tag: "SEQUENCE",
-    gradient:
-      "linear-gradient(135deg, rgba(52, 211, 153, 0.14) 0%, rgba(16, 185, 129, 0.04) 100%)",
-    border: "rgba(52, 211, 153, 0.22)",
-    glow: "rgba(52, 211, 153, 0.08)",
-    hue: "rgb(110, 231, 183)",
-  },
-] as const;
-
 /** 平倉彈窗 7 個狀態的規格 specimen——樣式與文案對齊 Augur 產品實際彈窗 */
 type DialogRow = {
   k: string;
@@ -1495,10 +1468,9 @@ export default function PredictionMarketClient() {
 
       <div className={`${SECTION} mb-8`}>
         <VideoEmbed
-          videoId="J6USuZNWh2U"
+          videoId="NezOMT0ZtsU"
           width="wide"
           padded={false}
-          caption={t("context.imageCaption")}
         />
       </div>
 
@@ -1555,22 +1527,13 @@ export default function PredictionMarketClient() {
         </p>
       </ScrollReveal>
 
-      <ScrollReveal className={`${SECTION} mb-8`}>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          {principleMeta.map((p, i) => (
-            <PrincipleCard
-              key={p.tag}
-              tag={p.tag}
-              gradient={p.gradient}
-              border={p.border}
-              glow={p.glow}
-              hue={p.hue}
-              title={t(`workflow.principle${i + 1}Title`)}
-              body={t(`workflow.principle${i + 1}Body`)}
-            />
-          ))}
-        </div>
-      </ScrollReveal>
+      <div className={`${SECTION} mb-8`}>
+        <VideoEmbed
+          videoId="J6USuZNWh2U"
+          width="wide"
+          padded={false}
+        />
+      </div>
 
       <ScrollReveal className={`${SECTION} mb-[var(--cs-section-gap)]`}>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
