@@ -74,6 +74,35 @@ body {
   letter-spacing: 0.01em;
 }
 
+/* === Content Protection ===
+   關閉文字選取與長按選單；需要可選取的區塊加上 .selectable */
+html,
+body {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
+img,
+svg,
+video,
+canvas {
+  -webkit-user-drag: none;
+}
+
+input,
+textarea,
+select,
+[contenteditable="true"],
+.selectable,
+.selectable * {
+  -webkit-user-select: text;
+  -moz-user-select: text;
+  user-select: text;
+  -webkit-touch-callout: default;
+}
+
 h1, h2, h3, h4, h5, h6 {
   letter-spacing: 0.02em;
 }

@@ -9,6 +9,7 @@ import Footer from '@/components/layout/Footer';
 import CustomCursor from '@/components/CustomCursor';
 import { Analytics } from '@vercel/analytics/next';
 import ScrollRestoration from '@/components/ScrollRestoration';
+import ContentProtection from '@/components/ContentProtection';
 
 const spaceGrotesk = Space_Grotesk({
   variable: '--font-display',
@@ -71,6 +72,7 @@ export default async function LocaleLayout({
     >
       <body className="min-h-screen bg-bg-primary text-text-primary font-[var(--font-body)]">
         <ScrollRestoration />
+        <ContentProtection />
         <NextIntlClientProvider messages={messages}>
           <CustomCursor />
           <AnimatedBackground />
