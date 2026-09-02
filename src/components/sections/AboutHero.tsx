@@ -65,14 +65,6 @@ export default function AboutHero() {
             </motion.div>
 
             <motion.div {...stagger(0.2)} className="mt-9 flex gap-4 items-center flex-wrap">
-              <a
-                href="https://drive.google.com/drive/u/5/folders/1jTFXeVDkk5sfFede1RY9_F6DIogl7pvu?usp=sharing"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3.5 bg-[var(--color-accent)] text-[var(--color-bg-primary)] font-semibold text-[14px] rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,208,0.25)] hover:-translate-y-0.5"
-              >
-                {t('btnResume')}
-              </a>
               <Link
                 href="/work"
                 className="inline-flex items-center gap-2 px-7 py-3.5 bg-transparent text-[var(--color-text-secondary)] font-medium text-[14px] rounded-full border border-[var(--color-border)] transition-all duration-300 hover:border-[rgba(0,229,208,0.2)] hover:text-[var(--color-accent)]"

@@ -6,6 +6,9 @@ import Image from 'next/image';
 import gsap from 'gsap';
 
 const isVideo = (src: string) => /\.(webm|mp4|mov)$/i.test(src);
+// Safari / iOS may not decode VP9 WebM — serve an H.264 sibling + a poster frame
+const mp4Fallback = (src: string) => src.replace(/\.webm$/i, '.mp4');
+const posterFor = (src: string) => src.replace(/\.(webm|mp4|mov)$/i, ' Poster.jpg');
 
 const skills = [
   {
@@ -88,12 +91,6 @@ export default function WhatIDo() {
     }
   }, []);
 
-  // Mobile: tap to toggle
-  const handleRowClick = useCallback((index: number) => {
-    if (!isMobile.current) return;
-    setActiveIndex((prev) => (prev === index ? null : index));
-  }, []);
-
   return (
     <section className="relative py-[var(--section-padding-y)] px-6 md:px-16">
       <div className="mx-auto max-w-6xl">
@@ -127,7 +124,6 @@ export default function WhatIDo() {
                 className="border-b border-white/[0.06] transition-opacity duration-500"
                 style={{ opacity: isFaded ? 0.35 : 1 }}
                 onMouseEnter={() => handleRowEnter(index)}
-                onClick={() => handleRowClick(index)}
               >
                 <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-3 md:gap-8 py-6 px-4 -mx-4 rounded-xl transition-all duration-300">
                   {/* Title — slides left on hover */}
@@ -157,31 +153,33 @@ export default function WhatIDo() {
                   </div>
                 </div>
 
-                {/* Mobile: show image/video inline */}
-                {isHovered && (
-                  <div className="md:hidden overflow-hidden pb-4">
-                    <div className="relative w-full rounded-2xl overflow-hidden border border-white/[0.08]" style={{ maxHeight: 300 }}>
-                      {isVideo(skill.image) ? (
-                        <video
-                          src={skill.image}
-                          autoPlay
-                          loop
-                          muted
-                          playsInline
-                          className="w-full object-cover"
-                        />
-                      ) : (
-                        <Image
-                          src={skill.image}
-                          alt={t(`skills.${skill.key}.title`)}
-                          width={800}
-                          height={300}
-                          className="w-full object-cover object-left-top"
-                        />
-                      )}
-                    </div>
+                {/* Mobile: image/video always visible (no hover on touch) */}
+                <div className="md:hidden overflow-hidden pb-6">
+                  <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/[0.08]">
+                    {isVideo(skill.image) ? (
+                      <video
+                        poster={posterFor(skill.image)}
+                        autoPlay
+                        loop
+                        muted
+                        playsInline
+                        preload="metadata"
+                        className="absolute inset-0 h-full w-full object-cover"
+                      >
+                        <source src={mp4Fallback(skill.image)} type="video/mp4" />
+                        <source src={skill.image} type="video/webm" />
+                      </video>
+                    ) : (
+                      <Image
+                        src={skill.image}
+                        alt={t(`skills.${skill.key}.title`)}
+                        fill
+                        className="object-cover object-left-top"
+                        sizes="100vw"
+                      />
+                    )}
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
@@ -189,7 +187,7 @@ export default function WhatIDo() {
           {/* Floating thumbnail that follows cursor (desktop only) */}
           <div
             ref={thumbRef}
-            className="pointer-events-none absolute top-0 left-0 z-10 w-[400px] h-[250px] rounded-2xl overflow-hidden border border-white/[0.08]"
+            className="pointer-events-none hidden md:block absolute top-0 left-0 z-10 w-[400px] h-[250px] rounded-2xl overflow-hidden border border-white/[0.08]"
             style={{ willChange: 'transform' }}
           >
             {skills.map((skill, index) => (
@@ -200,13 +198,17 @@ export default function WhatIDo() {
               >
                 {isVideo(skill.image) ? (
                   <video
-                    src={skill.image}
+                    poster={posterFor(skill.image)}
                     autoPlay
                     loop
                     muted
                     playsInline
+                    preload="metadata"
                     className="absolute inset-0 h-full w-full object-cover"
-                  />
+                  >
+                    <source src={mp4Fallback(skill.image)} type="video/mp4" />
+                    <source src={skill.image} type="video/webm" />
+                  </video>
                 ) : (
                   <Image
                     src={skill.image}

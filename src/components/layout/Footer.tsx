@@ -18,14 +18,6 @@ export default function Footer() {
           >
             Behance
           </a>
-          <a
-            href="https://drive.google.com/drive/u/5/folders/1jTFXeVDkk5sfFede1RY9_F6DIogl7pvu?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-medium text-text-secondary hover:text-text-primary transition-colors duration-300"
-          >
-            Resume
-          </a>
         </div>
       </div>
     </footer>
