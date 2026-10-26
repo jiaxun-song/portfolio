@@ -1,27 +1,9 @@
 'use client';
 
-import { useState, useEffect, useRef, memo } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import dynamic from 'next/dynamic';
+import NativeHeroScene from '@/components/hero/NativeHeroScene';
 import Marquee from '@/components/ui/Marquee';
-
-const UnicornScene = dynamic(() => import('unicornstudio-react'), {
-  ssr: false,
-});
-
-// Memo the WebGL scene so it never re-renders from parent state changes
-const StableWebGLScene = memo(function StableWebGLScene() {
-  return (
-    <UnicornScene
-      projectId="KbPFLo59fHLz24ges3J3"
-      width="100%"
-      height="100%"
-      scale={1}
-      dpi={1}
-      sdkUrl="https://cdn.jsdelivr.net/gh/hiunicornstudio/unicornstudio.js@2.1.5/dist/unicornStudio.umd.js"
-    />
-  );
-});
 
 interface HeroSectionProps {
   animationReady: boolean;
@@ -62,18 +44,13 @@ export default function HeroSection({ animationReady }: HeroSectionProps) {
         </div>
       </motion.div>
 
-      {/* Unicorn Studio WebGL — always shown, including mobile */}
+      {/* Locally rendered portrait, helmet reveal, and glass sculptures. */}
       <motion.div
         className="relative z-0 overflow-hidden"
         initial={{ opacity: 0 }}
         animate={animationReady ? { opacity: 1 } : { opacity: 0 }}
         transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
       >
-        {/*
-          Use a wrapper with the visible size (68vw) and an inner div
-          scaled up to fill it. The canvas thinks it's 68vw wide
-          and won't re-init on window resize since its % base stays stable.
-        */}
         <div
           className="mx-auto w-full md:w-[68vw] aspect-square md:aspect-[16/10]"
           style={{
@@ -81,7 +58,7 @@ export default function HeroSection({ animationReady }: HeroSectionProps) {
             visibility: isVisible ? 'visible' : 'hidden',
           }}
         >
-          <StableWebGLScene />
+          <NativeHeroScene active={isVisible && animationReady} />
         </div>
       </motion.div>
 

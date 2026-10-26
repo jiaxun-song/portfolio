@@ -50,8 +50,8 @@ export default function CustomCursor() {
     const onMouseMove = (e: MouseEvent) => {
       const el = cursorRef.current;
       if (!el) return;
-      el.style.left = `${e.clientX}px`;
-      el.style.top = `${e.clientY}px`;
+      // Keep movement off the layout path; scale retains its own hover easing.
+      el.style.translate = `${e.clientX}px ${e.clientY}px`;
       if (!visibleRef.current) {
         visibleRef.current = true;
         applyScale();
@@ -106,6 +106,8 @@ export default function CustomCursor() {
       ref={cursorRef}
       className="fixed z-[9999] pointer-events-none hidden md:block"
       style={{
+        left: 0,
+        top: 0,
         width: 50,
         height: 50,
         marginLeft: -25,
@@ -116,7 +118,7 @@ export default function CustomCursor() {
         opacity: 0,
         transform: 'scale(0.3)',
         transition: 'transform 300ms ease-out, opacity 150ms ease',
-        willChange: 'left, top, transform',
+        willChange: 'translate, transform',
       }}
     />
   );
